@@ -10,10 +10,9 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - [Figma wireframe & mockup](https://www.figma.com/file/Hnk0pvtp9GdPd8QCfoNQVd/Portfolio-Summer-2021?node-id=0%3A1)
 - HTML5, CSS3, JavaScript, JSX
 - UX and UI elements created from scratch
-- React / React Redux / Redux Toolkit
+- React / React Redux / Redux Toolkit / Redux Persist
 - React Router
-- Redux Persist
-- React Transition Groups / Redux Responsive / React Lottie Player
+- React Transition Groups / Redux Responsive & Custom Media Queries / React Lottie Player
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
 - Optimization of Search engine optimization (SEO) to improve the quality and quantity of website traffic from search engines.
