@@ -16,5 +16,5 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - React Transition Groups / Redux Responsive / React Lottie Player
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
-- Optimization of Search engine optimization (SEO) to improve the quality and quantity of website traffic to a website or a web page from search engines.
+- Optimization of Search engine optimization (SEO) to improve the quality and quantity of website traffic from search engines.
 - Validating the aspects of a Progressive Web App.
