@@ -1,5 +1,5 @@
 # Personal Portfolio 🦆
-Personal portfolio built with React and other technologies
+Personal portfolio built with React and other technologies.
 
 [Live Website](https://www.francoding.xyz/)
 
