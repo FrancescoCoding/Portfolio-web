@@ -1,7 +1,7 @@
 # Personal Portfolio 🦆
 Personal portfolio built with React and other technologies.
 
-[LIVE WEBSITE](https://www.francoding.xyz/)
+[Live Website](https://www.francoding.xyz/)
 
 ![Portfolio Preview](https://user-images.githubusercontent.com/64712227/134772520-dc7aaafb-3db4-4497-97b1-6d5b46fda844.gif)
 
