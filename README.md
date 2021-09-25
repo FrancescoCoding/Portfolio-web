@@ -12,7 +12,8 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - UX and UI elements created from scratch
 - React / React Redux / Redux Toolkit / Redux Persist
 - React Router
-- React Transition Groups / Redux Responsive & Custom Media Queries / React Lottie Player
+- Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
+- Google Maps API & Forms handling
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
 - Optimization of Search engine optimization (SEO) to improve the quality and quantity of website traffic from search engines.
