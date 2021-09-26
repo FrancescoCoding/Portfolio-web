@@ -4,6 +4,8 @@ Personal portfolio built with React and other technologies.
 [Live Website](https://www.francoding.xyz/)
 
 ![Portfolio Preview_3](https://user-images.githubusercontent.com/64712227/134774817-2df1821a-c59c-45c3-a341-7bf6b192afe7.gif)
+![Portfolio Preview_3](https://user-images.githubusercontent.com/64712227/134809667-7c9d2a8f-db61-47e5-8db5-9128b9ffbf65.gif)
+
 
 This portfolio is the product of my evolution as a frontend developer.  
 It showcases my current skill in creating responsive, efficient and fully functional React SPA webpages.
