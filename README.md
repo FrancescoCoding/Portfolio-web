@@ -13,8 +13,8 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - [Figma wireframe & mockup](https://www.figma.com/file/Hnk0pvtp9GdPd8QCfoNQVd/Portfolio-Summer-2021?node-id=0%3A1)
 - HTML5, CSS3, JavaScript, JSX
 - UX and UI elements created from scratch
-- React / React Redux / Redux Toolkit / Redux Persist
-- React Router
+- React / React Router
+- React Redux / Redux Toolkit / Redux Persist
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API & Forms handling
 - Custom hooks
