@@ -16,7 +16,7 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - React / React Router
 - React Redux / Redux Toolkit / Redux Persist
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
-- Google Maps API & Forms handling
+- Google Maps API / Forms - Portals - Modals handling
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
 - Search engine optimization (SEO) handling to improve the quality and quantity of website traffic from search engines
