@@ -14,7 +14,7 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - HTML5, CSS3, JavaScript, JSX
 - UX and UI elements created from scratch
 - React / React Router
-- React Redux / Redux Toolkit / Redux Persist
+- React Redux / Redux Toolkit / Redux Persist (to provide an "Offline First" support for some features)
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
 - Implemented copy text to clipboard
