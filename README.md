@@ -17,7 +17,7 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - React Redux / Redux Toolkit / Redux Persist (to provide an "Offline First" support for some features)
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
-- Implemented copy text to clipboard
+- Copy text to clipboard implementation
 - EmailJS React
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
