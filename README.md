@@ -22,4 +22,4 @@ It showcases my current skill in creating responsive, efficient and fully functi
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
 - Search engine optimization (SEO) handling to improve the quality and quantity of website traffic from search engines
-- Validating the aspects of a Progressive Web App.
+- Validating the aspects of a Progressive Web App
