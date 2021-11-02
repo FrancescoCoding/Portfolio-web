@@ -19,7 +19,7 @@ This is meant to showcase my current skill in creating responsive, efficient and
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
 - 404 page & non-existent project pages
-- Multi-language implementation
+- Multi-language implementation (i18n)
 - Copy text to clipboard implementation
 - EmailJS React
 - Custom hooks
