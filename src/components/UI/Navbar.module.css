@@ -1,0 +1,142 @@
+nav {
+  display: flex;
+  padding: 0rem 12.5rem;
+  justify-content: flex-start;
+  max-width: 2500px;
+  margin: 0 auto !important;
+}
+
+.hamburger-container {
+  /* border: 4px solid #be1b1b; */
+  height: 100%;
+  width: 100%;
+  margin: 3rem 5rem;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: -0.4rem;
+  padding: 0.8rem;
+  z-index: 400;
+  border-radius: 4rem;
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  padding-top: 3rem;
+}
+
+.navbar ul li {
+  padding: 2rem;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.navbar ul li a {
+  position: relative;
+}
+.navbar ul li a.active {
+  padding-bottom: -0.4rem;
+  /* border-bottom: 4px solid #be1b1b; */
+}
+.navbar ul li a.active:hover:after,
+.navbar ul li a.active:hover:before {
+  width: 0;
+}
+
+/* Canary yellow color scheme */
+.navbar ul.canary li a {
+  color: var(--canary-primary-color);
+}
+.navbar ul.canary li a:hover {
+  color: var(--canary-primary-color-lighter);
+}
+.navbar ul.canary li a.active {
+  color: var(--canary-active);
+}
+
+/* Magenta color scheme */
+.navbar ul.magenta li a {
+  color: var(--magenta-primary-color);
+}
+.navbar ul.magenta li a:hover {
+  color: var(--magenta-primary-color-lighter);
+}
+.navbar ul.magenta li a.active {
+  color: var(--magenta-active);
+}
+
+/* Blue ocean color scheme */
+.navbar ul.ocean li a {
+  color: var(--ocean-primary-color-lighter);
+}
+.navbar ul.ocean li a:hover {
+  color: var(--ocean-primary-color-lightest);
+}
+.navbar ul.ocean li a.active {
+  color: var(--ocean-active);
+}
+
+/* Green leaf color scheme */
+.navbar ul.leaf li a {
+  color: var(--leaf-primary-color);
+}
+.navbar ul.leaf li a:hover {
+  color: var(--leaf-primary-color-lighter);
+}
+.navbar ul.leaf li a.active {
+  color: var(--leaf-active);
+}
+
+/* Original transition below by Riccardo Zanutta
+   @ http://riccardozanutta.com/, I just modified his transition.
+*/
+
+.navbar ul li a:after,
+.navbar ul li a:before {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  right: 0;
+  left: auto;
+  width: 0;
+  height: 4px;
+  z-index: 2;
+}
+
+.navbar ul li a:before {
+  background-color: #2263bd;
+  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+}
+
+.navbar ul li a:after {
+  background-color: #f25757;
+  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+@media only screen and (min-width: 64em) {
+  .navbar ul li a:hover:after,
+  .navbar ul li a:hover:before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 1824px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+  }
+  nav {
+    position: absolute;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger-container {
+    margin: 0.5rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: -0.4rem;
+  }
+}

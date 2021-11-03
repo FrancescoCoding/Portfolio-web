@@ -1,0 +1,44 @@
+.form-container {
+  display: flex;
+}
+
+.form {
+  max-height: 500px !important;
+}
+.form label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.form input {
+  display: block;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  width: 100%;
+}
+.form input:focus {
+  outline-color: rgb(0, 110, 255);
+  outline-offset: 0px;
+}
+
+.invalid {
+  background: rgb(255, 194, 194);
+  border: 1px solid red !important;
+}
+
+textarea {
+  outline-color: rgb(0, 110, 255);
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem !important;
+  width: 205px !important;
+  height: 60px;
+  max-height: 200px;
+  padding: 0.3rem 0.6rem;
+}
+
+.submit {
+  margin-top: 0.5rem;
+  width: 100px !important;
+  cursor: pointer;
+}

@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
+
+:root {
+  --canary-primary-color-darker: #e6b34d;
+  --canary-primary-color: #ffcc66;
+  --canary-primary-color-lighter: #ffe680;
+
+  --ocean-primary-color-darker: #3e71af;
+  --ocean-primary-color: #578ac8;
+  --ocean-primary-color-lighter: #71a4e2;
+  --ocean-primary-color-lightest: #97c6ff;
+
+  --magenta-primary-color-darker: #dc2d81;
+  --magenta-primary-color: #ed4797;
+  --magenta-primary-color-lighter: #ee6cab;
+
+  --leaf-primary-color-darker: #318e46;
+  --leaf-primary-color: #4aa75f;
+  --leaf-primary-color-lighter: #64c179;
+
+  --canary-active: rgb(82, 113, 253);
+  --ocean-active: #1fdb83;
+  --magenta-active: #7092ff;
+  --leaf-active: #3f6ad8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #020816;
+  transition: transform 1s;
+  overflow-x: hidden;
+  font-family: "Roboto", "sans-serif";
+
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+.react-viewer-btn {
+  transform: translateY(-6px) translateX(2rem);
+}
+.react-viewer-close {
+  transform: translateY(0) translateX(0);
+}
+.react-viewer-attribute {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: red;
+  background: --var(--canary-primary-color);
+}
+
+::selection {
+  color: rgb(222, 5, 237);
+  background: var(--canary-primary-color);
+}
+
+@media screen and (max-width: 1824px) {
+  body {
+    transition: all 1s ease;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body {
+    transition: all 1s ease;
+  }
+}
+
+/* const isDesktopOrLaptop = useMediaQuery({ 
+  query: "(min-width: 1224px)",
+});
+const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" }); */

@@ -1,0 +1,257 @@
+/* The side navigation menu */
+.sidebar {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  z-index: 401;
+  background-color: #07031f;
+  border: 1px solid #56698c;
+  border-left: none;
+  color: white;
+}
+.sidebar.slide-in {
+  animation: slide-in 0.3s ease-out forwards !important;
+}
+.sidebar.slide-out {
+  transition: all 2s;
+  animation: slide-out 0.3s ease-out forwards !important;
+}
+.sidebar.slide-down {
+  animation: slide-down 0.4s ease-out forwards !important;
+}
+.sidebar.slide-up {
+  transition: all 2s;
+  animation: slide-up 0.4s ease-out forwards !important;
+}
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar ul li {
+  border: 1px solid transparent;
+  margin: 8px;
+  border: 1px solid #56698c;
+  border-radius: 0px !important;
+}
+.sidebar ul li:hover {
+  background: rgb(63, 63, 89);
+  /* border: 1px dashed #56698c; */
+}
+.sidebar-content {
+  max-height: calc(100% - 30px);
+  height: calc(100% - 30px);
+  overflow-y: auto;
+  position: relative;
+  font-size: 1.1rem;
+}
+.sidebar-brand {
+  padding: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+.sidebar-brand > a {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.sidebar-brand .close-sidebar {
+  cursor: pointer;
+  font-size: 20px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: translateX(0.4rem); */
+}
+
+/* Header */
+.sidebar-header {
+  padding: 2rem;
+  overflow: hidden;
+}
+.sidebar-header .user-pic {
+  float: left;
+  width: 60px;
+  padding: 2px;
+  border-radius: 12px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+.sidebar-header .user-pic img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.sidebar-header .user-info {
+  float: left;
+  margin-top: 5px;
+}
+.sidebar-header .user-info > span {
+  display: block;
+}
+span.user-role {
+  font-size: 12px;
+  margin: 3px 0;
+}
+.sidebar-header .user-info .user-status {
+  font-size: 11px;
+  margin-top: 4px;
+}
+.circle {
+  font-size: 8px;
+  margin-right: 4px;
+  color: #5cb85c;
+}
+
+/* Searchbar */
+.sidebar-search > div {
+  padding: 10px 20px;
+}
+input.search-menu,
+.input-group-text {
+  border-color: transparent;
+  box-shadow: none;
+}
+.sidebar-header,
+.sidebar-search,
+.sidebar-menu {
+  border-top: 1px solid #56698c;
+}
+
+.sidebar-search input.search-menu,
+.sidebar-search .input-group-text {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Make sidebar into topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    border: 1px solid #56698c !important;
+    /* animation: slide-down 0.4s ease-out forwards; */
+  }
+  .sidebar.slide-in {
+    animation: slide-down 0.4s ease-out forwards;
+  }
+  .sidebar.slide-out {
+    transition: all 2s;
+    animation: slide-up 0.3s ease-out forwards !important;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar {
+    position: fixed;
+  }
+  .sidebar ul li:first-child {
+  }
+  .sidebar a {
+    text-align: center;
+  }
+}
+
+/*------scroll bar---------------------*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #aeb6c4;
+  border: 0px none #ffffff;
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525965;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@keyframes slide-in {
+  0% {
+    left: -300px;
+    /* transform: translateX(-100%); */
+  }
+  100% {
+    /* transform: translateX(0); */
+    left: 0;
+  }
+}
+@keyframes slide-out {
+  0% {
+    left: 0;
+    /* transform: translateX(0); */
+  }
+  100% {
+    /* transform: translateX(-300px); */
+    left: -300px;
+  }
+}
+@keyframes slide-down {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+.active {
+  border-left: 8px solid #56698c;
+}
+
+.canary {
+  color: var(--canary-primary-color);
+}
+.leaf {
+  color: var(--leaf-primary-color);
+}
+.ocean {
+  color: var(--ocean-primary-color);
+}
+.magenta {
+  color: var(--magenta-primary-color);
+}

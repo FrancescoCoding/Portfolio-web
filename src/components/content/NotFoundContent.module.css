@@ -1,0 +1,44 @@
+.notFound-container h1 {
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.notFound-container {
+  overflow: hidden;
+}
+
+.notFound-content {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notFound-content > * {
+  text-shadow: 4px 4px 0px #000000;
+}
+
+.canary {
+  color: rgb(239, 243, 2);
+  text-shadow: 55px 55px 0px #a00dd1;
+}
+.ocean {
+  color: #1d94d5;
+  text-shadow: 55px 55px 0px #1fdb83;
+}
+.magenta {
+  color: hsl(331, 100%, 78%);
+  text-shadow: 55px 55px 0px #7092ff;
+}
+.leaf {
+  color: hsl(117, 65%, 62%);
+  text-shadow: 55px 55px 0px #ff5f53;
+}
+
+@media screen and (max-width: 1200px) {
+  .notFound-content h1 {
+    font-size: 2.3rem !important;
+  }
+}

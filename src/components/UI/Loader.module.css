@@ -1,0 +1,39 @@
+.loader-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 6;
+  opacity: 100%;
+  background: rgb(10, 0, 31);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animation-duration: 1s; */
+}
+.loader-container > * {
+  animation-name: loaderPage;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes loaderPage {
+  20% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.5);
+  }
+  80% {
+    transform: scale(1);
+  }
+  85% {
+  }
+  90% {
+  }
+  100% {
+    transform: scale(1);
+    /* opacity: 0; */
+    /* transform: scale(1); */
+  }
+}

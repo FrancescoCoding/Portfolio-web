@@ -1,0 +1,69 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0rem;
+  right: 7rem;
+  transition: all 1s ease;
+}
+
+.sidebar-home-link {
+  writing-mode: vertical-rl;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: #fff;
+  transform: scale(-1);
+}
+
+.canary {
+  color: var(--canary-active);
+}
+.leaf {
+  color: var(--leaf-active);
+}
+.ocean {
+  color: var(--ocean-active);
+}
+.magenta {
+  color: var(--magenta-active);
+}
+
+.sidebar .design {
+  width: 3px;
+  height: 90px;
+  background: #fff;
+  transition: all 1s ease;
+}
+
+.concatContainer {
+  height: 80px;
+  width: 80px;
+}
+
+@media screen and (max-width: 1824px) {
+  .concatContainer {
+    display: none;
+  }
+  .sidebar {
+    transition: all 1s ease;
+    transform: scale(0.8) translateY(4rem) translateY(0rem) rotate(0deg);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    transition: all 1s ease;
+    transform: rotate(90deg) scale(0.8) translateX(9rem) translateY(4rem);
+  }
+  .sidebar .design {
+    transition: all 1s ease;
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}

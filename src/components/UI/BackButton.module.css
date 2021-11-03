@@ -1,0 +1,15 @@
+.backButton {
+  position: fixed;
+  z-index: 4;
+  left: 3rem;
+  top: 3rem;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  transition: 0.3s all ease;
+}
+
+.backButton:hover {
+  color: rgb(23, 66, 121) !important;
+  transform: scale(1.2);
+}
