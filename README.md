@@ -12,7 +12,7 @@ This is meant to showcase my current skill in creating responsive, efficient and
 
 ## Full list of Technologies and features
 - [Figma wireframe & mockup](https://www.figma.com/file/Hnk0pvtp9GdPd8QCfoNQVd/Portfolio-Summer-2021?node-id=0%3A1)
-- HTML5, CSS3, JavaScript, JSX
+- HTML5, CSS3 (CSS modules to scope locally), JavaScript, JSX
 - UI elements created from scratch keeping UX into account
 - React / React Router
 - React Redux / Redux Toolkit / Redux Persist (to provide an "Offline First" support for some features)
