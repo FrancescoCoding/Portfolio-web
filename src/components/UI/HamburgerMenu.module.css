@@ -21,7 +21,7 @@
   animation: slide-out 0.3s ease-out forwards !important;
 }
 .sidebar.slide-down {
-  animation: slide-down 0.4s ease-out forwards !important;
+  animation: slide-down 0.3s ease-out forwards !important;
 }
 .sidebar.slide-up {
   transition: all 2s;

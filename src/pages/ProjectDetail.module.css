@@ -208,6 +208,7 @@ li {
   .project-card {
     padding: 1.8rem 2rem;
     width: 90%;
+    min-height: 100%;
     overflow: auto;
   }
   .project-card h1 {

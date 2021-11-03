@@ -56,7 +56,16 @@ const ProjectsContent = props => {
                   <div className={styles.tags}>
                     {project["EN"].tags &&
                       project["EN"].tags.map(tag => (
-                        <p className={` ${styles.tag}`}>{tag}</p>
+                        <p
+                          key={
+                            project.id +
+                            "tag" +
+                            Math.floor(Math.random() * 1000)
+                          }
+                          className={` ${styles.tag}`}
+                        >
+                          {tag}
+                        </p>
                       ))}
                   </div>
                 )}

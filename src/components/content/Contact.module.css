@@ -13,6 +13,22 @@
   flex-direction: column;
   transition: 0.4s;
 }
+.back {
+  border: 5px solid blue;
+  border-radius: 5rem;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(3.3rem) translateY(-8.3rem);
+  bottom: 0;
+  transition: 0.3s all;
+}
+.back:hover {
+  transition: 0.3s all;
+}
+
 .contact-container .mail:hover {
   transition: 0.4s;
 }
@@ -31,6 +47,7 @@
   padding-bottom: 1rem;
   border-bottom-style: solid !important;
   max-width: 450px;
+  user-select: none;
 }
 .contact-container h1:hover {
   border-bottom: rgb(41, 157, 245) solid 2px !important;

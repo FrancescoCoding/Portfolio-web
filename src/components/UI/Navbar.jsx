@@ -43,7 +43,7 @@ const Navbar = () => {
         <HamburgerMenu isMounted={isMounted} onClose={hideMenuSidebarHandler} />
       )}
 
-      {!isOpen && !isBigScreen && (
+      {!isBigScreen && (
         <nav className={styles.navbar}>
           <div
             onClick={showMenuSidebarHandler}
@@ -53,7 +53,7 @@ const Navbar = () => {
               size={30}
               rounded
               color="white"
-              toggled={isOpen}
+              // toggled={isOpen}
               toggle={setOpen}
             />
           </div>

@@ -8,6 +8,7 @@
 .form label {
   display: block;
   margin-bottom: 0.3rem;
+  user-select: none;
 }
 .form input {
   display: block;

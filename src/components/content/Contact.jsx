@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import copy from "copy-text-to-clipboard";
 import { Mail } from "../../assets/Animations";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaArrowLeft } from "react-icons/fa";
 
 import { useSelector } from "react-redux";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
@@ -65,9 +65,17 @@ const Contact = props => {
       <div className={styles["contact-container"]}>
         <div
           className={styles.mail}
-          onClick={() => setShowMessageSection(true)}
+          onClick={() => setShowMessageSection(!showMessageSection)}
         >
           <Mail />
+          {showMessageSection && (
+            <div
+              className={styles.back}
+              style={{ backgroundColor: `${storeColour.hex}` }}
+            >
+              <FaArrowLeft color="white" size="3rem" />
+            </div>
+          )}
         </div>
         {/* INFO */}
         {!showMessageSection && (
