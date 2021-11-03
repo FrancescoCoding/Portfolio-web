@@ -13,21 +13,6 @@
   flex-direction: column;
   transition: 0.4s;
 }
-.back {
-  border: 5px solid blue;
-  border-radius: 5rem;
-  height: 80px;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(3.3rem) translateY(-8.3rem);
-  bottom: 0;
-  transition: 0.3s all;
-}
-.back:hover {
-  transition: 0.3s all;
-}
 
 .contact-container .mail:hover {
   transition: 0.4s;
@@ -55,7 +40,7 @@
 
 .contact-container p {
   position: relative;
-  padding: 0rem 2rem;
+  padding: 1rem 2rem;
   align-items: center;
   border-radius: 10px;
   font-family: "Open Sans";

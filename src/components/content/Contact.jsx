@@ -36,6 +36,7 @@ const Contact = props => {
   const containerStyle = {
     width: "100%",
     height: "520px",
+    maxHeight: " 100%",
     borderBottomRightRadius: "1.19rem",
     borderTopRightRadius: "1.19rem",
   };
@@ -68,14 +69,6 @@ const Contact = props => {
           onClick={() => setShowMessageSection(!showMessageSection)}
         >
           <Mail />
-          {showMessageSection && (
-            <div
-              className={styles.back}
-              style={{ backgroundColor: `${storeColour.hex}` }}
-            >
-              <FaArrowLeft color="white" size="3rem" />
-            </div>
-          )}
         </div>
         {/* INFO */}
         {!showMessageSection && (
