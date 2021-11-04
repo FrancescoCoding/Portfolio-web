@@ -158,7 +158,7 @@
 @media screen and (max-width: 900px) {
   .astronaut-text h1 {
     font-size: 3.2rem !important;
-    color: rgb(0, 225, 255) !important;
+    /* color: rgb(0, 225, 255) !important; */
   }
   .astronaut-text p {
     font-size: 2.5rem !important;

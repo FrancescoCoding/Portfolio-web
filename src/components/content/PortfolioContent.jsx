@@ -70,10 +70,15 @@ const PortfolioContent = props => {
         <Astronaut delay={delayMS} />
         {!isBigScreen && (
           <div className={styles["astronaut-text"]}>
-            <h1 style={{ fontSize: "4rem", color: "white" }}>
+            <h1
+              style={{
+                fontSize: "4rem",
+                color: `${storeColour.hex}`,
+              }}
+            >
               Francesco Gruosso
             </h1>
-            <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc</p>
+            <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
           </div>
         )}
       </div>

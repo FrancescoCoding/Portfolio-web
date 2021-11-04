@@ -5,6 +5,35 @@
   position: relative;
 }
 
+.contact-container .close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  color: #515355 !important;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  background: none rgb(255, 255, 255);
+  border: 0px;
+  margin: 10px;
+  padding: 0px;
+  text-transform: none;
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 40px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+  overflow: hidden;
+  animation: appear 0.1s forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
 .contact-container .mail {
   position: absolute;
   left: -14rem;
@@ -32,10 +61,12 @@
   padding-bottom: 1rem;
   border-bottom-style: solid !important;
   max-width: 450px;
+  transition: border 0.7s !important;
   user-select: none;
 }
 .contact-container h1:hover {
   border-bottom: rgb(41, 157, 245) solid 2px !important;
+  transition: border 0.6s !important;
 }
 
 .contact-container p {
@@ -114,6 +145,7 @@
   border: solid 2px rgb(41, 157, 245) !important;
   transition: all 0.4s ease-in-out;
   max-width: 450px;
+  user-select: none;
 }
 .action-button:hover {
   border: solid 2px rgb(2, 145, 255) !important;
@@ -122,4 +154,13 @@
 .action-button:active {
   border: dotted 2px rgb(41, 157, 245) !important;
   transition: border 0s !important;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

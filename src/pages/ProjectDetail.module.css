@@ -179,6 +179,7 @@ li {
   }
   .information-wrapper .btn {
     padding: 1rem 1.5rem !important;
+    transition: 0s;
     font-size: 1rem;
   }
   .project-card h1 {
@@ -203,7 +204,7 @@ li {
     text-align: center;
     justify-content: center;
     font-size: 1.1rem;
-    transition: all 0.3s;
+    transition: all 0s;
   }
   .project-card {
     padding: 1.8rem 2rem;

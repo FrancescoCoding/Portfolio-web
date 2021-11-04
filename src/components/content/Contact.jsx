@@ -1,10 +1,12 @@
 import Modal from "../UI/Modal";
 import { ContactMeForm } from "../UI/ContactMeForm";
 import { useState } from "react";
+import { HorizontalTicker } from "react-infinite-ticker";
 
 import copy from "copy-text-to-clipboard";
 import { Mail } from "../../assets/Animations";
 import { FaChevronDown, FaArrowLeft } from "react-icons/fa";
+import { IoCloseOutline } from "react-icons/io5";
 
 import { useSelector } from "react-redux";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
@@ -70,6 +72,9 @@ const Contact = props => {
         >
           <Mail />
         </div>
+        <div className={styles.close} onClick={props.onClose}>
+          <IoCloseOutline />
+        </div>
         {/* INFO */}
         {!showMessageSection && (
           <div
@@ -131,15 +136,17 @@ const Contact = props => {
           </div>
         )}
         {showMessageSection && (
-          <div
-            className={styles.info}
-            style={{
-              border: `9px solid var(--${storeColour.colour}-active)`,
-              borderRight: `9px solid var(--${storeColour.colour}-active)`,
-            }}
-          >
-            <ContactMeForm />
-          </div>
+          <>
+            <div
+              className={styles.info}
+              style={{
+                border: `9px solid var(--${storeColour.colour}-active)`,
+                borderRight: `9px solid var(--${storeColour.colour}-active)`,
+              }}
+            >
+              <ContactMeForm />
+            </div>
+          </>
         )}
 
         {/* MAP */}

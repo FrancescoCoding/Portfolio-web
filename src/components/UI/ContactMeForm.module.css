@@ -26,6 +26,7 @@
   font-size: 1.3rem !important;
   border: 1px solid transparent;
   width: 100%;
+  border-radius: 3px;
 }
 .form input:focus {
   outline-color: rgb(0, 110, 255);
