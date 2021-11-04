@@ -11,7 +11,7 @@
   transition: all 1s ease;
 }
 
-.main-content h1 {
+.main-text h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 5rem;
   user-select: none;
@@ -19,7 +19,7 @@
   color: #ffffff;
 }
 
-.main-content p {
+.main-text p {
   color: #f2f2f2;
   font-family: "Lucida sans", sans-serif;
   text-align: end;
@@ -99,11 +99,17 @@
 .separator {
   -webkit-user-drag: none;
   user-select: none;
-
   transform: translateY(-40px);
   margin-left: 7rem;
 }
 
+.astronaut-container {
+  display: flex;
+  flex-direction: column;
+}
+.astronaut-text {
+  transform: translateY(-3rem);
+}
 .astronaut {
   -webkit-user-drag: none;
   user-select: none;
@@ -132,18 +138,9 @@
     position: fixed;
     flex-direction: column;
     transform: scale(0.8);
-    height: 100vh;
+    height: 80vh;
     transition: all 1s ease;
     align-items: center;
-  }
-
-  .main-content h1,
-  .main-content p,
-  .btn {
-    display: none;
-  }
-  .separator {
-    display: none;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -159,11 +156,23 @@
   }
 }
 @media screen and (max-width: 900px) {
+  .astronaut-text h1 {
+    font-size: 3.2rem !important;
+    color: rgb(0, 225, 255) !important;
+  }
+  .astronaut-text p {
+    font-size: 2.5rem !important;
+    margin-top: 0.6rem;
+  }
   .main-content {
     width: 100%;
     display: flex;
     justify-content: center;
     transform: scale(0.55);
     margin-top: 0%;
+    height: 90vh;
+  }
+  .astronaut-text {
+    transform: translateY(-2rem);
   }
 }

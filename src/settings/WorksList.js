@@ -73,7 +73,6 @@ const PROJECTS = [
         "This project was meant to showcase my skill in working with React.",
       tags: ["React, Redux, JavaScript"],
     },
-
     IT: {
       name: "PlayList",
       description:

@@ -18,6 +18,8 @@ export const ContactMeForm = props => {
     if (enteredName.trim() === "") {
       setEnteredNameIsValid(false);
       return;
+    } else {
+      setEnteredNameIsValid(true);
     }
   };
   const changeNameHandler = e => {

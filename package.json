@@ -22,7 +22,6 @@
     "react-tooltip": "^4.2.21",
     "react-viewer": "^3.2.2",
     "redux-persist": "^6.0.0",
-    "typewriter-effect": "^2.18.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
