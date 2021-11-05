@@ -24,5 +24,5 @@ This is meant to showcase my current skill in creating responsive, efficient and
 - EmailJS React
 - Custom hooks
 - Implementation of accessible keyboard shortcuts for navigation
-- Search engine optimization (SEO) handling to improve the quality and quantity of website traffic from search engines
+- Search engine optimization (SEO) handling to improve the quantity of website traffic from search engines
 - Validating the aspects of a Progressive Web App
