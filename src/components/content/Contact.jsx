@@ -1,7 +1,6 @@
 import Modal from "../UI/Modal";
 import { ContactMeForm } from "../UI/ContactMeForm";
 import { useState } from "react";
-import { HorizontalTicker } from "react-infinite-ticker";
 
 import copy from "copy-text-to-clipboard";
 import { Mail } from "../../assets/Animations";

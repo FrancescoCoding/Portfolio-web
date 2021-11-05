@@ -2,7 +2,15 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import styles from "./ContactMeForm.module.css";
 
-export const ContactMeForm = props => {
+// This function validates emails
+const validateEmail = email => {
+  const regex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  console.log(regex.test(String(email).toLowerCase()));
+  return regex.test(String(email).toLowerCase());
+};
+
+export const ContactMeForm = () => {
   const form = useRef();
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
@@ -11,8 +19,19 @@ export const ContactMeForm = props => {
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
   const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredEmailIsValid, setEnteredEmailIsValid] = useState(false);
+  const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
 
-  const nameInputChangeHandler = () => {
+  const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
+
+  const changeNameHandler = e => {
+    setEnteredName(e.target.value);
+
+    if (e.target.value.trim() !== "") {
+      setEnteredNameIsValid(true);
+    }
+  };
+  const nameInputBlurHandler = () => {
     setEnteredNameTouched(true);
 
     if (enteredName.trim() === "") {
@@ -22,11 +41,22 @@ export const ContactMeForm = props => {
       setEnteredNameIsValid(true);
     }
   };
-  const changeNameHandler = e => {
-    setEnteredName(e.target.value);
 
-    if (e.target.value.trim() !== "") {
-      setEnteredNameIsValid(true);
+  const changeEmailHandler = e => {
+    setEnteredEmail(e.target.value);
+
+    if (validateEmail(e.target.value)) {
+      setEnteredEmailIsValid(true);
+    }
+  };
+  const emailInputBlurHandler = () => {
+    setEnteredEmailTouched(true);
+
+    if (enteredEmail.trim() === "") {
+      setEnteredEmailIsValid(false);
+      return;
+    } else {
+      setEnteredEmailIsValid(true);
     }
   };
 
@@ -37,6 +67,10 @@ export const ContactMeForm = props => {
 
     if (enteredName.trim() === "") {
       setEnteredNameIsValid(false);
+      return;
+    }
+    if (enteredEmail.trim().length === 0) {
+      setEnteredEmailIsValid(false);
       return;
     }
 
@@ -60,6 +94,7 @@ export const ContactMeForm = props => {
   };
 
   const nameInputClasses = nameInputIsInvalid ? "invalid" : "";
+  const emailInputClasses = emailInputIsInvalid ? "invalid" : "";
 
   return (
     <div className={styles["form-container"]}>
@@ -71,10 +106,17 @@ export const ContactMeForm = props => {
           type="text"
           name="name"
           onChange={changeNameHandler}
-          onBlur={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
         />
         <label>Email</label>
-        <input type="email" name="email" />
+        <input
+          className={styles[`${emailInputClasses}`]}
+          type="email"
+          name="email"
+          value={enteredEmail}
+          onChange={changeEmailHandler}
+          onBlur={emailInputBlurHandler}
+        />
         <label>Message</label>
         <textarea name="message" />
         <input className={styles.submit} type="submit" value="Send" />

@@ -30,7 +30,6 @@ const Navbar = () => {
     setBurgerIsTouched(true);
   };
   const hideMenuSidebarHandler = () => {
-    setOpen(false);
     setIsMounted(false);
     setTimeout(() => {
       setBurgerIsTouched(false);
@@ -49,13 +48,7 @@ const Navbar = () => {
             onClick={showMenuSidebarHandler}
             className={styles["hamburger-container"]}
           >
-            <Hamburger
-              size={30}
-              rounded
-              color="white"
-              // toggled={isOpen}
-              toggle={setOpen}
-            />
+            <Hamburger size={30} rounded color="white" toggle={setOpen} />
           </div>
         </nav>
       )}

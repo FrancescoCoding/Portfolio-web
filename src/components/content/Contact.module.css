@@ -30,7 +30,7 @@
   width: 40px;
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
   overflow: hidden;
-  animation: appear 0.1s forwards;
+  animation: appear 0.2s forwards;
   animation-delay: 0.4s;
   opacity: 0;
 }
