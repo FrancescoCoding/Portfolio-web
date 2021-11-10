@@ -11,6 +11,8 @@
   background-color: #07031f;
   border: 1px solid #56698c;
   border-left: none;
+  border-top: none;
+  border-bottom: none;
   color: white;
 }
 .sidebar.slide-in {
@@ -97,32 +99,8 @@
 .sidebar-header .user-info > span {
   display: block;
 }
-span.user-role {
-  font-size: 12px;
-  margin: 3px 0;
-}
-.sidebar-header .user-info .user-status {
-  font-size: 11px;
-  margin-top: 4px;
-}
-.circle {
-  font-size: 8px;
-  margin-right: 4px;
-  color: #5cb85c;
-}
 
-/* Searchbar */
-.sidebar-search > div {
-  padding: 10px 20px;
-}
-input.search-menu,
-.input-group-text {
-  border-color: transparent;
-  box-shadow: none;
-}
-.sidebar-header,
-.sidebar-search,
-.sidebar-menu {
+.sidebar-search {
   border-top: 1px solid #56698c;
 }
 
@@ -158,8 +136,6 @@ input.search-menu,
 @media screen and (max-width: 400px) {
   .sidebar {
     position: fixed;
-  }
-  .sidebar ul li:first-child {
   }
   .sidebar a {
     text-align: center;

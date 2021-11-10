@@ -12,6 +12,7 @@ const validateEmail = email => {
 
 export const ContactMeForm = () => {
   const form = useRef();
+
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
@@ -31,6 +32,7 @@ export const ContactMeForm = () => {
       setEnteredNameIsValid(true);
     }
   };
+
   const nameInputBlurHandler = () => {
     setEnteredNameTouched(true);
 
@@ -45,10 +47,11 @@ export const ContactMeForm = () => {
   const changeEmailHandler = e => {
     setEnteredEmail(e.target.value);
 
-    if (validateEmail(e.target.value)) {
+    if (validateEmail(e.target.value.trim() !== "")) {
       setEnteredEmailIsValid(true);
     }
   };
+
   const emailInputBlurHandler = () => {
     setEnteredEmailTouched(true);
 
@@ -64,12 +67,13 @@ export const ContactMeForm = () => {
     e.preventDefault();
 
     setEnteredNameTouched(true);
+    setEnteredEmailTouched(true);
 
     if (enteredName.trim() === "") {
       setEnteredNameIsValid(false);
       return;
     }
-    if (enteredEmail.trim().length === 0) {
+    if (enteredEmail.trim().length === "") {
       setEnteredEmailIsValid(false);
       return;
     }
@@ -91,6 +95,7 @@ export const ContactMeForm = () => {
       );
 
     setEnteredName("");
+    setEnteredEmail("");
   };
 
   const nameInputClasses = nameInputIsInvalid ? "invalid" : "";

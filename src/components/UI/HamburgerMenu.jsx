@@ -56,11 +56,6 @@ const HamburgerMenu = props => {
           </div>
           <div className={styles["sidebar-search"]}></div>
           <ul>
-            {/* <li>
-              <NavLink activeClassName={styles.active} to="/projects">
-                Projects
-              </NavLink>
-            </li> */}
             <li>
               <NavLink activeClassName={styles.active} to="/projects">
                 Projects

@@ -22,7 +22,7 @@ const ProjectsContent = props => {
   return (
     <div className={styles["projects-section"]}>
       <div className={styles.projects}>
-        <div className={styles.items} style={{ paddingRight: "10px" }}>
+        <div className={styles.items} style={{ paddingRight: "12px" }}>
           {items.map(project => {
             return (
               <div className={styles["project-git"]} key={project.id + "git"}>
@@ -54,7 +54,9 @@ const ProjectsContent = props => {
                 )}
                 {isMediumScreen && (
                   <div className={styles.tags}>
-                    {project["EN"].tags &&
+                    <p className={` ${styles.tag}`}>{project["EN"].tags}</p>
+                    {/* Previous logic for singular tag boxes */}
+                    {/* {project["EN"].tags &&
                       project["EN"].tags.map(tag => (
                         <p
                           key={
@@ -66,7 +68,7 @@ const ProjectsContent = props => {
                         >
                           {tag}
                         </p>
-                      ))}
+                      ))} */}
                   </div>
                 )}
               </div>

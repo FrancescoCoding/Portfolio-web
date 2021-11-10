@@ -26,14 +26,13 @@ const PROJECTS = [
       This web app does not utilize any CSS frameworks.
       For a full list, please check out the GitHub Repository's README file.
       `,
-      tags: ["React", "Redux", "i18n"],
+      tags: ["React, Redux, i18n"],
     },
     IT: {
       id: "p5",
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["React", "Redux", "i18n"],
     },
     id: "p5",
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
@@ -51,13 +50,13 @@ const PROJECTS = [
       
       Refer to the README for a more in-depth description.
       `,
-      tags: ["RStudio", "ggPlot2"],
+      tags: ["RStudio, ggPlot2"],
     },
     IT: {
       name: "Simulatore di Tsunami",
       description: `Questo progetto è nato per dimostrare la mia abilità nel lavorare con varie tecnologie, coordinare lavori in un gruppo, e creare una simulazione utilizzando vari modelli e statistica.`,
     },
-    tags: ["RStudio", "ggPlot2"],
+    tags: ["RStudio, ggPlot2"],
     id: "p1",
     demoLink: "https://www.francescogruosso.xyz/covid/app",
     githubLink:
@@ -71,7 +70,7 @@ const PROJECTS = [
       name: "PlayList Project",
       description:
         "This project was meant to showcase my skill in working with React.",
-      tags: ["React", "Redux", "JavaScript"],
+      tags: ["React, Redux, JavaScript"],
     },
     IT: {
       name: "PlayList",
@@ -111,7 +110,7 @@ const PROJECTS = [
     EN: {
       name: "Tangible Pain Diary",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Tangible - Diario per dolori cronici",
@@ -129,7 +128,7 @@ const PROJECTS = [
     EN: {
       name: "Cardiac Tool",
       description: "",
-      tags: ["Spyder", "Python"],
+      tags: ["Spyder, Python"],
     },
     IT: {
       name: "Strumento Cardiaco",
@@ -146,7 +145,7 @@ const PROJECTS = [
     EN: {
       name: "Smite Ocean",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Strumento Cardiaco",
@@ -164,13 +163,13 @@ const PROJECTS = [
     EN: {
       name: "SunRice Weather App",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     id: "p8",
     githubLink: "https://github.com/",
@@ -181,13 +180,13 @@ const PROJECTS = [
     EN: {
       name: "Cardiac Tool",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Università", "Agile"],
+      tags: ["Università, Agile"],
     },
     id: "p9",
     githubLink: "https://github.com/",
@@ -198,13 +197,13 @@ const PROJECTS = [
     EN: {
       name: "Cardiac Tool",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Università", "Agile"],
+      tags: ["Università, Agile"],
     },
     id: "p10",
     githubLink: "https://github.com/",
@@ -215,13 +214,13 @@ const PROJECTS = [
     EN: {
       name: "Cardiac Tool",
       description: "",
-      tags: ["University", "Team", "Agile"],
+      tags: ["University, Team, Agile"],
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Università", "Agile"],
+      tags: ["Università, Agile"],
     },
     id: "p11",
     githubLink: "https://github.com/",

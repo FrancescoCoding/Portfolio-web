@@ -4,7 +4,8 @@ import { useState } from "react";
 
 import copy from "copy-text-to-clipboard";
 import { Mail } from "../../assets/Animations";
-import { FaChevronDown, FaArrowLeft } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { IoCloseOutline } from "react-icons/io5";
 
 import { useSelector } from "react-redux";
@@ -74,6 +75,15 @@ const Contact = props => {
         <div className={styles.close} onClick={props.onClose}>
           <IoCloseOutline />
         </div>
+        {showMessageSection && (
+          <div
+            className={styles.back}
+            onClick={() => setShowMessageSection(!showMessageSection)}
+          >
+            <AiOutlineArrowLeft />
+          </div>
+        )}
+
         {/* INFO */}
         {!showMessageSection && (
           <div
