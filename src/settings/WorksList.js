@@ -126,9 +126,9 @@ const PROJECTS = [
 
   {
     EN: {
-      name: "Cardiac Tool",
+      name: "Harvest Time",
       description: "",
-      tags: ["Spyder, Python"],
+      tags: ["Node, Puppeteer"],
     },
     IT: {
       name: "Strumento Cardiaco",
@@ -138,7 +138,7 @@ const PROJECTS = [
     },
     id: "p6",
     githubLink: "https://github.com/",
-    image: "https://img.wallpapersafari.com/desktop/1920/1080/8/54/m2Sd5U.jpeg",
+    image: "https://source.unsplash.com/cG8NwhPNvmA/300x200",
     endpoint: "cardiac-tool-2",
   },
   {
