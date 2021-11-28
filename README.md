@@ -6,7 +6,7 @@ Personal portfolio built with React and other technologies.
 
 ![Portfolio Preview](https://user-images.githubusercontent.com/64712227/134884152-c9b68740-8986-42de-bf20-cc81c598078a.gif)
 
-This portfolio is the product of my evolution as a frontend developer.  
+This portfolio is the product of my evolution as a frontend developer and UX\UI designer.  
 It is specifically designed to utilize some of the latest technologies and web development best practices.  
 This is meant to showcase my current skill in creating responsive, efficient and fully functional React SPA webpages.
 
