@@ -60,7 +60,7 @@ div.list {
   position: relative;
   cursor: pointer;
   padding: 0 2rem;
-  border: 0.125rem #505050 solid;
+  border: 0.125rem #525151 solid;
   /* transition: all 0.3s ease-in-out; */
 }
 div.list:hover::before {
@@ -109,6 +109,7 @@ div.list {
   justify-content: center;
   align-items: flex-end;
 }
+
 .project-git {
   position: relative;
 }
@@ -121,8 +122,8 @@ div.list {
   transform: translateY(10px);
   transition: 0.2s ease-out;
 }
-.project-git:hover .git,
-.project-git:hover .tags {
+/* .project-git:hover .tags, */
+.project-git:hover .git {
   transform: translateY(0);
   opacity: 1;
 }

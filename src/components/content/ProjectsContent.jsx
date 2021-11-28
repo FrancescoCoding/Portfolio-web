@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const ProjectsContent = props => {
+  const storeColour = useSelector(state => state);
   const [renderedItems, setRenderedItems] = useState(9);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
@@ -54,7 +56,8 @@ const ProjectsContent = props => {
                 )}
                 {isMediumScreen && (
                   <div className={styles.tags}>
-                    <p className={` ${styles.tag}`}>{project["EN"].tags}</p>
+                    <p className={` ${styles.short}`}>{project["EN"].short}</p>
+                    {/* <p className={` ${styles.tag}`}>{project["EN"].tags}</p> */}
                     {/* Previous logic for singular tag boxes */}
                     {/* {project["EN"].tags &&
                       project["EN"].tags.map(tag => (
@@ -86,6 +89,7 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
+                color: `${storeColour.hex}`,
               }}
             />
           </button>
@@ -101,6 +105,7 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
+                color: `${storeColour.hex}`,
               }}
             />
           </button>

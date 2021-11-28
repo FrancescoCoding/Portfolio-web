@@ -11,6 +11,8 @@ import { FaGithub } from "react-icons/fa";
 
 import styles from "./ProjectDetail.module.css";
 
+import { Helmet } from "react-helmet";
+
 import Viewer from "react-viewer";
 import Footer from "../components/UI/Footer";
 import WorksList from "../settings/WorksList";
@@ -48,6 +50,9 @@ const ProjectDetail = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{currentProject["EN"].name}</title>
+      </Helmet>
       {!isSmallScreen && <BackButton endpoint="/projects" />}
       <Viewer
         visible={visible}
@@ -58,7 +63,7 @@ const ProjectDetail = () => {
         onClose={() => setVisible(false)}
         images={[
           {
-            src: "https://i.imgur.com/fsyrScY.jpg",
+            src: "",
           },
           {
             src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
@@ -80,6 +85,7 @@ const ProjectDetail = () => {
           <div className={styles["information-wrapper"]}>
             <div className={styles["project-header"]}>
               <h1>{currentProject["EN"].name}</h1>
+
               {/* IMAGE TOGGLE */}
               {currentProject.gallery && currentProject.gallery.length !== 0 && (
                 <button
@@ -127,6 +133,7 @@ const ProjectDetail = () => {
                   })}
               </div>
             </div>
+
             <div className={styles["button-container"]}>
               <a
                 target="_blank"
@@ -143,8 +150,10 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
+
         <ColourSelector backgroundColor="#0a0f20" />
       </div>
+
       {!visible && isBigScreen && <Footer />}
     </>
   );

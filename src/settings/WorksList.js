@@ -27,6 +27,7 @@ const PROJECTS = [
       For a full list, please check out the GitHub Repository's README file.
       `,
       tags: ["React, Redux, i18n"],
+      short: "React based portfolio you are looking at right now :)",
     },
     IT: {
       id: "p5",
@@ -131,13 +132,13 @@ const PROJECTS = [
       tags: ["Node, Puppeteer"],
     },
     IT: {
-      name: "Strumento Cardiaco",
+      name: "Harvest Time",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Spyder", "Python"],
+      tags: ["Node, Puppeteer"],
     },
     id: "p6",
-    githubLink: "https://github.com/",
+    githubLink: "https://github.com/FrancescoCoding/Harvest-Time",
     image: "https://source.unsplash.com/cG8NwhPNvmA/300x200",
     endpoint: "cardiac-tool-2",
   },

@@ -1,7 +1,6 @@
 import React from "react";
 import { Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-// import * as emailjs from "emailjs-com";
 
 import Loader from "./components/UI/Loader";
 import Transition from "./components/UI/Transition";
@@ -19,14 +18,6 @@ const NotFound = React.lazy(async () => {
 });
 
 function App() {
-  // const template_params = {
-  //   to_email: "to_email_value",
-  // };
-
-  // const service_id = "default_service";
-  // const template_id = "service_wp9ydnd";
-  // emailjs.send(service_id, template_id, template_params);
-
   return (
     <Suspense
       fallback={

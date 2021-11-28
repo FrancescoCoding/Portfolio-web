@@ -8,7 +8,7 @@
   max-height: 100%;
   overflow: auto;
   z-index: 401;
-  background-color: #07031f;
+  background-color: #000000;
   border: 1px solid #56698c;
   border-left: none;
   border-top: none;
@@ -37,12 +37,14 @@
 }
 .sidebar ul li {
   border: 1px solid transparent;
-  margin: 8px;
+  margin: 8px 6px;
+  margin-left: 0;
   border: 1px solid #56698c;
+  border-left: 0;
   border-radius: 0px !important;
 }
 .sidebar ul li:hover {
-  background: rgb(63, 63, 89);
+  background: rgb(52, 52, 99);
   /* border: 1px dashed #56698c; */
 }
 .sidebar-content {
