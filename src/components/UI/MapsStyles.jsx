@@ -814,7 +814,7 @@ const canary = [
     elementType: "all",
     stylers: [
       {
-        color: "#384200",
+        color: "#001c38",
       },
     ],
   },

@@ -89,7 +89,7 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
-                color: `${storeColour.hex}`,
+                // color: `${storeColour.hex}`,
               }}
             />
           </button>
@@ -105,7 +105,7 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
-                color: `${storeColour.hex}`,
+                // color: `${storeColour.hex}`,
               }}
             />
           </button>
