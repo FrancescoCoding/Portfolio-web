@@ -3,12 +3,12 @@
   position: fixed;
   margin: 0;
   padding: 0;
-  width: 300px;
+  width: 330px;
   height: 100%;
   max-height: 100%;
   overflow: auto;
   z-index: 401;
-  background-color: #000000;
+  background-color: #070916;
   border: 1px solid #56698c;
   border-left: none;
   border-top: none;
@@ -39,9 +39,13 @@
   border: 1px solid transparent;
   margin: 8px 6px;
   margin-left: 0;
-  border: 1px solid #56698c;
   border-left: 0;
   border-radius: 0px !important;
+  border: 1px solid #56698c;
+}
+.sidebar ul li a {
+  border-left: 8px solid transparent;
+  padding-left: 1.5rem;
 }
 .sidebar ul li:hover {
   background: rgb(52, 52, 99);
@@ -59,7 +63,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 1rem;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
 }
 .sidebar-brand > a {
   text-transform: uppercase;
@@ -134,7 +139,6 @@
   }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   .sidebar {
     position: fixed;
@@ -143,8 +147,6 @@
     text-align: center;
   }
 }
-
-/*------scroll bar---------------------*/
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -182,7 +184,7 @@
 
 @keyframes slide-in {
   0% {
-    left: -300px;
+    left: -330px;
     /* transform: translateX(-100%); */
   }
   100% {
@@ -196,8 +198,8 @@
     /* transform: translateX(0); */
   }
   100% {
-    /* transform: translateX(-300px); */
-    left: -300px;
+    /* transform: translateX(-330px); */
+    left: -330px;
   }
 }
 @keyframes slide-down {
@@ -218,7 +220,7 @@
 }
 
 .active {
-  border-left: 8px solid #56698c;
+  border-left: 8px solid #56698c !important;
 }
 
 .canary {

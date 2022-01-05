@@ -113,8 +113,8 @@ const LoadingLottie = props => {
       animationData={loadingData}
       play
       style={{
-        width: +props.width || 400,
-        height: +props.height || 400,
+        width: "70%",
+        height: "50%",
       }}
     />
   );

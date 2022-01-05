@@ -54,6 +54,7 @@
 }
 @media screen and (max-width: 1200px) {
   .sidebar {
+    display: none;
     transition: all 1s ease;
     transform: rotate(90deg) scale(0.8) translateX(9rem) translateY(4rem);
   }

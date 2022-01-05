@@ -154,7 +154,7 @@ const ProjectDetail = () => {
         <ColourSelector backgroundColor="#0a0f20" />
       </div>
 
-      {!visible && isBigScreen && <Footer />}
+      {/* {!visible && isBigScreen && <Footer />} */}
     </>
   );
 };
