@@ -4,40 +4,26 @@ import thunk from "redux-thunk";
 
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const initialState = { colour: "canary", hex: "#FFCC66" };
-
-const colourSlice = createSlice({
-  name: "colours",
-  initialState,
-  reducers: {
-    colourMagenta(state) {
-      state.colour = "magenta";
-      state.hex = "#ED4797";
-    },
-    colourLeaf(state) {
-      state.colour = "leaf";
-      state.hex = "#4AA75F";
-    },
-    colourOcean(state) {
-      state.colour = "ocean";
-      state.hex = "#578AC8";
-    },
-    colourCanary(state) {
-      state.colour = "canary";
-      state.hex = "#FFCC66";
-    },
-  },
-});
+import colourSlice from "./colourSlice";
+import languageSlice from "./languageSlice";
 
 const persistConfig = {
-  key: "root",
+  key: "colour",
+  storage,
+};
+const persistLanguageConfig = {
+  key: "language",
   storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, colourSlice.reducer);
+const persistedLanguageReducer = persistReducer(
+  persistLanguageConfig,
+  languageSlice.reducer
+);
 
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: { colours: persistedReducer, language: persistedLanguageReducer },
   devTools: process.env.NODE_ENV !== "production",
   middleware: [thunk],
 });

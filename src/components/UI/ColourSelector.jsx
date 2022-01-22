@@ -11,7 +11,7 @@ const checkMark = (
 );
 
 const ColourSelector = ({ backgroundColor }) => {
-  const storeColour = useSelector(state => state.colour);
+  const storeColour = useSelector(state => state.colours.colour);
   const dispatch = useDispatch();
 
   const canaryThemeHandler = () => {

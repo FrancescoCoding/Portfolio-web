@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
-  const storeColour = useSelector(state => state.colour);
+  const storeColour = useSelector(state => state.colours.colour);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 

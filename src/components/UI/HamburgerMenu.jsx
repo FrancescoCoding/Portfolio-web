@@ -8,7 +8,7 @@ import { useState } from "react";
 const currentYear = new Date().getFullYear();
 
 const HamburgerMenu = props => {
-  const storeColour = useSelector(state => state.colour);
+  const storeColour = useSelector(state => state.colours.colour);
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
 
   const [isOpen, setOpen] = useState(false);

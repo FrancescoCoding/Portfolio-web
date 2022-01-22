@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Sidebar = props => {
-  const storeColour = useSelector(state => state.colour);
+  const storeColour = useSelector(state => state.colours.colour);
 
   return (
     <div className={styles.sidebar}>

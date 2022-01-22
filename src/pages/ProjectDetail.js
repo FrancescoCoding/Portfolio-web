@@ -11,8 +11,6 @@ import { FaGithub } from "react-icons/fa";
 
 import styles from "./ProjectDetail.module.css";
 
-import { Helmet } from "react-helmet";
-
 import Viewer from "react-viewer";
 import Footer from "../components/UI/Footer";
 import WorksList from "../settings/WorksList";
@@ -20,7 +18,7 @@ import ColourSelector from "../components/UI/ColourSelector";
 
 const ProjectDetail = () => {
   const params = useParams();
-  const storeColour = useSelector(state => state);
+  const storeColour = useSelector(state => state.colours);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
@@ -50,9 +48,6 @@ const ProjectDetail = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{currentProject["EN"].name}</title>
-      </Helmet>
       {!isSmallScreen && <BackButton endpoint="/projects" />}
       <Viewer
         visible={visible}
@@ -113,9 +108,6 @@ const ProjectDetail = () => {
                 <p>{currentProject["EN"].description}</p>
               )}
               <div className={styles.logos}>
-                {/* {currentProject.icons && currentProject.icons.length < 4 && (
-                  <h2>Project stack:</h2>
-                )} */}
                 {currentProject.icons &&
                   !isSmallScreen &&
                   currentProject.icons.map(el => {
@@ -135,17 +127,22 @@ const ProjectDetail = () => {
             </div>
 
             <div className={styles["button-container"]}>
+              {/* Create a button that leads to the github page */}
               <a
-                target="_blank"
-                rel="noreferrer"
                 href={currentProject.githubLink}
-                className={styles.btn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles["button"]}
               >
                 <FaGithub
-                  size="1.6rem"
-                  style={{ transform: "translateY(.32rem) translateX(-.3rem)" }}
-                />{" "}
-                GitHub page
+                  className={styles.github}
+                  size="3rem"
+                  style={{
+                    alignSelf: "flex-start",
+                    color: `${storeColour.hex}`,
+                    cursor: "pointer",
+                  }}
+                />
               </a>
             </div>
           </div>

@@ -16,13 +16,13 @@ export const ContactMeForm = () => {
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+  let nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredEmailIsValid, setEnteredEmailIsValid] = useState(false);
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
 
-  const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
+  let emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
 
   const changeNameHandler = e => {
     setEnteredName(e.target.value);
@@ -62,7 +62,7 @@ export const ContactMeForm = () => {
     }
   };
 
-  const sendEmail = e => {
+  const sendEmailHandler = e => {
     e.preventDefault();
 
     setEnteredNameTouched(true);
@@ -72,8 +72,15 @@ export const ContactMeForm = () => {
       setEnteredNameIsValid(false);
       return;
     }
-    if (enteredEmail.trim().length === "") {
+    if (enteredEmail.trim() === "") {
       setEnteredEmailIsValid(false);
+      return;
+    }
+    if (!validateEmail(enteredEmail)) {
+      setEnteredEmailIsValid(false);
+      return;
+    }
+    if (form.current.message.value.trim() === "") {
       return;
     }
 
@@ -95,6 +102,14 @@ export const ContactMeForm = () => {
 
     setEnteredName("");
     setEnteredEmail("");
+
+    form.current.name.value = "";
+    form.current.email.value = "";
+    form.current.reset();
+
+    // Make fields valid
+    setEnteredNameIsValid(true);
+    setEnteredEmailIsValid(true);
   };
 
   const nameInputClasses = nameInputIsInvalid ? "invalid" : "";
@@ -102,7 +117,7 @@ export const ContactMeForm = () => {
 
   return (
     <div className={styles["form-container"]}>
-      <form ref={form} onSubmit={sendEmail} className={styles.form}>
+      <form ref={form} onSubmit={sendEmailHandler} className={styles.form}>
         <label>Name</label>
         <input
           className={styles[`${nameInputClasses}`]}
@@ -115,9 +130,9 @@ export const ContactMeForm = () => {
         <label>Email</label>
         <input
           className={styles[`${emailInputClasses}`]}
+          value={enteredEmail}
           type="email"
           name="email"
-          value={enteredEmail}
           onChange={changeEmailHandler}
           onBlur={emailInputBlurHandler}
         />

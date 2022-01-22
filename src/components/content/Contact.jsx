@@ -17,7 +17,7 @@ import styles from "./Contact.module.css";
 import { mapStyles } from "../UI/MapsStyles";
 
 const Contact = props => {
-  const storeColour = useSelector(state => state);
+  const storeColour = useSelector(state => state.colours);
 
   const [textCopied, setTextCopied] = useState(false);
   const [showMessageSection, setShowMessageSection] = useState(false);

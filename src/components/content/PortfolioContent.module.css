@@ -110,6 +110,10 @@
 .astronaut-text {
   transform: translateY(-3rem);
 }
+.astronaut-text p {
+  font-size: 2.5rem !important;
+  margin-top: 0.6rem;
+}
 .astronaut {
   -webkit-user-drag: none;
   user-select: none;
@@ -159,10 +163,6 @@
   .astronaut-text h1 {
     font-size: 3.2rem !important;
     /* color: rgb(0, 225, 255) !important; */
-  }
-  .astronaut-text p {
-    font-size: 2.5rem !important;
-    margin-top: 0.6rem;
   }
   .main-content {
     width: 100%;

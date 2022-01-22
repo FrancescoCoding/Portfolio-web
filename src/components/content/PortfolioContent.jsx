@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 
 const PortfolioContent = props => {
-  const storeColour = useSelector(state => state);
+  const storeColour = useSelector(state => state.colours);
   const [showModal, setShowModal] = useState(false);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -38,7 +38,7 @@ const PortfolioContent = props => {
       {showModal && <Contact onClose={hideModalHandler} />}
 
       {isBigScreen && (
-        <div className={styles["main-text"]}>
+        <section className={styles["main-text"]}>
           <h1>
             Stand the{" "}
             <RubberDuck className={styles.quack} colour={storeColour.hex} /> out
@@ -63,10 +63,10 @@ const PortfolioContent = props => {
               />
             </button>
           </div>
-        </div>
+        </section>
       )}
       {isBigScreen && <Separator styles={styles.separator} />}
-      <div className={styles["astronaut-container"]}>
+      <section className={styles["astronaut-container"]}>
         <Astronaut delay={delayMS} />
         {!isBigScreen && (
           <div className={styles["astronaut-text"]}>
@@ -81,7 +81,7 @@ const PortfolioContent = props => {
             <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
           </div>
         )}
-      </div>
+      </section>
     </main>
   );
 };
