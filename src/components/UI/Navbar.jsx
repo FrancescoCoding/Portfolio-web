@@ -5,11 +5,16 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
 import { useMediaQuery } from "react-responsive";
+import { useDispatch } from "react-redux";
+import { languageActions } from "../../store/store";
 
 import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   const storeColour = useSelector(state => state.colours.colour);
+  const storeLanguage = useSelector(state => state.languages.language);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
@@ -34,6 +39,15 @@ const Navbar = () => {
     setTimeout(() => {
       setBurgerIsTouched(false);
     }, 400);
+  };
+  const changeLanguageHandler = e => {
+    e.preventDefault();
+
+    if (storeLanguage === "EN") {
+      dispatch(languageActions.switchToItalian());
+    } else {
+      dispatch(languageActions.switchToEnglish());
+    }
   };
 
   return (
@@ -68,7 +82,18 @@ const Navbar = () => {
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
             <li>
-              <NavLink to="/language">En</NavLink>
+              {/* If store language is En */}
+              {storeLanguage === "EN" && (
+                <a href="/#" onClick={changeLanguageHandler}>
+                  It
+                </a>
+              )}
+              {/* If store language is It */}
+              {storeLanguage === "IT" && (
+                <a href="/#" onClick={changeLanguageHandler}>
+                  En
+                </a>
+              )}
             </li>
           </ul>
         </nav>

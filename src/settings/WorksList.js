@@ -31,7 +31,7 @@ const PROJECTS = [
     },
     IT: {
       id: "p5",
-      name: "Strumento Cardiaco",
+      name: "Portfolio personale",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
     },

@@ -19,7 +19,8 @@ import ColourSelector from "../components/UI/ColourSelector";
 const ProjectDetail = () => {
   const params = useParams();
   const storeColour = useSelector(state => state.colours);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const storeLanguage = useSelector(state => state.languages.language);
+
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
   const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +80,7 @@ const ProjectDetail = () => {
         <div className={styles["project-card"]}>
           <div className={styles["information-wrapper"]}>
             <div className={styles["project-header"]}>
-              <h1>{currentProject["EN"].name}</h1>
+              <h1>{currentProject[`${storeLanguage}`].name}</h1>
 
               {/* IMAGE TOGGLE */}
               {currentProject.gallery && currentProject.gallery.length !== 0 && (
@@ -104,8 +105,8 @@ const ProjectDetail = () => {
             </div>
 
             <div className={styles.info}>
-              {currentProject["EN"].description && (
-                <p>{currentProject["EN"].description}</p>
+              {currentProject[`${storeLanguage}`].description && (
+                <p>{currentProject[`${storeLanguage}`].description}</p>
               )}
               <div className={styles.logos}>
                 {currentProject.icons &&

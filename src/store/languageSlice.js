@@ -6,10 +6,10 @@ const languageSlice = createSlice({
   name: "language",
   initialState,
   reducers: {
-    italian(state) {
+    switchToItalian(state) {
       state.language = "IT";
     },
-    english(state) {
+    switchToEnglish(state) {
       state.language = "EN";
     },
   },

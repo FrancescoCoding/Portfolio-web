@@ -6,7 +6,8 @@ import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const ProjectsContent = props => {
-  const storeColour = useSelector(state => state);
+  const storeLanguage = useSelector(state => state.languages.language);
+
   const [renderedItems, setRenderedItems] = useState(9);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
@@ -36,7 +37,7 @@ const ProjectsContent = props => {
                     }}
                   >
                     <div className={styles["title-container"]}>
-                      <p>{project["EN"].name}</p>
+                      <p>{project[`${storeLanguage}`].name}</p>
                     </div>
                   </div>
                 </Link>
@@ -56,7 +57,9 @@ const ProjectsContent = props => {
                 )}
                 {isMediumScreen && (
                   <div className={styles.tags}>
-                    <p className={` ${styles.short}`}>{project["EN"].short}</p>
+                    <p className={` ${styles.short}`}>
+                      {project[`${storeLanguage}`].short}
+                    </p>
                     {/* <p className={` ${styles.tag}`}>{project["EN"].tags}</p> */}
                     {/* Previous logic for singular tag boxes */}
                     {/* {project["EN"].tags &&
