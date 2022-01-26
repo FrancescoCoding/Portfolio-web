@@ -11,9 +11,9 @@ const NotFoundContent = ({ message }) => {
         <div className={`${styles[`${storeColour}`]}`}>
           {message || <h1>You're not supposed to be here</h1>}
         </div>
-        {storeColour === "magenta" && <Nessie width="30%" />}
+        {storeColour === "magenta" && <Nessie />}
         {storeColour === "leaf" && <NoData width="550" height="550" />}
-        {storeColour === "canary" && <Car width="600" height="600" />}
+        {storeColour === "canary" && <Car height="440" />}
         {storeColour === "ocean" && <Robot width="500" height="500" />}
       </div>
     </div>

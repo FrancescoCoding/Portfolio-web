@@ -82,13 +82,11 @@ const Navbar = () => {
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
             <li>
-              {/* If store language is En */}
               {storeLanguage === "EN" && (
                 <a href="/#" onClick={changeLanguageHandler}>
                   It
                 </a>
               )}
-              {/* If store language is It */}
               {storeLanguage === "IT" && (
                 <a href="/#" onClick={changeLanguageHandler}>
                   En

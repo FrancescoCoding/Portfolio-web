@@ -4,11 +4,17 @@ import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Fade as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { languageActions } from "../../store/store";
 
 const currentYear = new Date().getFullYear();
 
 const HamburgerMenu = props => {
+  const dispatch = useDispatch();
+
   const storeColour = useSelector(state => state.colours.colour);
+  const storeLanguage = useSelector(state => state.languages.language);
+
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
 
   const [isOpen, setOpen] = useState(false);
@@ -28,6 +34,16 @@ const HamburgerMenu = props => {
       showMenu = styles["slide-up"];
     }
   }
+
+  const changeLanguageHandler = e => {
+    e.preventDefault();
+
+    if (storeLanguage === "EN") {
+      dispatch(languageActions.switchToItalian());
+    } else {
+      dispatch(languageActions.switchToEnglish());
+    }
+  };
 
   return (
     <>
@@ -62,7 +78,7 @@ const HamburgerMenu = props => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/language">En</NavLink>
+              <NavLink to="/">En</NavLink>
             </li>
           </ul>
         </div>

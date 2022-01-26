@@ -2,7 +2,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 import colourSlice from "./colourSlice";
 import languageSlice from "./languageSlice";

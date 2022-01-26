@@ -49,6 +49,8 @@ textarea {
   max-height: 140px;
   min-height: 100px;
   padding: 0.3rem 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .submit {

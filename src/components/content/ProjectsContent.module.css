@@ -18,13 +18,12 @@
 div.items {
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 2.5rem;
-  width: 125%;
+  /* width: 110%; */
   max-height: 570px !important;
   overflow: scroll;
   position: relative;
@@ -61,6 +60,7 @@ div.list {
   cursor: pointer;
   padding: 0 2rem;
   border: 0.125rem #525151 solid;
+  width: 350px;
   /* transition: all 0.3s ease-in-out; */
 }
 div.list:hover::before {
@@ -81,16 +81,16 @@ div.list:hover {
 }
 
 .title-container {
-  border-top-right-radius: 15px;
+  /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   text-align: center;
-  width: 290px;
-  max-width: 290px;
+  /* width: 290px; */
+  /* max-width: 290px; */
   background: rgba(255, 254, 254, 0.94) 50%;
   padding: 0.55rem 0.7rem;
   border: 2px rgb(70, 70, 70, 0.6) solid;
-  transform: translateX(-4.6rem) translateY(0.5rem);
+  transform: translateY(0.8rem);
   user-select: none;
   /* Keep text from wrapping; */
 }

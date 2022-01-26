@@ -60,21 +60,6 @@ const ProjectsContent = props => {
                     <p className={` ${styles.short}`}>
                       {project[`${storeLanguage}`].short}
                     </p>
-                    {/* <p className={` ${styles.tag}`}>{project["EN"].tags}</p> */}
-                    {/* Previous logic for singular tag boxes */}
-                    {/* {project["EN"].tags &&
-                      project["EN"].tags.map(tag => (
-                        <p
-                          key={
-                            project.id +
-                            "tag" +
-                            Math.floor(Math.random() * 1000)
-                          }
-                          className={` ${styles.tag}`}
-                        >
-                          {tag}
-                        </p>
-                      ))} */}
                   </div>
                 )}
               </div>
@@ -92,7 +77,6 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
-                // color: `${storeColour.hex}`,
               }}
             />
           </button>
@@ -108,7 +92,6 @@ const ProjectsContent = props => {
               style={{
                 transform: "translateY(2.3px) translateX(.3rem)",
                 fontSize: ".9rem",
-                // color: `${storeColour.hex}`,
               }}
             />
           </button>
