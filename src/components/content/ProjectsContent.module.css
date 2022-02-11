@@ -1,14 +1,13 @@
 .projects-section {
   position: fixed;
-  margin: 1% 0 !important;
   font-size: 18px;
   display: flex;
-  /* margin-left: 25rem !important; */
   width: 100vw;
   justify-content: center;
   align-items: center;
   padding: 0 !important;
-  padding-right: 15rem !important;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .projects {
@@ -61,7 +60,6 @@ div.list {
   padding: 0 2rem;
   border: 0.125rem #525151 solid;
   width: 350px;
-  /* transition: all 0.3s ease-in-out; */
 }
 div.list:hover::before {
   content: "";
@@ -76,25 +74,28 @@ div.list:hover::before {
 }
 
 div.list:hover {
-  /* transition: all 0.1s ease-in-out; */
   border: rgb(199, 199, 199) 0.125rem solid;
 }
 
 .title-container {
-  /* border-top-right-radius: 15px; */
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
   text-align: center;
   transform: translateY(0.8rem);
-  font-weight: 700;
+  font-weight: 600;
   user-select: none;
   color: white;
   font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 0.3rem;
+  transition: all 0.3s ease-in-out;
 }
-div.list:hover .title-container {
-  background: rgba(39, 39, 39, 0.97);
-  display: none;
+.title-container p {
+  transition: all 0.3s ease-in-out;
+}
+div.list:hover {
+  transition: all 0.2s ease-in-out;
+  justify-content: start;
+  align-items: flex-start;
+  padding: 0.06rem 1.1rem;
+  /* display: none; */
 }
 div.list {
   padding: 1rem;
