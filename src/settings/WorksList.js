@@ -53,12 +53,13 @@ const PROJECTS = [
       Refer to the README for a more in-depth description.
       `,
       tags: ["RStudio, ggPlot2"],
-      short: "A mathematical model of tsunami damage",
+      short: "A mathematical model that predicts the damage of a tsunami",
     },
     IT: {
       name: "Simulatore di Tsunami",
       description: `Questo progetto è nato per dimostrare la mia abilità nel lavorare con varie tecnologie, coordinare lavori in un gruppo, e creare una simulazione utilizzando vari modelli e statistica.`,
-      short: "Un modello matematico di danno di tsunami",
+      short:
+        "Un modello matematico che calcola i danni provocati da uno tsunami",
     },
     tags: ["RStudio, ggPlot2"],
     id: "p1",
@@ -99,7 +100,7 @@ const PROJECTS = [
         This app was built using HTML5, CSS3, vanilla JavaScript, Ionic, along with a public API.
         Further information can be found in the GitHub repository README.md file.`,
       tags: ["React, Redux, JavaScript"],
-      short: "A COVID-19 tracker",
+      short: "A COVID-19 tracker. \nEnter your country to see the stats!",
     },
     IT: {
       name: "COVID Tracker",
@@ -126,7 +127,7 @@ const PROJECTS = [
       description:
         "Creato per aiutare persone a comunicare con la propria famiglia e il proprio medico curante in modo veloce ed efficace.",
       tags: ["Università", "Agile"],
-      short: "Tangible è un diario per la registrazione dei dolori",
+      short: "Tangible è un diario che ti permette di registrare i tuoi dolori",
     },
     id: "p4",
     githubLink: "https://github.com/",
