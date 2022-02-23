@@ -12,7 +12,7 @@ import { FaGithub } from "react-icons/fa";
 import styles from "./ProjectDetail.module.css";
 
 import Viewer from "react-viewer";
-import Footer from "../components/UI/Footer";
+// import Footer from "../components/UI/Footer";
 import WorksList from "../settings/WorksList";
 import ColourSelector from "../components/UI/ColourSelector";
 
@@ -128,7 +128,6 @@ const ProjectDetail = () => {
             </div>
 
             <div className={styles["button-container"]}>
-              {/* Create a button that leads to the github page */}
               <a
                 href={currentProject.githubLink}
                 target="_blank"
