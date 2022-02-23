@@ -10,19 +10,6 @@ import noDataData from "../assets/No Data 404.json";
 import loadingData from "../assets/Loading.json";
 import mailData from "../assets/Mail.json";
 
-const NessieMonsterLottie = props => {
-  return (
-    <Lottie
-      loop={+props.loop || true}
-      animationData={NessieData}
-      play
-      style={{ marginTop: -50, width: "70%", height: +props.height || 600 }}
-    />
-  );
-};
-
-export const Nessie = NessieMonsterLottie;
-
 const AstronautLottie = props => {
   const [isDelayed, setIsDelayed] = useState(false);
 
@@ -58,13 +45,34 @@ const ArrowLottie = props => {
 
 export const AnimatedArrow = ArrowLottie;
 
+const NessieMonsterLottie = props => {
+  return (
+    <Lottie
+      loop={+props.loop || true}
+      animationData={NessieData}
+      play
+      style={{
+        marginTop: +props.marginTop || -50,
+        width: "70%",
+        height: +props.height || 600,
+      }}
+    />
+  );
+};
+
+export const Nessie = NessieMonsterLottie;
+
 const RobotLottie = props => {
   return (
     <Lottie
       loop={true}
       animationData={robotData}
       play
-      style={{ marginTop: -10, width: "70%", height: +props.height || 600 }}
+      style={{
+        marginTop: +props.marginTop || 30,
+        width: "70%",
+        height: +props.height || 600,
+      }}
     />
   );
 };
@@ -78,7 +86,7 @@ const CarLottie = props => {
       animationData={carData}
       play
       style={{
-        marginTop: -540,
+        marginTop: +props.marginTop || 100,
         width: "70%",
         height: +props.height || 600,
       }}
@@ -94,7 +102,11 @@ const NoDataLottie = props => {
       loop={true}
       animationData={noDataData}
       play
-      style={{ width: "70%", height: +props.height || 600 }}
+      style={{
+        marginTop: +props.marginTop || 0,
+        width: "70%",
+        height: +props.height || 600,
+      }}
     />
   );
 };

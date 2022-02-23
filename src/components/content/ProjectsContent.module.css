@@ -22,11 +22,12 @@ div.items {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 2.5rem;
-  /* width: 110%; */
   max-height: 570px !important;
   overflow: scroll;
   position: relative;
   padding-left: 0.8rem;
+  /* padding: 1rem !important; TESTING */
+  /* width: 110%; */
 }
 
 .view-more {
@@ -70,7 +71,7 @@ div.list:hover::before {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 div.list:hover {
@@ -78,7 +79,6 @@ div.list:hover {
 }
 
 .title-container {
-  text-align: center;
   transform: translateY(0.8rem);
   font-weight: 600;
   user-select: none;
@@ -86,6 +86,7 @@ div.list:hover {
   font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 0.3rem;
   transition: all 0.3s ease-in-out;
+  display: none;
 }
 .title-container p {
   transition: all 0.3s ease-in-out;
@@ -94,9 +95,20 @@ div.list:hover {
   transition: all 0.2s ease-in-out;
   justify-content: start;
   align-items: flex-start;
-  padding: 0.06rem 1.1rem;
+  padding: 0rem 1.2rem;
+
   /* display: none; */
 }
+div.list:hover .title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.title-container p.short {
+  font-weight: 400;
+  color: rgb(218, 217, 217) !important;
+}
+
 div.list {
   padding: 1rem;
   height: 160px;
@@ -209,6 +221,9 @@ div.list {
     gap: 1.5rem;
     padding-left: 0;
     padding-bottom: 0rem;
+  }
+  div.list:hover {
+    padding: 0.8rem 1.2rem;
   }
 }
 

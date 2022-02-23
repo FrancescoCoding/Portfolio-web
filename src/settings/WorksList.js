@@ -34,6 +34,7 @@ const PROJECTS = [
       name: "Portfolio personale",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
+      short: "Portfolio creato con React, lo stai utilizzando ora :)",
     },
     id: "p5",
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
@@ -52,10 +53,12 @@ const PROJECTS = [
       Refer to the README for a more in-depth description.
       `,
       tags: ["RStudio, ggPlot2"],
+      short: "A mathematical model of tsunami damage",
     },
     IT: {
       name: "Simulatore di Tsunami",
       description: `Questo progetto è nato per dimostrare la mia abilità nel lavorare con varie tecnologie, coordinare lavori in un gruppo, e creare una simulazione utilizzando vari modelli e statistica.`,
+      short: "Un modello matematico di danno di tsunami",
     },
     tags: ["RStudio, ggPlot2"],
     id: "p1",
@@ -72,12 +75,14 @@ const PROJECTS = [
       description:
         "This project was meant to showcase my skill in working with React.",
       tags: ["React, Redux, JavaScript"],
+      short: "A simple playlist app",
     },
     IT: {
       name: "PlayList",
       description:
         "Questo progetto è nato per dimostrare la mia abilità di lavorare con React.",
       tags: ["React, Redux, JavaScript"],
+      short: "Un semplice app per la gestione di playlist",
     },
     id: "p2",
     githubLink: "https://github.com/",
@@ -94,12 +99,14 @@ const PROJECTS = [
         This app was built using HTML5, CSS3, vanilla JavaScript, Ionic, along with a public API.
         Further information can be found in the GitHub repository README.md file.`,
       tags: ["React, Redux, JavaScript"],
+      short: "A COVID-19 tracker",
     },
     IT: {
       name: "COVID Tracker",
       description:
         "Quest'applicazione fornisce il corrente numero di morti, guarigioni, ed ammalati causati dalla pandemia COVID-19.",
       tags: ["React, Redux, JavaScript"],
+      short: "Un tracker per la pandemia COVID-19",
     },
     id: "p3",
     githubLink: "https://github.com/FrancescoCoding/Covid-Tracker-Ionic-md-iOS",
@@ -112,12 +119,14 @@ const PROJECTS = [
       name: "Tangible Pain Diary",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "Tangible is a pain diary that helps you log and track your pain",
     },
     IT: {
-      name: "Tangible - Diario per dolori cronici",
+      name: "Tangible",
       description:
         "Creato per aiutare persone a comunicare con la propria famiglia e il proprio medico curante in modo veloce ed efficace.",
       tags: ["Università", "Agile"],
+      short: "Tangible è un diario per la registrazione dei dolori",
     },
     id: "p4",
     githubLink: "https://github.com/",
@@ -130,12 +139,14 @@ const PROJECTS = [
       name: "Harvest Time",
       description: "",
       tags: ["Node, Puppeteer"],
+      short: "Harvest Time is a web scraper that scrapes data from the web",
     },
     IT: {
       name: "Harvest Time",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["Node, Puppeteer"],
+      short: "Harvest Time è un web scraper che estrae dati dal web",
     },
     id: "p6",
     githubLink: "https://github.com/FrancescoCoding/Harvest-Time",
@@ -147,12 +158,14 @@ const PROJECTS = [
       name: "Smite Ocean",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "-",
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["Università", "Agile"],
+      short: "-",
     },
     id: "p7",
     githubLink: "https://github.com/",
@@ -165,12 +178,15 @@ const PROJECTS = [
       name: "SunRice Weather App",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "SunRice is a weather app that shows the weather in your area",
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["University, Team, Agile"],
+      short:
+        "SunRice è una app che mostra il meteo in tempo reale in una zona a tua scelta",
     },
     id: "p8",
     githubLink: "https://github.com/",
@@ -182,12 +198,14 @@ const PROJECTS = [
       name: "Cardiac Tool",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "-",
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["Università, Agile"],
+      short: "-",
     },
     id: "p9",
     githubLink: "https://github.com/",
@@ -199,12 +217,14 @@ const PROJECTS = [
       name: "Cardiac Tool",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "-",
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["Università, Agile"],
+      short: "-",
     },
     id: "p10",
     githubLink: "https://github.com/",
@@ -216,12 +236,14 @@ const PROJECTS = [
       name: "Cardiac Tool",
       description: "",
       tags: ["University, Team, Agile"],
+      short: "-",
     },
     IT: {
       name: "Strumento Cardiaco",
       description:
         "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
       tags: ["Università, Agile"],
+      short: "-",
     },
     id: "p11",
     githubLink: "https://github.com/",

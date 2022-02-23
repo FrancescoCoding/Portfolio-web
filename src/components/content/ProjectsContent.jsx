@@ -38,6 +38,7 @@ const ProjectsContent = props => {
                   >
                     <div className={styles["title-container"]}>
                       <p>{project[`${storeLanguage}`].name}</p>
+                      <p className={styles.short}> {project[`${storeLanguage}`].short} </p>
                     </div>
                   </div>
                 </Link>
