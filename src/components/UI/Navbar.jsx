@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { languageActions } from "../../store/store";
 
 import HamburgerMenu from "./HamburgerMenu";
+import italianFlag from "../../assets/Flags/IT-flag.svg";
+import UKFlag from "../../assets/Flags/UK-flag.svg";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -84,12 +86,12 @@ const Navbar = () => {
             <li>
               {storeLanguage === "EN" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  It
+                  <img src={UKFlag} alt="English flag" width="50px" />
                 </a>
               )}
               {storeLanguage === "IT" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  En
+                  <img src={italianFlag} alt="Italian flag" width="50px" />
                 </a>
               )}
             </li>
