@@ -1,4 +1,7 @@
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   padding: 0rem 12.5rem;
   justify-content: flex-start;

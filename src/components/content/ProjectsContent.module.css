@@ -1,21 +1,31 @@
 .projects-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  /* left: 0; */
+
+  /* 
   font-size: 18px;
-  display: flex;
+  
   width: 100vw;
+  height: 100vh;
+  border: solid 1px #ff0000;
   justify-content: center;
   align-items: center;
   padding: 0 !important;
   left: 50%;
   transform: translate(-50%, 0%);
-  border: solid 1px #e6e6e6;
+  z-index: 1; */
+  /* Center all */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  margin: auto;
 }
 
 .projects {
-  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #e6e6e6;
 }
 
 div.items {
@@ -35,6 +45,7 @@ div.items {
 }
 
 .view-more {
+  display: none; /* VIEW MORE BUTTON */
   position: absolute;
   top: 2px;
   right: 21%;
