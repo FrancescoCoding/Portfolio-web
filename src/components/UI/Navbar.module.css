@@ -7,6 +7,7 @@ nav {
   justify-content: flex-start;
   max-width: 2100px;
   margin: 0 auto !important;
+  z-index: 10;
 }
 
 .hamburger-container {
