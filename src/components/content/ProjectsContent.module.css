@@ -18,8 +18,8 @@ div.items {
   left: 0;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 2.5rem;
   max-height: 570px !important;
   overflow: scroll;
@@ -31,7 +31,7 @@ div.items {
 
 .view-more {
   position: absolute;
-  top: 21%;
+  top: 17%;
   right: 21%;
   font-size: 1rem;
   letter-spacing: 0.09rem;
@@ -44,15 +44,14 @@ div.items {
 
 .view-more-active {
   position: absolute;
-  top: 21%;
+  top: 17%;
   right: 21%;
-  font-size: 1rem !important;
+  font-size: 1rem;
   letter-spacing: 0.09rem;
-
   border: none;
   background: none;
-  cursor: pointer;
   color: rgb(237, 236, 236);
+  cursor: pointer;
   z-index: 30;
 }
 
@@ -73,8 +72,10 @@ div.list:hover::before {
   bottom: 0px;
   left: 0px;
   opacity: 0.9;
+  transition: all 0.3s ease-in-out;
 }
 div.list::before {
+  transition: all 0.3s ease-in-out;
   position: absolute;
   content: "";
   height: 100%;
@@ -83,8 +84,8 @@ div.list::before {
   left: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 0, 0, 0) 70%,
-    rgba(0, 0, 0, 0.913) 80%
+    rgba(255, 0, 0, 0) 58%,
+    rgb(0, 0, 0) 90%
   );
 }
 
