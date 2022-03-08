@@ -36,8 +36,8 @@ const ProjectsContent = props => {
                   <div
                     className={styles.list}
                     style={{
-                      background: `url(${project.image}) no-repeat center center/cover`,
-                      // 
+                      background: `url(${project.image}) no-repeat center center/cover`,  
+
                       // border: `${storeColour.hex} solid 2px`
                       // border: `1px solid ${props.colours.hex}`,
                     }}
