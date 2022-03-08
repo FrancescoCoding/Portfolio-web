@@ -83,7 +83,7 @@ const PROJECTS = [
       description:
         "Questo progetto è nato per dimostrare la mia abilità di lavorare con React.",
       tags: ["React, Redux, JavaScript"],
-      short: "Un semplice app per la gestione di playlist",
+      short: "Una semplice app per la gestione di playlist",
     },
     id: "p2",
     githubLink: "https://github.com/",

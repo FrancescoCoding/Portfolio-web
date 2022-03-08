@@ -30,9 +30,8 @@ div.items {
 }
 
 .view-more {
-  display: none; /* VIEW MORE BUTTON */
   position: absolute;
-  top: 2px;
+  top: 21%;
   right: 21%;
   font-size: 1rem;
   letter-spacing: 0.09rem;
@@ -40,19 +39,21 @@ div.items {
   background: none;
   color: rgb(237, 236, 236);
   cursor: pointer;
+  z-index: 30;
 }
 
 .view-more-active {
   position: absolute;
-  font-size: 1rem !important;
-  top: 2px;
+  top: 21%;
   right: 21%;
+  font-size: 1rem !important;
   letter-spacing: 0.09rem;
 
   border: none;
   background: none;
   cursor: pointer;
   color: rgb(237, 236, 236);
+  z-index: 30;
 }
 
 div.list {
@@ -73,6 +74,19 @@ div.list:hover::before {
   left: 0px;
   opacity: 0.9;
 }
+div.list::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.913) 80%
+  );
+}
 
 div.list:hover {
   border: rgb(199, 199, 199) 0.125rem solid;
@@ -86,7 +100,7 @@ div.list:hover {
   font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 0.3rem;
   transition: all 0.3s ease-in-out;
-  display: none;
+  /* display: none; */
 }
 .title-container p {
   transition: all 0.3s ease-in-out;
@@ -96,7 +110,6 @@ div.list:hover {
   justify-content: start;
   align-items: flex-start;
   padding: 0rem 1.2rem;
-
   /* display: none; */
 }
 div.list:hover .title-container {
@@ -107,6 +120,10 @@ div.list:hover .title-container {
 .title-container p.short {
   font-weight: 400;
   color: rgb(218, 217, 217) !important;
+  display: none;
+}
+div.list:hover .title-container p.short {
+  display: block;
 }
 
 div.list {
@@ -116,7 +133,7 @@ div.list {
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-end;
 }
 

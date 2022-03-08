@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const ProjectsContent = props => {
   const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector(state => state.colours);
 
   const [renderedItems, setRenderedItems] = useState(9);
 
@@ -19,6 +20,8 @@ const ProjectsContent = props => {
   } else {
     items = props.projects;
   }
+
+  // border: `${storeColour.hex} solid 2px` ,
 
   const stopEvent = event => event.stopPropagation();
 
@@ -34,6 +37,9 @@ const ProjectsContent = props => {
                     className={styles.list}
                     style={{
                       background: `url(${project.image}) no-repeat center center/cover`,
+                      // 
+                      // border: `${storeColour.hex} solid 2px`
+                      // border: `1px solid ${props.colours.hex}`,
                     }}
                   >
                     <div className={styles["title-container"]}>
