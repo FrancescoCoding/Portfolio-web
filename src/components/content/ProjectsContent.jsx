@@ -11,7 +11,6 @@ const ProjectsContent = props => {
   const storeColour = useSelector(state => state.colours);
 
   const [renderedItems, setRenderedItems] = useState(props.projects.length);
-  const [isLoading, setIsLoading] = useState(true);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
@@ -33,23 +32,6 @@ const ProjectsContent = props => {
 
   const stopEvent = event => event.stopPropagation();
 
-  console.log(isLoading ? "Loading..." : "Loaded");
-
-  useEffect(() => {
-    // Once the .list background image is loaded, set the isLoading state to false
-    const img = document.querySelectorAll(`.${styles.list}`);
-    console.log(img);
-
-    img.forEach(image => {
-      // If the backgroundImage is still loading, wait for it to load
-      if (image.style.backgroundImage === "none") {
-        return;
-      } else {
-        setIsLoading(false);
-      }
-    });
-  }, []);
-
   return (
     <>
       {/* {isLoading && <Loader />} */}
@@ -70,7 +52,6 @@ const ProjectsContent = props => {
                       style={{
                         background: `url(${project.image}) no-repeat center center/cover`,
                       }}
-                      onLoadedData={() => setIsLoading(false)}
                     >
                       <div className={styles["title-container"]}>
                         <p>{project[`${storeLanguage}`].name}</p>

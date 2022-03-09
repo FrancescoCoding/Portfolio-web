@@ -131,7 +131,7 @@ const PROJECTS = [
     },
     id: "p4",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?dark,pain",
+    image: "https://source.unsplash.com/300x200/?fitness",
     endpoint: "tangible-chronic-pain",
   },
 
@@ -191,7 +191,7 @@ const PROJECTS = [
     },
     id: "p8",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?sunrise",
+    image: "https://source.unsplash.com/300x200/?umbrella",
     endpoint: "cardiac-tool",
   },
   {
