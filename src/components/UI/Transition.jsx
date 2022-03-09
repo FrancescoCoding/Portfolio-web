@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Transition.module.css";
 
-const Transition = () => {
+const Transition = props => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {

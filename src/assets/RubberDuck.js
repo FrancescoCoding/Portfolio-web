@@ -2,12 +2,12 @@
 let honk1 = new Audio("https://files.catbox.moe/fl7wzu.ogg");
 let honk2 = new Audio("https://files.catbox.moe/mejpp4.ogg");
 let honk3 = new Audio("https://files.catbox.moe/s2pvvx.ogg");
-let honk4 = new Audio("https://files.catbox.moe/by7mer.ogg");
+// let honk4 = new Audio("https://files.catbox.moe/by7mer.ogg");
 
 const dice = () => Math.floor(Math.random() * 4);
 
 const honkHandler = () => {
-  let randomAudio = [honk1, honk2, honk3, honk4];
+  let randomAudio = [honk1, honk2, honk3]; // , honk4
   let audio = randomAudio[dice()];
   audio.play();
 };

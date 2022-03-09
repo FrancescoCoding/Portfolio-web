@@ -104,7 +104,7 @@ nav {
    @ http://riccardozanutta.com/, I just modified his transition.
 */
 
-.navbar ul li a:after,
+/* .navbar ul li a:after,
 .navbar ul li a:before {
   content: "";
   position: absolute;
@@ -125,7 +125,7 @@ nav {
   background-color: #f25757;
   transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
 }
-
+*/
 @media only screen and (min-width: 64em) {
   .navbar ul li a:hover:after,
   .navbar ul li a:hover:before {
