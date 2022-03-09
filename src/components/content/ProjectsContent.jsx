@@ -9,7 +9,7 @@ const ProjectsContent = props => {
   const storeLanguage = useSelector(state => state.languages.language);
   const storeColour = useSelector(state => state.colours);
 
-  const [renderedItems, setRenderedItems] = useState(9);
+  const [renderedItems, setRenderedItems] = useState(props.projects.length);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
@@ -21,6 +21,16 @@ const ProjectsContent = props => {
     items = props.projects;
   }
 
+  const hoverHandler = e => {
+    // Add a class to the parent of the parent element of the hovered element
+    e.target.classList.toggle(styles.hover);
+  };
+
+  const hoverOutHandler = e => {
+    // Remove the class from the parent of the parent element of the hovered element
+    e.target.classList.toggle(styles.hover);
+  };
+
   // border: `${storeColour.hex} solid 2px` ,
 
   const stopEvent = event => event.stopPropagation();
@@ -31,12 +41,17 @@ const ProjectsContent = props => {
         <div className={styles.items} style={{ paddingRight: "12px" }}>
           {items.map(project => {
             return (
-              <div className={styles["project-git"]} key={project.id + "git"}>
+              <div
+                className={styles["project-git"]}
+                key={project.id + "git"}
+                onMouseOver={hoverHandler}
+                onMouseOut={hoverOutHandler}
+              >
                 <Link key={project.id} to={`/projects/${project.endpoint}`}>
                   <div
-                    className={styles.list}
+                    className={`${styles.list}`}
                     style={{
-                      background: `url(${project.image}) no-repeat center center/cover`,  
+                      background: `url(${project.image}) no-repeat center center/cover`,
 
                       // border: `${storeColour.hex} solid 2px`
                       // border: `1px solid ${props.colours.hex}`,
@@ -44,7 +59,10 @@ const ProjectsContent = props => {
                   >
                     <div className={styles["title-container"]}>
                       <p>{project[`${storeLanguage}`].name}</p>
-                      <p className={styles.short}> {project[`${storeLanguage}`].short} </p>
+                      <p className={styles.short}>
+                        {" "}
+                        {project[`${storeLanguage}`].short}{" "}
+                      </p>
                     </div>
                   </div>
                 </Link>

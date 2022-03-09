@@ -86,12 +86,22 @@ const Navbar = () => {
             <li>
               {storeLanguage === "EN" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  <img src={UKFlag} alt="English flag" width="50px" />
+                  <img
+                    src={UKFlag}
+                    alt="English flag"
+                    width="50px"
+                    height="100%"
+                  />
                 </a>
               )}
               {storeLanguage === "IT" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  <img src={italianFlag} alt="Italian flag" width="50px" />
+                  <img
+                    src={italianFlag}
+                    alt="Italian flag"
+                    width="50px"
+                    height="100%"
+                  />
                 </a>
               )}
             </li>

@@ -30,6 +30,7 @@ div.items {
 }
 
 .view-more {
+  display: none;
   position: absolute;
   top: 17%;
   right: 21%;
@@ -43,6 +44,7 @@ div.items {
 }
 
 .view-more-active {
+  display: none;
   position: absolute;
   top: 17%;
   right: 21%;
@@ -105,6 +107,7 @@ div.list:hover {
   font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 0.3rem;
   transition: all 0.3s ease-in-out;
+  pointer-events: none;
   /* display: none; */
 }
 .title-container p {
@@ -278,4 +281,16 @@ div.list {
     height: 64vh;
     padding-top: 0;
   }
+}
+
+.leaf-hover {
+  border: 5px solid var(--leaf-primary-color) !important;
+}
+
+div.hover {
+  border: 5px solid var(--leaf-primary-color) !important;
+}
+/* When hovering over the children, keep border on div.hover */
+div.hover > div {
+  /* border: 5px solid var(--leaf-primary-color) !important; */
 }
