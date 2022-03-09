@@ -196,26 +196,19 @@ div.list {
 }
 
 @media screen and (max-width: 1824px) {
-  .projects-section {
-    margin-top: 7rem !important;
-    width: 70%;
-    margin-left: 12rem !important;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0rem !important;
-  }
-  .title-container {
-    transform: translateX(-3rem) translateY(0.5rem);
-  }
+  /* Make grid items responsive */
   div.items {
-    transition: all 0.6s;
-    width: 120%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .project-git {
+    width: 100%;
   }
 }
 @media screen and (max-width: 1604px) {
   div.items {
+    grid-template-columns: repeat(2, 1fr);
     transition: all 1s;
-    width: 100%;
   }
   .view-more {
     bottom: -6px;
@@ -223,21 +216,9 @@ div.list {
   }
 }
 @media screen and (max-width: 1200px) {
-  .projects-section {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    overflow: scroll;
-    margin: 0 !important;
-    margin-top: 8rem !important;
-    border-bottom: 5rem transparent solid;
-  }
-  .projects {
-    height: 75vh;
-    padding-top: 0;
-  }
   .title-container {
     transform: translateX(0) translateY(0);
+    margin-bottom: 0;
   }
   div.items {
     font-size: 16px;
@@ -254,12 +235,7 @@ div.list {
 
 @media screen and (max-width: 900px) {
   .projects-section {
-    margin-top: 8rem !important;
     width: 100%;
-  }
-  .projects {
-    height: 70vh;
-    width: 75vw;
   }
   div.items {
     font-size: 16px;
