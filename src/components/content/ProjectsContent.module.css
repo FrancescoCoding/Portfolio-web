@@ -61,7 +61,7 @@ div.list {
   position: relative;
   cursor: pointer;
   padding: 0 2rem;
-  border: 0.3rem solid;
+  border: 5px solid;
   width: 350px;
   overflow: hidden;
 }
@@ -288,9 +288,5 @@ div.list {
 }
 
 div.hover {
-  border: 5px solid var(--leaf-primary-color) !important;
-}
-/* When hovering over the children, keep border on div.hover */
-div.hover > div {
-  /* border: 5px solid var(--leaf-primary-color) !important; */
+  border: 6px solid var(--leaf-primary-color) !important;
 }
