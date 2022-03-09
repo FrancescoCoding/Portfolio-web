@@ -22,13 +22,11 @@ const ProjectsContent = props => {
   }
 
   const hoverHandler = e => {
-    // Add a class to the parent of the parent element of the hovered element
-    e.target.classList.toggle(styles.hover);
+    e.target.classList.toggle(styles[`${storeColour.colour}-hover`]);
   };
 
   const hoverOutHandler = e => {
-    // Remove the class from the parent of the parent element of the hovered element
-    e.target.classList.toggle(styles.hover);
+    e.target.classList.toggle(styles[`${storeColour.colour}-hover`]);
   };
 
   // border: `${storeColour.hex} solid 2px` ,
@@ -38,7 +36,7 @@ const ProjectsContent = props => {
   return (
     <div className={styles["projects-section"]}>
       <div className={styles.projects}>
-        <div className={styles.items} style={{ paddingRight: "12px" }}>
+        <div className={styles.items} style={{ paddingRight: "16px" }}>
           {items.map(project => {
             return (
               <div
@@ -52,9 +50,6 @@ const ProjectsContent = props => {
                     className={`${styles.list}`}
                     style={{
                       background: `url(${project.image}) no-repeat center center/cover`,
-
-                      // border: `${storeColour.hex} solid 2px`
-                      // border: `1px solid ${props.colours.hex}`,
                     }}
                   >
                     <div className={styles["title-container"]}>

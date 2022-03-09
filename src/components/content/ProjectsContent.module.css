@@ -61,7 +61,7 @@ div.list {
   position: relative;
   cursor: pointer;
   padding: 0 2rem;
-  border: 5px solid;
+  border: 4px solid rgb(70, 70, 70);
   width: 350px;
   overflow: hidden;
 }
@@ -283,10 +283,15 @@ div.list {
   }
 }
 
-.leaf-hover {
+div.leaf-hover {
   border: 5px solid var(--leaf-primary-color) !important;
 }
-
-div.hover {
-  border: 6px solid var(--leaf-primary-color) !important;
+div.magenta-hover {
+  border: 5px solid var(--magenta-primary-color) !important;
+}
+div.canary-hover {
+  border: 5px solid var(--canary-primary-color) !important;
+}
+div.ocean-hover {
+  border: 5px solid var(--ocean-primary-color) !important;
 }
