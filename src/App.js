@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import Loader from "./components/UI/Loader";
 import Transition from "./components/UI/Transition";
-import Projects from "./pages/Projects";
+// import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 
 const Portfolio = React.lazy(async () => {
@@ -17,16 +17,15 @@ const NotFound = React.lazy(async () => {
   return import("./pages/NotFound");
 });
 
+const Projects = React.lazy(async () => {
+  // Resolve a promise after the Projects page has loaded
+  await new Promise(resolve => setTimeout(resolve, 2700));
+  return import("./pages/Projects");
+});
+
 function App() {
   return (
-    <Suspense
-      fallback={
-        <>
-          <Loader />
-          <Transition />
-        </>
-      }
-    >
+    <Suspense fallback={<Loader />}>
       <Switch>
         <Route path="/" exact>
           <Redirect to="/portfolio" />
