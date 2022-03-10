@@ -13,7 +13,7 @@ let persistor = persistStore(store);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />
