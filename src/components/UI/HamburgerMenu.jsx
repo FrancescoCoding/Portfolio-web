@@ -78,7 +78,16 @@ const HamburgerMenu = props => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">En</NavLink>
+              {storeLanguage === "EN" && (
+                <NavLink to="/" onClick={changeLanguageHandler}>
+                  English
+                </NavLink>
+              )}
+              {storeLanguage === "IT" && (
+                <NavLink to="/" onClick={changeLanguageHandler}>
+                  Italian
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>

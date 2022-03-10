@@ -37,7 +37,10 @@ const ProjectsContent = props => {
       {/* {isLoading && <Loader />} */}
       <div className={styles["projects-section"]}>
         <div className={styles.projects}>
-          <div className={styles.items} style={{ paddingRight: "16px" }}>
+          <div
+            className={`${styles.items} ${styles[`${storeColour.colour}`]}`}
+            style={{ paddingRight: "16px" }}
+          >
             {items.map(project => {
               return (
                 <div

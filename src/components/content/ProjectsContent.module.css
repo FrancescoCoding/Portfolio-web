@@ -260,14 +260,35 @@ div.list {
 }
 
 div.leaf-hover {
-  border: 5px solid var(--leaf-primary-color) !important;
+  border: 6px solid var(--leaf-primary-color) !important;
 }
 div.magenta-hover {
-  border: 5px solid var(--magenta-primary-color) !important;
+  border: 6px solid var(--magenta-primary-color) !important;
 }
 div.canary-hover {
-  border: 5px solid var(--canary-primary-color) !important;
+  border: 6px solid var(--canary-primary-color) !important;
 }
 div.ocean-hover {
-  border: 5px solid var(--ocean-primary-color) !important;
+  border: 6px solid var(--ocean-primary-color) !important;
+}
+
+.items.leaf::-webkit-scrollbar-thumb {
+  background: var(--leaf-primary-color-darker);
+  border: 0px none #ffffff;
+  border-radius: 2rem;
+}
+.items.magenta::-webkit-scrollbar-thumb {
+  background: var(--magenta-primary-color-darker);
+  border: 0px none #ffffff;
+  border-radius: 2rem;
+}
+.items.canary::-webkit-scrollbar-thumb {
+  background: var(--canary-primary-color-darker);
+  border: 0px none #ffffff;
+  border-radius: 2rem;
+}
+.items.ocean::-webkit-scrollbar-thumb {
+  background: var(--ocean-primary-color-darker);
+  border: 0px none #ffffff;
+  border-radius: 2rem;
 }
