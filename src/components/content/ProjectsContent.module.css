@@ -196,7 +196,6 @@ div.list {
 }
 
 @media screen and (max-width: 1824px) {
-  /* Make grid items responsive */
   div.items {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -233,29 +232,48 @@ div.list {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 870px) {
   .projects-section {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .project-git {
+    justify-content: center;
+    align-items: center;
+  }
+  div.list {
     width: 100%;
   }
+
   div.items {
     font-size: 16px;
+    width: 85%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center !important;
     padding-bottom: 0rem;
   }
+  div.items.leaf > div > a > div:active {
+    border: 6px solid var(--leaf-primary-color) !important;
+  }
+  div.items.magenta > div > a > div:active {
+    border: 6px solid var(--magenta-primary-color) !important;
+  }
+  div.items.ocean > div > a > div:active {
+    border: 6px solid var(--ocean-primary-color) !important;
+  }
+  div.items.canary > div > a > div:active {
+    border: 6px solid var(--canary-primary-color) !important;
+  }
 }
 
-@media screen and (max-width: 350px) {
-  div.items {
-    gap: 1rem;
-    padding-bottom: 0 !important;
-  }
-  .projects {
-    width: 75vw;
-    height: 64vh;
-    padding-top: 0;
+@media screen and (max-height: 750px) {
+  .projects-section {
+    position: fixed;
+    margin-top: 100px;
+    height: 80vh;
+    margin-bottom: 0;
   }
 }
 

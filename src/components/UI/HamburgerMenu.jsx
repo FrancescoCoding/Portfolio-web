@@ -57,10 +57,7 @@ const HamburgerMenu = props => {
             >
               Portfolio {currentYear}
             </NavLink>
-            <div
-              onClick={props.onClose} //
-              className={styles["close-sidebar"]}
-            >
+            <div onClick={props.onClose} className={styles["close-sidebar"]}>
               <Hamburger
                 size={27}
                 rounded
