@@ -1,7 +1,7 @@
 # Personal Portfolio 🦆
 Personal portfolio built with React and other technologies.
 
-[Live Website](https://www.francoding.xyz/)
+[Live Website](https://fran-coding.netlify.app/)
 
 
 ![Portfolio Preview](https://user-images.githubusercontent.com/64712227/134884152-c9b68740-8986-42de-bf20-cc81c598078a.gif)
