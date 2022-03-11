@@ -4,10 +4,9 @@ nav {
   display: flex;
   padding: 0rem 12.5rem;
   justify-content: flex-start;
-  max-width: 2100px;
   margin: 0 auto !important;
-  z-index: 10;
   width: 100vw !important;
+  z-index: 10;
 }
 
 .hamburger-container {
@@ -15,7 +14,6 @@ nav {
   height: 100%;
   margin: 3rem 5rem;
   display: flex;
-  align-items: flex-start;
   padding-bottom: -0.4rem;
   padding: 0.8rem;
   z-index: 400;
@@ -39,7 +37,6 @@ nav {
 
 /* Put last li element at flex-end of ul */
 .navbar ul li:last-of-type {
-  align-self: flex-end !important;
   margin-left: auto !important;
 }
 
@@ -99,32 +96,6 @@ nav {
   color: var(--leaf-active);
 }
 
-/* Original transition below by Riccardo Zanutta
-   @ http://riccardozanutta.com/, I just modified his transition.
-*/
-
-/* .navbar ul li a:after,
-.navbar ul li a:before {
-  content: "";
-  position: absolute;
-  bottom: -0.4rem;
-  right: 0;
-  left: auto;
-  width: 0;
-  height: 4px;
-  z-index: 2;
-}
-
-.navbar ul li a:before {
-  background-color: #2263bd;
-  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
-}
-
-.navbar ul li a:after {
-  background-color: #f25757;
-  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-*/
 @media only screen and (min-width: 64em) {
   .navbar ul li a:hover:after,
   .navbar ul li a:hover:before {
@@ -141,6 +112,7 @@ nav {
   nav {
     position: absolute;
     padding: 0;
+    z-index: 0;
   }
 }
 
