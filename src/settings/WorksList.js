@@ -4,7 +4,7 @@ import CSS3Icon from "../assets/Logos/CSS3Icon.svg";
 
 import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.jpg";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.jpg";
-import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.jpg";
+import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail2-600w.jpg";
 
 const {
   rStudioIcon,
@@ -94,8 +94,7 @@ const PROJECTS = [
     },
     id: "p2",
     githubLink: "https://github.com/",
-    image:
-      "https://images.unsplash.com/photo-1605464315542-bda3e2f4e605?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    image: playlistThumbnail600w,
     endpoint: "playlist-project",
     icons: [htmlIcon, cssIcon, JSIcon, sassIcon],
   },
@@ -118,7 +117,7 @@ const PROJECTS = [
     },
     id: "p3",
     githubLink: "https://github.com/FrancescoCoding/Covid-Tracker-Ionic-md-iOS",
-    image: "https://source.unsplash.com/J-8ZxGgp0ik/300x200",
+    image: "https://source.unsplash.com/cG8NwhPNvmA/600x400",
     endpoint: "covid-tracker",
     icons: [htmlIcon, cssIcon, JSIcon, ionicIcon],
   },
@@ -138,7 +137,7 @@ const PROJECTS = [
     },
     id: "p4",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?fitness",
+    image: "https://source.unsplash.com/600x400/?fitness",
     endpoint: "tangible-chronic-pain",
   },
 
@@ -158,7 +157,7 @@ const PROJECTS = [
     },
     id: "p6",
     githubLink: "https://github.com/FrancescoCoding/Harvest-Time",
-    image: "https://source.unsplash.com/cG8NwhPNvmA/300x200",
+    image: "https://source.unsplash.com/cG8NwhPNvmA/600x400",
     endpoint: "cardiac-tool-2",
   },
   {
@@ -177,7 +176,7 @@ const PROJECTS = [
     },
     id: "p7",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?poseidon",
+    image: "https://source.unsplash.com/600x400/?poseidon",
     endpoint: "cardiac-tool-3",
     tags: ["University", "Team", "Agile"],
   },
@@ -218,7 +217,7 @@ const PROJECTS = [
     },
     id: "p9",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?purple,flower",
+    image: "https://source.unsplash.com/600x400/?purple,flower",
     endpoint: "cardiac-tool",
   },
   {
@@ -237,7 +236,7 @@ const PROJECTS = [
     },
     id: "p10",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?dark,woods",
+    image: "https://source.unsplash.com/600x400/?dark,woods",
     endpoint: "cardiac-tool",
   },
   {
@@ -256,7 +255,7 @@ const PROJECTS = [
     },
     id: "p11",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?dark,forest",
+    image: "https://source.unsplash.com/600x400/?dark,forest",
     endpoint: "cardiac-tool",
   },
 ];
