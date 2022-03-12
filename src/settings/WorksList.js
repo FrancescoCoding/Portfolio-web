@@ -94,7 +94,8 @@ const PROJECTS = [
     },
     id: "p2",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/VHf4jqrUu7g/300x200",
+    image:
+      "https://images.unsplash.com/photo-1605464315542-bda3e2f4e605?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     endpoint: "playlist-project",
     icons: [htmlIcon, cssIcon, JSIcon, sassIcon],
   },
@@ -197,7 +198,8 @@ const PROJECTS = [
     },
     id: "p8",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/300x200/?umbrella",
+    image:
+      "https://images.unsplash.com/photo-1607699330031-b8552f3ce4f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1972&q=80",
     endpoint: "cardiac-tool",
   },
   {
