@@ -14,9 +14,6 @@ const ProjectsContent = props => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
 
-  console.log(navigator.userAgent);
-  // If navigator.userAgent says it's an iOS device, set variable to "10px"
-  // Else, set variable to "0px"
   const runsiOS =
     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const iOSPadding = runsiOS ? "0px" : "16px";
