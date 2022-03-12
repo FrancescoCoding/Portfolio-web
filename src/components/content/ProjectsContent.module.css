@@ -268,11 +268,11 @@ div.list {
   }
 }
 
-@media screen and (max-height: 750px) {
+@media screen and (max-height: 800px) {
   .projects-section {
     position: fixed;
     margin-top: 100px;
-    height: 80vh;
+    height: 75vh;
     margin-bottom: 0;
   }
 }
