@@ -2,7 +2,6 @@
   "name": "francesco-gruosso-portfolio",
   "version": "0.1.0",
   "homepage": ".",
-  "static": "../static",
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.4.0",

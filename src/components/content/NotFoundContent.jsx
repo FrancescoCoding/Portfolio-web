@@ -10,14 +10,13 @@ const NotFoundContent = ({ message }) => {
   // Create marginTop responsive
   // If the page width is mobile, then the marginTop is -30
 
-
   let animationsMarginTop;
 
-    if (isBigScreen) {
-      animationsMarginTop = 80;
-    } else {
-      animationsMarginTop = -100;
-    }
+  if (isBigScreen) {
+    animationsMarginTop = 80;
+  } else {
+    animationsMarginTop = -100;
+  }
 
   return (
     <div className={styles["notFound-container"]}>
@@ -27,7 +26,9 @@ const NotFoundContent = ({ message }) => {
         </div>
         {storeColour === "magenta" && <Nessie />}
         {storeColour === "leaf" && <NoData width="550" height="550" />}
-        {storeColour === "canary" && <Car marginTop={animationsMarginTop} height="440" />}
+        {storeColour === "canary" && (
+          <Car marginTop={animationsMarginTop} height="440" />
+        )}
         {storeColour === "ocean" && <Robot width="500" height="500" />}
       </div>
     </div>
