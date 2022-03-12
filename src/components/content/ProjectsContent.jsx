@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import Loader from "../UI/Loader";
 
 const ProjectsContent = props => {
   const storeLanguage = useSelector(state => state.languages.language);
@@ -14,6 +13,13 @@ const ProjectsContent = props => {
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
+
+  console.log(navigator.userAgent);
+  // If navigator.userAgent says it's an iOS device, set variable to "10px"
+  // Else, set variable to "0px"
+  const runsiOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const iOSPadding = runsiOS ? "0px" : "16px";
 
   let items;
   if (isBigScreen) {
@@ -39,7 +45,7 @@ const ProjectsContent = props => {
         <div className={styles.projects}>
           <div
             className={`${styles.items} ${styles[`${storeColour.colour}`]}`}
-            style={{ paddingRight: "16px" }}
+            style={{ paddingRight: iOSPadding }}
           >
             {items.map(project => {
               return (
