@@ -1,5 +1,10 @@
 import icons from "./Icons.js";
-import FraJS from "../assets/Logos/Javascript Icon.svg";
+// Import CSS3Icon.svg from assets/Logos/CSS3Icon.svg as CSS3Icon
+import CSS3Icon from "../assets/Logos/CSS3Icon.svg";
+
+import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.jpg";
+import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.jpg";
+import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.jpg";
 
 const {
   rStudioIcon,
@@ -40,10 +45,10 @@ const PROJECTS = [
     },
     id: "p5",
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
-    image: "https://source.unsplash.com/xl2piFfdzyA/300x200",
+    image: portfolioThumbnail600w,
     gallery: [],
     endpoint: "portfolio",
-    icons: [htmlIcon, cssIcon, FraJS, reactIcon, reduxIcon],
+    icons: [htmlIcon, cssIcon, CSS3Icon, reactIcon, reduxIcon],
   },
   {
     EN: {
@@ -68,7 +73,7 @@ const PROJECTS = [
     demoLink: "https://www.francescogruosso.xyz/covid/app",
     githubLink:
       "https://github.com/FrancescoCoding/Tsunami-Damage-Prediction-Model",
-    image: "https://source.unsplash.com/DPSrekwcAl0/300x200",
+    image: tsunamiThumbnail600w,
     endpoint: "tsunami-simulator",
     icons: [rStudioIcon, GGPlotIcon],
   },
@@ -89,8 +94,7 @@ const PROJECTS = [
     },
     id: "p2",
     githubLink: "https://github.com/",
-    image:
-      "https://images.unsplash.com/photo-1622074288753-f7649eab55ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    image: "https://source.unsplash.com/VHf4jqrUu7g/300x200",
     endpoint: "playlist-project",
     icons: [htmlIcon, cssIcon, JSIcon, sassIcon],
   },

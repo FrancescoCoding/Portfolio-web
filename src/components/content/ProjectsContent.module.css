@@ -143,6 +143,7 @@ div.list {
   display: flex;
   justify-content: start;
   align-items: flex-end;
+  position: relative;
 }
 
 .project-git {

@@ -1,6 +1,7 @@
 import styles from "./ProjectsContent.module.css";
+
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
