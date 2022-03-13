@@ -2,12 +2,12 @@ import icons from "./Icons.js";
 // Import CSS3Icon.svg from assets/Logos/CSS3Icon.svg as CSS3Icon
 import CSS3Icon from "../assets/Logos/CSS3Icon.svg";
 
-import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.jpg";
-import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.jpg";
-import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.jpg";
-import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbnail-600w.jpg";
-import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.jpg";
-import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.jpg";
+import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.webp";
+import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.webp";
+import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.webp";
+import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbnail-600w.webp";
+import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.webp";
+import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.webp";
 
 const {
   rStudioIcon,

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.f0a91f6a.css",
-    "main.js": "./static/js/main.b5a8b2c2.js",
+    "main.js": "./static/js/main.89937379.js",
     "static/css/219.762147a6.chunk.css": "./static/css/219.762147a6.chunk.css",
     "static/js/219.d15609a7.chunk.js": "./static/js/219.d15609a7.chunk.js",
     "static/css/817.9db14e6e.chunk.css": "./static/css/817.9db14e6e.chunk.css",
@@ -11,16 +11,17 @@
     "static/js/783.47af6158.chunk.js": "./static/js/783.47af6158.chunk.js",
     "static/css/776.43202425.chunk.css": "./static/css/776.43202425.chunk.css",
     "static/js/776.f0618ab1.chunk.js": "./static/js/776.f0618ab1.chunk.js",
-    "static/media/Harvest-time-thumbnail-600w.jpg": "./static/media/Harvest-time-thumbnail-600w.7a57adab0b955aa1eb7d.jpg",
     "static/media/UK-flag.svg": "./static/media/UK-flag.76ae5b2dd0e22cd7eb9f84f712c516d5.svg",
     "static/media/IT-flag.svg": "./static/media/IT-flag.7da4e2ca82424b0ec482f3c926d4417b.svg",
-    "static/media/Tangible-thumbnail-600w.jpg": "./static/media/Tangible-thumbnail-600w.499468309a162e739267.jpg",
+    "static/media/Harvest-time-thumbnail-600w.webp": "./static/media/Harvest-time-thumbnail-600w.67a90d5071d95cf3f2ea.webp",
     "static/media/ClickSound.wav": "./static/media/ClickSound.6846094572e3f76bddb7.wav",
-    "static/media/Tsunami-thumbnail-600w.jpg": "./static/media/Tsunami-thumbnail-600w.7c8d65abfbc474261b1f.jpg",
-    "static/media/Covid-tracker-thumbnail-600w.jpg": "./static/media/Covid-tracker-thumbnail-600w.efe4f038b1277ce9196e.jpg",
-    "static/media/Playlist-thumbnail-600w.jpg": "./static/media/Playlist-thumbnail-600w.ccb2a3b43d45a5ef7d17.jpg",
+    "static/media/Tangible-thumbnail-600w.webp": "./static/media/Tangible-thumbnail-600w.d83547acdc85244459f9.webp",
     "static/media/ggPlot2 Icon.svg": "./static/media/ggPlot2 Icon.ae2508b1120bce7c6c55648c60c52dbf.svg",
+    "static/media/Tsunami-thumbnail-600w.webp": "./static/media/Tsunami-thumbnail-600w.29212b9cd01f784d0387.webp",
+    "static/media/Covid-tracker-thumbnail-600w.webp": "./static/media/Covid-tracker-thumbnail-600w.2d81b49ac9f1ff485c6f.webp",
     "static/media/Sass Icon.svg": "./static/media/Sass Icon.8ec1693844d3eb12c43fa282269f4cb0.svg",
+    "static/media/Playlist-thumbnail-600w.webp": "./static/media/Playlist-thumbnail-600w.6678b34834f9b36aeab8.webp",
+    "static/media/Portfolio-thumbnail-600w.webp": "./static/media/Portfolio-thumbnail-600w.8403cb031a1770835743.webp",
     "static/media/React Icon.svg": "./static/media/React Icon.7098e2714733fed1ce8cdb90d51c4289.svg",
     "static/media/RProject Icon.svg": "./static/media/RProject Icon.71e459733debb88d7091b968cec2e6ea.svg",
     "static/media/Redux Icon.svg": "./static/media/Redux Icon.0093fdee00ecf5136c9f7660ebe5e197.svg",
@@ -29,7 +30,7 @@
     "static/media/HTML5 Icon.svg": "./static/media/HTML5 Icon.d0addc05618b04fad8a920667bd781d7.svg",
     "index.html": "./index.html",
     "main.f0a91f6a.css.map": "./static/css/main.f0a91f6a.css.map",
-    "main.b5a8b2c2.js.map": "./static/js/main.b5a8b2c2.js.map",
+    "main.89937379.js.map": "./static/js/main.89937379.js.map",
     "219.762147a6.chunk.css.map": "./static/css/219.762147a6.chunk.css.map",
     "219.d15609a7.chunk.js.map": "./static/js/219.d15609a7.chunk.js.map",
     "817.9db14e6e.chunk.css.map": "./static/css/817.9db14e6e.chunk.css.map",
@@ -42,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.f0a91f6a.css",
-    "static/js/main.b5a8b2c2.js"
+    "static/js/main.89937379.js"
   ]
 }
