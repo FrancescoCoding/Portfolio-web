@@ -14,6 +14,7 @@
   border-top: none;
   border-bottom: none;
   color: white;
+  border-radius: 15px;
 }
 .sidebar.slide-in {
   animation: slide-in 0.3s ease-out forwards !important;
@@ -123,7 +124,7 @@
     width: 100%;
     height: auto;
     position: fixed;
-    border: 1px solid #56698c !important;
+    /* border: 1px solid #56698c !important; */
     /* animation: slide-down 0.4s ease-out forwards; */
   }
   .sidebar.slide-in {

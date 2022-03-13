@@ -107,6 +107,7 @@
 .astronaut-container {
   display: flex;
   flex-direction: column;
+  z-index: -1;
 }
 .astronaut-text {
   transform: translateY(-3rem);

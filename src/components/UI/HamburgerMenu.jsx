@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
 const HamburgerMenu = props => {
   const dispatch = useDispatch();
 
-  const storeColour = useSelector(state => state.colours.colour);
+  const storeColour = useSelector(state => state.colours);
   const storeLanguage = useSelector(state => state.languages.language);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
@@ -47,13 +47,19 @@ const HamburgerMenu = props => {
 
   return (
     <>
-      <div className={`${styles.sidebar} ${showMenu}`}>
+      <div
+        style={{
+          // border: `9px solid var(--${storeColour.colour}-active)`,
+          borderRight: `9px solid var(--${storeColour.colour}-active)`,
+        }}
+        className={`${styles.sidebar} ${showMenu}`}
+      >
         <div className={styles["sidebar-content"]}>
           <div className={styles["sidebar-brand"]}>
             <NavLink
               className={styles.home}
               to="/portfolio"
-              activeClassName={styles[`${storeColour}`]}
+              activeClassName={styles[`${storeColour.colour}`]}
             >
               Portfolio {currentYear}
             </NavLink>
