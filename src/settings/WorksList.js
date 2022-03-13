@@ -4,8 +4,10 @@ import CSS3Icon from "../assets/Logos/CSS3Icon.svg";
 
 import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.jpg";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.jpg";
-import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail2-600w.jpg";
+import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.jpg";
 import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbnail-600w.jpg";
+import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.jpg";
+import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.jpg";
 
 const {
   rStudioIcon,
@@ -138,7 +140,7 @@ const PROJECTS = [
     },
     id: "p4",
     githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/600x400/?fitness",
+    image: tangibleThumbnail600w,
     endpoint: "tangible-chronic-pain",
   },
 
@@ -158,7 +160,7 @@ const PROJECTS = [
     },
     id: "p6",
     githubLink: "https://github.com/FrancescoCoding/Harvest-Time",
-    image: "https://source.unsplash.com/cG8NwhPNvmA/600x400",
+    image: harvestTimeThumbnail600w,
     endpoint: "cardiac-tool-2",
   },
   {
