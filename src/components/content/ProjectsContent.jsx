@@ -76,6 +76,7 @@ const ProjectsContent = props => {
                       onClick={stopEvent}
                       target="_blank"
                       tabIndex="-1" // Unfocusable
+                      aria-label={project[`${storeLanguage}`].name}
                     >
                       <FaGithub
                         className={`${styles.git} ${styles.github}`}
