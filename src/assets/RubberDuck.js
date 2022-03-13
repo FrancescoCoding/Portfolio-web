@@ -1,15 +1,14 @@
 // Ultimate Honking technology
-let honk1 = new Audio("https://files.catbox.moe/fl7wzu.ogg");
-let honk2 = new Audio("https://files.catbox.moe/mejpp4.ogg");
-let honk3 = new Audio("https://files.catbox.moe/s2pvvx.ogg");
-// let honk4 = new Audio("https://files.catbox.moe/by7mer.ogg");
+import honk1 from "../assets/Sounds/Honk1.ogg";
+import honk2 from "../assets/Sounds/Honk2.ogg";
+import honk3 from "../assets/Sounds/Honk3.ogg";
 
-const dice = () => Math.floor(Math.random() * 4);
+const dice = () => Math.floor(Math.random() * 3);
 
 const honkHandler = () => {
-  let randomAudio = [honk1, honk2, honk3]; // , honk4
-  let audio = randomAudio[dice()];
-  audio.play();
+  const honk = [honk1, honk2, honk3];
+  const honkSound = new Audio(honk[dice()]);
+  honkSound.play();
 };
 
 const RubberDuck = props => {
