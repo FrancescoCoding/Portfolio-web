@@ -63,6 +63,7 @@ const Navbar = () => {
           <div
             onClick={showMenuSidebarHandler}
             className={styles["hamburger-container"]}
+            aria-label="Open menu"
           >
             <Hamburger size={30} rounded color="white" toggle={setOpen} />
           </div>
