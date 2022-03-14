@@ -20,6 +20,7 @@ const ProjectsContent = props => {
   const iOSPadding = runsiOS ? "0px" : "16px";
 
   let items;
+
   if (isBigScreen) {
     items = props.projects.slice(0, renderedItems);
   } else {
@@ -38,7 +39,6 @@ const ProjectsContent = props => {
 
   return (
     <>
-      {/* {isLoading && <Loader />} */}
       <div className={styles["projects-section"]}>
         <div className={styles.projects}>
           <div
