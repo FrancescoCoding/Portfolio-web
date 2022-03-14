@@ -27,3 +27,4 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Implementation of accessible keyboard shortcuts for navigation
 - Search engine optimization (SEO) handling to improve the quantity of website traffic from search engines
 - Validating the aspects of a Progressive Web App
+- Fully working production build with great performance and best practices
