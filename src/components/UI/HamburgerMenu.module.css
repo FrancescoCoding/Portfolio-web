@@ -8,7 +8,7 @@
   max-height: 100%;
   overflow: auto;
   z-index: 401;
-  background-color: #070916;
+  background-color: var(--modals-background) !important;
   border: 1px solid #56698c;
   border-left: none;
   border-top: none;
@@ -38,11 +38,10 @@
 }
 .sidebar ul li {
   border: 1px solid transparent;
-  margin: 8px 6px;
   margin-left: 0;
   border-left: 0;
   border-radius: 0px !important;
-  border: 1px solid #56698c;
+  /* border: 1px solid #56698c; */
 }
 .sidebar ul li a {
   border-left: 8px solid transparent;
@@ -108,12 +107,12 @@
   display: block;
 }
 
-.sidebar-search {
+.sidebar-separator {
   border-top: 1px solid #56698c;
 }
 
-.sidebar-search input.search-menu,
-.sidebar-search .input-group-text {
+.sidebar-separator input.separator-menu,
+.sidebar-separator .input-group-text {
   border-color: transparent;
   box-shadow: none;
 }

@@ -32,6 +32,8 @@ const HamburgerMenu = props => {
       showMenu = styles["slide-down"];
       menuBorderSlide = {
         borderBottom: `9px solid var(--${storeColour.colour}-active)`,
+        borderTopLeftRadius: "0px",
+        borderTopRightRadius: "0px",
       };
     }
   } else {
@@ -74,7 +76,7 @@ const HamburgerMenu = props => {
               />
             </div>
           </div>
-          <div className={styles["sidebar-search"]}></div>
+          <div className={styles["sidebar-separator"]}></div>
           <ul>
             <li>
               <NavLink activeClassName={styles.active} to="/projects">
