@@ -16,7 +16,7 @@ const NotFound = React.lazy(async () => {
 });
 
 const Projects = React.lazy(async () => {
-  await new Promise(resolve => setTimeout(resolve, 800));
+  await new Promise(resolve => setTimeout(resolve, 1000));
   return import("./pages/Projects");
 });
 

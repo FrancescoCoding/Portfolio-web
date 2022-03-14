@@ -20,12 +20,19 @@ const HamburgerMenu = props => {
   const [isOpen, setOpen] = useState(false);
 
   let showMenu;
+  let menuBorderSlide;
 
   if (props.isMounted) {
     if (isBigScreen) {
       showMenu = styles["slide-in"];
+      menuBorderSlide = {
+        borderRight: `9px solid var(--${storeColour.colour}-active)`,
+      };
     } else {
       showMenu = styles["slide-down"];
+      menuBorderSlide = {
+        borderBottom: `9px solid var(--${storeColour.colour}-active)`,
+      };
     }
   } else {
     if (isBigScreen) {
@@ -47,13 +54,7 @@ const HamburgerMenu = props => {
 
   return (
     <>
-      <div
-        style={{
-          // border: `9px solid var(--${storeColour.colour}-active)`,
-          borderRight: `9px solid var(--${storeColour.colour}-active)`,
-        }}
-        className={`${styles.sidebar} ${showMenu}`}
-      >
+      <div style={menuBorderSlide} className={`${styles.sidebar} ${showMenu}`}>
         <div className={styles["sidebar-content"]}>
           <div className={styles["sidebar-brand"]}>
             <NavLink

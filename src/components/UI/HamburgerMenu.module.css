@@ -124,17 +124,7 @@
     width: 100%;
     height: auto;
     position: fixed;
-    /* border: 1px solid #56698c !important; */
-    /* animation: slide-down 0.4s ease-out forwards; */
   }
-  .sidebar.slide-in {
-    animation: slide-down 0.4s ease-out forwards;
-  }
-  .sidebar.slide-out {
-    transition: all 2s;
-    animation: slide-up 0.3s ease-out forwards !important;
-  }
-
   div.content {
     margin-left: 0;
   }
@@ -186,20 +176,16 @@
 @keyframes slide-in {
   0% {
     left: -330px;
-    /* transform: translateX(-100%); */
   }
   100% {
-    /* transform: translateX(0); */
     left: 0;
   }
 }
 @keyframes slide-out {
   0% {
     left: 0;
-    /* transform: translateX(0); */
   }
   100% {
-    /* transform: translateX(-330px); */
     left: -330px;
   }
 }
