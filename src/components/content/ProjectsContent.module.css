@@ -3,6 +3,8 @@
   width: 100vw;
   display: flex;
   margin: auto;
+  opacity: 0;
+  animation: appear 1.5s forwards 0.8s;
 }
 
 .projects {
@@ -310,4 +312,15 @@ div.ocean-hover {
   background: var(--ocean-primary-color-darker);
   border: 0px none #ffffff;
   border-radius: 2rem;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -7,7 +7,7 @@ import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.we
 import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.webp";
 import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbnail-600w.webp";
 import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.webp";
-import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.webp";
+import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.jpg";
 
 const {
   rStudioIcon,
