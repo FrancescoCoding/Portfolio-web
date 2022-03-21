@@ -12,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: solid 1px #e6e6e6; */
 }
 
 div.items {
@@ -27,45 +26,17 @@ div.items {
   overflow: scroll;
   position: relative;
   padding-left: 0.8rem;
-  /* padding: 1rem !important; TESTING */
-  /* width: 110%; */
-}
-
-.view-more {
-  display: none;
-  position: absolute;
-  top: 17%;
-  right: 21%;
-  font-size: 1rem;
-  letter-spacing: 0.09rem;
-  border: none;
-  background: none;
-  color: rgb(237, 236, 236);
-  cursor: pointer;
-  z-index: 30;
-}
-
-.view-more-active {
-  display: none;
-  position: absolute;
-  top: 17%;
-  right: 21%;
-  font-size: 1rem;
-  letter-spacing: 0.09rem;
-  border: none;
-  background: none;
-  color: rgb(237, 236, 236);
-  cursor: pointer;
-  z-index: 30;
 }
 
 div.list {
   position: relative;
   cursor: pointer;
   padding: 0 2rem;
-  border: 4px solid rgb(43, 43, 43);
+  border-radius: 10px !important;
+  /* border: 4px solid transparent; */
+  box-shadow: 0 0 0 4px transparent;
+
   width: 350px;
-  overflow: hidden;
 }
 
 div.list::before {
@@ -75,12 +46,12 @@ div.list::before {
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -10px;
   left: 0px;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 70%,
-    rgb(0, 0, 0) 100%
+    rgba(0, 0, 0, 0) 60%,
+    rgb(0, 0, 0, 0.5) 100%
   );
 }
 
@@ -99,6 +70,7 @@ div.list:hover::before {
 
 div.list:hover {
   border: rgb(199, 199, 199) 0.3rem solid;
+  overflow: hidden;
 }
 
 .title-container {
@@ -220,7 +192,7 @@ div.list {
 @media screen and (max-width: 1200px) {
   .title-container {
     transform: translateX(0) translateY(0);
-    margin-bottom: 0;
+    margin-bottom: -10px;
   }
   div.items {
     font-size: 16px;
@@ -258,39 +230,43 @@ div.list {
     padding-bottom: 0rem;
   }
   div.items.leaf > div > a > div:active {
-    border: 6px solid var(--leaf-primary-color) !important;
+    border: 4px solid var(--leaf-primary-color) !important;
   }
   div.items.magenta > div > a > div:active {
-    border: 6px solid var(--magenta-primary-color) !important;
+    border: 4px solid var(--magenta-primary-color) !important;
   }
   div.items.ocean > div > a > div:active {
-    border: 6px solid var(--ocean-primary-color) !important;
+    border: 4px solid var(--ocean-primary-color) !important;
   }
   div.items.canary > div > a > div:active {
-    border: 6px solid var(--canary-primary-color) !important;
+    border: 4px solid var(--canary-primary-color) !important;
   }
 }
 
 @media screen and (max-height: 800px) {
   .projects-section {
-    position: fixed;
-    margin-top: 100px;
-    height: 75vh;
+    /* position: fixed; */
+    /* margin-top: 100px; */
+    /* height: 75vh; */
     margin-bottom: 0;
+    /* overflow: hidden; */
   }
+  /* .items::-webkit-scrollbar {
+    display: none;
+  } */
 }
 
 div.leaf-hover {
-  border: 6px solid var(--leaf-primary-color) !important;
+  border: 4px solid var(--leaf-primary-color) !important;
 }
 div.magenta-hover {
-  border: 6px solid var(--magenta-primary-color) !important;
+  border: 4px solid var(--magenta-primary-color) !important;
 }
 div.canary-hover {
-  border: 6px solid var(--canary-primary-color) !important;
+  border: 4px solid var(--canary-primary-color) !important;
 }
 div.ocean-hover {
-  border: 6px solid var(--ocean-primary-color) !important;
+  border: 4px solid var(--ocean-primary-color) !important;
 }
 
 .items.leaf::-webkit-scrollbar-thumb {
@@ -323,4 +299,32 @@ div.ocean-hover {
   100% {
     opacity: 1;
   }
+}
+
+.view-more {
+  display: none;
+  position: absolute;
+  top: 17%;
+  right: 21%;
+  font-size: 1rem;
+  letter-spacing: 0.09rem;
+  border: none;
+  background: none;
+  color: rgb(237, 236, 236);
+  cursor: pointer;
+  z-index: 30;
+}
+
+.view-more-active {
+  display: none;
+  position: absolute;
+  top: 17%;
+  right: 21%;
+  font-size: 1rem;
+  letter-spacing: 0.09rem;
+  border: none;
+  background: none;
+  color: rgb(237, 236, 236);
+  cursor: pointer;
+  z-index: 30;
 }
