@@ -7,7 +7,7 @@ const Sidebar = props => {
 
   return (
     <div className={styles.sidebar}>
-      <div className={styles.concatContainer}>{props.concatContent}</div>
+      <div className={styles["concat-container"]}>{props.concatContent}</div>
       <NavLink
         to="/portfolio"
         className={styles["sidebar-home-link"]}
