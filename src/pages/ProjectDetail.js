@@ -135,7 +135,6 @@ const ProjectDetail = () => {
                 className={styles["button"]}
               >
                 <FaGithub
-                  // className={`${storeColour.colour}-active`}
                   size="3rem"
                   style={{
                     alignSelf: "flex-start",
