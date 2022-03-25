@@ -18,7 +18,7 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - React Redux / Redux Toolkit / Redux Persist (to provide an "Offline First" support for some features)
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
-- Custom made maps and styles for each portfolio colour (Canary, Ocean, Magenta, Leaf)
+- Custom made maps and styles for each portfolio colour (Canary, Ocean, Magenta, Leaf) with corresponding accent colours
 - 404 page & non-existent project pages
 - Multi-language implementation (i18n)
 - Copy text to clipboard implementation
