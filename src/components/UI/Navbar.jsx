@@ -91,7 +91,7 @@ const Navbar = () => {
               <a
                 href="/#"
                 onClick={changeLanguageHandler}
-                className={styles[`${toggleItalian}`]}
+                className={styles[`${toggleEnglish}`]}
               >
                 <img
                   src={UKFlag}
@@ -103,7 +103,7 @@ const Navbar = () => {
               <a
                 href="/#"
                 onClick={changeLanguageHandler}
-                className={styles[`${toggleEnglish}`]}
+                className={styles[`${toggleItalian}`]}
               >
                 <img
                   src={italianFlag}

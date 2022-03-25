@@ -166,6 +166,19 @@ li {
   margin: 0.4rem 0;
 }
 
+.canary-active {
+  color: var(--canary-active) !important;
+}
+.leaf-active {
+  color: var(--leaf-active) !important;
+}
+.ocean-active {
+  color: var(--ocean-active) !important;
+}
+.magenta-active {
+  color: var(--magenta-active);
+}
+
 @media screen and (max-width: 1800px) {
   .logo {
     margin-left: 1.6rem;

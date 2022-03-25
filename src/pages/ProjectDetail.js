@@ -135,11 +135,11 @@ const ProjectDetail = () => {
                 className={styles["button"]}
               >
                 <FaGithub
-                  className={styles.github}
+                  // className={`${storeColour.colour}-active`}
                   size="3rem"
                   style={{
                     alignSelf: "flex-start",
-                    color: `${storeColour.hex}`,
+                    color: `var(--${storeColour.colour}-active)`,
                     cursor: "pointer",
                   }}
                 />
