@@ -19,6 +19,7 @@ div.items {
   left: 0;
   height: 100%;
   display: grid;
+  padding-top: 3px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 2.5rem 2.3rem;

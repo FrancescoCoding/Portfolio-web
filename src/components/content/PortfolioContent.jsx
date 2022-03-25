@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 
 import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
+const clickSound = new Audio(clickSoundWav);
 
 const PortfolioContent = props => {
   const storeColour = useSelector(state => state.colours);
@@ -23,7 +24,6 @@ const PortfolioContent = props => {
   };
 
   const clickSoundHandler = () => {
-    const clickSound = new Audio(clickSoundWav);
     clickSound.play();
 
     setShowModal(true);
