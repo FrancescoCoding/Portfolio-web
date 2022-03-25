@@ -153,19 +153,17 @@
 @media screen and (max-width: 1200px) {
   .main-content {
     transform: scale(0.76);
-    /* margin-top: 15%; */
+    height: 70vh !important;
   }
 }
 @media screen and (max-width: 1000px) {
   .main-content {
     transform: scale(0.8);
-    /* margin-top: 15%; */
   }
 }
 @media screen and (max-width: 900px) {
   .astronaut-text h1 {
     font-size: 3.2rem !important;
-    /* color: rgb(0, 225, 255) !important; */
   }
   .main-content {
     width: 100%;

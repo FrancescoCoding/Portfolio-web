@@ -10,10 +10,9 @@ const ProjectsContent = props => {
   const storeColour = useSelector(state => state.colours);
 
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 870px)" });
 
-  const runsiOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  const iOSPadding = runsiOS ? "0px" : "16px";
+  const smallScreenPadding = isSmallScreen ? "0px" : "16px";
 
   let items = props.projects;
 
@@ -33,7 +32,7 @@ const ProjectsContent = props => {
         <div className={styles.projects}>
           <div
             className={`${styles.items} ${styles[`${storeColour.colour}`]}`}
-            style={{ paddingRight: iOSPadding }}
+            style={{ paddingRight: smallScreenPadding }}
           >
             {items.map(project => {
               return (
