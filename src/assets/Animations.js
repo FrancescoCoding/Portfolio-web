@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Lottie from "react-lottie-player";
 
 import NessieData from "../assets/Lochness Monster.json";
@@ -13,9 +13,16 @@ import mailData from "../assets/Mail.json";
 const AstronautLottie = props => {
   const [isDelayed, setIsDelayed] = useState(false);
 
-  setTimeout(() => {
-    setIsDelayed(true);
-  }, props.delay);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsDelayed(true);
+    }, props.delay);
+
+    // Clear the delay when the component unmounts
+    return () => {
+      setIsDelayed(false);
+    };
+  }, []);
 
   return (
     <Lottie
