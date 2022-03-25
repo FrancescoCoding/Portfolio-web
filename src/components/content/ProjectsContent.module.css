@@ -20,6 +20,7 @@ div.items {
   height: 100%;
   display: grid;
   padding-top: 3px;
+  padding-bottom: 3px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 2.5rem 2.3rem;
@@ -81,7 +82,6 @@ div.list:hover {
   margin-bottom: 0.3rem;
   transition: all 0.3s ease-in-out;
   pointer-events: none;
-  /* display: none; */
 }
 .title-container p {
   transition: all 0.3s ease-in-out;
