@@ -20,6 +20,9 @@ const Navbar = () => {
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
+  const toggleItalian = storeLanguage === "EN" ? "hideIT" : "";
+  const toggleEnglish = storeLanguage === "IT" ? "hideEN" : "";
+
   const [showModal, setShowModal] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -85,26 +88,30 @@ const Navbar = () => {
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
             <li>
-              {storeLanguage === "EN" && (
-                <a href="/#" onClick={changeLanguageHandler}>
-                  <img
-                    src={UKFlag}
-                    alt="English flag"
-                    width="50px"
-                    height="100%"
-                  />
-                </a>
-              )}
-              {storeLanguage === "IT" && (
-                <a href="/#" onClick={changeLanguageHandler}>
-                  <img
-                    src={italianFlag}
-                    alt="Italian flag"
-                    width="50px"
-                    height="100%"
-                  />
-                </a>
-              )}
+              <a
+                href="/#"
+                onClick={changeLanguageHandler}
+                className={styles[`${toggleItalian}`]}
+              >
+                <img
+                  src={UKFlag}
+                  alt="English flag"
+                  width="50px"
+                  height="100%"
+                />
+              </a>
+              <a
+                href="/#"
+                onClick={changeLanguageHandler}
+                className={styles[`${toggleEnglish}`]}
+              >
+                <img
+                  src={italianFlag}
+                  alt="Italian flag"
+                  width="50px"
+                  height="100%"
+                />
+              </a>
             </li>
           </ul>
         </nav>

@@ -23,18 +23,16 @@ nav {
 .navbar ul {
   display: flex;
   padding-top: 3rem;
-  /* border: 4px solid #4e0aed; */
   width: 100vw;
 }
 
 .navbar ul li {
   padding: 2rem;
-  /* border: 4px solid #0bdf40; */
   list-style-type: none;
   font-size: 1.2rem;
 }
 
-/* Put last li element at flex-end of ul */
+/* Put last li element at end of navbar */
 .navbar ul li:last-of-type {
   margin-left: auto !important;
 }
@@ -127,4 +125,12 @@ nav {
     align-items: flex-start;
     padding-bottom: -0.4rem;
   }
+}
+
+.hideIT {
+  display: none;
+}
+
+.hideEN {
+  display: none;
 }

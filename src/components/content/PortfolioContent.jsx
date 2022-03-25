@@ -49,7 +49,7 @@ const PortfolioContent = props => {
           <p>
             ... as a frontend developer, UX designer,
             <br />
-            initiator of horrible puns.
+            engineer of terrible puns.
           </p>
           <div className={styles["btn-container"]}>
             <button
