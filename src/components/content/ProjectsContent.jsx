@@ -1,31 +1,21 @@
 import styles from "./ProjectsContent.module.css";
 
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const ProjectsContent = props => {
   const storeLanguage = useSelector(state => state.languages.language);
   const storeColour = useSelector(state => state.colours);
 
-  const [renderedItems, setRenderedItems] = useState(props.projects.length);
-
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1825px)" });
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
 
   const runsiOS =
     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const iOSPadding = runsiOS ? "0px" : "16px";
 
-  let items;
-
-  if (isBigScreen) {
-    items = props.projects.slice(0, renderedItems);
-  } else {
-    items = props.projects;
-  }
+  let items = props.projects;
 
   const hoverHandler = e => {
     e.target.classList.toggle(styles[`${storeColour.colour}-hover`]);
@@ -95,36 +85,6 @@ const ProjectsContent = props => {
               );
             })}
           </div>
-          {props.projects.length && renderedItems === 9 && isBigScreen && (
-            <button
-              onClick={() => setRenderedItems(props.projects.length)}
-              className={styles["view-more"]}
-            >
-              View more
-              <FaChevronDown
-                color="rgb(237, 236, 236)"
-                style={{
-                  transform: "translateY(2.3px) translateX(.3rem)",
-                  fontSize: ".9rem",
-                }}
-              />
-            </button>
-          )}
-          {renderedItems > 9 && isBigScreen && (
-            <button
-              onClick={() => setRenderedItems(9)}
-              className={styles["view-more-active"]}
-            >
-              View more
-              <FaChevronUp
-                color="rgb(237, 236, 236)"
-                style={{
-                  transform: "translateY(2.3px) translateX(.3rem)",
-                  fontSize: ".9rem",
-                }}
-              />
-            </button>
-          )}
         </div>
       </div>
     </>
