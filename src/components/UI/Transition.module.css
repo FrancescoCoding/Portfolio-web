@@ -3,13 +3,32 @@
   top: 0;
   bottom: 0;
   height: 100%;
+  width: 100vw;
+  background: rgb(10, 0, 31);
+  z-index: 5;
+  animation: scroll-in 0.6s forwards;
+}
+.scrollOut {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   width: 100%;
   background: rgb(10, 0, 31);
   z-index: 5;
-  animation: appear 0.6s forwards;
+  animation: scroll-out 0.6s forwards;
 }
 
-@keyframes appear {
+@keyframes scroll-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes scroll-out {
   0% {
     opacity: 1;
     width: 1;

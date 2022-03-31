@@ -9,7 +9,7 @@ import Transition from "../components/UI/Transition";
 const Projects = () => {
   return (
     <>
-      <Transition />
+      <Transition reverse />
       <Navbar />
       <ProjectsContent projects={ProjectsList} />
       <Sidebar concatContent={<AnimatedArrow />} />

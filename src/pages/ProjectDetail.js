@@ -15,6 +15,7 @@ import Viewer from "react-viewer";
 // import Footer from "../components/UI/Footer";
 import WorksList from "../settings/WorksList";
 import ColourSelector from "../components/UI/ColourSelector";
+import Transition from "../components/UI/Transition";
 
 const ProjectDetail = () => {
   const params = useParams();
@@ -49,6 +50,7 @@ const ProjectDetail = () => {
 
   return (
     <>
+      <Transition />
       {!isSmallScreen && <BackButton endpoint="/projects" />}
       <Viewer
         visible={visible}

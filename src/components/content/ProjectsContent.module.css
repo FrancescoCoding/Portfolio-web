@@ -88,7 +88,7 @@ div.list:hover {
 }
 div.list:hover {
   transition: all 0.2s ease-in-out;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 0rem 1.2rem;
 }
