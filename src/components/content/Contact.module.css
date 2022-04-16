@@ -85,8 +85,9 @@
   transition: 0.1s;
 }
 .contact-container h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-size: 2.1rem;
-  font-weight: 500;
   margin-bottom: 0.32rem;
   text-align: center;
   width: 70%;

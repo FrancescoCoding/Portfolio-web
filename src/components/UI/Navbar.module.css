@@ -6,7 +6,7 @@ nav {
   justify-content: flex-start;
   margin: 0 auto !important;
   width: 100vw !important;
-  z-index: 10;
+  z-index: 10 !important;
 }
 
 .hamburger-container {
@@ -15,7 +15,7 @@ nav {
   display: flex;
   padding-bottom: -0.4rem;
   padding: 0.8rem;
-  z-index: 400;
+  z-index: 400 !important;
   border-radius: 4rem;
   cursor: pointer;
 }
@@ -102,12 +102,15 @@ nav {
 }
 
 @media screen and (max-width: 1824px) {
+  nav {
+    width: 0 !important;
+  }
   .navbar ul {
+    width: 100% !important;
     display: none;
     flex-direction: column;
   }
   nav {
-    /* position: relative; */
     padding: 0;
     z-index: 0;
   }
@@ -116,6 +119,7 @@ nav {
 @media screen and (max-width: 900px) {
   nav {
     position: relative;
+    width: 100vw !important;
     padding: 0;
     z-index: 0;
   }

@@ -41,6 +41,8 @@ const ProjectsContent = props => {
                   key={project.id + "git"}
                   onMouseOver={hoverHandler}
                   onMouseOut={hoverOutHandler}
+                  onTouchStart={isSmallScreen ? hoverHandler : ""}
+                  onTouchEnd={isSmallScreen ? hoverOutHandler : ""}
                 >
                   <Link key={project.id} to={`/projects/${project.endpoint}`}>
                     <div

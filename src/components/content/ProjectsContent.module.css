@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
 div.items {
@@ -116,6 +117,7 @@ div.list {
   justify-content: start;
   align-items: flex-end;
   position: relative;
+  z-index: 101 !important;
 }
 
 .project-git {
@@ -282,21 +284,25 @@ div.ocean-hover {
 
 .items.leaf::-webkit-scrollbar-thumb {
   background: var(--leaf-primary-color-darker);
+  background: var(--leaf-active);
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.magenta::-webkit-scrollbar-thumb {
   background: var(--magenta-primary-color-darker);
+  background: var(--magenta-active);
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.canary::-webkit-scrollbar-thumb {
   background: var(--canary-primary-color-darker);
+  background: var(--canary-active);
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.ocean::-webkit-scrollbar-thumb {
   background: var(--ocean-primary-color-darker);
+  background: var(--ocean-active);
   border: 0px none #ffffff;
   border-radius: 2rem;
 }

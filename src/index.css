@@ -40,7 +40,7 @@ body {
   background: #020816;
   transition: transform 1s;
   overflow-x: hidden;
-  font-family: "Roboto", "sans-serif";
+  font-family: "Roboto", "Open Sans", "sans-serif";
 
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
