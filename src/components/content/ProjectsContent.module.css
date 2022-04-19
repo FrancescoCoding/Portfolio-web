@@ -70,7 +70,7 @@ div.list:hover::before {
 }
 
 div.list:hover {
-  border: rgb(199, 199, 199) 0.3rem solid;
+  border: none;
   overflow: hidden;
 }
 
@@ -131,6 +131,7 @@ div.list {
   position: absolute;
   transform: translateY(10px);
   transition: 0.2s ease-out;
+  z-index: 4000;
 }
 .project-git:hover .git {
   transform: translateY(0);

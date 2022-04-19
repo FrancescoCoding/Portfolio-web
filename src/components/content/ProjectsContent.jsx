@@ -20,10 +20,6 @@ const ProjectsContent = props => {
     e.target.classList.toggle(styles[`${storeColour.colour}-hover`]);
   };
 
-  const hoverOutHandler = e => {
-    e.target.classList.toggle(styles[`${storeColour.colour}-hover`]);
-  };
-
   const stopEvent = event => event.stopPropagation();
 
   return (
@@ -40,8 +36,9 @@ const ProjectsContent = props => {
                   className={styles["project-git"]}
                   key={project.id + "git"}
                   onMouseOver={hoverHandler}
-                  onMouseOut={hoverOutHandler}
+                  onMouseOut={hoverHandler}
                   onTouchStart={hoverHandler}
+                  onTouchEnd={hoverHandler}
                 >
                   <Link key={project.id} to={`/projects/${project.endpoint}`}>
                     <div
