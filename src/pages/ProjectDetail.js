@@ -23,6 +23,7 @@ const ProjectDetail = () => {
   const storeLanguage = useSelector(state => state.languages.language);
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
+  const verySmallScreen = useMediaQuery({ query: "(max-width: 400px)" });
 
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -83,27 +84,6 @@ const ProjectDetail = () => {
           <div className={styles["information-wrapper"]}>
             <div className={styles["project-header"]}>
               <h1>{currentProject[`${storeLanguage}`].name}</h1>
-
-              {/* IMAGE TOGGLE */}
-              {currentProject.gallery && currentProject.gallery.length !== 0 && (
-                <button
-                  className={styles["img-btn"]}
-                  onClick={() => {
-                    setVisible(true);
-                    setIsOpen(true);
-                  }}
-                >
-                  <BsImageFill
-                    className={styles.imageFill}
-                    size="2rem"
-                    style={{
-                      alignSelf: "flex-start",
-                      // color: `${storeColour.hex} `,
-                      cursor: "pointer",
-                    }}
-                  />
-                </button>
-              )}
             </div>
 
             <div className={styles.info}>
@@ -120,7 +100,7 @@ const ProjectDetail = () => {
                           className={styles["logo-wrap"]}
                           style={{ margin: ".3rem 0" }}
                         >
-                          <div>{el.icon}</div>
+                          {el.icon}
                           <p>{el.tag}</p>
                         </div>
                       </div>
@@ -134,7 +114,7 @@ const ProjectDetail = () => {
                 href={currentProject.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles["button"]}
+                className={styles["git-btn"]}
               >
                 <FaGithub
                   size="3rem"

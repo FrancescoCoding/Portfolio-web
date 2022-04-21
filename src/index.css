@@ -104,3 +104,16 @@ p {
     transition: all 1s ease;
   }
 }
+
+.canary {
+  color: var(--canary-primary-color) !important;
+}
+.leaf {
+  color: var(--leaf-primary-color) !important;
+}
+.ocean {
+  color: var(--ocean-primary-color) !important;
+}
+.magenta {
+  color: var(--magenta-primary-color) !important;
+}

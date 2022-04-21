@@ -111,6 +111,24 @@
   border-top: 1px solid #56698c;
 }
 
+.colour-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 !important;
+}
+.colour-row button {
+  height: 30px;
+  width: 100%;
+  background: white;
+  cursor: pointer;
+  border: none !important;
+  opacity: 0.9;
+  margin: 5px 0;
+  margin-top: 0;
+}
+
 .sidebar-separator input.separator-menu,
 .sidebar-separator .input-group-text {
   border-color: transparent;
@@ -205,10 +223,6 @@
   }
 }
 
-.active {
-  border-left: 8px solid #56698c !important;
-}
-
 .canary {
   color: var(--canary-primary-color);
 }
@@ -220,4 +234,30 @@
 }
 .magenta {
   color: var(--magenta-primary-color);
+}
+
+.canary.active {
+  border-left: 8px solid var(--canary-primary-color) !important;
+}
+.leaf.active {
+  border-left: 8px solid var(--leaf-primary-color) !important;
+}
+.ocean.active {
+  border-left: 8px solid var(--ocean-primary-color) !important;
+}
+.magenta.active {
+  border-left: 8px solid var(--magenta-primary-color) !important;
+}
+
+.canary-bg {
+  background: var(--canary-primary-color) !important;
+}
+.leaf-bg {
+  background: var(--leaf-primary-color) !important;
+}
+.ocean-bg {
+  background: var(--ocean-primary-color) !important;
+}
+.magenta-bg {
+  background: var(--magenta-primary-color) !important;
 }

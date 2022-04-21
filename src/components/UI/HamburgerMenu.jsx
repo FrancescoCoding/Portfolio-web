@@ -5,7 +5,14 @@ import { useMediaQuery } from "react-responsive";
 import { Fade as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { languageActions } from "../../store/store";
+import { languageActions, colourActions } from "../../store/store";
+import { FaCheck } from "react-icons/fa";
+const checkMark = (
+  <FaCheck
+    size="0.68rem"
+    style={{ transform: "translateY(.06rem) translateX(-.01rem)" }}
+  />
+);
 
 const currentYear = new Date().getFullYear();
 
@@ -76,10 +83,44 @@ const HamburgerMenu = props => {
               />
             </div>
           </div>
-          <div className={styles["sidebar-separator"]}></div>
+          <div className={styles["colour-row"]}>
+            <button
+              aria-label="Canary colour"
+              onClick={() => dispatch(colourActions.colourCanary())}
+              className={styles["canary-bg"]}
+            >
+              {storeColour.colour === "canary" && checkMark}
+            </button>
+            <button
+              aria-label="Ocean colour"
+              onClick={() => dispatch(colourActions.colourOcean())}
+              className={styles["ocean-bg"]}
+            >
+              {storeColour.colour === "ocean" && checkMark}
+            </button>
+            <button
+              aria-label="Leaf colour"
+              onClick={() => dispatch(colourActions.colourLeaf())}
+              className={styles["leaf-bg"]}
+            >
+              {storeColour.colour === "leaf" && checkMark}
+            </button>
+            <button
+              aria-label="Magenta colour"
+              onClick={() => dispatch(colourActions.colourMagenta())}
+              className={styles["magenta-bg"]}
+            >
+              {storeColour.colour === "magenta" && checkMark}
+            </button>
+          </div>
           <ul>
             <li>
-              <NavLink activeClassName={styles.active} to="/projects">
+              <NavLink
+                activeClassName={`${styles[`${storeColour.colour}`]} ${
+                  styles.active
+                }`}
+                to="/projects"
+              >
                 Projects
               </NavLink>
             </li>
@@ -96,6 +137,7 @@ const HamburgerMenu = props => {
               )}
             </li>
           </ul>
+          <div className={styles["sidebar-separator"]}></div>
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 import icons from "./Icons.js";
 // Import CSS3Icon.svg from assets/Logos/CSS3Icon.svg as CSS3Icon
 import CSS3Icon from "../assets/Logos/CSS3Icon.svg";
+import ReactIconTest from "../assets/Icons/React_icon.svg";
 
 import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.webp";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.webp";
@@ -51,7 +52,7 @@ const PROJECTS = [
     image: portfolioThumbnail600w,
     gallery: [],
     endpoint: "portfolio",
-    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon],
+    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon, ReactIconTest],
   },
   {
     EN: {

@@ -34,7 +34,7 @@
   color: #073e68;
 }
 .project-card {
-  padding: 3.4rem 5rem;
+  padding: 3.4rem 4rem;
   width: 50%;
   min-height: 250px;
   height: 100%;
@@ -52,6 +52,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Make all project-card links spaced out from the above text */
+.information-wrapper {
+  display: flex !important;
+  flex-direction: column;
 }
 
 .logo {
@@ -161,6 +167,14 @@
   justify-content: flex-end;
   align-items: center;
 }
+.git-btn {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.git-btn:hover {
+  transform: scale(1.5) rotate(10deg);
+  transition: all 0.2s;
+}
 
 li {
   margin: 0.4rem 0;
@@ -231,6 +245,7 @@ li {
     margin-top: 1.5rem;
   }
 }
+
 @media screen and (max-width: 400px) {
   .project-card {
     height: 100vh;
@@ -244,10 +259,11 @@ li {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 0rem;
+    margin-top: 1rem;
   }
   .project-card {
     padding: 1.8rem 2rem;
