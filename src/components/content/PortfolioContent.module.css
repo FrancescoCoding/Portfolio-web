@@ -153,13 +153,8 @@
 @media screen and (max-width: 1200px) {
   .main-content {
     transform: scale(0.76);
-    height: 90vh !important;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .main-content {
-    transform: scale(0.8);
-    height: 60vh !important;
+    height: 100vh !important;
+    border: 1px blueviolet solid;
   }
 }
 @media screen and (max-width: 900px) {
@@ -168,11 +163,9 @@
   }
   .main-content {
     width: 100%;
-    display: flex;
-    justify-content: center;
     transform: scale(0.55);
-    margin-top: 0%;
-    height: 90vh;
+    margin-top: -6rem;
+    height: 100vh;
   }
   .astronaut-text {
     transform: translateY(-2rem);
