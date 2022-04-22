@@ -285,25 +285,25 @@ div.ocean-hover {
 
 .items.leaf::-webkit-scrollbar-thumb {
   background: var(--leaf-primary-color-darker);
-  background: var(--leaf-active);
+  /* background: var(--leaf-active); */
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.magenta::-webkit-scrollbar-thumb {
   background: var(--magenta-primary-color-darker);
-  background: var(--magenta-active);
+  /* background: var(--magenta-active); */
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.canary::-webkit-scrollbar-thumb {
   background: var(--canary-primary-color-darker);
-  background: var(--canary-active);
+  /* background: var(--canary-active); */
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
 .items.ocean::-webkit-scrollbar-thumb {
   background: var(--ocean-primary-color-darker);
-  background: var(--ocean-active);
+  /* background: var(--ocean-active); */
   border: 0px none #ffffff;
   border-radius: 2rem;
 }

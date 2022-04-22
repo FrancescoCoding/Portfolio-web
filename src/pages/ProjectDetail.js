@@ -6,13 +6,11 @@ import { BackButton } from "../components/UI/BackButton";
 import { useMediaQuery } from "react-responsive";
 
 import { useSelector } from "react-redux";
-import { BsImageFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 
 import styles from "./ProjectDetail.module.css";
 
 import Viewer from "react-viewer";
-// import Footer from "../components/UI/Footer";
 import WorksList from "../settings/WorksList";
 import ColourSelector from "../components/UI/ColourSelector";
 import Transition from "../components/UI/Transition";
@@ -131,8 +129,6 @@ const ProjectDetail = () => {
 
         <ColourSelector backgroundColor="#0a0f20" />
       </div>
-
-      {/* {!visible && isBigScreen && <Footer />} */}
     </>
   );
 };

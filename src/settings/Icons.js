@@ -36,11 +36,11 @@ const reactIcon = createIcon(
   "React",
   <>
     <img
+      height="45px"
+      alt="React Logo"
       data-tip="react"
       data-for="react"
-      src={FraReact}
-      alt="React Logo"
-      height="45px"
+      src={process.env.PUBLIC_URL + "/Icons/React_icon.svg"}
     />
     <ReactTooltip id="react" effect="solid">
       <span>JavaScript frontend development library</span>
