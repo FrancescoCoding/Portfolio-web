@@ -41,6 +41,8 @@
   margin-left: 0;
   border-left: 0;
   border-radius: 0px !important;
+  display: flex;
+  align-items: center;
   /* border: 1px solid #56698c; */
 }
 .sidebar ul li a {
@@ -50,6 +52,9 @@
 .sidebar ul li:hover {
   background: rgb(52, 52, 99);
   /* border: 1px dashed #56698c; */
+}
+.sidebar ul li img {
+  transform: translateY(3px);
 }
 .sidebar-content {
   max-height: calc(100% - 30px);
@@ -230,7 +235,7 @@
   color: var(--leaf-primary-color);
 }
 .ocean {
-  color: var(--ocean-primary-color);
+  color: var(--ocean-primary-color-lighter);
 }
 .magenta {
   color: var(--magenta-primary-color);
@@ -260,4 +265,12 @@
 }
 .magenta-bg {
   background: var(--magenta-primary-color) !important;
+}
+
+.hideIT {
+  display: none;
+}
+
+.hideEN {
+  display: none;
 }

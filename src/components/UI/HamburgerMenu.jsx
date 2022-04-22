@@ -3,16 +3,22 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Fade as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { languageActions, colourActions } from "../../store/store";
 import { FaCheck } from "react-icons/fa";
+
+import italianFlag from "../../assets/Flags/IT-flag.svg";
+import UKFlag from "../../assets/Flags/UK-flag.svg";
+
 const checkMark = (
   <FaCheck
     size="0.68rem"
     style={{ transform: "translateY(.06rem) translateX(-.01rem)" }}
   />
 );
+
+// import italian and english flag
 
 const currentYear = new Date().getFullYear();
 
@@ -21,6 +27,14 @@ const HamburgerMenu = props => {
 
   const storeColour = useSelector(state => state.colours);
   const storeLanguage = useSelector(state => state.languages.language);
+
+  // Preload the flags to avoid flickering
+  useEffect(() => {
+    const flagList = [italianFlag, UKFlag];
+    flagList.forEach(flag => {
+      new Image().src = flag;
+    });
+  }, []);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
 
@@ -127,12 +141,19 @@ const HamburgerMenu = props => {
             <li>
               {storeLanguage === "EN" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  Italian
+                  <img
+                    src={italianFlag}
+                    alt="Italian flag"
+                    width="40px"
+                    height="100%"
+                  />
+                  &nbsp; Italian
                 </NavLink>
               )}
               {storeLanguage === "IT" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  English
+                  <img src={UKFlag} alt="UK flag" width="40px" height="100%" />
+                  &nbsp;English
                 </NavLink>
               )}
             </li>

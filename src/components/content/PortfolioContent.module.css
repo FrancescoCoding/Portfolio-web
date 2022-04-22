@@ -145,7 +145,7 @@
     position: fixed;
     flex-direction: column;
     transform: scale(0.8);
-    height: 90vh;
+    height: 100vh;
     transition: all 1s ease;
     align-items: center;
   }
@@ -153,12 +153,13 @@
 @media screen and (max-width: 1200px) {
   .main-content {
     transform: scale(0.76);
-    height: 70vh !important;
+    height: 90vh !important;
   }
 }
 @media screen and (max-width: 1000px) {
   .main-content {
     transform: scale(0.8);
+    height: 60vh !important;
   }
 }
 @media screen and (max-width: 900px) {

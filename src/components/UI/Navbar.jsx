@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import Contact from "../content/Contact";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
@@ -20,8 +20,13 @@ const Navbar = () => {
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
-  const toggleItalian = storeLanguage === "EN" ? "hideIT" : "";
-  const toggleEnglish = storeLanguage === "IT" ? "hideEN" : "";
+  // Preload the flags to avoid flickering
+  useEffect(() => {
+    const flagList = [italianFlag, UKFlag];
+    flagList.forEach(flag => {
+      new Image().src = flag;
+    });
+  }, []);
 
   const [showModal, setShowModal] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -88,30 +93,26 @@ const Navbar = () => {
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
             <li>
-              <a
-                href="/#"
-                onClick={changeLanguageHandler}
-                className={styles[`${toggleEnglish}`]}
-              >
-                <img
-                  src={UKFlag}
-                  alt="English flag"
-                  width="50px"
-                  height="100%"
-                />
-              </a>
-              <a
-                href="/#"
-                onClick={changeLanguageHandler}
-                className={styles[`${toggleItalian}`]}
-              >
-                <img
-                  src={italianFlag}
-                  alt="Italian flag"
-                  width="50px"
-                  height="100%"
-                />
-              </a>
+              {storeLanguage === "EN" && (
+                <a href="/#" onClick={changeLanguageHandler}>
+                  <img
+                    src={UKFlag}
+                    alt="English flag"
+                    width="50px"
+                    height="100%"
+                  />
+                </a>
+              )}
+              {storeLanguage === "IT" && (
+                <a href="/#" onClick={changeLanguageHandler}>
+                  <img
+                    src={italianFlag}
+                    alt="Italian flag"
+                    width="50px"
+                    height="100%"
+                  />
+                </a>
+              )}
             </li>
           </ul>
         </nav>
