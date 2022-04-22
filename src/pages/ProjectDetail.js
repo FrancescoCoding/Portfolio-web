@@ -10,7 +10,6 @@ import { FaGithub } from "react-icons/fa";
 
 import styles from "./ProjectDetail.module.css";
 
-import Viewer from "react-viewer";
 import WorksList from "../settings/WorksList";
 import ColourSelector from "../components/UI/ColourSelector";
 import Transition from "../components/UI/Transition";
@@ -24,7 +23,6 @@ const ProjectDetail = () => {
   const verySmallScreen = useMediaQuery({ query: "(max-width: 400px)" });
 
   const [isOpen, setIsOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
 
   const currentProject = WorksList.find(
     project => project.endpoint === params.projectID
@@ -51,22 +49,6 @@ const ProjectDetail = () => {
     <>
       <Transition />
       {!isSmallScreen && <BackButton endpoint="/projects" />}
-      <Viewer
-        visible={visible}
-        rotatable={false}
-        noImgDetails={true}
-        scalable={false}
-        onMaskClick={() => setVisible(false)}
-        onClose={() => setVisible(false)}
-        images={[
-          {
-            src: "",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
-          },
-        ]}
-      />
       <section className={styles["project-section"]}>
         <div
           className={styles.design}
