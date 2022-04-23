@@ -6,7 +6,7 @@ import Sidebar from "../components/UI/Sidebar";
 const NotFound = () => {
   return (
     <>
-      <NotFoundContent />
+      <NotFoundContent message={"Uh-oh. Something went wrong..."} />
       <Sidebar concatContent={<AnimatedArrow />} />
       <ColourSelector />
     </>

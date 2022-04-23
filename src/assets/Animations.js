@@ -59,8 +59,7 @@ const NessieMonsterLottie = props => {
       animationData={NessieData}
       play
       style={{
-        marginTop: +props.marginTop || -50,
-        width: "70%",
+        marginTop: +props.marginTop || -150,
         height: +props.height || 600,
       }}
     />
@@ -76,8 +75,7 @@ const RobotLottie = props => {
       animationData={robotData}
       play
       style={{
-        marginTop: +props.marginTop || 30,
-        width: "70%",
+        marginTop: +props.marginTop || -50,
         height: +props.height || 600,
       }}
     />
@@ -93,9 +91,8 @@ const CarLottie = props => {
       animationData={carData}
       play
       style={{
-        marginTop: +props.marginTop || 100,
-        width: "70%",
         height: +props.height || 600,
+        marginTop: +props.marginTop || -100,
       }}
     />
   );

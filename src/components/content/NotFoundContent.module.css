@@ -1,23 +1,42 @@
 .notFound-container h1 {
   font-family: "Josefin Sans", sans-serif;
-  margin-bottom: 5rem;
-  font-size: 3vw;
+  padding: 3rem;
+  font-size: 3rem !important;
   font-weight: 600;
+  width: 800px;
 }
 
 .notFound-container {
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
 }
 
 .notFound-content {
-  margin-top: 8rem;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+
+.notFound-content > div {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .notFound-content > * {
   text-shadow: 4px 4px 0px #000000;
+}
+
+.notFound-animation {
+  transform: translateX(10rem) !important;
+  width: 100vw;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  animation: notFound-animation 1s ease-in-out infinite;
 }
 
 .canary {
@@ -39,20 +58,20 @@
 
 @media screen and (max-width: 1200px) {
   .notFound-content h1 {
-    font-size: 6vw;
+    width: 90%;
     text-shadow: none;
   }
 
   .canary {
-    text-shadow: 55px 40px 0px #000;
+    text-shadow: none;
   }
   .ocean {
-    text-shadow: 55px 40px 0px #000;
+    text-shadow: none;
   }
   .magenta {
-    text-shadow: 55px 40px 0px #000;
+    text-shadow: none;
   }
   .leaf {
-    text-shadow: 55px 40px 0px #000;
+    text-shadow: none;
   }
 }
