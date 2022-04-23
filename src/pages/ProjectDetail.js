@@ -20,7 +20,6 @@ const ProjectDetail = () => {
   const storeLanguage = useSelector(state => state.languages.language);
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
-  const verySmallScreen = useMediaQuery({ query: "(max-width: 400px)" });
 
   const [isOpen, setIsOpen] = useState(false);
 
