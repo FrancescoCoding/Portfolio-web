@@ -154,7 +154,6 @@
   .main-content {
     transform: scale(0.76);
     height: 100vh !important;
-    border: 1px blueviolet solid;
   }
 }
 @media screen and (max-width: 900px) {
