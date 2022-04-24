@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "./static/css/main.54ad6c8d.css",
-    "main.js": "./static/js/main.5e443558.js",
+    "main.js": "./static/js/main.8691b147.js",
     "static/css/219.2041f543.chunk.css": "./static/css/219.2041f543.chunk.css",
     "static/js/219.284f0772.chunk.js": "./static/js/219.284f0772.chunk.js",
     "static/css/817.b7b94254.chunk.css": "./static/css/817.b7b94254.chunk.css",
     "static/js/817.2750bf66.chunk.js": "./static/js/817.2750bf66.chunk.js",
     "static/css/325.f20dbda4.chunk.css": "./static/css/325.f20dbda4.chunk.css",
-    "static/js/325.a5770b4b.chunk.js": "./static/js/325.a5770b4b.chunk.js",
+    "static/js/325.e75a8f54.chunk.js": "./static/js/325.e75a8f54.chunk.js",
     "static/js/783.47af6158.chunk.js": "./static/js/783.47af6158.chunk.js",
-    "static/css/239.7485b39e.chunk.css": "./static/css/239.7485b39e.chunk.css",
-    "static/js/239.a464f988.chunk.js": "./static/js/239.a464f988.chunk.js",
+    "static/css/239.37a1bad6.chunk.css": "./static/css/239.37a1bad6.chunk.css",
+    "static/js/239.c9041e34.chunk.js": "./static/js/239.c9041e34.chunk.js",
     "static/media/UK-flag.svg": "./static/media/UK-flag.76ae5b2dd0e22cd7eb9f84f712c516d5.svg",
     "static/media/IT-flag.svg": "./static/media/IT-flag.7da4e2ca82424b0ec482f3c926d4417b.svg",
     "static/media/Harvest-time-thumbnail-600w.jpg": "./static/media/Harvest-time-thumbnail-600w.1712048b5ed8fb94e9ca.jpg",
@@ -25,28 +25,27 @@
     "static/media/Covid-tracker-thumbnail-600w.webp": "./static/media/Covid-tracker-thumbnail-600w.2d81b49ac9f1ff485c6f.webp",
     "static/media/Sass Icon.svg": "./static/media/Sass Icon.8ec1693844d3eb12c43fa282269f4cb0.svg",
     "static/media/Playlist-thumbnail-600w.webp": "./static/media/Playlist-thumbnail-600w.6678b34834f9b36aeab8.webp",
-    "static/media/React Icon.svg": "./static/media/React Icon.7098e2714733fed1ce8cdb90d51c4289.svg",
     "static/media/React_icon.svg": "./static/media/React_icon.7098e2714733fed1ce8cdb90d51c4289.svg",
     "static/media/RProject Icon.svg": "./static/media/RProject Icon.71e459733debb88d7091b968cec2e6ea.svg",
     "static/media/Redux Icon.svg": "./static/media/Redux Icon.0093fdee00ecf5136c9f7660ebe5e197.svg",
     "static/media/Javascript Icon.svg": "./static/media/Javascript Icon.f719efab5b799ddc35b5055935a3cedd.svg",
     "static/media/CSS3Icon.svg": "./static/media/CSS3Icon.a79b97e79096bb163edb3f2ec6de4824.svg",
-    "index.html": "./index.html",
     "static/media/HTML5 Icon.svg": "./static/media/HTML5 Icon.d0addc05618b04fad8a920667bd781d7.svg",
+    "index.html": "./index.html",
     "main.54ad6c8d.css.map": "./static/css/main.54ad6c8d.css.map",
-    "main.5e443558.js.map": "./static/js/main.5e443558.js.map",
+    "main.8691b147.js.map": "./static/js/main.8691b147.js.map",
     "219.2041f543.chunk.css.map": "./static/css/219.2041f543.chunk.css.map",
     "219.284f0772.chunk.js.map": "./static/js/219.284f0772.chunk.js.map",
     "817.b7b94254.chunk.css.map": "./static/css/817.b7b94254.chunk.css.map",
     "817.2750bf66.chunk.js.map": "./static/js/817.2750bf66.chunk.js.map",
     "325.f20dbda4.chunk.css.map": "./static/css/325.f20dbda4.chunk.css.map",
-    "325.a5770b4b.chunk.js.map": "./static/js/325.a5770b4b.chunk.js.map",
+    "325.e75a8f54.chunk.js.map": "./static/js/325.e75a8f54.chunk.js.map",
     "783.47af6158.chunk.js.map": "./static/js/783.47af6158.chunk.js.map",
-    "239.7485b39e.chunk.css.map": "./static/css/239.7485b39e.chunk.css.map",
-    "239.a464f988.chunk.js.map": "./static/js/239.a464f988.chunk.js.map"
+    "239.37a1bad6.chunk.css.map": "./static/css/239.37a1bad6.chunk.css.map",
+    "239.c9041e34.chunk.js.map": "./static/js/239.c9041e34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.54ad6c8d.css",
-    "static/js/main.5e443558.js"
+    "static/js/main.8691b147.js"
   ]
 }

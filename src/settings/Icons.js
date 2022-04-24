@@ -3,7 +3,6 @@ import { IoLogoIonic } from "react-icons/io";
 import FraJS from "../assets/Logos/Javascript Icon.svg";
 import FraHTML from "../assets/Logos/HTML5 Icon.svg";
 import FraSass from "../assets/Logos/Sass Icon.svg";
-import FraReact from "../assets/Logos/React Icon.svg";
 import FraRedux from "../assets/Logos/Redux Icon.svg";
 import FraggPlot2 from "../assets/Logos/ggPlot2 Icon.svg";
 import FraRProject from "../assets/Logos/RProject Icon.svg";
