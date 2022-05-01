@@ -80,7 +80,7 @@ const ProjectDetail = () => {
                           style={{ margin: ".3rem 0" }}
                         >
                           <img
-                            src={`${window.location.origin}/Icons/${el}.svg`}
+                            src={`${process.env.PUBLIC_URL}/Icons/${el}.svg`}
                             alt={el.name}
                           />
                           <p>{el.tag}</p>
