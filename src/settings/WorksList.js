@@ -1,5 +1,4 @@
 import icons from "./Icons.js";
-import ReactIconTest from "../assets/Icons/React_icon.svg";
 
 import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.webp";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.webp";
@@ -10,7 +9,6 @@ import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnai
 
 const {
   rStudioIcon,
-  reactIcon,
   ionicIcon,
   reduxIcon,
   htmlIcon,
@@ -18,7 +16,6 @@ const {
   JSIcon,
   sassIcon,
   GGPlotIcon,
-  Kratos,
 } = icons;
 
 const PROJECTS = [
@@ -49,9 +46,8 @@ const PROJECTS = [
     id: "p5",
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
     image: portfolioThumbnail600w,
-    gallery: [],
     endpoint: "portfolio",
-    icons: [htmlIcon, icons.cssIcon, JSIcon, reactIcon, reduxIcon, Kratos],
+    icons: [htmlIcon, cssIcon, JSIcon, "react", reduxIcon],
   },
   {
     EN: {
