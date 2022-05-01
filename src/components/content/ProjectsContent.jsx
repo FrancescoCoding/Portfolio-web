@@ -1,6 +1,6 @@
 import styles from "./ProjectsContent.module.css";
 
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -56,6 +56,7 @@ const ProjectsContent = props => {
                       </div>
                     </div>
                   </Link>
+
                   {isMediumScreen && (
                     <a
                       rel="noreferrer"

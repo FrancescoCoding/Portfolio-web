@@ -8,6 +8,7 @@ import FraggPlot2 from "../assets/Logos/ggPlot2 Icon.svg";
 import FraRProject from "../assets/Logos/RProject Icon.svg";
 import ReactTooltip from "react-tooltip";
 import FraCSS from "../assets/Logos/CSS3Icon.svg";
+import Kratos from "../assets/Icons/Kratos-test.png";
 
 // Helper function
 const createIcon = (tag, icon) => {
@@ -151,6 +152,7 @@ let icons = {
   JSIcon,
   sassIcon,
   GGPlotIcon,
+  Kratos,
 };
 
 export default icons;

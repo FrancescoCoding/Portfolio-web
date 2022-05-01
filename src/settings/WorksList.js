@@ -18,6 +18,7 @@ const {
   JSIcon,
   sassIcon,
   GGPlotIcon,
+  Kratos,
 } = icons;
 
 const PROJECTS = [
@@ -50,7 +51,7 @@ const PROJECTS = [
     image: portfolioThumbnail600w,
     gallery: [],
     endpoint: "portfolio",
-    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon, ReactIconTest],
+    icons: [htmlIcon, icons.cssIcon, JSIcon, reactIcon, reduxIcon, Kratos],
   },
   {
     EN: {
