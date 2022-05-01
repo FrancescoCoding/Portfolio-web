@@ -79,7 +79,7 @@ const ProjectDetail = () => {
                           className={styles["logo-wrap"]}
                           style={{ margin: ".3rem 0" }}
                         >
-                          {el.icon}
+                          <img src={el.icon} alt="" />
                           <p>{el.tag}</p>
                         </div>
                       </div>
