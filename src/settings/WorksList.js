@@ -50,7 +50,7 @@ const PROJECTS = [
     image: portfolioThumbnail600w,
     gallery: [],
     endpoint: "portfolio",
-    icons: [<htmlIcon />, cssIcon, JSIcon, reactIcon, reduxIcon, ReactIconTest],
+    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon, ReactIconTest],
   },
   {
     EN: {

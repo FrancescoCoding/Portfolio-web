@@ -72,12 +72,19 @@ const ProjectDetail = () => {
               <div className={styles.logos}>
                 {currentProject.icons &&
                   !isSmallScreen &&
-                  // Iterate and render all the icons in el.icon
-                  currentProject.icons.map(el => (
-                    <div className={styles.icon} key={el.id}>
-                      {el}
-                    </div>
-                  ))}
+                  currentProject.icons.map(el => {
+                    return (
+                      <div key={el.id} className={styles.logo}>
+                        <div
+                          className={styles["logo-wrap"]}
+                          style={{ margin: ".3rem 0" }}
+                        >
+                          {el.icon}
+                          <p>{el.tag}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
 
