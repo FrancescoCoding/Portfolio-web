@@ -33,8 +33,7 @@ function App() {
         <Route path="/projects" exact>
           <Projects />
         </Route>
-        {/* Create a dynamic route for projects/projectID and render projectdetail in it */}
-        <Route path="/projects/:projectID" exact>
+        <Route path="/projects/:projectID">
           <ProjectDetail />
         </Route>
         <Route path="/404" exact>
