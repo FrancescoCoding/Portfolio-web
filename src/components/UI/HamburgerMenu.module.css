@@ -163,7 +163,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
   height: 7px;
 }
 ::-webkit-scrollbar-button {

@@ -141,19 +141,12 @@ const HamburgerMenu = props => {
             <li>
               {storeLanguage === "EN" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  <img
-                    src={italianFlag}
-                    alt="Italian flag"
-                    width="40px"
-                    height="100%"
-                  />
-                  &nbsp; Italian
+                  Language: IT - Italian
                 </NavLink>
               )}
               {storeLanguage === "IT" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  <img src={UKFlag} alt="UK flag" width="40px" height="100%" />
-                  &nbsp;English
+                  Language: EN - English
                 </NavLink>
               )}
             </li>
