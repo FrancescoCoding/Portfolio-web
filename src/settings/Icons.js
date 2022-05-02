@@ -1,6 +1,7 @@
 import { IoLogoIonic } from "react-icons/io";
 
 import FraJS from "../assets/Logos/Javascript Icon.svg";
+import FraReact from "../assets/Logos/React Icon.svg";
 import FraHTML from "../assets/Logos/HTML5 Icon.svg";
 import FraSass from "../assets/Logos/Sass Icon.svg";
 import FraRedux from "../assets/Logos/Redux Icon.svg";
@@ -8,7 +9,8 @@ import FraggPlot2 from "../assets/Logos/ggPlot2 Icon.svg";
 import FraRProject from "../assets/Logos/RProject Icon.svg";
 import ReactTooltip from "react-tooltip";
 import FraCSS from "../assets/Logos/CSS3Icon.svg";
-import Kratos from "../assets/Icons/Kratos-test.png";
+
+const iconsSize = "45px";
 
 // Helper function
 const createIcon = (tag, icon) => {
@@ -21,26 +23,26 @@ const createIcon = (tag, icon) => {
 
 const htmlIcon = createIcon(
   "HTML5",
-  <img src={FraHTML} alt="HTML" height="45px" />
+  <img src={FraHTML} alt="HTML" height={iconsSize} />
 );
 const cssIcon = createIcon(
   "CSS3",
-  <img src={FraCSS} alt="CSS" height="45px" />
+  <img src={FraCSS} alt="CSS" height={iconsSize} />
 );
 const JSIcon = createIcon(
   "JavaScript",
-  <img src={FraJS} alt="JavaScript" height="45px" />
+  <img src={FraJS} alt="JavaScript" height={iconsSize} />
 );
 
 const reactIcon = createIcon(
   "React",
   <>
     <img
-      height="45px"
+      height={iconsSize}
       alt="React Logo"
       data-tip="react"
       data-for="react"
-      src={process.env.PUBLIC_URL + "/Icons/React_icon.svg"}
+      src={FraReact}
     />
     <ReactTooltip id="react" effect="solid">
       <span>JavaScript frontend development library</span>
@@ -56,7 +58,7 @@ const reduxIcon = createIcon(
       data-for="redux"
       src={FraRedux}
       alt="Redux Logo"
-      height="45px"
+      height={iconsSize}
     />
     <ReactTooltip id="redux" effect="solid">
       <span>
@@ -74,7 +76,7 @@ const ionicIcon = createIcon(
       color="#367CF7"
       data-tip="ionic"
       data-for="ionic"
-      size="45px"
+      size={iconsSize}
     />
     <ReactTooltip id="ionic" effect="solid">
       <span>
@@ -93,7 +95,7 @@ const sassIcon = createIcon(
       data-for="sass"
       src={FraSass}
       alt="Redux Logo"
-      height="45px"
+      height={iconsSize}
     />
     <ReactTooltip id="sass" effect="solid">
       <span>
@@ -112,7 +114,7 @@ const GGPlotIcon = createIcon(
       data-tip="ggplot"
       data-for="ggplot"
       alt="ggPlot2"
-      height="45px"
+      height={iconsSize}
     />
     <ReactTooltip id="ggplot" effect="solid">
       <span>
@@ -131,7 +133,7 @@ const rStudioIcon = createIcon(
       data-for="rstudio"
       src={FraRProject}
       alt="Redux Logo"
-      height="45px"
+      height={iconsSize}
     />
     <ReactTooltip id="rstudio" effect="solid">
       <span>
@@ -152,7 +154,6 @@ let icons = {
   JSIcon,
   sassIcon,
   GGPlotIcon,
-  Kratos,
 };
 
 export default icons;

@@ -16,6 +16,8 @@
   border-bottom: none;
   color: white;
   border-radius: 15px;
+  word-spacing: 1px;
+  letter-spacing: 0.6px;
 }
 .sidebar.slide-in {
   animation: slide-in 0.3s ease-out forwards !important;

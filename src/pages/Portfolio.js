@@ -9,7 +9,7 @@ const Portfolio = () => {
     <>
       <Transition />
       <Navbar />
-      <PortfolioContent astronautDelaySec={"1.2s"} />
+      <PortfolioContent astronautDelaySec={"1s"} />
       <ColourSelector />
       <Sidebar />
     </>

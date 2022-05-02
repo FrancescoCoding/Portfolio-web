@@ -10,6 +10,7 @@ import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnai
 const {
   rStudioIcon,
   ionicIcon,
+  reactIcon,
   reduxIcon,
   htmlIcon,
   cssIcon,
@@ -47,7 +48,7 @@ const PROJECTS = [
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
     image: portfolioThumbnail600w,
     endpoint: "portfolio",
-    icons: [htmlIcon, cssIcon, JSIcon, "react", reduxIcon],
+    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon],
   },
   {
     EN: {

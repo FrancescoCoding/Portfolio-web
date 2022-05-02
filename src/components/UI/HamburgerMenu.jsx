@@ -28,6 +28,8 @@ const HamburgerMenu = props => {
   const storeColour = useSelector(state => state.colours);
   const storeLanguage = useSelector(state => state.languages.language);
 
+  const isOcean = storeColour.colour === "ocean";
+
   // Preload the flags to avoid flickering
   useEffect(() => {
     const flagList = [italianFlag, UKFlag];
@@ -47,7 +49,7 @@ const HamburgerMenu = props => {
     if (isBigScreen) {
       showMenu = styles["slide-in"];
       menuBorderSlide = {
-        borderRight: `9px solid var(--${storeColour.colour}-active)`,
+        borderRight: `9px solid var(--${storeColour.colour}-primary-color)`,
       };
     } else {
       showMenu = styles["slide-down"];
@@ -135,18 +137,38 @@ const HamburgerMenu = props => {
                 }`}
                 to="/projects"
               >
-                Projects
+                <b>{storeLanguage === "EN" ? "Projects" : "Progetti"}</b>
               </NavLink>
             </li>
             <li>
               {storeLanguage === "EN" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  Language: IT - Italian
+                  Switch to
+                  <span
+                    style={{
+                      color: `var(--${storeColour.colour}-primary-color${
+                        isOcean ? "-lighter" : ""
+                      })`,
+                    }}
+                  >
+                    {" "}
+                    <b>Italian (IT)</b>
+                  </span>
                 </NavLink>
               )}
               {storeLanguage === "IT" && (
                 <NavLink to="/" onClick={changeLanguageHandler}>
-                  Language: EN - English
+                  Visualizza in
+                  <span
+                    style={{
+                      color: `var(--${storeColour.colour}-primary-color${
+                        isOcean ? "-lighter" : ""
+                      })`,
+                    }}
+                  >
+                    {" "}
+                    <b>Inglese (EN)</b>
+                  </span>
                 </NavLink>
               )}
             </li>
