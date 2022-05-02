@@ -79,13 +79,7 @@ const ProjectDetail = () => {
                           className={styles["logo-wrap"]}
                           style={{ margin: ".3rem 0" }}
                         >
-                          <img
-                            src={
-                              process.env.PUBLIC_URL + "/Icons/" + el + ".svg"
-                            }
-                            width="54px"
-                            alt=""
-                          />
+                          {el.icon}
                           <p>{el.tag}</p>
                         </div>
                       </div>
