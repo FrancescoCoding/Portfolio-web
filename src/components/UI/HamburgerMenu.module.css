@@ -256,6 +256,9 @@
 .magenta.active {
   border-left: 8px solid var(--magenta-primary-color) !important;
 }
+.active {
+  font-weight: bold;
+}
 
 .canary-bg {
   background: var(--canary-primary-color) !important;

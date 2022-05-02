@@ -135,14 +135,19 @@ const HamburgerMenu = props => {
                 activeClassName={`${styles[`${storeColour.colour}`]} ${
                   styles.active
                 }`}
+                style={{ width: "100%" }}
                 to="/projects"
               >
-                <b>{storeLanguage === "EN" ? "Projects" : "Progetti"}</b>
+                {storeLanguage === "EN" ? "Projects" : "Progetti"}
               </NavLink>
             </li>
             <li>
               {storeLanguage === "EN" && (
-                <NavLink to="/" onClick={changeLanguageHandler}>
+                <NavLink
+                  to="/"
+                  onClick={changeLanguageHandler}
+                  style={{ width: "100%" }}
+                >
                   Switch to
                   <span
                     style={{
@@ -157,7 +162,11 @@ const HamburgerMenu = props => {
                 </NavLink>
               )}
               {storeLanguage === "IT" && (
-                <NavLink to="/" onClick={changeLanguageHandler}>
+                <NavLink
+                  to="/"
+                  onClick={changeLanguageHandler}
+                  style={{ width: "100%" }}
+                >
                   Visualizza in
                   <span
                     style={{

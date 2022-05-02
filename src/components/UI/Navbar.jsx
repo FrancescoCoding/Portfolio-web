@@ -95,7 +95,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="/#" onClick={showModalHandler}>
-                Contact
+                About
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
