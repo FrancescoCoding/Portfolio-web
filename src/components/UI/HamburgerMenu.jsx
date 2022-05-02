@@ -85,7 +85,7 @@ const HamburgerMenu = props => {
             <NavLink
               className={styles.home}
               to="/portfolio"
-              activeClassName={styles[`${storeColour.colour}`]}
+              activeClassName={styles[`${storeColour.colour} ${styles.active}`]}
             >
               Portfolio {currentYear}
             </NavLink>

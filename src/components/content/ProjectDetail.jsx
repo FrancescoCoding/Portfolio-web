@@ -47,24 +47,16 @@ const ProjectDetail = () => {
   return (
     <>
       <Transition />
+      <ColourSelector backgroundColor="#0a0f20" />
       {!isSmallScreen && <BackButton endpoint="/projects" />}
-      <section className={styles["project-section"]}>
-        <div
-          className={styles.design}
-          style={{
-            background: `linear-gradient(45deg, ${storeColour.hex} 60%, #555)`,
-          }}
-        />
-      </section>
-      {/* Full page wrapper */}
-      <div className={styles["project-container"]}>
+
+      <section className={styles["project-card-section"]}>
         {/* Card */}
         <div className={styles["project-card"]}>
           <div className={styles["information-wrapper"]}>
             <div className={styles["project-header"]}>
               <h1>{currentProject[`${storeLanguage}`].name}</h1>
             </div>
-
             <div className={styles.info}>
               {currentProject[`${storeLanguage}`].description && (
                 <p>{currentProject[`${storeLanguage}`].description}</p>
@@ -107,9 +99,15 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
-
-        <ColourSelector backgroundColor="#0a0f20" />
-      </div>
+      </section>
+      <section className={styles["design-section"]}>
+        <div
+          className={styles.design}
+          style={{
+            background: `linear-gradient(45deg, ${storeColour.hex} 60%, #555)`,
+          }}
+        />
+      </section>
     </>
   );
 };

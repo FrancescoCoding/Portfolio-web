@@ -17,7 +17,8 @@ const Sidebar = props => {
         className={styles["sidebar-home-link"]}
         activeClassName={styles[`${storeColour}`]}
       >
-        {location.pathname === "/portfolio" ? "Homepage" : "Francesco"}
+        {/* {location.pathname === "/portfolio" ? "Homepage" : "Francesco"} */}
+        Francesco Gruosso
       </NavLink>
       <div className={styles.design}></div>
     </div>
