@@ -1,6 +1,6 @@
 import Modal from "../UI/Modal";
 import { ContactMeForm } from "../UI/ContactMeForm";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 import copy from "copy-text-to-clipboard";
 import { Mail } from "../../assets/Animations";
@@ -17,6 +17,16 @@ import styles from "./Contact.module.css";
 import { mapStyles } from "../UI/MapsStyles";
 
 const Contact = props => {
+  const containerStyle = useMemo(() => {
+    return {
+      width: "100%",
+      height: "520px",
+      maxHeight: " 100%",
+      borderBottomRightRadius: "1.19rem",
+      borderTopRightRadius: "1.19rem",
+    };
+  }, []);
+
   const storeColour = useSelector(state => state.colours);
 
   const [textCopied, setTextCopied] = useState(false);
@@ -35,13 +45,6 @@ const Contact = props => {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return ""; // Loading
 
-  const containerStyle = {
-    width: "100%",
-    height: "520px",
-    maxHeight: " 100%",
-    borderBottomRightRadius: "1.19rem",
-    borderTopRightRadius: "1.19rem",
-  };
   const center = {
     lat: 57.14891090503782,
     lng: -2.0964244758753043,

@@ -67,10 +67,7 @@ const ProjectDetail = () => {
                   currentProject.icons.map(el => {
                     return (
                       <div key={el.id} className={styles.logo}>
-                        <div
-                          className={styles["logo-wrap"]}
-                          style={{ margin: ".3rem 0" }}
-                        >
+                        <div className={styles["logo-wrap"]}>
                           {el.icon}
                           <p>{el.tag}</p>
                         </div>

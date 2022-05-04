@@ -5,9 +5,7 @@ import { useLocation } from "react-router-dom";
 
 const Sidebar = props => {
   const storeColour = useSelector(state => state.colours.colour);
-  const location = useLocation();
-
-  console.log(location.pathname, "location");
+  // const location = useLocation();
 
   return (
     <div className={styles.sidebar}>

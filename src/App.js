@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import Loader from "./components/UI/Loader";
-import ProjectDetail from "./components/content/ProjectDetail";
 
 const Portfolio = React.lazy(async () => {
   await new Promise(resolve => setTimeout(resolve, 700));
@@ -18,6 +17,11 @@ const NotFound = React.lazy(async () => {
 const Projects = React.lazy(async () => {
   await new Promise(resolve => setTimeout(resolve, 1000));
   return import("./pages/Projects");
+});
+
+const ProjectDetail = React.lazy(async () => {
+  await new Promise(resolve => setTimeout(resolve, 200));
+  return import("./components/content/ProjectDetail");
 });
 
 function App() {
