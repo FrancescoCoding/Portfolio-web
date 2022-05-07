@@ -99,25 +99,21 @@ const Navbar = () => {
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
-            <li>
+            <li style={{ color: "white" }}>
               {storeLanguage === "EN" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  <img
-                    src={UKFlag}
-                    alt="English flag"
-                    width="50px"
-                    height="100%"
-                  />
+                  EN
                 </a>
               )}
               {storeLanguage === "IT" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  <img
+                  {/* <img
                     src={italianFlag}
                     alt="Italian flag"
                     width="50px"
                     height="100%"
-                  />
+                  /> */}
+                  IT&nbsp;
                 </a>
               )}
             </li>

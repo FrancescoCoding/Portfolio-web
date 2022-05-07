@@ -48,13 +48,13 @@
 }
 .project-card-section .project-card {
   padding: 3rem 4rem;
-  padding-bottom: 2.3rem;
   border-radius: 1rem;
   background-color: white;
   box-shadow: 5px 15px 4px rgba(154, 160, 185, 0.05),
     8px 8px 10px rgba(3, 8, 29, 0.23);
   overflow: hidden;
   text-align: left;
+  position: relative;
 }
 .project-card-section .project-header {
   display: flex;
@@ -73,7 +73,6 @@
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
-  /* color: rgb(6, 44, 94); */
 }
 .logo p {
   transition: all 0.2s;
@@ -95,12 +94,12 @@
   padding-top: 0.7rem;
 }
 .logos h2 {
-  font-weight: 400 !important;
   color: black;
+  font-weight: 400 !important;
   margin-bottom: 3rem;
 }
 .logos > * {
-  margin: 0 1rem;
+  margin: 0 0.8rem;
 }
 .logos > *:first-child {
   margin-left: 2rem !important;
@@ -118,7 +117,7 @@
 .information-wrapper {
   display: flex !important;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 800px;
 }
 .information-wrapper .info p {
   font-size: 19px;
@@ -162,10 +161,13 @@
 }
 
 .button-container {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
 }
 .git-btn {
   cursor: pointer;
