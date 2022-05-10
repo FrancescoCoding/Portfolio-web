@@ -20,7 +20,7 @@ const Projects = React.lazy(async () => {
 });
 
 const ProjectDetail = React.lazy(async () => {
-  await new Promise(resolve => setTimeout(resolve, 200));
+  await new Promise(resolve => setTimeout(resolve, 500));
   return import("./components/content/ProjectDetail");
 });
 

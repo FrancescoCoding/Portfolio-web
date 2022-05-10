@@ -47,7 +47,7 @@
   transform: translateY(-2rem);
 }
 .project-card-section .project-card {
-  padding: 3rem 4rem;
+  padding: 2.6rem 3.4rem;
   border-radius: 1rem;
   background-color: white;
   box-shadow: 5px 15px 4px rgba(154, 160, 185, 0.05),
@@ -56,14 +56,14 @@
   text-align: left;
   position: relative;
 }
-.project-card-section .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
 .project-card-section .project-card p {
   font-size: 19px !important;
+}
+.project-card-section .project-card .project-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #073e68;
+  margin-bottom: 0.7rem;
 }
 
 .logo {

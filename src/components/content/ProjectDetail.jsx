@@ -54,13 +54,15 @@ const ProjectDetail = () => {
         {/* Card */}
         <div className={styles["project-card"]}>
           <div className={styles["information-wrapper"]}>
-            <div className={styles["project-header"]}>
-              <h1>{currentProject[`${storeLanguage}`].name}</h1>
-            </div>
+            {/* Project Header (name) */}
+            <h1 className={styles["project-title"]}>
+              {currentProject[`${storeLanguage}`].name}
+            </h1>
             <div className={styles.info}>
               {currentProject[`${storeLanguage}`].description && (
                 <p>{currentProject[`${storeLanguage}`].description}</p>
               )}
+
               <div className={styles.logos}>
                 {currentProject.icons &&
                   !isSmallScreen &&
