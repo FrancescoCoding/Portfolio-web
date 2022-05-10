@@ -173,7 +173,6 @@ div.list {
   background: rgba(0, 0, 0, 0.59);
 }
 
-/* Create a media query that has effect when going over 1080 height */
 @media screen and (min-height: 1080px) {
   div.items {
     top: 0;
@@ -191,7 +190,6 @@ div.list {
     padding-left: 0.8rem;
     width: 70%;
     height: 60%;
-    /* border: red 1px solid; */
   }
   .project-git .git {
     right: 0.9rem;
@@ -217,10 +215,6 @@ div.list {
   div.items {
     grid-template-columns: repeat(2, 1fr);
     transition: all 1s;
-  }
-  .view-more {
-    bottom: -6px;
-    right: 3%;
   }
 }
 @media screen and (max-width: 1200px) {

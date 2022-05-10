@@ -116,10 +116,11 @@ nav {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 870px) {
   nav {
-    position: relative;
+    border: 1px solid red;
     width: 100vw !important;
+    position: relative;
     padding: 0;
     z-index: 0;
   }
