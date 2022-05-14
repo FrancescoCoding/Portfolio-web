@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import styles from "./ContactMeForm.module.css";
+import { useSelector } from "react-redux";
 
 const validateEmail = email => {
   const regex =
@@ -10,6 +11,9 @@ const validateEmail = email => {
 
 export const ContactMeForm = () => {
   const form = useRef();
+
+  const storeLanguage = useSelector(state => state.languages.language);
+  const isEnglish = storeLanguage === "EN";
 
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
@@ -106,7 +110,6 @@ export const ContactMeForm = () => {
     form.current.email.value = "";
     form.current.reset();
 
-    // Make fields valid
     setEnteredNameIsValid(true);
     setEnteredEmailIsValid(true);
   };
@@ -117,7 +120,7 @@ export const ContactMeForm = () => {
   return (
     <div className={styles["form-container"]}>
       <form ref={form} onSubmit={sendEmailHandler} className={styles.form}>
-        <label>Name</label>
+        <label>{isEnglish ? "Name" : "Nome"}</label>
         <input
           className={styles[`${nameInputClasses}`]}
           value={enteredName}
@@ -135,7 +138,7 @@ export const ContactMeForm = () => {
           onChange={changeEmailHandler}
           onBlur={emailInputBlurHandler}
         />
-        <label>Message</label>
+        <label>{isEnglish ? "message" : "Messaggio"}</label>
         <textarea name="message" />
         <input className={styles.submit} type="submit" value="Send" />
       </form>

@@ -15,6 +15,8 @@ const clickSound = new Audio(clickSoundWav);
 
 const PortfolioContent = props => {
   const storeColour = useSelector(state => state.colours);
+  const storeLanguage = useSelector(state => state.languages.language);
+
   const [showModal, setShowModal] = useState(false);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -40,7 +42,7 @@ const PortfolioContent = props => {
     <main className={styles["main-content"]}>
       {showModal && <Contact onClose={hideModalHandler} />}
 
-      {isBigScreen && (
+      {storeLanguage === "EN" && isBigScreen && (
         <section className={styles["main-text"]}>
           <h1>
             Stand the{" "}
@@ -57,6 +59,33 @@ const PortfolioContent = props => {
               className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
             >
               Find out more{" "}
+              <FaChevronDown
+                style={{
+                  transform: "translateY(3px)",
+                  fontSize: " 1.1rem",
+                  marginLeft: "",
+                }}
+              />
+            </button>
+          </div>
+        </section>
+      )}
+      {storeLanguage === "IT" && isBigScreen && (
+        <section className={styles["main-text"]}>
+          <h1>
+            Fatti nuotare{" "}
+            <RubberDuck className={styles.quack} colour={storeColour.hex} />
+          </h1>
+          <p>
+            ... come frontend developer, designer UX
+            <br />e di terribili giochi di parole.
+          </p>
+          <div className={styles["btn-container"]}>
+            <button
+              onClick={clickSoundHandler}
+              className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+            >
+              Scopri altro{" "}
               <FaChevronDown
                 style={{
                   transform: "translateY(3px)",

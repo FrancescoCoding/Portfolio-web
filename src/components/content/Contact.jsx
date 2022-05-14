@@ -28,6 +28,8 @@ const Contact = props => {
   }, []);
 
   const storeColour = useSelector(state => state.colours);
+  const storeLanguage = useSelector(state => state.languages.language);
+  const isEnglish = storeLanguage === "EN";
 
   const [textCopied, setTextCopied] = useState(false);
   const [showMessageSection, setShowMessageSection] = useState(false);
@@ -87,7 +89,8 @@ const Contact = props => {
           </div>
         )}
 
-        {/* INFO */}
+        {/* /////////////////////////////// */}
+        {/* // -- INFO SECTION -- */}
         {!showMessageSection && (
           <div
             className={styles.info}
@@ -107,9 +110,15 @@ const Contact = props => {
             </h1>
             <p
               onClick={() => {
-                copy(
-                  "I am an Italian Computing Science BSc (Hons) student with an interest in Full Stack Web Development, Graphics Design, UX & AI."
-                );
+                {
+                  isEnglish
+                    ? copy(
+                        "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full Stack Web Development, Graphics Design, UX & AI."
+                      )
+                    : copy(
+                        "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full Stack Web Development, Design Grafico, UX & AI."
+                      );
+                }
                 textWasCopiedPopup();
               }}
               style={{
@@ -117,15 +126,24 @@ const Contact = props => {
                 border: `${storeColour.hex} solid 2px`,
               }}
             >
-              I am an Italian Computing Science BSc (Hons) student with an
-              interest in Full Stack Web Development, Graphics Design, UX & AI.
+              {isEnglish
+                ? "I am an Italian Computing Science BSc (Hons) student with an interest in Full Stack Web Development, Graphics Design, UX & AI."
+                : "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full Stack Web Development, Design Grafico, UX & AI."}
             </p>
 
             <p
               onClick={() => {
-                copy(
-                  "Currently open to work part-time as a frontend developer."
-                );
+                {
+                  isEnglish
+                    ? copy(
+                        copy(
+                          "Currently open to work part-time as a frontend developer."
+                        )
+                      )
+                    : copy(
+                        "Attualmente disponibile a lavorare come frontend developer."
+                      );
+                }
                 textWasCopiedPopup();
               }}
               style={{
@@ -133,16 +151,22 @@ const Contact = props => {
                 border: `${storeColour.hex} solid 2px`,
               }}
             >
-              Currently open to work part-time as a frontend developer.
+              {isEnglish
+                ? "Currently open to work part-time as a frontend developer."
+                : "Attualmente disponibile a lavorare come frontend developer."}
             </p>
             {textCopied && (
-              <p className={styles.copied}>Text copied to clipboard</p>
+              <p className={styles.copied}>
+                {isEnglish
+                  ? "Text copied to clipboard"
+                  : "Testo copiato negli appunti"}
+              </p>
             )}
             <button
               className={styles["action-button"]}
               onClick={() => setShowMessageSection(true)}
             >
-              Send me a message!{" "}
+              {isEnglish ? "Send me a message! " : "Invia un messaggio! "}
               <FaChevronDown style={{ transform: "translateY(4px)" }} />
             </button>
           </div>
@@ -161,7 +185,8 @@ const Contact = props => {
           </>
         )}
 
-        {/* MAP */}
+        {/* /////////////////////////////// */}
+        {/* // -- MAP SECTION -- */}
         <div
           className={styles.map}
           style={{

@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import Contact from "../content/Contact";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
@@ -9,24 +9,15 @@ import { useDispatch } from "react-redux";
 import { languageActions } from "../../store/store";
 
 import HamburgerMenu from "./HamburgerMenu";
-import italianFlag from "../../assets/Flags/IT-flag.svg";
-import UKFlag from "../../assets/Flags/UK-flag.svg";
 
 const Navbar = () => {
   const dispatch = useDispatch();
 
   const storeColour = useSelector(state => state.colours.colour);
   const storeLanguage = useSelector(state => state.languages.language);
+  const isEnglish = storeLanguage === "EN";
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
-
-  // Preload the flags to avoid flickering
-  useEffect(() => {
-    const flagList = [italianFlag, UKFlag];
-    flagList.forEach(flag => {
-      new Image().src = flag;
-    });
-  }, []);
 
   const [showModal, setShowModal] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -53,7 +44,7 @@ const Navbar = () => {
   const changeLanguageHandler = e => {
     e.preventDefault();
 
-    if (storeLanguage === "EN") {
+    if (isEnglish) {
       dispatch(languageActions.switchToItalian());
     } else {
       dispatch(languageActions.switchToEnglish());
@@ -90,29 +81,23 @@ const Navbar = () => {
           <ul className={styles[`${storeColour}`]}>
             <li>
               <NavLink activeClassName={styles.active} to="/projects">
-                Projects
+                {isEnglish ? "Projects" : "Progetti"}
               </NavLink>
             </li>
             <li>
               <a href="/#" onClick={showModalHandler}>
-                About
+                {isEnglish ? "Contact" : "Contatto"}
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
             <li style={{ color: "white" }}>
-              {storeLanguage === "EN" && (
+              {isEnglish && (
                 <a href="/#" onClick={changeLanguageHandler}>
                   EN
                 </a>
               )}
               {storeLanguage === "IT" && (
                 <a href="/#" onClick={changeLanguageHandler}>
-                  {/* <img
-                    src={italianFlag}
-                    alt="Italian flag"
-                    width="50px"
-                    height="100%"
-                  /> */}
                   IT&nbsp;
                 </a>
               )}
