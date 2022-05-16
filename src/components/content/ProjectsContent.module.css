@@ -116,7 +116,7 @@ div.list {
   border-radius: 5px !important;
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-end;
   position: relative;
   z-index: 101 !important;
