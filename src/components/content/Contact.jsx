@@ -20,7 +20,7 @@ const Contact = props => {
   const containerStyle = useMemo(() => {
     return {
       width: "100%",
-      height: "520px",
+      height: "100%",
       maxHeight: " 100%",
       borderBottomRightRadius: "1.19rem",
       borderTopRightRadius: "1.19rem",

@@ -150,7 +150,7 @@
   text-align: center;
 }
 
-.info {
+.contact-container .info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,7 +163,7 @@
   border-top-left-radius: 1.5rem !important;
   border-bottom-left-radius: 1.5rem !important;
 }
-.map {
+.contact-container .map {
   background: rgb(0, 0, 38);
   width: 50%;
   border-top-right-radius: 1.5rem !important;

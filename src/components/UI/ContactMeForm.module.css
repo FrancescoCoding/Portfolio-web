@@ -46,7 +46,7 @@ textarea {
   width: 100% !important;
   height: 60px;
   font-size: 1.3rem;
-  max-height: 140px;
+  max-height: 240px;
   min-height: 100px;
   padding: 0.3rem 0.6rem;
   white-space: pre-wrap;
