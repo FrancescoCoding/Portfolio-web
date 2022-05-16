@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Sidebar = props => {
   const storeColour = useSelector(state => state.colours.colour);

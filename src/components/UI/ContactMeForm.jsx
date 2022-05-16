@@ -138,7 +138,7 @@ export const ContactMeForm = () => {
           onChange={changeEmailHandler}
           onBlur={emailInputBlurHandler}
         />
-        <label>{isEnglish ? "message" : "Messaggio"}</label>
+        <label>{isEnglish ? "Message" : "Messaggio"}</label>
         <textarea name="message" />
         <input className={styles.submit} type="submit" value="Send" />
       </form>

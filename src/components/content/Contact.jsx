@@ -110,15 +110,13 @@ const Contact = props => {
             </h1>
             <p
               onClick={() => {
-                {
-                  isEnglish
-                    ? copy(
-                        "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full Stack Web Development, Graphics Design, UX & AI."
-                      )
-                    : copy(
-                        "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full Stack Web Development, Design Grafico, UX & AI."
-                      );
-                }
+                isEnglish
+                  ? copy(
+                      "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full Stack Web Development, Graphics Design, UX & AI."
+                    )
+                  : copy(
+                      "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full Stack Web Development, Design Grafico, UX & AI."
+                    );
                 textWasCopiedPopup();
               }}
               style={{
@@ -133,17 +131,15 @@ const Contact = props => {
 
             <p
               onClick={() => {
-                {
-                  isEnglish
-                    ? copy(
-                        copy(
-                          "Currently open to work part-time as a frontend developer."
-                        )
+                isEnglish
+                  ? copy(
+                      copy(
+                        "Currently open to work part-time as a frontend developer."
                       )
-                    : copy(
-                        "Attualmente disponibile a lavorare come frontend developer."
-                      );
-                }
+                    )
+                  : copy(
+                      "Attualmente disponibile a lavorare come frontend developer."
+                    );
                 textWasCopiedPopup();
               }}
               style={{
