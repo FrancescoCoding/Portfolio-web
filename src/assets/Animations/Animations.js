@@ -9,6 +9,7 @@ import carData from "./Car 404.json";
 import noDataData from "./No Data 404.json";
 import loadingData from "./Loading.json";
 import mailData from "./Mail.json";
+import successCheck from "./Success.json";
 
 const AstronautLottie = props => {
   const [isDelayed, setIsDelayed] = useState(false);
@@ -148,3 +149,20 @@ const MailLottie = props => {
 };
 
 export const Mail = MailLottie;
+
+const SuccessLottie = props => {
+  return (
+    <Lottie
+      loop={true}
+      animationData={successCheck}
+      play
+      style={{
+        width: +props.width || 130,
+        height: +props.height || 150,
+        transform: "translateY(1.4rem)",
+      }}
+    />
+  );
+};
+
+export const Success = SuccessLottie;

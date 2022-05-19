@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import styles from "./ContactMeForm.module.css";
 import { useSelector } from "react-redux";
+import { Success } from "../../assets/Animations/Animations";
 
 const validateEmail = email => {
   const regex =
@@ -27,7 +28,6 @@ export const ContactMeForm = () => {
 
   let emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
 
-  // create state for when email is sent
   const [emailSent, setEmailSent] = useState(false);
 
   const changeNameHandler = e => {
@@ -123,7 +123,7 @@ export const ContactMeForm = () => {
     // after 3 seconds, reset the form
     setTimeout(() => {
       setEmailSent(false);
-    }, 5000);
+    }, 4000);
   };
 
   const nameInputClasses = nameInputIsInvalid ? "invalid" : "";
@@ -131,7 +131,7 @@ export const ContactMeForm = () => {
 
   return (
     <div className={styles["form-container"]}>
-      {emailSent && (
+      {!emailSent && (
         <form ref={form} onSubmit={sendEmailHandler} className={styles.form}>
           <label>{isEnglish ? "Name" : "Nome"}</label>
           <input
@@ -156,13 +156,22 @@ export const ContactMeForm = () => {
           <input className={styles.submit} type="submit" value="Send" />
         </form>
       )}
-      {!emailSent && (
-        <div>
-          <p className={styles.success}>
-            {isEnglish
-              ? "Your message has been sent! I will get back to you as soon as possible."
-              : "Il tuo messaggio è stato inviato. Ti risponderò il prima possibile."}
-          </p>
+      {emailSent && (
+        <div className={styles["success-container"]}>
+          <Success />
+
+          {isEnglish && (
+            <p className={styles.success}>
+              Your message has been sent! <br /> I will get back to you as soon
+              as possible.{" "}
+            </p>
+          )}
+          {!isEnglish && (
+            <p className={styles.success}>
+              Il tuo messaggio è stato inviato! <br /> Ti risponderò il prima
+              possibile.{" "}
+            </p>
+          )}
         </div>
       )}
     </div>
