@@ -115,18 +115,18 @@ const HamburgerMenu = props => {
               {storeColour.colour === "ocean" && checkMark}
             </button>
             <button
-              aria-label="Leaf colour"
-              onClick={() => dispatch(colourActions.colourLeaf())}
-              className={styles["leaf-bg"]}
-            >
-              {storeColour.colour === "leaf" && checkMark}
-            </button>
-            <button
               aria-label="Magenta colour"
               onClick={() => dispatch(colourActions.colourMagenta())}
               className={styles["magenta-bg"]}
             >
               {storeColour.colour === "magenta" && checkMark}
+            </button>
+            <button
+              aria-label="Leaf colour"
+              onClick={() => dispatch(colourActions.colourLeaf())}
+              className={styles["leaf-bg"]}
+            >
+              {storeColour.colour === "leaf" && checkMark}
             </button>
           </div>
           <ul>

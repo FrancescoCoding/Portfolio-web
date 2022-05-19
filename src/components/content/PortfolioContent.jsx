@@ -1,7 +1,7 @@
 import Contact from "./Contact";
-import Separator from "../../assets/Separator";
-import RubberDuck from "../../assets/RubberDuck";
-import { Astronaut } from "../../assets/Animations";
+import Separator from "../../assets/Animations/Separator";
+import RubberDuck from "../../assets/Animations/RubberDuck";
+import { Astronaut } from "../../assets/Animations/Animations";
 import { FaChevronDown } from "react-icons/fa";
 
 import styles from "./PortfolioContent.module.css";

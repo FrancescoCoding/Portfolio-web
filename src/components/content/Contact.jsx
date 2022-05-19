@@ -3,7 +3,7 @@ import { ContactMeForm } from "../UI/ContactMeForm";
 import { useState, useMemo } from "react";
 
 import copy from "copy-text-to-clipboard";
-import { Mail } from "../../assets/Animations";
+import { Mail } from "../../assets/Animations/Animations";
 import { FaChevronDown } from "react-icons/fa";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { IoCloseOutline } from "react-icons/io5";
@@ -142,6 +142,7 @@ const Contact = props => {
                     );
                 textWasCopiedPopup();
               }}
+              className={styles.paragraph}
               style={{
                 marginBottom: "1rem",
                 border: `${storeColour.hex} solid 2px`,

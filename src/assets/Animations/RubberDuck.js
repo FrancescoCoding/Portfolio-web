@@ -1,7 +1,7 @@
 // Ultimate Honking technology
-import honk1 from "../assets/Sounds/Honk1.ogg";
-import honk2 from "../assets/Sounds/Honk2.ogg";
-import honk3 from "../assets/Sounds/Honk3.ogg";
+import honk1 from "../../assets/Sounds/Honk1.ogg";
+import honk2 from "../../assets/Sounds/Honk2.ogg";
+import honk3 from "../../assets/Sounds/Honk3.ogg";
 
 const dice = () => Math.floor(Math.random() * 3);
 

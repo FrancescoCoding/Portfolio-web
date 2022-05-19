@@ -86,3 +86,13 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: rgb(222, 5, 237);
   background: var(--canary-primary-color);
 }
+
+.success {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
+  cursor: text !important;
+  user-select: auto !important;
+}

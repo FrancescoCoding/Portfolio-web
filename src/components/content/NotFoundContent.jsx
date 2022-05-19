@@ -1,6 +1,6 @@
 import styles from "./NotFoundContent.module.css";
 import { useSelector } from "react-redux";
-import { Nessie, Robot, Car, NoData } from "../../assets/Animations";
+import { Nessie, Robot, Car, NoData } from "../../assets/Animations/Animations";
 import { useMediaQuery } from "react-responsive";
 
 const NotFoundContent = ({ message }) => {

@@ -271,6 +271,7 @@
 }
 .magenta-bg {
   background: var(--magenta-primary-color) !important;
+  transform: translateY(0.4px);
 }
 
 .hideIT {

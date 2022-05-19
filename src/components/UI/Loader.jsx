@@ -1,5 +1,5 @@
 import styles from "./Loader.module.css";
-import { Loading } from "../../assets/Animations";
+import { Loading } from "../../assets/Animations/Animations";
 
 const Loader = props => {
   return (

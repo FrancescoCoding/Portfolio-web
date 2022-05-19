@@ -121,10 +121,10 @@
   cursor: pointer;
   user-select: none;
 }
-.contact-container p:first-child {
+.contact-container p.paragraph:first-child {
   margin-top: 2rem;
 }
-.contact-container p:hover {
+.contact-container p.paragraph:hover {
   border: rgb(41, 157, 245) 2px solid !important;
   transition: border 0.6s !important;
 }

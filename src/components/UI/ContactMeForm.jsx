@@ -27,6 +27,9 @@ export const ContactMeForm = () => {
 
   let emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
 
+  // create state for when email is sent
+  const [emailSent, setEmailSent] = useState(false);
+
   const changeNameHandler = e => {
     setEnteredName(e.target.value);
 
@@ -112,6 +115,15 @@ export const ContactMeForm = () => {
 
     setEnteredNameIsValid(true);
     setEnteredEmailIsValid(true);
+
+    // Set email was sent state
+    setEmailSent(true);
+    console.log("running");
+
+    // after 3 seconds, reset the form
+    setTimeout(() => {
+      setEmailSent(false);
+    }, 5000);
   };
 
   const nameInputClasses = nameInputIsInvalid ? "invalid" : "";
@@ -119,29 +131,40 @@ export const ContactMeForm = () => {
 
   return (
     <div className={styles["form-container"]}>
-      <form ref={form} onSubmit={sendEmailHandler} className={styles.form}>
-        <label>{isEnglish ? "Name" : "Nome"}</label>
-        <input
-          className={styles[`${nameInputClasses}`]}
-          value={enteredName}
-          type="text"
-          name="name"
-          onChange={changeNameHandler}
-          onBlur={nameInputBlurHandler}
-        />
-        <label>Email</label>
-        <input
-          className={styles[`${emailInputClasses}`]}
-          value={enteredEmail}
-          type="email"
-          name="email"
-          onChange={changeEmailHandler}
-          onBlur={emailInputBlurHandler}
-        />
-        <label>{isEnglish ? "Message" : "Messaggio"}</label>
-        <textarea name="message" />
-        <input className={styles.submit} type="submit" value="Send" />
-      </form>
+      {emailSent && (
+        <form ref={form} onSubmit={sendEmailHandler} className={styles.form}>
+          <label>{isEnglish ? "Name" : "Nome"}</label>
+          <input
+            className={styles[`${nameInputClasses}`]}
+            value={enteredName}
+            type="text"
+            name="name"
+            onChange={changeNameHandler}
+            onBlur={nameInputBlurHandler}
+          />
+          <label>Email</label>
+          <input
+            className={styles[`${emailInputClasses}`]}
+            value={enteredEmail}
+            type="email"
+            name="email"
+            onChange={changeEmailHandler}
+            onBlur={emailInputBlurHandler}
+          />
+          <label>{isEnglish ? "Message" : "Messaggio"}</label>
+          <textarea name="message" />
+          <input className={styles.submit} type="submit" value="Send" />
+        </form>
+      )}
+      {!emailSent && (
+        <div>
+          <p className={styles.success}>
+            {isEnglish
+              ? "Your message has been sent! I will get back to you as soon as possible."
+              : "Il tuo messaggio è stato inviato. Ti risponderò il prima possibile."}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
