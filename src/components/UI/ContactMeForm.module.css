@@ -93,6 +93,7 @@ select:-webkit-autofill:focus {
   justify-content: center;
   align-items: center;
   height: 60%;
+  transform: translateY(-1.5rem);
 }
 .success-container .success {
   font-size: 1.2rem;

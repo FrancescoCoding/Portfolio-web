@@ -23,7 +23,7 @@ const AstronautLottie = props => {
     return () => {
       setIsDelayed(false);
     };
-  }, []);
+  }, [props.delay]);
 
   return (
     <Lottie
@@ -157,9 +157,8 @@ const SuccessLottie = props => {
       animationData={successCheck}
       play
       style={{
-        width: +props.width || 130,
-        height: +props.height || 150,
-        transform: "translateY(1.4rem)",
+        width: +props.width || 300,
+        transform: "translateY(1.3rem)",
       }}
     />
   );
