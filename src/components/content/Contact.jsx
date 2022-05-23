@@ -119,6 +119,7 @@ const Contact = props => {
                     );
                 textWasCopiedPopup();
               }}
+              className={styles.paragraph}
               style={{
                 marginBottom: "1rem",
                 border: `${storeColour.hex} solid 2px`,
