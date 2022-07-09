@@ -135,11 +135,11 @@ const Contact = props => {
                 isEnglish
                   ? copy(
                       copy(
-                        "Currently open to work part-time as a frontend developer."
+                        "Currently working as a frontend developer @ eCERTO."
                       )
                     )
                   : copy(
-                      "Attualmente disponibile a lavorare come frontend developer."
+                      "Attualmente lavoro come frontend developer @ eCERTO."
                     );
                 textWasCopiedPopup();
               }}
@@ -150,8 +150,8 @@ const Contact = props => {
               }}
             >
               {isEnglish
-                ? "Currently open to work part-time as a frontend developer."
-                : "Attualmente disponibile a lavorare come frontend developer."}
+                ? "Currently working as a frontend developer @ eCERTO."
+                : "Attualmente lavoro come frontend developer @ eCERTO."}
             </p>
             {textCopied && (
               <p className={styles.copied}>
