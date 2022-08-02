@@ -102,7 +102,7 @@ const Contact = props => {
             <h1
               style={{ borderBottom: `${storeColour.hex} 2px` }}
               onClick={() => {
-                copy("Francesco Gruosso");
+                copy("🐸 Francesco Gruosso 🐸");
                 textWasCopiedPopup();
               }}
             >

@@ -14,7 +14,9 @@
   width: 200%;
   transform: skewY(4.5deg) translateY(-3rem) scale(1.3);
 }
-
+.project-card h1 {
+  font-size: 1.7rem !important;
+}
 .project-container {
   position: fixed;
   top: 0;
@@ -47,7 +49,7 @@
   transform: translateY(-2rem);
 }
 .project-card-section .project-card {
-  padding: 2.6rem 3.4rem;
+  padding: 2.6rem 5rem;
   border-radius: 1rem;
   background-color: white;
   box-shadow: 5px 15px 4px rgba(154, 160, 185, 0.05),
@@ -99,7 +101,7 @@
   margin-bottom: 3rem;
 }
 .logos > * {
-  margin: 0 0.8rem;
+  margin: 0 2rem;
 }
 .logos > *:first-child {
   margin-left: 2rem !important;
@@ -184,13 +186,7 @@ li {
 }
 
 @media screen and (max-width: 1800px) {
-  .logo {
-    margin-left: 1.6rem;
-  }
   .project-card {
-    padding: 3.4rem 5rem;
-    width: 70%;
-    height: 100%;
     font-size: 16px;
   }
   .information-wrapper .btn {
@@ -214,18 +210,10 @@ li {
     justify-content: center;
     padding: 0;
   }
-  .information-wrapper .btn {
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    transition: all 0s;
-  }
+
   .project-card {
-    padding: 1.8rem 2rem;
+    padding: 2rem 3rem !important;
     width: 90%;
-    min-height: 100%;
     overflow: auto;
   }
   .project-card h1 {
@@ -233,6 +221,7 @@ li {
   }
   .project-card p {
     font-size: 1rem !important;
+    width: 90%;
   }
   .img-btn {
     display: none;
@@ -248,7 +237,7 @@ li {
   }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   .project-card {
     height: 100vh;
   }
@@ -277,4 +266,4 @@ li {
     width: 100%;
     padding: 0.4rem;
   }
-}
+} */
