@@ -28,3 +28,6 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Search engine optimization (SEO) handling to improve the quantity of website traffic from search engines
 - Validating the aspects of a Progressive Web App
 - Fully working production build with great performance and best practices
+
+![image](https://user-images.githubusercontent.com/64712227/182474162-62a034ce-43b8-444f-a6f0-48ed111ae253.png)
+
