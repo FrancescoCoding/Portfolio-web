@@ -157,8 +157,9 @@ const HamburgerMenu = props => {
                     }}
                   >
                     {" "}
-                    <b>Italian (IT)</b>
+                    <b>Italian </b>
                   </span>
+                  [IT]
                 </NavLink>
               )}
               {storeLanguage === "IT" && (
@@ -176,8 +177,9 @@ const HamburgerMenu = props => {
                     }}
                   >
                     {" "}
-                    <b>Inglese (EN)</b>
+                    <b>Inglese </b>
                   </span>
+                  [EN]
                 </NavLink>
               )}
             </li>

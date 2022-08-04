@@ -78,6 +78,10 @@
   text-transform: uppercase;
   font-weight: 500;
 }
+.sidebar-brand > a:hover {
+  color: #6397f0;
+  text-decoration: underline !important;
+}
 .sidebar-brand .close-sidebar {
   cursor: pointer;
   font-size: 20px;
@@ -160,7 +164,7 @@
     position: fixed;
   }
   .sidebar a {
-    text-align: center;
+    /* text-align: center; */
   }
 }
 
