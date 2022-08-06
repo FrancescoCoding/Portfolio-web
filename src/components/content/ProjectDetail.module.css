@@ -58,7 +58,7 @@
   text-align: left;
   position: relative;
   opacity: 0;
-  animation: appear 1s forwards 0.6s;
+  animation: appear 0.8s forwards 0.5s;
 }
 .project-card-section .project-card p {
   font-size: 19px !important;
