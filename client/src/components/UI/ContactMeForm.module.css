@@ -1,0 +1,108 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.form {
+  max-height: 500px !important;
+}
+.form label {
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.4rem;
+  user-select: none;
+  font-size: 19px;
+}
+
+.form input {
+  font-family: "Lucida sans", sans-serif !important;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  font-size: 1.3rem !important;
+  border: 1px solid transparent;
+  width: 100%;
+  border-radius: 3px;
+}
+.form input:focus {
+  outline-color: rgb(0, 110, 255);
+  outline-offset: 0px;
+}
+
+.invalid {
+  background: rgb(255, 194, 194);
+  border: 1px solid red !important;
+}
+
+textarea {
+  font-family: "Lucida sans", sans-serif !important;
+  outline-color: rgb(0, 110, 255);
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem !important;
+  width: 100% !important;
+  height: 60px;
+  font-size: 1.3rem;
+  max-height: 240px;
+  min-height: 100px;
+  padding: 0.3rem 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.submit {
+  margin-top: 1rem;
+  width: 100px !important;
+  cursor: pointer;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  font-family: "Lucida sans", sans-serif !important;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  font-size: 1.3rem !important;
+  border: 1px solid transparent;
+  width: 100%;
+  -webkit-text-size-adjust: 120%;
+  -webkit-text-fill-color: black;
+  box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+}
+
+:-webkit-autofill::selection {
+  -webkit-text-fill-color: rgb(222, 5, 237);
+  background: var(--canary-primary-color);
+}
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  transform: translateY(-1.5rem);
+}
+.success-container .success {
+  font-size: 1.2rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
+  cursor: text !important;
+  user-select: auto !important;
+}
