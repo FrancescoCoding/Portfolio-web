@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
-  "proxy": "/api",
+  "proxy": "/.netlify/functions/api",
   "dependencies": {
     "@react-google-maps/api": "^2.4.0",
     "@reduxjs/toolkit": "^1.8.3",
