@@ -24,6 +24,11 @@ const ProjectDetail = React.lazy(async () => {
   return import("./components/content/ProjectDetail");
 });
 
+const NFTs = React.lazy(async () => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  return import("./pages/NFTs");
+});
+
 function App() {
   return (
     <Suspense fallback={<Loader />}>
@@ -39,6 +44,9 @@ function App() {
         </Route>
         <Route path="/projects/:projectID">
           <ProjectDetail />
+        </Route>
+        <Route path="/NFTs">
+          <NFTs />
         </Route>
         <Route path="/404" exact>
           <NotFound />

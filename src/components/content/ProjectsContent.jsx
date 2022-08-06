@@ -40,7 +40,11 @@ const ProjectsContent = props => {
                   onTouchStart={hoverHandler}
                   onTouchEnd={hoverHandler}
                 >
-                  <Link key={project.id} to={`/projects/${project.endpoint}`}>
+                  <Link
+                    key={project.id}
+                    to={`/projects/${project.endpoint}`}
+                    className={styles["list-container"]}
+                  >
                     <div
                       className={`${styles.list}`}
                       style={{
