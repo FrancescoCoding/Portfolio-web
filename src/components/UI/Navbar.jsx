@@ -85,11 +85,18 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
+              <NavLink activeClassName={styles.active} to="/nfts">
+                {" "}
+                {isEnglish ? "NFTs" : "NFTs"}
+              </NavLink>
+            </li>
+            <li>
               <a href="/#" onClick={showModalHandler}>
                 {isEnglish ? "Contact" : "Contatto"}
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
+
             <li style={{ color: "white" }}>
               {isEnglish && (
                 <a href="/#" onClick={changeLanguageHandler}>

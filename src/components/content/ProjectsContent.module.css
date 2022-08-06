@@ -31,6 +31,10 @@ div.items {
   padding-left: 0.8rem;
   width: 70%;
   height: 70%;
+  scroll-snap-type: y mandatory;
+}
+div.items > div {
+  scroll-snap-align: start;
 }
 
 div.list {
@@ -120,6 +124,9 @@ div.list {
   align-items: flex-end;
   position: relative;
   z-index: 101 !important;
+}
+
+.list-container {
 }
 
 .project-git {
