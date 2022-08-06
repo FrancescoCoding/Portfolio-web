@@ -4,7 +4,7 @@ const projects = require("./routes/projects");
 const serverless = require("serverless-http");
 
 app
-  .get("/api", (req, res) => {
+  .get("/", (req, res) => {
     res.send("Hello World <h1> from Express </h1>");
   })
   .listen(5000, () => {
@@ -23,6 +23,6 @@ app
     console.log("Connection established");
   });
 
-app.use("/.netlify/functions/api", projects);
+app.use("/api", projects);
 
 module.exports.handler = serverless(app);
