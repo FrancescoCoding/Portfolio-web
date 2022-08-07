@@ -84,12 +84,12 @@ const Navbar = () => {
                 {isEnglish ? "Projects" : "Progetti"}
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink activeClassName={styles.active} to="/nfts">
                 {" "}
                 {isEnglish ? "NFTs" : "NFTs"}
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <a href="/#" onClick={showModalHandler}>
                 {isEnglish ? "Contact" : "Contatto"}
