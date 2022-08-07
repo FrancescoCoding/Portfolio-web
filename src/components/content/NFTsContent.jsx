@@ -5,7 +5,7 @@ const NFTsContent = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/francesco-api.herokuapp.com/api")
+    fetch("https://francesco-api.herokuapp.com/projects")
       .then(response => response.json())
       .then(data => {
         setProjects(data);
