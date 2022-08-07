@@ -98,6 +98,7 @@
   max-width: 450px;
   transition: border 0.7s !important;
   user-select: none;
+  cursor: pointer;
 }
 .contact-container h1:hover {
   border-bottom: rgb(41, 157, 245) solid 2px !important;

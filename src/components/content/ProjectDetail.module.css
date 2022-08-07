@@ -58,7 +58,7 @@
   text-align: left;
   position: relative;
   opacity: 0;
-  animation: appear 0.8s forwards 0.5s;
+  animation: appear 0.55s forwards 0.1s;
 }
 .project-card-section .project-card p {
   font-size: 19px !important;
@@ -242,11 +242,14 @@ li {
 @keyframes appear {
   0% {
     opacity: 0;
+    transform: translateX(100%);
   }
   50% {
+    opacity: 1;
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

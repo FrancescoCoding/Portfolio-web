@@ -5,7 +5,10 @@ const Loader = props => {
   return (
     <div
       className={styles["loader-container"]}
-      style={{ animationDuration: props.duration || 1000 }}
+      style={{
+        animationDuration: props.duration || 1000,
+        backgroundColor: props.backgroundColor,
+      }}
     >
       <Loading />
     </div>
