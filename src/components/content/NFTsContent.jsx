@@ -14,18 +14,15 @@ const NFTsContent = () => {
     fetch("https://francesco-api.herokuapp.com/projects")
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         setProjects(data);
       })
       .catch(error => console.log(error));
-
-    console.log(projects);
   });
 
   return (
     <div>
       <h1 style={{ color: "white", width: "100%", textAlign: "center" }}>
-        NFTsContent
+        {projects}
       </h1>
     </div>
   );
