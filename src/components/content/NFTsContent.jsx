@@ -21,9 +21,9 @@ const NFTsContent = () => {
 
   return (
     <div>
-      <h1 style={{ color: "white", width: "100%", textAlign: "center" }}>
+      <p style={{ color: "white", width: "100%", textAlign: "center" }}>
         {projects}
-      </h1>
+      </p>
     </div>
   );
 };
