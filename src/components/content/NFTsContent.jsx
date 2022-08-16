@@ -11,12 +11,16 @@ const NFTsContent = () => {
       return;
     }
 
-    fetch("https://francesco-api.herokuapp.com/projects")
-      .then(response => response.json())
-      .then(data => {
-        setProjects(data);
-      })
-      .catch(error => console.log(error));
+    console.log("projects", projects);
+
+    if (projects.length === 0) {
+      fetch("https://francesco-api.herokuapp.com/projects")
+        .then(response => response.json())
+        .then(data => {
+          setProjects(data);
+        })
+        .catch(error => console.log(error));
+    }
   });
 
   return (
