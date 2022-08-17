@@ -29,5 +29,5 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Validating the aspects of a Progressive Web App
 - Fully working production build with great performance and best practices
 
-![image](https://user-images.githubusercontent.com/64712227/182474162-62a034ce-43b8-444f-a6f0-48ed111ae253.png)
+![image](https://user-images.githubusercontent.com/64712227/185088303-f6e11b7d-4d34-4470-ac39-5358a599062a.png)
 
