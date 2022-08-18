@@ -261,7 +261,7 @@
   border-left: 8px solid var(--magenta-primary-color) !important;
 }
 .active {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .canary-bg {
