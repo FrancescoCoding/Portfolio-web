@@ -29,5 +29,9 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Validating the aspects of a Progressive Web App
 - Fully working production build with great performance and best practices
 
-![image](https://user-images.githubusercontent.com/64712227/185088303-f6e11b7d-4d34-4470-ac39-5358a599062a.png)
+## Incoming features
+- Making this a Full-Stack project by adding a TypeScript Node server with its own REST API and MongoDB database: [[Under construction] Portfolio-api](https://github.com/FrancescoCoding/Portfolio-api)
+- Admin page for myself to manage the CRUD operations from my own admin page
+- Authentication for the admin page
 
+![image](https://user-images.githubusercontent.com/64712227/185088303-f6e11b7d-4d34-4470-ac39-5358a599062a.png)
