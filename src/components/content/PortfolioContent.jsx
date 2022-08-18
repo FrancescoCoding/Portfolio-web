@@ -49,7 +49,7 @@ const PortfolioContent = props => {
             <RubberDuck className={styles.quack} colour={storeColour.hex} /> out
           </h1>
           <p>
-            ... as a frontend developer, UX designer,
+            ... as a Full-Stack developer, UX designer,
             <br />
             engineer of terrible puns.
           </p>
@@ -77,7 +77,7 @@ const PortfolioContent = props => {
             <RubberDuck className={styles.quack} colour={storeColour.hex} />
           </h1>
           <p>
-            ... come frontend developer, designer UX
+            ... come Full-Stack developer, designer di UX
             <br />e di terribili giochi di parole.
           </p>
           <div className={styles["btn-container"]}>
