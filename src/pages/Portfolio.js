@@ -11,7 +11,7 @@ const Portfolio = () => {
       <Navbar />
       <PortfolioContent astronautDelaySec={"1s"} />
       <ColourSelector />
-      <Sidebar />
+      {/* <Sidebar /> */}
     </>
   );
 };
