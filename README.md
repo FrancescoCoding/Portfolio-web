@@ -15,7 +15,7 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - HTML5, CSS3 (CSS modules to scope locally), JavaScript, JSX
 - UI elements created from scratch keeping UX into account
 - React / React Router
-- React Redux / Redux Toolkit / Redux Persist to store and rehydrate the store (and provide an "Offline First" support)
+- React Redux / Redux Toolkit / Redux Persist to save and rehydrate the store (and provide an "Offline First" support)
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
 - Custom made maps and styles for each portfolio colour (Canary, Ocean, Magenta, Leaf) with corresponding accent colours
