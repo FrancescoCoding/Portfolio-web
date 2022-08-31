@@ -1,7 +1,7 @@
-# Personal Portfolio 🦆
+# Personal Portfolio - Web 🦆
 Personal portfolio built with React and other technologies.
 
-[Live Website](https://fran-dev.com/portfolio/)
+Link: [Live Website](https://fran-dev.com/portfolio/)  
 
 
 ![Portfolio Preview](https://user-images.githubusercontent.com/64712227/134884152-c9b68740-8986-42de-bf20-cc81c598078a.gif)
@@ -15,7 +15,7 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - HTML5, CSS3 (CSS modules to scope locally), JavaScript, JSX
 - UI elements created from scratch keeping UX into account
 - React / React Router
-- React Redux / Redux Toolkit / Redux Persist (to provide an "Offline First" support for some features)
+- React Redux / Redux Toolkit / Redux Persist to save and rehydrate the store (and provide an "Offline First" support)
 - Handling touched states / Redux Responsive & Custom Media Queries / React Lottie Player
 - Google Maps API / Forms - Portals - Modals handling
 - Custom made maps and styles for each portfolio colour (Canary, Ocean, Magenta, Leaf) with corresponding accent colours
@@ -30,8 +30,7 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Fully working production build with great performance and best practices
 
 ## Incoming features
-- Making this a Full-Stack project by adding a TypeScript Node server with its own REST API and MongoDB database: [[Under construction] Portfolio-api](https://github.com/FrancescoCoding/Portfolio-api)
-- Admin page for myself to manage the CRUD operations from my own admin page
-- Authentication for the admin page
+- Making this a Full-Stack project by adding a TypeScript Node server with its own REST API and MongoDB database: [Portfolio-api](https://github.com/FrancescoCoding/Portfolio-api)
+- Admin page for myself to manage the CRUD operations from my own custom panel, complete with authentication
 
 ![image](https://user-images.githubusercontent.com/64712227/185088303-f6e11b7d-4d34-4470-ac39-5358a599062a.png)
