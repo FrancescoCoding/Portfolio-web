@@ -4,7 +4,7 @@
   "homepage": ".",
   "private": true,
   "dependencies": {
-    "@react-google-maps/api": "^2.4.0",
+    "@react-google-maps/api": "^2.12.1",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
