@@ -20,6 +20,7 @@ const Navbar = () => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   const [showModal, setShowModal] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isOpen, setOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [burgerIsTouched, setBurgerIsTouched] = useState(false);

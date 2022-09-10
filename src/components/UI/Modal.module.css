@@ -35,7 +35,6 @@
   }
 }
 
-/* if the screen is bigger than 1080 change the modal width */
 @media screen and (min-height: 1080px) {
   .modal {
     width: 50%;

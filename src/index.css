@@ -86,7 +86,7 @@ p {
 ::-moz-selection {
   /* Code for Firefox */
   color: rgb(222, 5, 237);
-  background: --var(--canary-primary-color);
+  background: var(--canary-primary-color);
 }
 
 ::selection {

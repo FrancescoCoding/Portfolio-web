@@ -1,5 +1,4 @@
 import styles from "./ProjectsContent.module.css";
-
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { FaGithub } from "react-icons/fa";
