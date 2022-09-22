@@ -33,4 +33,5 @@ This showcases my current skills in creating responsive, efficient and fully fun
 - Making this a Full-Stack project by adding a TypeScript Node server with its own REST API and MongoDB database: [Portfolio-api](https://github.com/FrancescoCoding/Portfolio-api)
 - Admin page for myself to manage the CRUD operations from my own custom panel, complete with authentication
 
-![image](https://user-images.githubusercontent.com/64712227/185088303-f6e11b7d-4d34-4470-ac39-5358a599062a.png)
+![image](https://user-images.githubusercontent.com/64712227/191815790-57ed3daf-1d7c-44d2-b282-a1473a15ab53.png)
+
