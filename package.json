@@ -19,7 +19,7 @@
     "react-lottie-player": "^1.4.3",
     "react-redux": "^7.2.9",
     "react-responsive": "^9.0.0-beta.4",
-    "react-router-dom": "5.3.3",
+    "react-router-dom": "5.3.4",
     "react-scripts": "^5.0.1",
     "react-tooltip": "^4.2.21",
     "react-utterances": "^0.6.4",
