@@ -112,11 +112,11 @@ const Contact = props => {
               onClick={() => {
                 isEnglish
                   ? copy(
-                      "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
-                    )
+                    "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
+                  )
                   : copy(
-                      "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
-                    );
+                    "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
+                  );
                 textWasCopiedPopup();
               }}
               className={styles.paragraph}
@@ -134,13 +134,13 @@ const Contact = props => {
               onClick={() => {
                 isEnglish
                   ? copy(
-                      copy(
-                        "Currently working as a software developer @ eCERTO."
-                      )
+                    copy(
+                      "Currently working as a software developer @ eCERTO."
                     )
+                  )
                   : copy(
-                      "Attualmente lavoro come software developer @ eCERTO."
-                    );
+                    "Attualmente lavoro come software developer @ eCERTO."
+                  );
                 textWasCopiedPopup();
               }}
               className={styles.paragraph}

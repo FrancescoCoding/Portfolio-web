@@ -13,12 +13,28 @@
   z-index: -1;
 }
 
+.main-content-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: appear 1.5s forwards 1s;
+  transition: all 1s ease;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  z-index: -1;
+}
+
 .main-text h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 5rem;
   user-select: none;
   font-weight: 400;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .main-text p {
@@ -37,10 +53,12 @@
   cursor: pointer;
   transition: all 0.1s;
 }
+
 .quack:hover {
   transform: scale(1.5) translateX(6px);
   transition: all 0.2s;
 }
+
 .quack:active {
   transition: all 0.1s ease-out;
   transform: scale(3);
@@ -51,6 +69,7 @@
   width: 100%;
   justify-content: flex-end;
 }
+
 .btn {
   margin-top: 1rem;
   margin-right: 0 !important;
@@ -76,24 +95,31 @@
 .btn.canary {
   background-color: var(--canary-primary-color);
 }
+
 .btn.leaf {
   background-color: var(--leaf-primary-color);
 }
+
 .btn.ocean {
   background-color: var(--ocean-primary-color);
 }
+
 .btn.magenta {
   background-color: var(--magenta-primary-color);
 }
+
 .btn.canary:active {
   background-color: var(--canary-primary-color-darker);
 }
+
 .btn.leaf:active {
   background-color: var(--leaf-primary-color-darker);
 }
+
 .btn.ocean:active {
   background-color: var(--ocean-primary-color-darker);
 }
+
 .btn.magenta:active {
   background-color: var(--magenta-primary-color-darker);
 }
@@ -110,13 +136,16 @@
   flex-direction: column;
   z-index: -1;
 }
+
 .astronaut-text {
   transform: translateY(-3rem);
 }
+
 .astronaut-text p {
   font-size: 2.5rem !important;
   margin-top: 0.6rem;
 }
+
 .astronaut {
   -webkit-user-drag: none;
   user-select: none;
@@ -133,39 +162,43 @@
   0% {
     opacity: 0;
   }
-  50% {
-  }
+
+  50% {}
+
   100% {
     opacity: 1;
   }
 }
 
-@media screen and (max-width: 1824px) {
+@media screen and (max-width: 1524px) {
   .main-content {
     position: fixed;
     flex-direction: column;
-    transform: scale(0.8);
+    transform: scale(0.7);
     height: 100vh;
     transition: all 1s ease;
     align-items: center;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .main-content {
-    transform: scale(0.76);
-    height: 100vh !important;
+    /* border: red solid 1px; // Testing */
+    transform: scale(0.6);
   }
 }
+
 @media screen and (max-width: 900px) {
   .astronaut-text h1 {
     font-size: 3.2rem !important;
   }
+
   .main-content {
     width: 100%;
-    transform: scale(0.55);
     margin-top: -6rem;
-    height: 100vh;
+    transform: scale(0.3);
   }
+
   .astronaut-text {
     transform: translateY(-2rem);
   }

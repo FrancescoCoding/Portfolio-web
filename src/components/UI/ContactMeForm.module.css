@@ -9,6 +9,7 @@
 .form {
   max-height: 500px !important;
 }
+
 .form label {
   font-family: sans-serif;
   letter-spacing: 0.05em;
@@ -28,6 +29,7 @@
   width: 100%;
   border-radius: 3px;
 }
+
 .form input:focus {
   outline-color: rgb(0, 110, 255);
   outline-offset: 0px;
@@ -95,6 +97,7 @@ select:-webkit-autofill:focus {
   height: 60%;
   transform: translateY(-1.5rem);
 }
+
 .success-container .success {
   font-size: 1.2rem;
   text-align: center;

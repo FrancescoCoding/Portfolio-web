@@ -64,9 +64,11 @@ p {
 .react-viewer-btn {
   transform: translateY(-6px) translateX(2rem);
 }
+
 .react-viewer-close {
   transform: translateY(0) translateX(0);
 }
+
 .react-viewer-attribute {
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -76,8 +78,9 @@ p {
   0% {
     opacity: 0;
   }
-  50% {
-  }
+
+  50% {}
+
   100% {
     opacity: 1;
   }
@@ -99,6 +102,7 @@ p {
     transition: all 1s ease;
   }
 }
+
 @media screen and (max-width: 1200px) {
   body {
     transition: all 1s ease;
@@ -108,12 +112,15 @@ p {
 .canary {
   color: var(--canary-primary-color) !important;
 }
+
 .leaf {
   color: var(--leaf-primary-color) !important;
 }
+
 .ocean {
   color: var(--ocean-primary-color) !important;
 }
+
 .magenta {
   color: var(--magenta-primary-color) !important;
 }

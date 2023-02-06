@@ -4,7 +4,6 @@ nav {
   display: flex;
   padding: 0rem 12.5rem;
   justify-content: flex-start;
-  margin: 0 auto !important;
   width: 100vw !important;
   z-index: 10 !important;
 }
@@ -23,6 +22,8 @@ nav {
 .navbar ul {
   display: flex;
   padding-top: 3rem;
+  max-width: 2200px;
+  margin: auto;
   width: 100vw;
 }
 
@@ -40,10 +41,12 @@ nav {
 .navbar ul li a {
   position: relative;
 }
+
 .navbar ul li a.active {
   padding-bottom: -0.4rem;
   /* border-bottom: 4px solid #be1b1b; */
 }
+
 .navbar ul li a.active:hover:after,
 .navbar ul li a.active:hover:before {
   width: 0;
@@ -53,9 +56,11 @@ nav {
 .navbar ul.canary li a {
   color: var(--canary-primary-color);
 }
+
 .navbar ul.canary li a:hover {
   color: var(--canary-primary-color-lighter);
 }
+
 .navbar ul.canary li a.active {
   color: var(--canary-active);
 }
@@ -64,9 +69,11 @@ nav {
 .navbar ul.magenta li a {
   color: var(--magenta-primary-color);
 }
+
 .navbar ul.magenta li a:hover {
   color: var(--magenta-primary-color-lighter);
 }
+
 .navbar ul.magenta li a.active {
   color: var(--magenta-active);
 }
@@ -75,9 +82,11 @@ nav {
 .navbar ul.ocean li a {
   color: var(--ocean-primary-color-lighter);
 }
+
 .navbar ul.ocean li a:hover {
   color: var(--ocean-primary-color-lightest);
 }
+
 .navbar ul.ocean li a.active {
   color: var(--ocean-active);
 }
@@ -86,14 +95,17 @@ nav {
 .navbar ul.leaf li a {
   color: var(--leaf-primary-color);
 }
+
 .navbar ul.leaf li a:hover {
   color: var(--leaf-primary-color-lighter);
 }
+
 .navbar ul.leaf li a.active {
   color: var(--leaf-active);
 }
 
 @media only screen and (min-width: 64em) {
+
   .navbar ul li a:hover:after,
   .navbar ul li a:hover:before {
     width: 100%;
@@ -105,16 +117,38 @@ nav {
   nav {
     width: 0 !important;
   }
+
   .navbar ul {
     width: 100% !important;
     display: none;
     flex-direction: column;
   }
+
   nav {
     padding: 0;
     z-index: 0;
   }
+
+  .hamburger-container {
+    display: flex;
+    align-items: flex-start;
+    /* border: blue solid 1px; // testing */
+    padding-bottom: -0.4rem;
+  }
 }
+
+@media screen and (max-width: 300px) {
+
+  .hamburger-container {
+    margin: 2.5rem 5.5rem;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: -0.4rem;
+    /* border: red solid 1px; // testing */
+
+  }
+}
+
 
 @media screen and (max-width: 870px) {
   nav {
@@ -123,10 +157,11 @@ nav {
     padding: 0;
     z-index: 0;
   }
+
   .hamburger-container {
     margin: 0.5rem 1rem;
     display: flex;
-    align-items: flex-start;
+    /* border: red solid 1px; // testing */
     padding-bottom: -0.4rem;
   }
 }

@@ -34,10 +34,12 @@
   animation-delay: 0.5s;
   opacity: 0;
 }
+
 .contact-container .close:hover {
   color: black !important;
   transition: 0 !important;
 }
+
 .contact-container .back {
   position: absolute;
   top: 9px;
@@ -64,6 +66,7 @@
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
   overflow: hidden;
 }
+
 .contact-container .back:hover {
   color: black !important;
 }
@@ -80,10 +83,12 @@
 .contact-container .mail:hover {
   transition: 0.4s;
 }
+
 .contact-container .mail:active {
   transform: scale(1.1);
   transition: 0.1s;
 }
+
 .contact-container h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -100,6 +105,7 @@
   user-select: none;
   cursor: pointer;
 }
+
 .contact-container h1:hover {
   border-bottom: rgb(41, 157, 245) solid 2px !important;
   transition: border 0.6s !important;
@@ -122,13 +128,16 @@
   cursor: pointer;
   user-select: none;
 }
+
 .contact-container p.paragraph:first-child {
   margin-top: 2rem;
 }
+
 .contact-container p.paragraph:hover {
   border: rgb(41, 157, 245) 2px solid !important;
   transition: border 0.6s !important;
 }
+
 .contact-container p.copied {
   padding: 1rem !important;
   background: black;
@@ -140,7 +149,7 @@
   position: fixed;
   z-index: 40000;
   bottom: 1.7rem;
-  right: 3.95rem;
+  right: 4rem;
 }
 
 .contact-container h3 {
@@ -154,6 +163,7 @@
 .contact-container .info {
   display: flex;
   flex-direction: column;
+  min-height: 500px;
   align-items: center;
   background: var(--modals-background);
   border: 9px solid rgb(213, 212, 206);
@@ -170,6 +180,7 @@
   width: 50%;
   border-top-right-radius: 1.5rem !important;
   border-bottom-right-radius: 1.5rem !important;
+  min-height: 500px;
 }
 
 .action-button {
@@ -185,10 +196,12 @@
   max-width: 450px;
   user-select: none;
 }
+
 .action-button:hover {
   border: solid 2px rgb(2, 145, 255) !important;
   transition: border 0.3s !important;
 }
+
 .action-button:active {
   border: dotted 2px rgb(41, 157, 245) !important;
   transition: border 0s !important;
@@ -198,6 +211,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

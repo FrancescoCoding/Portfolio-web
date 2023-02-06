@@ -9,6 +9,7 @@ import styles from "./PortfolioContent.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
+import { isMobile } from 'react-device-detect';
 
 import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
 const clickSound = new Audio(clickSoundWav);
@@ -19,7 +20,8 @@ const PortfolioContent = props => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1524px)" });
+
 
   const hideModalHandler = () => {
     setShowModal(false);
@@ -39,7 +41,7 @@ const PortfolioContent = props => {
   }
 
   return (
-    <main className={styles["main-content"]}>
+    <main className={`${isMobile ? styles["main-content-mobile"] : styles["main-content"]}`}>
       {showModal && <Contact onClose={hideModalHandler} />}
 
       {storeLanguage === "EN" && isBigScreen && (
