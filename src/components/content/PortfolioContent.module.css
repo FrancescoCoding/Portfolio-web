@@ -22,8 +22,8 @@
   opacity: 0;
   animation: appear 1.5s forwards 1s;
   transition: all 1s ease;
-  margin-top: 2rem;
   margin: auto;
+  margin-top: -8rem;
   z-index: -1;
 }
 
@@ -193,9 +193,17 @@
   }
 
   .main-content {
-    width: 100%;
-    margin-top: -6rem;
-    transform: scale(0.3);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    transform: scale(0.5);
+    opacity: 0;
+    animation: appear 1.5s forwards 1s;
+    transition: all 1s ease;
+    margin: auto;
+    margin-top: -8rem;
+    z-index: -1;
   }
 
   .astronaut-text {
