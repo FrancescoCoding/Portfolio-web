@@ -22,12 +22,15 @@
 .canary {
   color: var(--canary-active);
 }
+
 .leaf {
   color: var(--leaf-active);
 }
+
 .ocean {
   color: var(--ocean-active);
 }
+
 .magenta {
   color: var(--magenta-active);
 }
@@ -42,28 +45,33 @@
 .concat-container {
   height: 80px;
   width: 80px;
+  transform: translateY(17px) translateX(2px);
 }
 
 @media screen and (max-width: 1824px) {
   .concat-container {
     display: none;
   }
+
   .sidebar {
     transition: all 1s ease;
     transform: scale(0.8) translateY(4rem) translateY(0rem) rotate(0deg);
   }
 }
+
 @media screen and (max-width: 1200px) {
   .sidebar {
     display: none;
     transition: all 1s ease;
     transform: rotate(90deg) scale(0.8) translateX(9rem) translateY(4rem);
   }
+
   .sidebar .design {
     transition: all 1s ease;
     display: none;
   }
 }
+
 @media screen and (max-width: 900px) {
   .sidebar {
     display: none;

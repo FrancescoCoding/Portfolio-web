@@ -31,7 +31,7 @@
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
   overflow: hidden;
   animation: appear 0s forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.4s;
   opacity: 0;
 }
 
@@ -92,17 +92,16 @@
 .contact-container h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-size: 2.1rem;
+  font-size: 1.5vw;
   margin-bottom: 0.32rem;
-  text-align: center;
-  width: 70%;
+  text-align: center !important;
   margin: 0 auto;
   margin-bottom: 1.4rem;
   padding-bottom: 1rem;
   border-bottom-style: solid !important;
-  max-width: 450px;
   transition: border 0.7s !important;
   user-select: none;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -113,20 +112,21 @@
 
 .contact-container p {
   position: relative;
-  padding: 1rem 2rem;
+  padding: 1rem 2vw;
   align-items: center;
   border-radius: 10px;
   font-family: "Open Sans";
-  font-size: 16px;
   background: transparent;
   border-style: dashed !important;
-  max-width: 450px;
+  max-width: 100%;
   display: flex;
   height: 100%;
+  width: 100%;
   border: transparent;
   transition: border 0.7s !important;
   cursor: pointer;
   user-select: none;
+  font-size: 0.70vw;
 }
 
 .contact-container p.paragraph:first-child {
@@ -145,10 +145,11 @@
   border: rgb(41, 157, 245) 2px solid !important;
   height: 1rem;
   margin: 0 !important;
+  width: fit-content !important;
   color: white;
   position: fixed;
   z-index: 40000;
-  bottom: 1.7rem;
+  bottom: 1.7rem !important;
   right: 4rem;
 }
 
@@ -170,7 +171,7 @@
   border-right: 0;
   color: white;
   width: 50%;
-  padding: 2.4rem 4rem;
+  padding: 2.4rem 2vw;
   border-top-left-radius: 1.5rem !important;
   border-bottom-left-radius: 1.5rem !important;
 }
@@ -185,7 +186,7 @@
 
 .action-button {
   padding: 1.5rem 2rem;
-  font-size: 1.2rem;
+  font-size: .8vw;
   border-radius: 20px;
   background: transparent;
   width: 100%;
@@ -193,7 +194,7 @@
   color: white;
   border: solid 2px rgb(41, 157, 245) !important;
   transition: all 0.4s ease-in-out;
-  max-width: 450px;
+  max-width: 100%;
   user-select: none;
 }
 
@@ -215,4 +216,40 @@
   100% {
     opacity: 1;
   }
+}
+
+/* If the screen is within 2k */
+@media screen and (max-width: 2561px) {
+
+  .contact-container p:not(.copied) {
+    font-size: 0.70vw;
+  }
+}
+
+
+/* If the screen is bigger than 2k (i.e. zoom out) */
+@media screen and (min-width:2561px) {
+
+  .contact-container p {
+    position: relative;
+    padding: 1rem 2rem;
+    align-items: center;
+    border-radius: 10px;
+    font-family: "Open Sans";
+    background: transparent;
+    border-style: dashed !important;
+    max-width: 100%;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border: transparent;
+    transition: border 0.7s !important;
+    cursor: pointer;
+    font-size: 0.80vw !important;
+  }
+
+  .contact-container p:not(.copied) {
+    font-size: 0.70vw;
+  }
+
 }

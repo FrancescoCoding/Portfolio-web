@@ -11,12 +11,12 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-import useKeypress from "../../hooks/useKeyPress";
 
 import styles from "./Contact.module.css";
 import { mapStyles } from "../UI/MapsStyles";
 
 const Contact = props => {
+
   const containerStyle = useMemo(() => {
     return {
       width: "100%",
@@ -34,7 +34,6 @@ const Contact = props => {
   const [textCopied, setTextCopied] = useState(false);
   const [showMessageSection, setShowMessageSection] = useState(false);
 
-  useKeypress("Escape", props.onClose);
 
   const options = {
     styles: mapStyles[`${storeColour.colour}`],

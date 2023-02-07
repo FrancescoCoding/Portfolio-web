@@ -6,7 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 import styles from "./PortfolioContent.module.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { isMobile } from 'react-device-detect';
@@ -19,11 +19,22 @@ const PortfolioContent = props => {
   const storeLanguage = useSelector(state => state.languages.language);
 
   const [showModal, setShowModal] = useState(false);
+  const [showModalTouched, setShowModalTouched] = useState(false);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1524px)" });
 
+  // Ensuring the modal appears and disappears when the screen size changes if it has been touched
+  useEffect(() => {
+    if (showModalTouched && !isBigScreen) {
+      setShowModal(false);
+    } else if (showModalTouched && isBigScreen) {
+      setShowModal(true);
+    }
+  }, [isBigScreen, showModalTouched]);
+
 
   const hideModalHandler = () => {
+    setShowModalTouched(false);
     setShowModal(false);
   };
 
@@ -31,6 +42,7 @@ const PortfolioContent = props => {
     clickSound.play();
 
     setShowModal(true);
+    setShowModalTouched(true);
   };
 
   // Convert "0.7s to ms"

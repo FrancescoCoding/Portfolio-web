@@ -141,8 +141,8 @@ const MailLottie = props => {
       animationData={mailData}
       play
       style={{
-        width: +props.width || 200,
-        height: +props.height || 200,
+        width: +props.width || 215,
+        height: +props.height || 215,
       }}
     />
   );

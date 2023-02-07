@@ -36,6 +36,7 @@ nav {
 /* Put last li element at end of navbar */
 .navbar ul li:last-of-type {
   margin-left: auto !important;
+  transform: translateX(2rem);
 }
 
 .navbar ul li a {

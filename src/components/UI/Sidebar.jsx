@@ -1,11 +1,11 @@
 import styles from "./Sidebar.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = props => {
   const storeColour = useSelector(state => state.colours.colour);
-  // const location = useLocation();
+  const location = useLocation();
 
   return (
     <div className={styles.sidebar}>
@@ -15,8 +15,7 @@ const Sidebar = props => {
         className={styles["sidebar-home-link"]}
         activeClassName={styles[`${storeColour}`]}
       >
-        {/* {location.pathname === "/portfolio" ? "Homepage" : "Francesco"} */}
-        Francesco Gruosso
+        {location.pathname === "/portfolio" ? "Francesco G" : "Homepage"}
       </NavLink>
       <div className={styles.design}></div>
     </div>
