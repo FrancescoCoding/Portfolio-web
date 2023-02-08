@@ -185,7 +185,6 @@
 }
 
 .action-button {
-  padding: 1.5rem 2rem;
   font-size: .8vw;
   border-radius: 20px;
   background: transparent;
@@ -196,6 +195,8 @@
   transition: all 0.4s ease-in-out;
   max-width: 100%;
   user-select: none;
+  height: 13.6vh !important;
+  padding: 1.5rem 2rem !important;
 }
 
 .action-button:hover {
