@@ -52,83 +52,108 @@ const PortfolioContent = props => {
     delayMS = delay * 1000;
   }
 
-  return (
-    <main className={`${isMobile ? styles["main-content-mobile"] : styles["main-content"]}`}>
-      {showModal && <Contact onClose={hideModalHandler} />}
+  //  use useeffect to calculate the zoom level
 
-      {storeLanguage === "EN" && isBigScreen && (
-        <section className={styles["main-text"]}>
-          <h1>
-            Stand the{" "}
-            <RubberDuck className={styles.quack} colour={storeColour.hex} /> out
-          </h1>
-          <p>
-            ... as a Full-Stack developer, UX designer,
-            <br />
-            engineer of terrible puns.
-          </p>
-          <div className={styles["btn-container"]}>
-            <button
-              onClick={clickSoundHandler}
-              className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
-            >
-              Find out more{" "}
-              <FaChevronDown
+  const [zoomLevel, setZoomLevel] = useState(0);
+
+  const zoomLevelPercents = () => {
+    return Math.round(zoomLevel * 100);
+  };
+
+  useEffect(() => {
+    const handleZoom = () => {
+      setZoomLevel(window.devicePixelRatio);
+    };
+    window.addEventListener("resize", handleZoom);
+    return () => window.removeEventListener("resize", handleZoom);
+  }, []);
+
+
+  return (
+    <>
+      {!showModal && showModalTouched && !isBigScreen && (<><h1 className={styles.zoom__h1}>Zoom level: {`${zoomLevelPercents()}%`}</h1> <br /><p className={styles.zoom__p}>Your modal was open! Zoom out 🦆 if you wish to see it again</p></>)}
+
+      <main className={`${isMobile ? styles["main-content-mobile"] : styles["main-content"]}`}>
+        {showModal && <Contact onClose={hideModalHandler} />}
+
+        {
+          storeLanguage === "EN" && isBigScreen && (
+            <section className={styles["main-text"]}>
+              <h1>
+                Stand the{" "}
+                <RubberDuck className={styles.quack} colour={storeColour.hex} /> out
+              </h1>
+              <p>
+                ... as a Full-Stack developer, UX designer,
+                <br />
+                engineer of terrible puns.
+              </p>
+              <div className={styles["btn-container"]}>
+                <button
+                  onClick={clickSoundHandler}
+                  className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+                >
+                  Find out more{" "}
+                  <FaChevronDown
+                    style={{
+                      transform: "translateY(3px)",
+                      fontSize: " 1.1rem",
+                      marginLeft: "",
+                    }}
+                  />
+                </button>
+              </div>
+            </section>
+          )
+        }
+        {
+          storeLanguage === "IT" && isBigScreen && (
+            <section className={styles["main-text"]}>
+              <h1>
+                Fatti nuotare{" "}
+                <RubberDuck className={styles.quack} colour={storeColour.hex} />
+              </h1>
+              <p>
+                ... come Full-Stack developer, designer di UX
+                <br />e di terribili giochi di parole.
+              </p>
+              <div className={styles["btn-container"]}>
+                <button
+                  onClick={clickSoundHandler}
+                  className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+                >
+                  Scopri altro{" "}
+                  <FaChevronDown
+                    style={{
+                      transform: "translateY(3px)",
+                      fontSize: " 1.1rem",
+                      marginLeft: "",
+                    }}
+                  />
+                </button>
+              </div>
+            </section>
+          )
+        }
+        {isBigScreen && <Separator styles={styles.separator} />}
+        <section className={styles["astronaut-container"]}>
+          <Astronaut delay={delayMS} />
+          {!isBigScreen && (
+            <div className={styles["astronaut-text"]}>
+              <h1
                 style={{
-                  transform: "translateY(3px)",
-                  fontSize: " 1.1rem",
-                  marginLeft: "",
+                  fontSize: "4rem",
+                  color: `${storeColour.hex}`,
                 }}
-              />
-            </button>
-          </div>
+              >
+                Francesco Gruosso
+              </h1>
+              <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
+            </div>
+          )}
         </section>
-      )}
-      {storeLanguage === "IT" && isBigScreen && (
-        <section className={styles["main-text"]}>
-          <h1>
-            Fatti nuotare{" "}
-            <RubberDuck className={styles.quack} colour={storeColour.hex} />
-          </h1>
-          <p>
-            ... come Full-Stack developer, designer di UX
-            <br />e di terribili giochi di parole.
-          </p>
-          <div className={styles["btn-container"]}>
-            <button
-              onClick={clickSoundHandler}
-              className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
-            >
-              Scopri altro{" "}
-              <FaChevronDown
-                style={{
-                  transform: "translateY(3px)",
-                  fontSize: " 1.1rem",
-                  marginLeft: "",
-                }}
-              />
-            </button>
-          </div>
-        </section>
-      )}
-      {isBigScreen && <Separator styles={styles.separator} />}
-      <section className={styles["astronaut-container"]}>
-        <Astronaut delay={delayMS} />
-        {!isBigScreen && (
-          <div className={styles["astronaut-text"]}>
-            <h1
-              style={{
-                fontSize: "4rem",
-                color: `${storeColour.hex}`,
-              }}
-            >
-              Francesco Gruosso
-            </h1>
-            <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
-          </div>
-        )}
-      </section>
-    </main>
+      </main >
+    </>
   );
 };
 

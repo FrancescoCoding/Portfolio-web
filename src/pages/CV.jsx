@@ -1,17 +1,17 @@
 import Navbar from "../components/UI/Navbar";
 import Transition from "../components/UI/Transition";
 import ColourSelector from "../components/UI/ColourSelector";
-import NFTsContent from "../components/content/NFTsContent";
+import CVContent from "../components/content/CVContent";
 
-const NFTs = () => {
+const CV = () => {
   return (
     <>
       <Transition />
       <Navbar />
       <ColourSelector />
-      <NFTsContent />
+      <CVContent />
     </>
   );
 };
 
-export default NFTs;
+export default CV;

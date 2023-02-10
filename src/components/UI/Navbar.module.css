@@ -21,16 +21,16 @@ nav {
 
 .navbar ul {
   display: flex;
-  padding-top: 3rem;
-  max-width: 2200px;
+  padding-top: 3vh;
+  max-width: var(--max-view-width);
   margin: auto;
   width: 100vw;
 }
 
 .navbar ul li {
-  padding: 2rem;
+  padding: 1vw;
   list-style-type: none;
-  font-size: 1.2rem;
+  font-size: 1.6vh;
 }
 
 /* Put last li element at end of navbar */

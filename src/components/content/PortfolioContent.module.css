@@ -157,6 +157,33 @@
   margin-left: 0.2rem;
 }
 
+.zoom__h1 {
+  position: fixed;
+  top: 12vh;
+  right: 8vw;
+  color: var(--canary-primary-color) !important;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3vh;
+  color: #f2f2f2;
+  margin: 0.5rem;
+  z-index: 100;
+}
+
+.zoom__p {
+  position: fixed;
+  top: 16vh;
+  right: 7.8vw;
+  color: var(--canary-active) !important;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.9vh;
+  color: #f2f2f2;
+  margin: 0.5rem;
+  z-index: 100;
+  transition: margin 1s ease;
+  max-width: 13vw !important;
+  text-align: right;
+}
+
 @keyframes appear {
   0% {
     opacity: 0;
@@ -169,21 +196,27 @@
   }
 }
 
-@media screen and (max-width: 1524px) {
+/* If the screen is bigger than 2k (i.e. zoom out) */
+@media screen and (min-width:2561px) {
   .main-content {
-    position: fixed;
-    flex-direction: column;
-    transform: scale(0.7);
+    transform: scale(1.3) !important;
     height: 100vh;
     transition: all 1s ease;
     align-items: center;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   .main-content {
     /* border: red solid 1px; // Testing */
     transform: scale(0.6);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main-content {
+    /* border: red solid 1px; // Testing */
+    transform: scale(0.5);
   }
 }
 
@@ -192,12 +225,30 @@
     font-size: 3.2rem !important;
   }
 
+  .zoom__h1 {
+    position: fixed;
+    top: 9vh;
+    right: 6vw;
+    color: var(--canary-primary-color) !important;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 3vh;
+    color: #f2f2f2;
+    margin: 0.5rem;
+    z-index: 100;
+  }
+
+  .zoom__p {
+    position: fixed;
+    top: 13vh;
+    right: 5.8vw;
+  }
+
   .main-content {
     display: flex;
     justify-content: center;
     /* align-items: center; */
     text-align: center;
-    transform: scale(0.5);
+    transform: scale(0.3) translateY(30vh) !important;
     opacity: 0;
     animation: appear 1.5s forwards 1s;
     transition: all 1s ease;
@@ -207,6 +258,23 @@
   }
 
   .astronaut-text {
-    transform: translateY(-2rem);
+    transform: translateY(-20vh);
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.25) translateY(40vh) !important;
+    text-align: center;
+    transform: scale(0.22);
+    opacity: 0;
+    animation: appear 1.5s forwards 1s;
+    transition: all 1s ease;
+    margin: auto;
+    margin-top: -8rem;
+    z-index: -1;
   }
 }

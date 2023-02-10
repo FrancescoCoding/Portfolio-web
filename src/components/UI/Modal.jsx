@@ -2,7 +2,7 @@ import styles from "./Modal.module.css";
 import ReactDOM from "react-dom";
 import useKeypress from "../../hooks/useKeyPress";
 
-const Backdrop = props => {
+export const Backdrop = props => {
   return <div onClick={props.onClose} className={styles.backdrop}></div>;
 };
 

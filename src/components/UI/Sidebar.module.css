@@ -6,7 +6,7 @@
   bottom: 0rem;
   right: 7rem;
   transition: all 1s ease;
-  z-index: 6 !important;
+  z-index: 50 !important;
 }
 
 .sidebar-home-link {

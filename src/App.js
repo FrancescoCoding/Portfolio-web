@@ -26,7 +26,7 @@ const ProjectDetail = React.lazy(async () => {
 
 const NFTs = React.lazy(async () => {
   await new Promise(resolve => setTimeout(resolve, 500));
-  return import("./pages/NFTs");
+  return import("./pages/CV");
 });
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
         <Route path="/projects/:projectID">
           <ProjectDetail />
         </Route>
-        <Route path="/NFTs">
+        <Route path="/CV">
           <NFTs />
         </Route>
         <Route path="/404" exact>

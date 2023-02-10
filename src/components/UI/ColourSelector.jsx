@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaCheck } from "react-icons/fa";
 const checkMark = (
   <FaCheck
-    size="0.68rem"
-    style={{ transform: "translateY(.06rem) translateX(-.01rem)" }}
+    size="0.8vh"
+    style={{ transform: "translateY(.1rem) translateX(-.01rem)" }}
+    className={styles["check-mark"]}
   />
 );
 
@@ -29,40 +30,42 @@ const ColourSelector = ({ backgroundColor }) => {
 
   return (
     <section className={styles["colours-section"]}>
-      <div
-        className={styles["colours-container"]}
-        style={{ backgroundColor: `${backgroundColor}` }}
-      >
-        <button
-          aria-label="Canary colour"
-          onClick={canaryThemeHandler}
-          className={styles.canary}
+      <div className={styles["colours-wrapper"]}>
+        <div
+          className={styles["colours-container"]}
+          style={{ backgroundColor: `${backgroundColor}` }}
         >
-          {storeColour === "canary" && checkMark}
-        </button>
-        <button
-          aria-label="Ocean colour"
-          onClick={oceanThemeHandler}
-          className={styles.ocean}
-        >
-          {storeColour === "ocean" && checkMark}
-        </button>
-        <button
-          aria-label="Magenta colour"
-          onClick={magentaThemeHandler}
-          className={styles.magenta}
-        >
-          {storeColour === "magenta" && checkMark}
-        </button>
-        <button
-          aria-label="Leaf colour"
-          onClick={leafThemeHandler}
-          className={styles.leaf}
-        >
-          {storeColour === "leaf" && checkMark}
-        </button>
+          <button
+            aria-label="Canary colour"
+            onClick={canaryThemeHandler}
+            className={styles.canary}
+          >
+            {storeColour === "canary" && checkMark}
+          </button>
+          <button
+            aria-label="Ocean colour"
+            onClick={oceanThemeHandler}
+            className={styles.ocean}
+          >
+            {storeColour === "ocean" && checkMark}
+          </button>
+          <button
+            aria-label="Magenta colour"
+            onClick={magentaThemeHandler}
+            className={styles.magenta}
+          >
+            {storeColour === "magenta" && checkMark}
+          </button>
+          <button
+            aria-label="Leaf colour"
+            onClick={leafThemeHandler}
+            className={styles.leaf}
+          >
+            {storeColour === "leaf" && checkMark}
+          </button>
+        </div>
       </div>
-    </section>
+    </section >
   );
 };
 

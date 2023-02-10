@@ -26,6 +26,8 @@
   --leaf-active: #3f6ad8;
 
   --modals-background: #061024;
+
+  --max-view-width: 3900px;
 }
 
 * {

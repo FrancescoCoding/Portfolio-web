@@ -1,15 +1,16 @@
+import ReactDOM from "react-dom";
 import styles from "./HamburgerMenu.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Fade as Hamburger } from "hamburger-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { languageActions, colourActions } from "../../store/store";
 import { FaCheck } from "react-icons/fa";
+import { Backdrop } from "./Modal";
 
-import italianFlag from "../../assets/Flags/IT-flag.svg";
-import UKFlag from "../../assets/Flags/UK-flag.svg";
+import useKeypress from "../../hooks/useKeyPress";
 
 const checkMark = (
   <FaCheck
@@ -18,29 +19,21 @@ const checkMark = (
   />
 );
 
-// import italian and english flag
-
 const currentYear = new Date().getFullYear();
 
 const HamburgerMenu = props => {
   const dispatch = useDispatch();
 
+  const portalElement = document.getElementById("overlays");
+
   const storeColour = useSelector(state => state.colours);
   const storeLanguage = useSelector(state => state.languages.language);
-
   const isOcean = storeColour.colour === "ocean";
-
-  // Preload the flags to avoid flickering
-  useEffect(() => {
-    const flagList = [italianFlag, UKFlag];
-    flagList.forEach(flag => {
-      new Image().src = flag;
-    });
-  }, []);
-
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
 
   const [isOpen, setOpen] = useState(false);
+
+  useKeypress("Escape", props.onClose);
 
   let showMenu;
   let menuBorderSlide;
@@ -79,114 +72,118 @@ const HamburgerMenu = props => {
 
   return (
     <>
-      <div style={menuBorderSlide} className={`${styles.sidebar} ${showMenu}`}>
-        <div className={styles["sidebar-content"]}>
-          <div className={styles["sidebar-brand"]}>
-            <NavLink
-              className={styles.home}
-              to="/portfolio"
-              activeClassName={styles[`${storeColour.colour} ${styles.active}`]}
-            >
-              Portfolio {currentYear}
-            </NavLink>
-            <div onClick={props.onClose} className={styles["close-sidebar"]}>
-              <Hamburger
-                size={27}
-                rounded
-                color="white" // #56698c
-                toggled={isOpen}
-                toggle={setOpen}
-              />
-            </div>
-          </div>
-          <div className={styles["colour-row"]}>
-            <button
-              aria-label="Canary colour"
-              onClick={() => dispatch(colourActions.colourCanary())}
-              className={styles["canary-bg"]}
-            >
-              {storeColour.colour === "canary" && checkMark}
-            </button>
-            <button
-              aria-label="Ocean colour"
-              onClick={() => dispatch(colourActions.colourOcean())}
-              className={styles["ocean-bg"]}
-            >
-              {storeColour.colour === "ocean" && checkMark}
-            </button>
-            <button
-              aria-label="Magenta colour"
-              onClick={() => dispatch(colourActions.colourMagenta())}
-              className={styles["magenta-bg"]}
-            >
-              {storeColour.colour === "magenta" && checkMark}
-            </button>
-            <button
-              aria-label="Leaf colour"
-              onClick={() => dispatch(colourActions.colourLeaf())}
-              className={styles["leaf-bg"]}
-            >
-              {storeColour.colour === "leaf" && checkMark}
-            </button>
-          </div>
-          <ul>
-            <li>
+      {ReactDOM.createPortal(
+        <Backdrop onClose={props.onClose} />,
+        portalElement
+      )}
+
+      {ReactDOM.createPortal(
+        <div style={menuBorderSlide} className={`${styles.sidebar} ${showMenu}`}>
+          <div className={styles["sidebar-content"]}>
+            <div className={styles["sidebar-brand"]}>
               <NavLink
-                activeClassName={`${styles[`${storeColour.colour}`]} ${
-                  styles.active
-                }`}
-                style={{ width: "100%" }}
-                to="/projects"
+                className={styles.home}
+                to="/portfolio"
+                activeClassName={styles[`${storeColour.colour} ${styles.active}`]}
               >
-                {storeLanguage === "EN" ? "Projects" : "Progetti"}
+                Portfolio {currentYear}
               </NavLink>
-            </li>
-            <li>
-              {storeLanguage === "EN" && (
+              <div onClick={props.onClose} className={styles["close-sidebar"]}>
+                <Hamburger
+                  size={27}
+                  rounded
+                  color="white" // #56698c
+                  toggled={isOpen}
+                  toggle={setOpen}
+                />
+              </div>
+            </div>
+            <div className={styles["colour-row"]}>
+              <button
+                aria-label="Canary colour"
+                onClick={() => dispatch(colourActions.colourCanary())}
+                className={styles["canary-bg"]}
+              >
+                {storeColour.colour === "canary" && checkMark}
+              </button>
+              <button
+                aria-label="Ocean colour"
+                onClick={() => dispatch(colourActions.colourOcean())}
+                className={styles["ocean-bg"]}
+              >
+                {storeColour.colour === "ocean" && checkMark}
+              </button>
+              <button
+                aria-label="Magenta colour"
+                onClick={() => dispatch(colourActions.colourMagenta())}
+                className={styles["magenta-bg"]}
+              >
+                {storeColour.colour === "magenta" && checkMark}
+              </button>
+              <button
+                aria-label="Leaf colour"
+                onClick={() => dispatch(colourActions.colourLeaf())}
+                className={styles["leaf-bg"]}
+              >
+                {storeColour.colour === "leaf" && checkMark}
+              </button>
+            </div>
+            <ul>
+              <li>
                 <NavLink
-                  to="/"
-                  onClick={changeLanguageHandler}
+                  activeClassName={`${styles[`${storeColour.colour}`]} ${styles.active
+                    }`}
                   style={{ width: "100%" }}
+                  to="/projects"
                 >
-                  Switch to
-                  <span
-                    style={{
-                      color: `var(--${storeColour.colour}-primary-color${
-                        isOcean ? "-lighter" : ""
-                      })`,
-                    }}
-                  >
-                    {" "}
-                    Italian{" "}
-                  </span>
-                  [IT]
+                  {storeLanguage === "EN" ? "Projects" : "Progetti"}
                 </NavLink>
-              )}
-              {storeLanguage === "IT" && (
-                <NavLink
-                  to="/"
-                  onClick={changeLanguageHandler}
-                  style={{ width: "100%" }}
-                >
-                  Visualizza in
-                  <span
-                    style={{
-                      color: `var(--${storeColour.colour}-primary-color${
-                        isOcean ? "-lighter" : ""
-                      })`,
-                    }}
+              </li>
+              <li>
+                {storeLanguage === "EN" && (
+                  <NavLink
+                    to="/"
+                    onClick={changeLanguageHandler}
+                    style={{ width: "100%" }}
                   >
-                    {" "}
-                    Inglese{" "}
-                  </span>
-                  [EN]
-                </NavLink>
-              )}
-            </li>
-          </ul>
-          <div className={styles["sidebar-separator"]}></div>
-        </div>
-      </div>
+                    Switch to
+                    <span
+                      style={{
+                        color: `var(--${storeColour.colour}-primary-color${isOcean ? "-lighter" : ""
+                          })`,
+                      }}
+                    >
+                      {" "}
+                      Italian{" "}
+                    </span>
+                    [IT]
+                  </NavLink>
+                )}
+                {storeLanguage === "IT" && (
+                  <NavLink
+                    to="/"
+                    onClick={changeLanguageHandler}
+                    style={{ width: "100%" }}
+                  >
+                    Visualizza in
+                    <span
+                      style={{
+                        color: `var(--${storeColour.colour}-primary-color${isOcean ? "-lighter" : ""
+                          })`,
+                      }}
+                    >
+                      {" "}
+                      Inglese{" "}
+                    </span>
+                    [EN]
+                  </NavLink>
+                )}
+              </li>
+            </ul>
+            <div className={styles["sidebar-separator"]}></div>
+          </div>
+        </div>, portalElement
+      )}
     </>
   );
 };

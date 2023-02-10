@@ -94,8 +94,8 @@ const Contact = props => {
           <div
             className={styles.info}
             style={{
-              border: `9px solid var(--${storeColour.colour}-active)`,
-              borderRight: `9px solid var(--${storeColour.colour}-active)`,
+              border: `0.9vh solid var(--${storeColour.colour}-active)`,
+              borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,
             }}
           >
             <h1
@@ -173,8 +173,8 @@ const Contact = props => {
             <div
               className={styles.info}
               style={{
-                border: `9px solid var(--${storeColour.colour}-active)`,
-                borderRight: `9px solid var(--${storeColour.colour}-active)`,
+                border: `0.9vh solid var(--${storeColour.colour}-active)`,
+                borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,
               }}
             >
               <ContactMeForm />
@@ -187,8 +187,8 @@ const Contact = props => {
         <div
           className={styles.map}
           style={{
-            border: `9px solid ${storeColour.hex}`,
-            borderLeft: `9px solid ${storeColour.hex}`,
+            border: `0.9vh solid ${storeColour.hex}`,
+            borderLeft: `0.9vh solid ${storeColour.hex}`,
           }}
         >
           <GoogleMap
