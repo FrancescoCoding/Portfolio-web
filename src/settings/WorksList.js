@@ -1,5 +1,3 @@
-import icons from "./Icons.js";
-
 import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.webp";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.webp";
 import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.webp";
@@ -7,62 +5,105 @@ import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbn
 import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.webp";
 import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.jpg";
 
-const {
-  rStudioIcon,
+import {
+  mongoDBIcon,
+  expressIcon,
+  npmIcon,
+  typescriptIcon,
+  javaIcon,
+  androidIcon,
+  pythonIcon,
+  vercelIcon,
+  nodeIcon,
+  puppeteerIcon,
+  JSIcon,
+  cssIcon,
+  htmlIcon,
+  GGPlotIcon,
   ionicIcon,
+  rStudioIcon,
   reactIcon,
   reduxIcon,
-  htmlIcon,
-  cssIcon,
-  JSIcon,
-  sassIcon,
-  GGPlotIcon,
-} = icons;
+  netlifyIcon,
+} from "./Icons.js";
 
 const PROJECTS = [
   {
     EN: {
-      name: "Personal portfolio",
-      description: `This very portfolio is a moderately big project. It utilizes several technologies, including:
+      name: "🦆 Personal portfolio (Web)",
+      description: `
+      <p>This very portfolio is a moderately big project. It utilizes several technologies, including: </p>
+      <ul>
+        <li><b>React</b> with <b>Redux Toolkit</b> for State management and <b>Redux Persist</b> for offline storage</li>
+        <li><b>React Router</b> for navigation</li>
+        <li>Custom hooks for custom keyboard shortcuts</li>
+      </ul>
+      <p>This web app does <b>not</b> utilize any CSS frameworks. Only pain and sweat 😊</p>
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/3kxqq8cEMdREbprhR9/giphy.gif" alt="GIF of the portfolio in action" />
+      </div>
+      <br/>
 
-      \u2022 React with Redux Toolkit for State management and Redux Persist for offline storage
-      \u2022 React Router for navigation
-      \u2022 Custom hooks for custom keyboard shortcuts
-
-      This web app does not utilize any CSS frameworks.
-      For a full list, please check out the GitHub Repository's README file.
+      <p>For a full list of technologies, please check out the GitHub Repository's <a href="https://github.com/FrancescoCoding/Portfolio">README</a> file. </p>
       `,
       tags: ["React, Redux, i18n"],
-      short: "React based portfolio you are looking at right now :)",
+      short:
+        "React based portfolio you are looking at right now 😊 built with React, Redux and other technologies",
     },
     IT: {
       id: "p5",
-      name: "Portfolio personale",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      short: "Portfolio creato con React, lo stai utilizzando ora :)",
+      name: "🦆 Portfolio personale (Web)",
+      description: `<p>Questo portfolio è un progetto di media entità. Utilizza diverse tecnologie, tra cui: </p> 
+
+      <ul>
+        <li><b>React</b> con <b>Redux Toolkit</b> per la gestione dello stato e <b>Redux Persist</b> per lo storage offline</li>
+        <li><b>React Router</b> per la navigazione</li>
+        <li>Custom hooks per le scorciatoie da tastiera</li>
+      </ul>
+
+      <p>Questa web app <b>non</b> utilizza alcun framework CSS. Solo dolore e sudore 😊</p>
+
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/3kxqq8cEMdREbprhR9/giphy.gif" alt="GIF of the portfolio in action" />
+      </div>
+      <br/>
+      
+      <p>Per una lista più approfondita, controlla il file <a href="https://github.com/FrancescoCoding/Portfolio">README</a> del GitHub repo. </p>`,
+      short: "Portfolio creato con React, lo stai utilizzando ora 😊",
     },
     id: "p5",
     githubLink: "https://github.com/FrancescoCoding/Portfolio",
-    image: portfolioThumbnail600w,
+    // image: portfolioThumbnail600w,
+    image:
+      "https://images.unsplash.com/photo-1553358814-833ee10c95a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     endpoint: "portfolio",
-    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon],
+    order: 0,
+    icons: [htmlIcon, cssIcon, JSIcon, reactIcon, reduxIcon, netlifyIcon],
   },
   {
     EN: {
-      name: "Tsunami Prediction Model",
-      description: `This project required me to formulate, research and present a mathematical and probabilistic model of attributes relating to a computer simulation.
+      name: "🌊 Tsunami Prediction Model",
+      description: `<p>This project required me to formulate, research and present\na mathematical and <b>probabilistic model</b> of attributes relating to a computer simulation.</p>
 
-      This specific model can predict the damage amount calculated in Millions (GBP), and uses different methods to achieve so.
+      <p>This specific model can predict the damage amount calculated in <b>Millions (GBP)</b>, and uses different methods to achieve so.</p>
       
-      Refer to the README for a more in-depth description.
+       <div style="text-align: center;">
+        <img width="50%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
+      </div>
+      <br/>
+
+      <p>Refer to the <a href="https://github.com/FrancescoCoding/Tsunami-Damage-Prediction-Model">README</a> for a more in-depth description.</p>
       `,
       tags: ["RStudio, ggPlot2"],
       short: "A mathematical model that predicts the damage of a tsunami",
     },
     IT: {
-      name: "Simulatore di Tsunami",
-      description: `Questo progetto è nato per dimostrare la mia abilità nel lavorare con varie tecnologie, coordinare lavori in un gruppo, e creare una simulazione utilizzando vari modelli e statistica.`,
+      name: "🌊 Simulatore di Tsunami",
+      description: `Questo progetto mi ha richiesto di formulare, ricercare e presentare un modello matematico e probabilistico di attributi relativi a una simulazione al computer.
+
+      Questo modello specifico può prevedere l'ammontare del danno calcolato in milioni di sterline (GBP) e utilizza diversi metodi per farlo.
+      
+      Per ulteriori dettagli, consulta il file README nel GitHub repo.`,
       short:
         "Un modello matematico che calcola i danni provocati da uno tsunami",
     },
@@ -72,189 +113,403 @@ const PROJECTS = [
     githubLink:
       "https://github.com/FrancescoCoding/Tsunami-Damage-Prediction-Model",
     image: tsunamiThumbnail600w,
-    endpoint: "tsunami-simulator",
+    endpoint: "tsunami-computer-model",
+    order: 2,
     icons: [rStudioIcon, GGPlotIcon],
   },
   {
     EN: {
-      name: "PlayList Project",
-      description:
-        "This project was meant to showcase my skill in working with React.",
-      tags: ["React, Redux, JavaScript"],
-      short: "A simple playlist app",
+      name: "🤖 easyGPT",
+      description: `
+      
+      <h1 align="center">An Express server and npm module for ChatGPT 🤖</h1> <br/>
+      
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF of the portfolio in action" />
+      </div>
+      <p style="display: flex; justify-content: center;margin-bottom: 0px">
+      <a href="https://github.com/FrancescoCoding/easyGPT/blob/main/LICENSE%20%F0%9F%A4%96" target="_blank"><img src="https://img.shields.io/github/license/francescocoding/easygpt" alt="Package License" style="margin-right: 5px;" /></a>
+      <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/npm/v/easygpt" alt="NPM Version" style="margin-right: 5px;" /></a>
+      <a href="https://easygpt.dev" target="_blank"><img src="https://img.shields.io/badge/docs-easygpt.dev-blue" alt="Documentation" style="margin-right: 5px;"/></a>
+      <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/npm/dw/easygpt" alt="NPM Downloads" style="margin-right: 5px;" /></a>
+      <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/maintenance/yes/2023" alt="Maintained" style="margin-right: 5px;" /></a>
+      </p>
+      <p><b>This project contains:</b></p>
+      <ul>
+        <li>An <b>npm module</b> to simplify the use of the server or any other Node.js project</li>
+        <li>An <b>express server</b> that sends requests to the ChatGPT API with the module</li>
+        <li>A <b>Postman collection</b> to test the server and the npm module</li>
+      </ul>
+
+        `,
+      tags: ["Node, JavaScript"],
+      short: "A ChatGPT Express server and npm module",
     },
     IT: {
-      name: "PlayList",
-      description:
-        "Questo progetto è nato per dimostrare la mia abilità di lavorare con React.",
-      tags: ["React, Redux, JavaScript"],
-      short: "Una semplice app per la gestione di playlist",
+      name: "🤖 easyGPT",
+      description: `
+      <p align="center">
+      <a href="https://www.npmjs.com/package/easygpt" target="blank"><img src="https://user-images.githubusercontent.com/64712227/223658360-1584fdf2-39c6-4895-9c25-4aafea32d780.png" width="220" alt="easyGPT Logo" /></a></p>
+      <h1 align="center">easyGPT: Un server Express e modulo npm per ChatGPT 🤖</h1>
+
+      <p style="display: flex; justify-content: center;">
+        <a href="https://github.com/FrancescoCoding/easyGPT/blob/main/LICENSE%20%F0%9F%A4%96" target="_blank"><img src="https://img.shields.io/github/license/francescocoding/easygpt" alt="Package License" style="margin-right: 5px;" /></a>
+        <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/npm/v/easygpt" alt="NPM Version" style="margin-right: 5px;" /></a>
+        <a href="https://easygpt.dev" target="_blank"><img src="https://img.shields.io/badge/docs-easygpt.dev-blue" alt="Documentation" style="margin-right: 5px;"/></a>
+        <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/npm/dw/easygpt" alt="NPM Downloads" style="margin-right: 5px;" /></a>
+        <a href="https://www.npmjs.com/easygpt" target="_blank"><img src="https://img.shields.io/maintenance/yes/2023" alt="Maintained" style="margin-right: 5px;" /></a>
+      </p>
+
+      <p><b>Questo progetto contiene:</b></p>
+      <ul>
+        <li>Un <b>modulo npm</b> per semplificare l'uso del server o di qualsiasi altro progetto Node.js</li>
+        <li>Un <b>server express</b> che invia richieste all'API ChatGPT con il modulo</li>
+        <li>Una <b>raccolta Postman</b> per testare il server e il modulo npm</li>
+      </ul>
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF del portfolio in azione" />
+      </div>
+
+      `,
+      tags: ["Node, JavaScript"],
+      short:
+        "Modulo npm e server Express per semplificare l'utilizzo del ChatGPT API di OpenAI",
     },
     id: "p2",
-    githubLink: "https://github.com/",
+    githubLink: "https://github.com/FrancescoCoding/easyGPT",
     image: playlistThumbnail600w,
     endpoint: "playlist-project",
-    icons: [htmlIcon, cssIcon, JSIcon, sassIcon],
+    order: 1.5,
+    icons: [expressIcon, npmIcon, JSIcon],
   },
   {
     EN: {
-      name: "COVID Tracker",
-      description: `I created this project to teach myself the Ionic Framework.
-        
-        This app was built using HTML5, CSS3, vanilla JavaScript, Ionic, along with a public API.
-        Further information can be found in the GitHub repository README.md file.`,
-      tags: ["React, Redux, JavaScript"],
+      name: "🦠 COVID Tracker",
+      description: `
+      <p>This project is a <b>COVID-19 tracker</b> that I created to teach myself the <b>Ionic Framework</b>. I used <b>HTML5</b>, <b>CSS3</b>, <b>vanilla JavaScript</b>, and <b>Ionic</b>, along with a <b>public API</b> to display <b>real-time data</b> on the number of cases, deaths, and recoveries worldwide and in individual countries.</p>
+
+      <div style="text-align: center;">
+        <img width="70%" src="https://media.giphy.com/media/MCAFTO4btHOaiNRO1k/giphy.gif" alt="GIF of the portfolio in action" />
+      </div>
+      <br/>
+
+      <p>To build a <b>cross-platform mobile app</b>, I leveraged the power of the <b>Ionic Framework</b>. This helped me to create a user-friendly interface with a consistent design and experience across multiple platforms like <b>iOS</b>, <b>Android</b>, and the <b>web</b>.</p>
+      <p>Further information can be found in the GitHub repository README.md file.</p>
+
+      <p> <span style="font-size: 24px;">📌</span> Unfortunately, the <b>public API</b> that this COVID-19 tracker was using has been removed from public access. This means that the logic of the app needs to be reworked in order to retrieve data from a different source. Please keep this in mind if you plan to use or modify this project.
+      </p>
+          `,
+      tags: ["HTML, CSS, JavaScript, Ionic"],
       short: "A COVID-19 tracker. \nEnter your country to see the stats!",
     },
     IT: {
-      name: "COVID Tracker",
-      description:
-        "Quest'applicazione fornisce il corrente numero di morti, guarigioni, ed ammalati causati dalla pandemia COVID-19.",
-      tags: ["React, Redux, JavaScript"],
-      short: "Un tracker per la pandemia COVID-19",
+      name: "🦠 COVID Tracker",
+      description: `
+      <p>Questo progetto è un <b>tracker COVID-19</b> che ho creato per imparare il <b>Framework Ionic</b>. Ho usato <b>HTML5</b>, <b>CSS3</b>, <b>vanilla JavaScript</b> e <b>Ionic</b>, insieme ad una <b>API pubblica</b> per visualizzare dati <b>in tempo reale</b> sul numero di casi, decessi e guariti in tutto il mondo e in singoli paesi.</p>
+      <div style="text-align: center;">
+        <img width="70%" src="https://media.giphy.com/media/MCAFTO4btHOaiNRO1k/giphy.gif" alt="GIF del portfolio in azione" />
+      </div>
+      <br/>
+
+      <p>Per costruire un'app mobile cross-platform</b>, ho sfruttato la potenza del <b>Framework Ionic</b>.\n\nQuesto mi ha aiutato a creare un'interfaccia utente intuitiva con un design e un'esperienza coerenti su molteplici piattaforme come <b>iOS</b>, <b>Android</b> e <b>web</b>.</p>
+      <p>Ulteriori informazioni possono essere trovate nel file README.md del repository GitHub.</p>
+      <p> 📌 Purtroppo, l'<b>API pubblico</b> che questo tracker COVID-19 stava utilizzando è stata rimossa dall'accesso pubblico. Ciò significa che la logica dell'app deve essere modificata per recuperare dati da una fonte diversa. Per favore, tenere presente questo fatto se si intende utilizzare o modificare questo progetto.
+      </p>
+      `,
+      tags: ["HTML, CSS, JavaScript, Ionic"],
+      short:
+        "Un'app per Android che traccia il numero di casi per la pandemia COVID-19",
     },
     id: "p3",
     githubLink: "https://github.com/FrancescoCoding/Covid-Tracker-Ionic-md-iOS",
     image: covidTrackerThumbnail600w,
     endpoint: "covid-tracker",
+    order: 3,
     icons: [htmlIcon, cssIcon, JSIcon, ionicIcon],
   },
   {
     EN: {
-      name: "Tangible Pain Diary",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "Tangible is a pain diary that helps you log and track your pain",
+      name: "🍄 Mushrooms Classification",
+      description: `
+      <div>
+        <p>The project involves using a <b>Supervised Machine Learning</b> algorithm to classify mushroom samples as <b>edible</b> or <b>poisonous</b>.</p>
+        
+        <div style="text-align: center;">
+          <img width="60%" src="https://media.giphy.com/media/vJ6LGDsUHG5RS/giphy.gif" alt="GIF of the portfolio in action" />
+        </div>
+        <br/>
+
+        <p>The dataset used includes various features such as <b>cap shape</b> and <b>odor</b>, and the models implemented include <b>Logistic Regression</b>, <b>Decision Trees</b>, and <b>Random Forest</b>.</p>
+      </div>`,
+      tags: ["University, Python, Scikit-learn, Pandas, Numpy"],
+      short:
+        "A supervised Machine Learning project to classify mushrooms as edible or poisonous",
     },
     IT: {
-      name: "Tangible",
-      description:
-        "Creato per aiutare persone a comunicare con la propria famiglia e il proprio medico curante in modo veloce ed efficace.",
-      tags: ["Università", "Agile"],
-      short: "Tangible è un diario che ti permette di registrare i tuoi dolori",
+      name: "🍄 Classificazione funghi con ML",
+      description: `
+      <div>
+        <p>Il progetto prevede l'utilizzo di un algoritmo di <b>Machine Learning Supervisionato</b> per classificare campioni di funghi come <b>commestibili</b> o <b>velenosi</b>.</p>
+        
+        <div style="text-align: center;">
+          <img width="60%" src="https://media.giphy.com/media/vJ6LGDsUHG5RS/giphy.gif" alt="GIF del portafoglio in azione" />
+        </div>
+        <br/>
+
+        <p>Il dataset utilizzato include diverse caratteristiche come la <b>forma del cappello</b> e l'<b>odore</b>, e i modelli implementati includono la <b>Regressione Logistica</b>, gli <b>Alberi di Decisione</b> e il <b>Random Forest</b>.</p>
+      </div>
+      `,
+      tags: ["Università, Python, Scikit-learn, Pandas, Numpy"],
+      short:
+        "Un progetto di Machine Learning per classificare funghi come commestibili o velenosi",
     },
     id: "p4",
-    githubLink: "https://github.com/",
-    image: tangibleThumbnail600w,
+    githubLink:
+      "https://github.com/FrancescoCoding/Mushroom-Supervised-Machine-Learning-Classification",
+    order: 4,
+    image:
+      "https://images.unsplash.com/photo-1611938700738-9228b326cf38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
     endpoint: "tangible-chronic-pain",
+    icons: [pythonIcon],
   },
 
   {
     EN: {
-      name: "Harvest Time",
-      description: "",
+      name: "🌽 Harvest Time",
+      description: `
+      <p>Harvest Time is a web scraper that scrapes data from the web using Node.js and Puppeteer.</p>
+
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/3orieOGI1gkpr1kaeA/giphy.gif" alt="GIF of the portfolio in action" />
+      </div>
+      <br/>
+      `,
       tags: ["Node, Puppeteer"],
-      short: "Harvest Time is a web scraper that scrapes data from the web",
+      short: `Harvest Time is a web scraper that scrapes data from the web using Node.js and Puppeteer.`,
     },
     IT: {
-      name: "Harvest Time",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
+      name: "🌽 Harvest Time",
+      description: `
+      <p>Harvest Time è un web scraper che raccoglie dati dal web utilizzando Node.js e Puppeteer.</p>
+
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/3orieOGI1gkpr1kaeA/giphy.gif" alt="GIF del portafoglio in azione" />
+      </div>
+      <br/>
+      
+      
+      <br/>
+      `,
       tags: ["Node, Puppeteer"],
       short: "Harvest Time è un web scraper che estrae dati dal web",
     },
     id: "p6",
+    order: 5,
     githubLink: "https://github.com/FrancescoCoding/Harvest-Time",
     image: harvestTimeThumbnail600w,
-    endpoint: "cardiac-tool-2",
+    endpoint: "harvest",
+    icons: [nodeIcon, puppeteerIcon],
   },
   {
     EN: {
-      name: "Smite Ocean",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "-",
+      name: "🪴 HydroFlora",
+      description: `
+      <p>The <b>HydroFlora application</b> was created to help you keep track of the water you need to give to your plants.</p>
+      <p>With the <i>watering scheduling</i> feature, you can schedule the times when you need to water your plants and receive a notification on your mobile phone to ensure you never forget to do so!</p>
+      <div style="text-align: center;">
+        <img width="95%" src="https://user-images.githubusercontent.com/64712227/205894827-770b28c0-e245-4b0e-8c24-219d9b388f7f.png" alt="GIF of the app in action" />
+      </div>
+      <br />
+      <p>HydroFlora has an intuitive and easy-to-use interface, making it suitable for all types of users. Thanks to its flexibility, you can use it to keep track of your indoor plants, garden plants, or even office plants!</p>
+      `,
+
+      tags: ["Android Studio, Java, Firebase"],
+      short:
+        "HydroFlora is an Android app that helps you track your plants' water intake",
     },
     IT: {
-      name: "Strumento Cardiaco",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
+      name: "🪴 HydroFlora",
+      description: `
+      <p>L'applicazione <b>HydroFlora</b> è stata creata per aiutarti a tenere traccia dell'acqua che devi dare alle tue piante.</p>
+      <p>Grazie alla funzionalità di <i>pianificazione dell'annaffiatura</i>, puoi programmare le volte in cui devi annaffiare le tue piante e ricevere una notifica sul cellulare per assicurarti di non dimenticare mai di farlo!</p>
+      <div style="text-align: center;">
+        <img width="95%" src="https://user-images.githubusercontent.com/64712227/205894827-770b28c0-e245-4b0e-8c24-219d9b388f7f.png" alt="GIF dell'app in azione" />
+      </div>
+      <br />
+      <p>HydroFlora è dotata di un'interfaccia intuitiva e facile da usare, che la rende adatta a tutti i tipi di utenti. Grazie alla sua flessibilità, puoi utilizzarla per tenere traccia delle tue piante d'appartamento, del giardino o anche per le piante d'ufficio.</p>
+      `,
       tags: ["Università", "Agile"],
-      short: "-",
+      short:
+        "HydroFlora è un'app Android che ti aiuta a tenere traccia dell'acqua delle tue piante",
     },
     id: "p7",
-    githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/600x400/?poseidon",
-    endpoint: "cardiac-tool-3",
-    tags: ["University", "Team", "Agile"],
+    githubLink: "https://github.com/FrancescoCoding/HydroFlora-app",
+    image: "https://source.unsplash.com/600x400/?plant",
+    endpoint: "HydroFlora",
+    order: 1.5,
+    tags: ["Android Studio, Java, Firebase"],
+    icons: [androidIcon, javaIcon],
   },
   {
     EN: {
-      name: "SunRice Weather App",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "SunRice is a weather app that shows the weather in your area",
-    },
-    IT: {
-      name: "Strumento Cardiaco",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
+      name: "🔬 Sort algorithms analysis",
+      description: `
+      <p>This exercise <b>focuses</b> on the <b>analysis</b> of two popular algorithms - <b>Quick Sort</b> and <b>Count Sort</b> - using <b>Big O Notation</b> to evaluate their <b>temporal and spatial complexities</b>.</p>
+      <div style="text-align: center;">
+        <img width="50%" src="https://media.giphy.com/media/WfIDKyIzU95kY/giphy.gif" alt="GIF del portafoglio in azione" />
+      </div>
+      <br/>
+      <p>The analysis is done in the code provided in the <b>MainApp.java</b> class, which tests each algorithm. The <b>CountSort.java</b> class contains the implementation of Count Sort, while the <b>QuickSort.java</b> class contains the implementation of Quick Sort.</p>
+      <p>The report discusses the <b>efficiency and scalability concerns</b> of both algorithms and provides a <b>critical comparison</b> of their designs.</p>
+      `,
+
       tags: ["University, Team, Agile"],
       short:
-        "SunRice è una app che mostra il meteo in tempo reale in una zona a tua scelta",
+        "An analysis and critical comparison between alternative sorting algorithm designs",
+    },
+    IT: {
+      name: "🔬 Analisi di algoritmi",
+      description: `
+      <p><b>Questo esercizio</b> si concentra sull'analisi di due algoritmi popolari - <b>Quick Sort</b> e <b>Count Sort</b> - utilizzando la Notazione <b>Big O</b> per valutare le loro complessità <b>temporali e spaziali</b>.</p>
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/WfIDKyIzU95kY/giphy.gif" alt="GIF del portafoglio in azione" />
+      </div>
+      <br/>
+      <p>L'analisi viene effettuata attraverso il codice di esempio fornito nella classe <b>MainApp.java</b> che testa ciascun algoritmo. La classe <b>CountSort.java</b> contiene l'implementazione del Count Sort, mentre la classe <b>QuickSort.java</b> contiene l'implementazione del Quick Sort.</p>
+      <p>La relazione discute <b>le preoccupazioni di efficienza e scalabilità</b> di entrambi gli algoritmi e fornisce <b>un confronto critico</b> dei loro progetti.</p>
+      `,
+      tags: ["University, Team, Agile"],
+      short:
+        "Un'analisi e comparazione critica tra diversi algoritmi di ordinamento (quick e count sort) basate su efficienza e scalabilità.",
     },
     id: "p8",
-    githubLink: "https://github.com/",
-    image:
-      "https://images.unsplash.com/photo-1607699330031-b8552f3ce4f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1972&q=80",
-    endpoint: "cardiac-tool",
+    githubLink:
+      "https://github.com/FrancescoCoding/Quick-and-Count-sort-algorithm-analysis",
+    order: 7,
+    image: " https://source.unsplash.com/600x400/?algorithm",
+    endpoint: "algorithms-analysis",
+    tags: ["Java, Big O Notation"],
+    icons: [javaIcon],
   },
   {
     EN: {
-      name: "Cardiac Tool",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "-",
+      name: "👨🏻‍💻 Ethical Hacking",
+      description: `
+      <p>A systematic <b>penetration test</b> was performed for Cantina Lorenzo to assess the security of its IT infrastructure and network protocol vulnerabilities. The objective was to identify any weaknesses in the system that could potentially be exploited by malicious actors.</p>
+
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/xT0Gqjm3fef2Xm3Dag/giphy.gif" alt="GIF dell'app in azione" />
+      </div>
+      <br />
+
+      <p>The test was conducted using the <b>Kali Linux distribution</b>, which is a popular penetration testing operating system, and the <b>Metasploit Framework</b>, which is an open-source tool used for developing and executing exploits. These tools were used to carry out attacks on the system and identify any potential vulnerabilities.</p>
+
+      <p>The report discusses the results of the test, provides a <b>critical analysis</b> of the security of the system and suggests <b>mitigation</b> techniques.</p>
+      `,
+      tags: ["Kali Linux, Metasploit"],
+      short:
+        "A systematic penetration test for Cantina Lorenzo to assess network protocol vulnerabilities and the security its IT infrastructure",
     },
     IT: {
-      name: "Strumento Cardiaco",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Università, Agile"],
-      short: "-",
+      name: "👨🏻‍💻 Ethical Hacking",
+      description: `
+      <p>Per questo progetto ho effettuato un <b>test di penetrazione sistematico</b> per Cantina Lorenzo al fine di valutare la sicurezza dell'infrastruttura IT e le vulnerabilità dei protocolli di rete. Il mio obiettivo era individuare eventuali debolezze nel sistema che potrebbero essere sfruttate da attori malevoli.</p>
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/xT0Gqjm3fef2Xm3Dag/giphy.gif" alt="GIF dell'app in azione" />
+      </div>
+      <br />
+      <p>Ho condotto il test utilizzando la distribuzione <b>Kali Linux</b>, che è un sistema operativo popolare per il penetration testing, e il <b>Metasploit Framework</b>, che è uno strumento open-source utilizzato per sviluppare ed eseguire exploit. Questi strumenti sono stati utilizzati per effettuare attacchi al sistema e individuare potenziali vulnerabilità.</p>
+      
+      <p>La relazione discute i risultati del test, fornisce un'analisi critica della sicurezza del sistema e suggerisce tecniche di <b>mitigazione</b>.</p>
+      `,
+      tags: ["Kali Linux, Metasploit"],
+      short:
+        "Un test di penetrazione sistematico per Cantina Lorenzo per valutare le vulnerabilità dei protocolli di rete e la sicurezza dell'infrastruttura IT",
     },
     id: "p9",
-    githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/600x400/?purple,flower",
-    endpoint: "cardiac-tool",
+    githubLink:
+      "https://github.com/FrancescoCoding/Ethical-Hacking-penetration-test",
+    image: "https://source.unsplash.com/600x400/?hacking",
+    order: 8,
+    endpoint: "hacking",
   },
   {
     EN: {
-      name: "Cardiac Tool",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "-",
+      name: "🦎 Chamelii Chatbot",
+      description: `
+      <p>This <b>prototype</b> is designed for a chatbot that will be integrated with the <b>Chamelii App</b>, which \nis owned by <b>Omniscient Safety Innovations Ltd</b>, a mental health software solutions company.
+
+      The chatbot will provide users with an interactive and personalized mental health support experience. </p>
+      
+      <div style="text-align: center;">
+        <img width="50%" src="https://media.giphy.com/media/Xx7nOiC6bU1Gw/giphy.gif" alt="GIF of the chatbot in action" />
+      </div><br/>
+      <p>The full implementation will be using advanced <b>natural language processing </b>(NLP) and <b>Machine Learning</b> techniques to understand and respond to users' needs.</p>
+      
+      <p>The prototype also includes a dashboard that will enable users and mental health professionals to monitor and analyze data related to users' mental health, including their moods, behaviors, and progress over time. This dashboard will provide valuable insights that can help users make informed decisions about their mental health, and can also inform the development of new mental health solutions by <b>Omniscient Safety Innovations Ltd.</b></p>
+      `,
+      tags: ["React"],
+      short:
+        "This is a Prototype for a chatbot with dashboard for the Chamelii App (track your staff's happiness and productivity)",
     },
     IT: {
-      name: "Strumento Cardiaco",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
+      name: "🦎 Chamelii Chatbot",
+      description: `
+        <p>Questo <b>prototipo</b> è stato progettato per un chatbot che verrà integrato con l'app <b>Chamelii</b>, di proprietà di <b>Omniscient Safety Innovations Ltd</b>, un'azienda di soluzioni software per la salute mentale.</p>
+        <div style="text-align: center;">
+          <img width="50%" src="https://media.giphy.com/media/Xx7nOiC6bU1Gw/giphy.gif" alt="GIF del chatbot in azione" />
+        </div><br/>
+        <p>L'applicazione fornirà agli utenti un'esperienza di supporto per la salute mentale interattiva e personalizzata.</p>
+        <p>La piena implementazione utilizzerà avanzate tecniche di <b>elaborazione del linguaggio naturale</b> (NLP) e di <b>apprendimento automatico</b> per comprendere e rispondere alle esigenze degli utenti.</p>
+        <p>Il prototipo include anche una dashboard che consentirà agli utenti e ai professionisti della salute mentale di monitorare e analizzare i dati relativi alla salute mentale degli utenti, compresi i loro umori, comportamenti e progressi nel tempo. Questa dashboard fornirà preziose informazioni che possono aiutare gli utenti a prendere decisioni informate sulla loro salute mentale e possono anche informare lo sviluppo di nuove soluzioni per la salute mentale da parte di <b>Omniscient Safety Innovations Ltd.</b></p>
+      `,
       tags: ["Università, Agile"],
-      short: "-",
+      short:
+        "Questo è un prototipo per un chatbot con dashboard per l'app Chamelii (monitora la felicità e produttività del tuo personale)",
     },
     id: "p10",
-    githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/600x400/?dark,woods",
-    endpoint: "cardiac-tool",
+    githubLink: "https://github.com/FrancescoCoding/Chamelii-chatbot",
+    image: "https://source.unsplash.com/600x400/?green lizard",
+    order: 9,
+    endpoint: "chameleon",
   },
   {
     EN: {
-      name: "Cardiac Tool",
-      description: "",
-      tags: ["University, Team, Agile"],
-      short: "-",
+      name: "🦁 Personal Portfolio (Server)",
+      description: `<p>Server and API are currently hosted on <a href='https://portfolio-api-2023-m5kgbmw7h-francescocoding.vercel.app/api/projects'>Vercel</a> and are fully functional.</p>
+
+      <div style="text-align: center;">
+        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="60%"/>
+      </div>
+      <br/>
+      <p>While the client (this) website is not yet connected to the server, it will be soon! <b>(Incoming!)</b></p>
+      `,
+      tags: ["Node, Express, TypeScript, MongoDB, Mongoose "],
+      short:
+        "Personal portfolio's Server and REST API, built with Node.js, Express, TypeScript, MongoDB and other magic tools 😎",
     },
     IT: {
-      name: "Strumento Cardiaco",
-      description:
-        "Creato con dei modelli di machine learning per predirre certi parametri e malattie in persone con problemi al cuore.",
-      tags: ["Università, Agile"],
-      short: "-",
+      name: "🦁 Portfolio personale (Server)",
+      description: `<p>Il server e l'API sono attualmente ospitati su <a href='https://portfolio-api-2023-m5kgbmw7h-francescocoding.vercel.app/api/projects'>Vercel</a> e sono completamente funzionanti.</p>
+
+      <div style="text-align: center;">
+        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="60%"/>
+      </div>
+      <br/>
+      
+      <p>Anche se il sito web client non è ancora collegato al server, lo sarà presto! <b>(In arrivo!)</b></p>
+      <p>Il server è costruito utilizzando Node.js, Express, TypeScript, MongoDB e altri strumenti magici. 😎</p>`,
+      tags: ["Node, Express, TypeScript, MongoDB, Mongoose "],
+      short:
+        "Server e REST API per questo portfolio. Costruito con Node.js, Express, TypeScript, MongoDB e altri strumenti magici 🪄",
     },
     id: "p11",
-    githubLink: "https://github.com/",
-    image: "https://source.unsplash.com/600x400/?dark,forest",
-    endpoint: "cardiac-tool",
+    githubLink: "https://github.com/FrancescoCoding/Portfolio-api",
+    image:
+      " https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    order: 1,
+    endpoint: "portfolio-api",
+    icons: [typescriptIcon, expressIcon, mongoDBIcon, vercelIcon],
   },
 ];
 

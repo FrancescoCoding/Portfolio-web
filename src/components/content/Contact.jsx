@@ -3,6 +3,7 @@ import { ContactMeForm } from "../UI/ContactMeForm";
 import { useState, useMemo } from "react";
 
 import copy from "copy-text-to-clipboard";
+
 import { Mail } from "../../assets/Animations/Animations";
 import { FaChevronDown } from "react-icons/fa";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -11,12 +12,10 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-
 import styles from "./Contact.module.css";
 import { mapStyles } from "../UI/MapsStyles";
 
-const Contact = props => {
-
+const Contact = (props) => {
   const containerStyle = useMemo(() => {
     return {
       width: "100%",
@@ -27,13 +26,12 @@ const Contact = props => {
     };
   }, []);
 
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
   const isEnglish = storeLanguage === "EN";
 
   const [textCopied, setTextCopied] = useState(false);
   const [showMessageSection, setShowMessageSection] = useState(false);
-
 
   const options = {
     styles: mapStyles[`${storeColour.colour}`],
@@ -111,11 +109,11 @@ const Contact = props => {
               onClick={() => {
                 isEnglish
                   ? copy(
-                    "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
-                  )
+                      "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
+                    )
                   : copy(
-                    "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
-                  );
+                      "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
+                    );
                 textWasCopiedPopup();
               }}
               className={styles.paragraph}
@@ -133,13 +131,13 @@ const Contact = props => {
               onClick={() => {
                 isEnglish
                   ? copy(
-                    copy(
-                      "Currently working as a software developer @ eCERTO."
+                      copy(
+                        "Currently working as a software developer @ eCERTO."
+                      )
                     )
-                  )
                   : copy(
-                    "Attualmente lavoro come software developer @ eCERTO."
-                  );
+                      "Attualmente lavoro come software developer @ eCERTO."
+                    );
                 textWasCopiedPopup();
               }}
               className={styles.paragraph}

@@ -1,3 +1,4 @@
+import PopUp from "../UI/PopUp";
 import Contact from "./Contact";
 import Separator from "../../assets/Animations/Separator";
 import RubberDuck from "../../assets/Animations/RubberDuck";
@@ -9,14 +10,14 @@ import styles from "./PortfolioContent.module.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
 const clickSound = new Audio(clickSoundWav);
 
-const PortfolioContent = props => {
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+const PortfolioContent = (props) => {
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
 
   const [showModal, setShowModal] = useState(false);
   const [showModalTouched, setShowModalTouched] = useState(false);
@@ -31,7 +32,6 @@ const PortfolioContent = props => {
       setShowModal(true);
     }
   }, [isBigScreen, showModalTouched]);
-
 
   const hideModalHandler = () => {
     setShowModalTouched(false);
@@ -52,89 +52,75 @@ const PortfolioContent = props => {
     delayMS = delay * 1000;
   }
 
-  //  use useeffect to calculate the zoom level
-
-  const [zoomLevel, setZoomLevel] = useState(0);
-
-  const zoomLevelPercents = () => {
-    return Math.round(zoomLevel * 100);
-  };
-
-  useEffect(() => {
-    const handleZoom = () => {
-      setZoomLevel(window.devicePixelRatio);
-    };
-    window.addEventListener("resize", handleZoom);
-    return () => window.removeEventListener("resize", handleZoom);
-  }, []);
-
-
   return (
     <>
-      {!showModal && showModalTouched && !isBigScreen && (<><h1 className={styles.zoom__h1}>Zoom level: {`${zoomLevelPercents()}%`}</h1> <br /><p className={styles.zoom__p}>Your modal was open! Zoom out 🦆 if you wish to see it again</p></>)}
+      {!showModal && showModalTouched && !isBigScreen && (
+        <PopUp onClose={hideModalHandler} />
+      )}
 
-      <main className={`${isMobile ? styles["main-content-mobile"] : styles["main-content"]}`}>
+      <main
+        className={`${
+          isMobile ? styles["main-content-mobile"] : styles["main-content"]
+        }`}
+      >
         {showModal && <Contact onClose={hideModalHandler} />}
 
-        {
-          storeLanguage === "EN" && isBigScreen && (
-            <section className={styles["main-text"]}>
-              <h1>
-                Stand the{" "}
-                <RubberDuck className={styles.quack} colour={storeColour.hex} /> out
-              </h1>
-              <p>
-                ... as a Full-Stack developer, UX designer,
-                <br />
-                engineer of terrible puns.
-              </p>
-              <div className={styles["btn-container"]}>
-                <button
-                  onClick={clickSoundHandler}
-                  className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
-                >
-                  Find out more{" "}
-                  <FaChevronDown
-                    style={{
-                      transform: "translateY(3px)",
-                      fontSize: " 1.1rem",
-                      marginLeft: "",
-                    }}
-                  />
-                </button>
-              </div>
-            </section>
-          )
-        }
-        {
-          storeLanguage === "IT" && isBigScreen && (
-            <section className={styles["main-text"]}>
-              <h1>
-                Fatti nuotare{" "}
-                <RubberDuck className={styles.quack} colour={storeColour.hex} />
-              </h1>
-              <p>
-                ... come Full-Stack developer, designer di UX
-                <br />e di terribili giochi di parole.
-              </p>
-              <div className={styles["btn-container"]}>
-                <button
-                  onClick={clickSoundHandler}
-                  className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
-                >
-                  Scopri altro{" "}
-                  <FaChevronDown
-                    style={{
-                      transform: "translateY(3px)",
-                      fontSize: " 1.1rem",
-                      marginLeft: "",
-                    }}
-                  />
-                </button>
-              </div>
-            </section>
-          )
-        }
+        {storeLanguage === "EN" && isBigScreen && (
+          <section className={styles["main-text"]}>
+            <h1>
+              Stand the{" "}
+              <RubberDuck className={styles.quack} colour={storeColour.hex} />{" "}
+              out
+            </h1>
+            <p>
+              ... as a Full-Stack developer, UX designer,
+              <br />
+              engineer of terrible puns.
+            </p>
+            <div className={styles["btn-container"]}>
+              <button
+                onClick={clickSoundHandler}
+                className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+              >
+                Find out more{" "}
+                <FaChevronDown
+                  style={{
+                    transform: "translateY(3px)",
+                    fontSize: " 1.1rem",
+                    marginLeft: "",
+                  }}
+                />
+              </button>
+            </div>
+          </section>
+        )}
+        {storeLanguage === "IT" && isBigScreen && (
+          <section className={styles["main-text"]}>
+            <h1>
+              Fatti nuotare{" "}
+              <RubberDuck className={styles.quack} colour={storeColour.hex} />
+            </h1>
+            <p>
+              ... come Full-Stack developer, designer di UX
+              <br />e di terribili giochi di parole.
+            </p>
+            <div className={styles["btn-container"]}>
+              <button
+                onClick={clickSoundHandler}
+                className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+              >
+                Scopri altro{" "}
+                <FaChevronDown
+                  style={{
+                    transform: "translateY(3px)",
+                    fontSize: " 1.1rem",
+                    marginLeft: "",
+                  }}
+                />
+              </button>
+            </div>
+          </section>
+        )}
         {isBigScreen && <Separator styles={styles.separator} />}
         <section className={styles["astronaut-container"]}>
           <Astronaut delay={delayMS} />
@@ -152,7 +138,7 @@ const PortfolioContent = props => {
             </div>
           )}
         </section>
-      </main >
+      </main>
     </>
   );
 };

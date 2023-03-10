@@ -22,7 +22,16 @@
   animation: slide-down 400ms ease-out forwards;
 }
 
-/* 110% and below */
+/* 150% zoom and above */
+@media screen and (max-height: 900px) {
+  .modal {
+    top: 18vh !important;
+    width: 63%;
+    height: 20rem !important;
+  }
+}
+
+/* 110% zoom and below */
 @media screen and (min-height: 1080px) {
   .modal {
     top: 22vh !important;
@@ -33,7 +42,7 @@
 }
 
 /* If the screen is bigger than 2k (i.e. zoom out) */
-@media screen and (min-width:2561px) {
+@media screen and (min-width: 2561px) {
   .modal {
     top: 22vh !important;
     width: 60%;

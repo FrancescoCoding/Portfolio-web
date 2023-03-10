@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
 
 :root {
+  --portfolio-background: #020816;
+
   --canary-primary-color-darker: #e6b34d;
   --canary-primary-color: #ffcc66;
   --canary-primary-color-lighter: #ffe680;
@@ -26,7 +28,6 @@
   --leaf-active: #3f6ad8;
 
   --modals-background: #061024;
-
   --max-view-width: 3900px;
 }
 
@@ -34,12 +35,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: none !important;
 }
 
 body {
   margin: 0;
   height: 100vh;
-  background: #020816;
+  background: var(--portfolio-background);
   transition: transform 1s;
   overflow-x: hidden;
   font-family: "Roboto", "Open Sans", "sans-serif";
@@ -63,17 +65,38 @@ p {
   line-height: 1.4em;
 }
 
-.react-viewer-btn {
-  transform: translateY(-6px) translateX(2rem);
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
 }
-
-.react-viewer-close {
-  transform: translateY(0) translateX(0);
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
-
-.react-viewer-attribute {
-  font-size: 18px !important;
-  font-weight: 400 !important;
+::-webkit-scrollbar-thumb {
+  background: #aeb6c4;
+  border: 0px none #ffffff;
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525965;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 @keyframes appear {
@@ -81,7 +104,8 @@ p {
     opacity: 0;
   }
 
-  50% {}
+  50% {
+  }
 
   100% {
     opacity: 1;

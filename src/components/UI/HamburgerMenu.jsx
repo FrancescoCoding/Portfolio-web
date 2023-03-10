@@ -21,13 +21,13 @@ const checkMark = (
 
 const currentYear = new Date().getFullYear();
 
-const HamburgerMenu = props => {
+const HamburgerMenu = (props) => {
   const dispatch = useDispatch();
 
   const portalElement = document.getElementById("overlays");
 
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
   const isOcean = storeColour.colour === "ocean";
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
 
@@ -55,12 +55,20 @@ const HamburgerMenu = props => {
   } else {
     if (isBigScreen) {
       showMenu = styles["slide-out"];
+      menuBorderSlide = {
+        borderRight: `9px solid var(--${storeColour.colour}-primary-color)`,
+      };
     } else {
       showMenu = styles["slide-up"];
+      menuBorderSlide = {
+        borderBottom: `9px solid var(--${storeColour.colour}-active)`,
+        borderTopLeftRadius: "0px",
+        borderTopRightRadius: "0px",
+      };
     }
   }
 
-  const changeLanguageHandler = e => {
+  const changeLanguageHandler = (e) => {
     e.preventDefault();
 
     if (storeLanguage === "EN") {
@@ -78,13 +86,18 @@ const HamburgerMenu = props => {
       )}
 
       {ReactDOM.createPortal(
-        <div style={menuBorderSlide} className={`${styles.sidebar} ${showMenu}`}>
+        <div
+          style={menuBorderSlide}
+          className={`${styles.sidebar} ${showMenu}`}
+        >
           <div className={styles["sidebar-content"]}>
             <div className={styles["sidebar-brand"]}>
               <NavLink
                 className={styles.home}
                 to="/portfolio"
-                activeClassName={styles[`${storeColour.colour} ${styles.active}`]}
+                activeClassName={
+                  styles[`${storeColour.colour} ${styles.active}`]
+                }
               >
                 Portfolio {currentYear}
               </NavLink>
@@ -131,8 +144,9 @@ const HamburgerMenu = props => {
             <ul>
               <li>
                 <NavLink
-                  activeClassName={`${styles[`${storeColour.colour}`]} ${styles.active
-                    }`}
+                  activeClassName={`${styles[`${storeColour.colour}`]} ${
+                    styles.active
+                  }`}
                   style={{ width: "100%" }}
                   to="/projects"
                 >
@@ -149,8 +163,9 @@ const HamburgerMenu = props => {
                     Switch to
                     <span
                       style={{
-                        color: `var(--${storeColour.colour}-primary-color${isOcean ? "-lighter" : ""
-                          })`,
+                        color: `var(--${storeColour.colour}-primary-color${
+                          isOcean ? "-lighter" : ""
+                        })`,
                       }}
                     >
                       {" "}
@@ -168,8 +183,9 @@ const HamburgerMenu = props => {
                     Visualizza in
                     <span
                       style={{
-                        color: `var(--${storeColour.colour}-primary-color${isOcean ? "-lighter" : ""
-                          })`,
+                        color: `var(--${storeColour.colour}-primary-color${
+                          isOcean ? "-lighter" : ""
+                        })`,
                       }}
                     >
                       {" "}
@@ -182,7 +198,18 @@ const HamburgerMenu = props => {
             </ul>
             <div className={styles["sidebar-separator"]}></div>
           </div>
-        </div>, portalElement
+          {/* create a footer */}
+          <div className={styles["sidebar-footer"]}>
+            <div className={styles["sidebar-footer-content"]}>
+              <p className={styles["sidebar-text"]}>
+                {storeLanguage === "EN"
+                  ? "Made with ❤️ Francesco Gruosso"
+                  : "Creato con ❤️ Francesco Gruosso"}
+              </p>
+            </div>
+          </div>
+        </div>,
+        portalElement
       )}
     </>
   );

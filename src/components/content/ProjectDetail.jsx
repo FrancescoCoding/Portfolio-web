@@ -1,4 +1,5 @@
 import useKeypress from "../../hooks/useKeyPress";
+import parse from "html-react-parser";
 
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -16,22 +17,21 @@ import Transition from "../UI/Transition";
 
 const ProjectDetail = () => {
   const params = useParams();
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
   const [isOpen, setIsOpen] = useState(false);
 
   const currentProject = WorksList.find(
-    project => project.endpoint === params.projectID
+    (project) => project.endpoint === params.projectID
   );
 
   const closeHandler = () => {
     setIsOpen(false);
   };
 
-  // If the lightbox is open, close it. If it's closed, go back to projects
   const backCondition = !isOpen ? "goBack" : closeHandler;
   useKeypress("Escape", backCondition);
 
@@ -40,6 +40,11 @@ const ProjectDetail = () => {
     return (
       <section style={{ color: "white", padding: "6rem", fontSize: "3rem" }}>
         <h1 style={{ color: "violet" }}>No project found</h1>
+        <p>
+          The project you are looking for does not exist or has been removed.
+        </p>
+
+        <BackButton endpoint="/projects" />
       </section>
     );
   }
@@ -59,14 +64,18 @@ const ProjectDetail = () => {
               {currentProject[`${storeLanguage}`].name}
             </h1>
             <div className={styles.info}>
-              {currentProject[`${storeLanguage}`].description && (
-                <p>{currentProject[`${storeLanguage}`].description}</p>
-              )}
+              <div className={styles.description}>
+                {currentProject[`${storeLanguage}`].description && (
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    {parse(currentProject[`${storeLanguage}`].description)}
+                  </div>
+                )}
+              </div>
 
               <div className={styles.logos}>
                 {currentProject.icons &&
                   !isSmallScreen &&
-                  currentProject.icons.map(el => {
+                  currentProject.icons.map((el) => {
                     return (
                       <div key={el.id} className={styles.logo}>
                         <div className={styles["logo-wrap"]}>

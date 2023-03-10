@@ -1,11 +1,9 @@
-import styles from "./CVContent.module.css";
+// import styles from "./CVContent.module.css";
 
 const CVContent = () => {
-
   return (
     <div>
-      <p style={{ color: "white", width: "100%", textAlign: "center" }}>
-      </p>
+      <p style={{ color: "white", width: "100%", textAlign: "center" }}></p>
     </div>
   );
 };

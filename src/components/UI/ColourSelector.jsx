@@ -5,14 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaCheck } from "react-icons/fa";
 const checkMark = (
   <FaCheck
-    size="0.8vh"
-    style={{ transform: "translateY(.1rem) translateX(-.01rem)" }}
-    className={styles["check-mark"]}
+    size="50%"
+    style={{
+      transform: "translateY(.12rem) translateX(.04em)",
+    }}
   />
 );
 
 const ColourSelector = ({ backgroundColor }) => {
-  const storeColour = useSelector(state => state.colours.colour);
+  const storeColour = useSelector((state) => state.colours.colour);
   const dispatch = useDispatch();
 
   const canaryThemeHandler = () => {
@@ -65,7 +66,7 @@ const ColourSelector = ({ backgroundColor }) => {
           </button>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

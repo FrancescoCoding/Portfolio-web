@@ -7,7 +7,6 @@ section.colours-section {
   bottom: 5vh;
   z-index: 21;
 }
-
 .colours-wrapper {
   margin: auto;
   width: 2200px !important;
@@ -19,7 +18,7 @@ section.colours-section {
   display: flex;
   overflow: auto;
   border-radius: 3rem;
-  padding: .85vw .8vw;
+  padding: 0.85vw 0.8vw;
   transition: all 0.5s ease-out;
   border: rgba(0, 4, 255, 0.357) 0.4vh solid;
 }
@@ -30,18 +29,18 @@ section.colours-section {
   box-shadow: 2px 2px 25px rgb(0, 110, 255);
 }
 
-.colours-container>button {
+.colours-container > button {
   width: 1.1vw;
   height: 1.1vw;
   margin: 0 0.25vw;
   border-radius: 50%;
-  color: rgba(6, 8, 106, 0.967);
+  color: rgba(0, 2, 128, 0.967);
   border: none;
   cursor: pointer;
   box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
 }
 
-.colours-container>button:active {
+.colours-container > button:active {
   box-shadow: inset 1px 1px 2px #000;
 }
 
@@ -61,32 +60,32 @@ section.colours-section {
   background-color: var(--magenta-primary-color);
 }
 
-.colours-container>button.canary:active {
+.colours-container > button.canary:active {
   background-color: var(--canary-primary-color-darker);
 }
 
-.colours-container>button.leaf:active {
+.colours-container > button.leaf:active {
   background-color: var(--leaf-primary-color-darker);
 }
 
-.colours-container>button.ocean:active {
+.colours-container > button.ocean:active {
   background-color: var(--ocean-primary-color-darker);
 }
 
-.colours-container>button.magenta:active {
+.colours-container > button.magenta:active {
   background-color: var(--magenta-primary-color-darker);
 }
 
 /* Max zoom out */
-@media screen and (min-width:6091px) {
+@media screen and (min-width: 6091px) {
   .colours-container {
     transform: scale(1) !important;
-    padding: .7vw .7vw;
+    padding: 0.7vw 0.7vw;
   }
 }
 
 /* If the screen is bigger than 2k (i.e. zoom out) */
-@media screen and (min-width:2561px) {
+@media screen and (min-width: 2561px) {
   .colours-container {
     transform: scale(1.2);
     bottom: 10rem !important;
@@ -101,7 +100,7 @@ section.colours-section {
     padding-left: 2vw;
   }
 
-  .colours-container>button {
+  .colours-container > button {
     width: 1vw;
     height: 1vw;
     margin: 0vh 0.2vw;
@@ -124,7 +123,7 @@ section.colours-section {
     border-radius: 3rem;
   }
 
-  .colours-container>button {
+  .colours-container > button {
     width: 25px;
     height: 25px;
     margin: 0.3rem 0.3rem;
@@ -133,10 +132,6 @@ section.colours-section {
     cursor: pointer;
     box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
   }
-
-  .check-mark {
-    transform: translateY(-0.04rem) scale(1.8) !important;
-  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -144,16 +139,10 @@ section.colours-section {
     flex-direction: column;
     transform: scale(0.8);
   }
-
-
-  .check-mark {
-    transform: translateY(-0.04rem) scale(2.5) !important;
-  }
 }
 
 @media screen and (max-width: 900px) {
   .colours-container {
     display: none;
   }
-
 }
