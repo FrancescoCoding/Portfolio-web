@@ -13,8 +13,8 @@ import HamburgerMenu from "./HamburgerMenu";
 const Navbar = () => {
   const dispatch = useDispatch();
 
-  const storeColour = useSelector(state => state.colours.colour);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours.colour);
+  const storeLanguage = useSelector((state) => state.languages.language);
   const isEnglish = storeLanguage === "EN";
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -25,7 +25,7 @@ const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [burgerIsTouched, setBurgerIsTouched] = useState(false);
 
-  const showModalHandler = e => {
+  const showModalHandler = (e) => {
     e.preventDefault();
     setShowModal(true);
   };
@@ -42,7 +42,7 @@ const Navbar = () => {
       setBurgerIsTouched(false);
     }, 400);
   };
-  const changeLanguageHandler = e => {
+  const changeLanguageHandler = (e) => {
     e.preventDefault();
 
     if (isEnglish) {
@@ -85,18 +85,17 @@ const Navbar = () => {
                 {isEnglish ? "Projects" : "Progetti"}
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink activeClassName={styles.active} to="/nfts">
-                {" "}
-                {isEnglish ? "NFTs" : "NFTs"}
-              </NavLink>
-            </li> */}
             <li>
               <a href="/#" onClick={showModalHandler}>
                 {isEnglish ? "Contact" : "Contatto"}
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
+            {/* <li>
+              <NavLink activeClassName={styles.active} to="/CV">
+                CV
+              </NavLink>
+            </li> */}
 
             <li style={{ color: "white" }}>
               {isEnglish && (

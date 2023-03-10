@@ -9,8 +9,19 @@ import FraggPlot2 from "../assets/Logos/ggPlot2 Icon.svg";
 import FraRProject from "../assets/Logos/RProject Icon.svg";
 import ReactTooltip from "react-tooltip";
 import FraCSS from "../assets/Logos/CSS3Icon.svg";
+import MongoDB from "../assets/Logos/MongoDB Icon.svg";
+import ExpressIcon from "../assets/Logos/Express Icon.svg";
+import TypeScript from "../assets/Logos/Typescript Icon.svg";
+import NpmIcon from "../assets/Logos/Npm Icon.svg";
+import JavaIcon from "../assets/Logos/Java Icon.svg";
+import AndroidIcon from "../assets/Logos/Android Icon.svg";
+import PythonIcon from "../assets/Logos/Python Icon.svg";
+import VercelIcon from "../assets/Logos/Vercel Icon.svg";
+import PuppeteerIcon from "../assets/Logos/Puppeteer Icon.svg";
+import NodeIcon from "../assets/Logos/Node Icon.svg";
+import NetlifyIcon from "../assets/Logos/Netlify Icon.svg";
 
-const iconsSize = "45px";
+const iconsSize = "35px";
 
 // Helper function
 const createIcon = (tag, icon) => {
@@ -21,20 +32,32 @@ const createIcon = (tag, icon) => {
   };
 };
 
-const htmlIcon = createIcon(
+export const htmlIcon = createIcon(
   "HTML5",
   <img src={FraHTML} alt="HTML" height={iconsSize} />
 );
-const cssIcon = createIcon(
+export const cssIcon = createIcon(
   "CSS3",
   <img src={FraCSS} alt="CSS" height={iconsSize} />
 );
-const JSIcon = createIcon(
+export const JSIcon = createIcon(
   "JavaScript",
   <img src={FraJS} alt="JavaScript" height={iconsSize} />
 );
+export const androidIcon = createIcon(
+  "Android",
+  <img src={AndroidIcon} alt="Android" height={iconsSize} />
+);
+export const pythonIcon = createIcon(
+  "Python",
+  <img src={PythonIcon} alt="Python" height={iconsSize} />
+);
+export const nodeIcon = createIcon(
+  "NodeJs",
+  <img src={NodeIcon} alt="Node" height={iconsSize} />
+);
 
-const reactIcon = createIcon(
+export const reactIcon = createIcon(
   "React",
   <>
     <img
@@ -50,7 +73,7 @@ const reactIcon = createIcon(
   </>
 );
 
-const reduxIcon = createIcon(
+export const reduxIcon = createIcon(
   "Redux",
   <>
     <img
@@ -69,7 +92,7 @@ const reduxIcon = createIcon(
   </>
 );
 
-const ionicIcon = createIcon(
+export const ionicIcon = createIcon(
   "Ionic",
   <>
     <IoLogoIonic
@@ -87,7 +110,7 @@ const ionicIcon = createIcon(
   </>
 );
 
-const sassIcon = createIcon(
+export const sassIcon = createIcon(
   "Sass",
   <>
     <img
@@ -106,7 +129,7 @@ const sassIcon = createIcon(
   </>
 );
 
-const GGPlotIcon = createIcon(
+export const GGPlotIcon = createIcon(
   "ggPlot2",
   <>
     <img
@@ -125,7 +148,7 @@ const GGPlotIcon = createIcon(
   </>
 );
 
-const rStudioIcon = createIcon(
+export const rStudioIcon = createIcon(
   "R Project",
   <>
     <img
@@ -144,16 +167,154 @@ const rStudioIcon = createIcon(
   </>
 );
 
-let icons = {
-  reactIcon,
-  reduxIcon,
-  ionicIcon,
-  rStudioIcon,
-  cssIcon,
-  htmlIcon,
-  JSIcon,
-  sassIcon,
-  GGPlotIcon,
-};
+export const mongoDBIcon = createIcon(
+  "MongoDB",
+  <>
+    <img
+      data-tip="mongodb"
+      data-for="mongodb"
+      src={MongoDB}
+      alt="MongoDB"
+      height={iconsSize}
+    />
+    <ReactTooltip id="mongodb" effect="solid">
+      <span>
+        MongoDB is a cross-platform document-oriented <br />
+        database program. Classified as a NoSQL database program
+      </span>
+    </ReactTooltip>
+  </>
+);
 
-export default icons;
+export const expressIcon = createIcon(
+  "express",
+  <>
+    <img
+      data-tip="express"
+      data-for="express"
+      src={ExpressIcon}
+      alt="Express"
+      height={iconsSize}
+    />
+    <ReactTooltip id="express" effect="solid">
+      <span>
+        Express is a minimal and flexible Node.js web application <br />
+        framework that provides a robust set of features for web and mobile
+        applications
+        <br />
+      </span>
+    </ReactTooltip>
+  </>
+);
+
+export const npmIcon = createIcon(
+  "npm",
+  <>
+    <img
+      data-tip="npm"
+      data-for="npm"
+      src={NpmIcon}
+      alt="npm"
+      height={iconsSize}
+    />
+    <ReactTooltip id="npm" effect="solid">
+      <span>npm is a package manager for the JavaScript ecosystem</span>
+    </ReactTooltip>
+  </>
+);
+
+export const typescriptIcon = createIcon(
+  "TypeScript",
+  <>
+    <img
+      data-tip="typescript"
+      data-for="typescript"
+      src={TypeScript}
+      alt="TypeScript"
+      height={iconsSize}
+    />
+    <ReactTooltip id="typescript" effect="solid">
+      <span>
+        TypeScript is strongly typed programming language <br />
+        developed and maintained by Microsoft
+      </span>
+    </ReactTooltip>
+  </>
+);
+
+export const javaIcon = createIcon(
+  "Java",
+  <>
+    <img
+      data-tip="java"
+      data-for="java"
+      src={JavaIcon}
+      alt="Java"
+      height={iconsSize}
+    />
+    <ReactTooltip id="java" effect="solid">
+      <span>
+        Java is a general-purpose programming language <br />
+        that is class-based, object-oriented, and designed to have as few
+        implementation dependencies as possible
+      </span>
+    </ReactTooltip>
+  </>
+);
+
+export const vercelIcon = createIcon(
+  "Vercel",
+  <>
+    <img
+      data-tip="vercel"
+      data-for="vercel"
+      src={VercelIcon}
+      alt="Vercel"
+      height={iconsSize}
+    />
+    <ReactTooltip id="vercel" effect="solid">
+      <span>
+        Vercel is a cloud platform for static sites, <br />
+        hybrid apps, and Serverless Functions
+      </span>
+    </ReactTooltip>
+  </>
+);
+
+export const puppeteerIcon = createIcon(
+  "Puppeteer",
+  <>
+    <img
+      data-tip="puppeteer"
+      data-for="puppeteer"
+      src={PuppeteerIcon}
+      alt="Puppeteer"
+      height={iconsSize}
+    />
+    <ReactTooltip id="puppeteer" effect="solid">
+      <span>
+        Puppeteer is a Node library which provides a high-level API <br />
+        to control Chrome or Chromium over the DevTools Protocol
+      </span>
+    </ReactTooltip>
+  </>
+);
+
+export const netlifyIcon = createIcon(
+  "Netlify",
+  <>
+    <img
+      data-tip="netlify"
+      data-for="netlify"
+      src={NetlifyIcon}
+      alt="Netlify"
+      height={iconsSize}
+    />
+    <ReactTooltip id="netlify" effect="solid">
+      <span>
+        Netlify is a cloud computing company that offers hosting and serverless
+        backend services for static websites
+      </span>
+    </ReactTooltip>
+  </>
+);

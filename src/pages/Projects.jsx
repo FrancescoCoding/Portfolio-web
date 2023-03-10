@@ -11,9 +11,9 @@ const Projects = () => {
     <>
       <Transition reverse />
       <Navbar />
+      <ColourSelector />
       <ProjectsContent projects={ProjectsList} />
       <Sidebar concatContent={<AnimatedArrow />} />
-      <ColourSelector />
     </>
   );
 };

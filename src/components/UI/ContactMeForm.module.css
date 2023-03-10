@@ -25,7 +25,8 @@
   margin-bottom: 1rem;
   padding: 0.7rem;
   font-size: 1.3rem !important;
-  border: 1px solid transparent;
+  border: 1.4px solid transparent;
+  border-bottom: 2px solid transparent;
   width: 100%;
   border-radius: 3px;
 }
@@ -37,7 +38,8 @@
 
 .invalid {
   background: rgb(255, 194, 194);
-  border: 1px solid red !important;
+  border: 1.4px solid red !important;
+  border-bottom: 2px solid red !important;
 }
 
 textarea {

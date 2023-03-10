@@ -1,11 +1,11 @@
 import styles from "./NotFoundContent.module.css";
 import { useSelector } from "react-redux";
 import { Nessie, Robot, Car, NoData } from "../../assets/Animations/Animations";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 
 const NotFoundContent = ({ message }) => {
-  const storeColour = useSelector(state => state.colours.colour);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
+  const storeColour = useSelector((state) => state.colours.colour);
+  // const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
 
   return (
     <div className={styles["notFound-container"]}>

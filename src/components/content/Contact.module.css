@@ -126,7 +126,7 @@
   transition: border 0.7s !important;
   cursor: pointer;
   user-select: none;
-  font-size: 0.70vw;
+  font-size: 0.7vw;
 }
 
 .contact-container p.paragraph:first-child {
@@ -185,7 +185,7 @@
 }
 
 .action-button {
-  font-size: .8vw;
+  font-size: 0.8vw;
   border-radius: 20px;
   background: transparent;
   width: 100%;
@@ -221,21 +221,17 @@
 
 /* If the screen is within 2k */
 @media screen and (max-width: 2561px) {
-
   .contact-container p:not(.copied) {
-    font-size: 0.70vw;
+    font-size: 0.7vw;
   }
 }
 
-
 /* If the screen is bigger than 2k (i.e. zoom out) */
-@media screen and (min-width:2561px) {
-
+@media screen and (min-width: 2561px) {
   .contact-container p {
     position: relative;
     margin: 1vh auto !important;
     border-radius: 1vh;
-
   }
 
   .contact-container .info {
@@ -250,7 +246,6 @@
   }
 
   .contact-container p:not(.copied) {
-    font-size: 0.70vw;
+    font-size: 0.7vw;
   }
-
 }

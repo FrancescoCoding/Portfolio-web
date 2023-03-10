@@ -1,17 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import store from "./store/store";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
+import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
+
 import App from "./App";
+import store from "./store/store";
 
 let persistor = persistStore(store);
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+
+root.render(
   <React.StrictMode>
     <BrowserRouter basename="/">
       <Provider store={store}>
@@ -20,8 +23,7 @@ ReactDOM.render(
         </PersistGate>
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 const message = `

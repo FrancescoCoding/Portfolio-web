@@ -106,7 +106,6 @@ nav {
 }
 
 @media only screen and (min-width: 64em) {
-
   .navbar ul li a:hover:after,
   .navbar ul li a:hover:before {
     width: 100%;
@@ -139,17 +138,14 @@ nav {
 }
 
 @media screen and (max-width: 300px) {
-
   .hamburger-container {
     margin: 2.5rem 5.5rem;
     display: flex;
     align-items: flex-start;
     padding-bottom: -0.4rem;
     /* border: red solid 1px; // testing */
-
   }
 }
-
 
 @media screen and (max-width: 870px) {
   nav {
@@ -160,10 +156,13 @@ nav {
   }
 
   .hamburger-container {
-    margin: 0.5rem 1rem;
+    margin: 0.2rem 0.7rem;
     display: flex;
-    /* border: red solid 1px; // testing */
     padding-bottom: -0.4rem;
+  }
+
+  .hamburger-container > * {
+    transform: scale(0.5) !important;
   }
 }
 

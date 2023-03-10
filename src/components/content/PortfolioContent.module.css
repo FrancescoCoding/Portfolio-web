@@ -157,33 +157,6 @@
   margin-left: 0.2rem;
 }
 
-.zoom__h1 {
-  position: fixed;
-  top: 12vh;
-  right: 8vw;
-  color: var(--canary-primary-color) !important;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 3vh;
-  color: #f2f2f2;
-  margin: 0.5rem;
-  z-index: 100;
-}
-
-.zoom__p {
-  position: fixed;
-  top: 16vh;
-  right: 7.8vw;
-  color: var(--canary-active) !important;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.9vh;
-  color: #f2f2f2;
-  margin: 0.5rem;
-  z-index: 100;
-  transition: margin 1s ease;
-  max-width: 13vw !important;
-  text-align: right;
-}
-
 @keyframes appear {
   0% {
     opacity: 0;
