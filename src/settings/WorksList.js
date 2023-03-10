@@ -87,7 +87,7 @@ const PROJECTS = [
 
       <p>This specific model can predict the damage amount calculated in <b>Millions (GBP)</b>, and uses different methods to achieve so.</p>
       
-       <div style="text-align: center;">
+      <div style="text-align: center;">
         <img width="50%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
       </div>
       <br/>
@@ -99,11 +99,17 @@ const PROJECTS = [
     },
     IT: {
       name: "🌊 Simulatore di Tsunami",
-      description: `Questo progetto mi ha richiesto di formulare, ricercare e presentare un modello matematico e probabilistico di attributi relativi a una simulazione al computer.
+      description: `<p>Questo progetto mi ha richiesto di formulare, ricercare e presentare un <b>modello probabilistico</b> e matematico di attributi relativi a una simulazione al computer. </p>
 
-      Questo modello specifico può prevedere l'ammontare del danno calcolato in milioni di sterline (GBP) e utilizza diversi metodi per farlo.
+      <p>Questo modello specifico può prevedere l'ammontare del danno calcolato in <b>milioni di sterline (GBP)</b> e utilizza diversi metodi per farlo.</p>
       
-      Per ulteriori dettagli, consulta il file README nel GitHub repo.`,
+      <div style="text-align: center;">
+        <img width="50%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
+      </div>
+      <br/>
+
+      <p>Per ulteriori dettagli, consulta il file README nel GitHub repo. </p>
+      `,
       short:
         "Un modello matematico che calcola i danni provocati da uno tsunami",
     },
