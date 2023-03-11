@@ -15,7 +15,7 @@
     "html-react-parser": "^3.0.12",
     "memfs": "^3.4.13",
     "react": "^18.2.0",
-    "react-device-detect": "^2.2.2",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-lottie-player": "^1.5.4",
