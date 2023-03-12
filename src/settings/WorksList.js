@@ -85,12 +85,13 @@ const PROJECTS = [
       name: "🌊 Tsunami Prediction Model",
       description: `<p>This project required me to formulate, research and present\na mathematical and <b>probabilistic model</b> of attributes relating to a computer simulation.</p>
 
-      <p>This specific model can predict the damage amount calculated in <b>Millions (GBP)</b>, and uses different methods to achieve so.</p>
       
       <div style="text-align: center;">
-        <img width="50%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
+        <img width="45%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
       </div>
       <br/>
+
+      <p>This specific model can predict the damage amount calculated in <b>Millions (GBP)</b>, and uses different methods to achieve so.</p>
 
       <p>Refer to the <a href="https://github.com/FrancescoCoding/Tsunami-Damage-Prediction-Model">README</a> for a more in-depth description.</p>
       `,
@@ -101,12 +102,11 @@ const PROJECTS = [
       name: "🌊 Simulatore di Tsunami",
       description: `<p>Questo progetto mi ha richiesto di formulare, ricercare e presentare un <b>modello probabilistico</b> e matematico di attributi relativi a una simulazione al computer. </p>
 
-      <p>Questo modello specifico può prevedere l'ammontare del danno calcolato in <b>milioni di sterline (GBP)</b> e utilizza diversi metodi per farlo.</p>
-      
       <div style="text-align: center;">
-        <img width="50%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
+        <img width="45%" src="https://media.giphy.com/media/XFITRJv9IMhi0/giphy.gif" alt="Bender Bending" />
       </div>
       <br/>
+      <p>Questo modello specifico può prevedere l'ammontare del danno calcolato in <b>milioni di sterline (GBP)</b> e utilizza diversi metodi per farlo.</p>
 
       <p>Per ulteriori dettagli, consulta il file README nel GitHub repo. </p>
       `,
@@ -154,9 +154,11 @@ const PROJECTS = [
     IT: {
       name: "🤖 easyGPT",
       description: `
-      <p align="center">
-      <a href="https://www.npmjs.com/package/easygpt" target="blank"><img src="https://user-images.githubusercontent.com/64712227/223658360-1584fdf2-39c6-4895-9c25-4aafea32d780.png" width="220" alt="easyGPT Logo" /></a></p>
       <h1 align="center">easyGPT: Un server Express e modulo npm per ChatGPT 🤖</h1>
+
+      <div style="text-align: center;">
+        <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF del portfolio in azione" />
+      </div>
 
       <p style="display: flex; justify-content: center;">
         <a href="https://github.com/FrancescoCoding/easyGPT/blob/main/LICENSE%20%F0%9F%A4%96" target="_blank"><img src="https://img.shields.io/github/license/francescocoding/easygpt" alt="Package License" style="margin-right: 5px;" /></a>
@@ -172,10 +174,6 @@ const PROJECTS = [
         <li>Un <b>server express</b> che invia richieste all'API ChatGPT con il modulo</li>
         <li>Una <b>raccolta Postman</b> per testare il server e il modulo npm</li>
       </ul>
-      <div style="text-align: center;">
-        <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF del portfolio in azione" />
-      </div>
-
       `,
       tags: ["Node, JavaScript"],
       short:
@@ -184,7 +182,7 @@ const PROJECTS = [
     id: "p2",
     githubLink: "https://github.com/FrancescoCoding/easyGPT",
     image: playlistThumbnail600w,
-    endpoint: "playlist-project",
+    endpoint: "easygpt",
     order: 1.5,
     icons: [expressIcon, npmIcon, JSIcon],
   },
@@ -485,7 +483,7 @@ const PROJECTS = [
       description: `<p>Server and API are currently hosted on <a href='https://portfolio-api-2023-m5kgbmw7h-francescocoding.vercel.app/api/projects'>Vercel</a> and are fully functional.</p>
 
       <div style="text-align: center;">
-        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="60%"/>
+        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="50%"/>
       </div>
       <br/>
       <p>While the client (this) website is not yet connected to the server, it will be soon! <b>(Incoming!)</b></p>
@@ -499,7 +497,7 @@ const PROJECTS = [
       description: `<p>Il server e l'API sono attualmente ospitati su <a href='https://portfolio-api-2023-m5kgbmw7h-francescocoding.vercel.app/api/projects'>Vercel</a> e sono completamente funzionanti.</p>
 
       <div style="text-align: center;">
-        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="60%"/>
+        <img src="https://media.giphy.com/media/IpeYSEZshTefe/giphy.gif" alt="Server is up and running" width="50%"/>
       </div>
       <br/>
       

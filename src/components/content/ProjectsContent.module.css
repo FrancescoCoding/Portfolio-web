@@ -2,6 +2,9 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   opacity: 0;
   animation: appear 1.5s forwards 0.8s;
@@ -10,18 +13,18 @@
 .projects {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: 0 auto !important;
   align-items: center;
   z-index: 3;
 }
 
 .filter-container {
-  position: absolute;
   display: flex;
   align-items: flex-end !important;
   justify-content: flex-end !important;
   font-size: 20px;
-  top: 78%;
   width: 69%;
   background: transparent;
 }
@@ -81,10 +84,11 @@ div.items {
   position: relative;
   padding-left: 0.8rem;
   width: 70%;
-  height: 69%;
+  height: 100% !important;
   /* scroll-snap-type: y mandatory;
   scroll-behavior: smooth; */
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
 }
 
 div.items > div {
@@ -283,7 +287,7 @@ div.list-item {
     grid-template-rows: repeat(4, 1fr);
     gap: 0.6rem 0.9rem;
     height: 36rem !important;
-    max-height: 570px !important;
+    max-height: 80vh !important;
     /* border: red solid 1px !important; */
   }
 
@@ -390,7 +394,7 @@ div.list-item {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2rem 2.3rem;
-    max-height: 70% !important;
+    max-height: 71% !important;
     overflow: scroll;
     position: relative;
     padding-left: 0.8rem;
@@ -448,7 +452,6 @@ div.list-item {
     gap: 1rem;
     justify-content: center !important;
     padding-bottom: 0rem;
-    overflow: hidden;
     max-height: 100% !important;
     min-height: 100%;
   }

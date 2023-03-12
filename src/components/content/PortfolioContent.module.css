@@ -13,20 +13,6 @@
   z-index: -1;
 }
 
-.main-content-mobile {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  text-align: center;
-  transform: scale(0.5);
-  opacity: 0;
-  animation: appear 1.5s forwards 1s;
-  transition: all 1s ease;
-  margin: auto;
-  margin-top: -8rem;
-  z-index: -1;
-}
-
 .main-text h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 5rem;
@@ -45,6 +31,24 @@
   margin-bottom: 0.6rem;
   border-radius: 5rem;
   border-top-right-radius: 2rem;
+}
+
+.main-content-mobile {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: appear 1.5s forwards 1s;
+  transition: all 1s ease;
+  margin: auto;
+  margin-top: -8rem;
+  z-index: -1;
+}
+
+.main-content-mobile .astronaut-text {
+  margin-top: 1rem !important;
 }
 
 .quack {
@@ -162,7 +166,8 @@
     opacity: 0;
   }
 
-  50% {}
+  50% {
+  }
 
   100% {
     opacity: 1;
@@ -170,7 +175,7 @@
 }
 
 /* If the screen is bigger than 2k (i.e. zoom out) */
-@media screen and (min-width:2561px) {
+@media screen and (min-width: 2561px) {
   .main-content {
     transform: scale(1.3) !important;
     height: 100vh;
@@ -236,7 +241,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
   .main-content {
     display: flex;
     justify-content: center;

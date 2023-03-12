@@ -54,7 +54,7 @@
   background-color: white;
   box-shadow: 5px 15px 4px rgba(154, 160, 185, 0.05),
     8px 8px 10px rgba(3, 8, 29, 0.23);
-  overflow: hidden;
+  overflow: auto;
   text-align: left;
   position: relative;
   opacity: 0;
@@ -216,6 +216,21 @@ li {
 }
 
 @media screen and (max-width: 1800px) {
+  .project-card-section {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    height: 80vh;
+    bottom: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-1rem);
+  }
+
   .project-card-section .project-card img {
     width: 100%;
     margin: 0.6rem 0;
@@ -249,6 +264,8 @@ li {
     padding: 2rem 3rem !important;
     width: 90%;
     overflow: auto;
+    text-align: center !important;
+    padding: 1rem 0.5rem !important;
   }
   .project-card h1 {
     font-size: 1.6rem !important;
