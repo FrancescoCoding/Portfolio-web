@@ -13,8 +13,8 @@ import HamburgerMenu from "./HamburgerMenu";
 const Navbar = () => {
   const dispatch = useDispatch();
 
-  const storeColour = useSelector((state) => state.colours.colour);
-  const storeLanguage = useSelector((state) => state.languages.language);
+  const storeColour = useSelector(state => state.colours.colour);
+  const storeLanguage = useSelector(state => state.languages.language);
   const isEnglish = storeLanguage === "EN";
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -25,7 +25,7 @@ const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [burgerIsTouched, setBurgerIsTouched] = useState(false);
 
-  const showModalHandler = (e) => {
+  const showModalHandler = e => {
     e.preventDefault();
     setShowModal(true);
   };
@@ -42,7 +42,7 @@ const Navbar = () => {
       setBurgerIsTouched(false);
     }, 400);
   };
-  const changeLanguageHandler = (e) => {
+  const changeLanguageHandler = e => {
     e.preventDefault();
 
     if (isEnglish) {
@@ -81,7 +81,20 @@ const Navbar = () => {
         <nav className={styles.navbar}>
           <ul className={styles[`${storeColour}`]}>
             <li>
-              <NavLink activeClassName={styles.active} to="/projects">
+              <NavLink
+                activeClassName={styles.active}
+                to="/portfolio"
+                exact={true}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName={styles.active}
+                to="/projects"
+                exact={true}
+              >
                 {isEnglish ? "Projects" : "Progetti"}
               </NavLink>
             </li>

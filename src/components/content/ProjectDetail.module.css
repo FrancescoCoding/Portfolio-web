@@ -78,6 +78,23 @@
   transform: scale(0.98);
   transition: all 0.2s;
 }
+.project-btn__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+.project-btn__wrapper p {
+  /* make text unselectable */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome and Opera */
+}
 
 .logo {
   display: flex;
@@ -106,6 +123,7 @@
   text-align: center;
   padding: 0.2rem 2rem;
   padding-top: 0.7rem;
+  z-index: 10;
 }
 .logos h2 {
   color: black;
@@ -192,22 +210,29 @@
   transition: all 0.2s;
 }
 
-.button-container {
+.buttons-container {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   position: absolute;
+  width: 100%;
   right: 0;
   bottom: 0;
-  padding: 2rem;
+  padding: 2rem 0rem;
+}
+/* Git caption */
+.buttons-container p {
+  text-align: center;
+  margin-top: 0.3rem;
+  color: rgb(1, 15, 34) !important;
 }
 .git-btn {
   cursor: pointer;
   transition: all 0.2s;
   z-index: 400;
+  animation: pulse 2s ease-in-out infinite;
 }
 .git-btn:hover {
-  transform: scale(1.5) rotate(10deg);
+  transform: scale(1.5);
   transition: all 0.2s;
 }
 
@@ -232,7 +257,7 @@ li {
   }
 
   .project-card-section .project-card img {
-    width: 100%;
+    width: 90%;
     margin: 0.6rem 0;
   }
   .project-card {
@@ -249,6 +274,18 @@ li {
   .project-card p {
     font-size: 18px !important;
   }
+  .buttons-container {
+    padding: 0;
+    position: relative;
+    align-items: center;
+  }
+  .project-btn__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -260,19 +297,23 @@ li {
     padding: 0;
   }
 
+  /* @todo make github link and other buttons appear at the bottom for mobile */
+  /* @todo make similar to the hamburger sidebar for mobile, but do it at the bottom of the card */
+
   .project-card {
     padding: 2rem 3rem !important;
     width: 90%;
     overflow: auto;
-    text-align: center !important;
-    padding: 1rem 0.5rem !important;
+    /* text-align: center !important; */
+    padding: 1rem 2rem !important;
   }
   .project-card h1 {
     font-size: 1.6rem !important;
   }
   .project-card p {
     font-size: 1rem !important;
-    width: 90%;
+    width: 100%;
+    padding: 0 1.05rem;
   }
   .img-btn {
     display: none;
@@ -288,6 +329,17 @@ li {
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -327,7 +379,7 @@ li {
     overflow: auto;
     border-radius: 0;
   }
-  .button-container {
+  .buttons-container {
     width: 100%;
     padding: 0.4rem;
   }

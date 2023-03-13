@@ -7,13 +7,13 @@ const checkMark = (
   <FaCheck
     size="50%"
     style={{
-      transform: "translateY(.12rem) translateX(.04em)",
+      transform: "translateY(.13rem) translateX(.03em)",
     }}
   />
 );
 
 const ColourSelector = ({ backgroundColor }) => {
-  const storeColour = useSelector((state) => state.colours.colour);
+  const storeColour = useSelector(state => state.colours.colour);
   const dispatch = useDispatch();
 
   const canaryThemeHandler = () => {

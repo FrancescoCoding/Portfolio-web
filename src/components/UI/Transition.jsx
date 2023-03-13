@@ -4,7 +4,7 @@ import styles from "./Transition.module.css";
 const Transition = ({ reverse }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  const styleHandler = reverse ? "scrollIn" : "scrollOut";
+  const directionHandler = reverse ? "scrollIn" : "scrollOut";
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,7 +14,7 @@ const Transition = ({ reverse }) => {
 
   return (
     <>
-      {!hasLoaded && <div className={styles[`${styleHandler}`]}></div>}
+      {!hasLoaded && <div className={styles[`${directionHandler}`]}></div>}
       {!hasLoaded && <div className={styles.fadeOut}></div>}
     </>
   );

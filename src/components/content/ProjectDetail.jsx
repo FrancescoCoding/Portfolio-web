@@ -8,6 +8,7 @@ import { useMediaQuery } from "react-responsive";
 
 import { useSelector } from "react-redux";
 import { FaGithub } from "react-icons/fa";
+import { FcDocument } from "react-icons/fc";
 
 import styles from "./ProjectDetail.module.css";
 
@@ -17,15 +18,15 @@ import Transition from "../UI/Transition";
 
 const ProjectDetail = () => {
   const params = useParams();
-  const storeColour = useSelector((state) => state.colours);
-  const storeLanguage = useSelector((state) => state.languages.language);
+  const storeColour = useSelector(state => state.colours);
+  const storeLanguage = useSelector(state => state.languages.language);
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
   const [isOpen, setIsOpen] = useState(false);
 
   const currentProject = WorksList.find(
-    (project) => project.endpoint === params.projectID
+    project => project.endpoint === params.projectID
   );
 
   const closeHandler = () => {
@@ -72,10 +73,11 @@ const ProjectDetail = () => {
                 )}
               </div>
 
+              {/* Technologies utilised logos */}
               <div className={styles.logos}>
                 {currentProject.icons &&
                   !isSmallScreen &&
-                  currentProject.icons.map((el) => {
+                  currentProject.icons.map(el => {
                     return (
                       <div key={el.id} className={styles.logo}>
                         <div className={styles["logo-wrap"]}>
@@ -88,22 +90,54 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div className={styles["button-container"]}>
-              <a
-                href={currentProject.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles["git-btn"]}
-              >
-                <FaGithub
-                  size="3rem"
-                  style={{
-                    alignSelf: "flex-start",
-                    color: `var(--${storeColour.colour}-active)`,
-                    cursor: "pointer",
-                  }}
-                />
-              </a>
+            {/* External links */}
+            <div
+              style={{
+                justifyContent: currentProject.extraLink
+                  ? "space-between"
+                  : "flex-end",
+              }}
+              className={styles["buttons-container"]}
+            >
+              {/* Extra link on the left if present */}
+              {currentProject.extraLink && (
+                <div className={styles["project-btn__wrapper"]}>
+                  <a
+                    href={currentProject.extraLink.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles["git-btn"]}
+                  >
+                    <FcDocument
+                      size="3rem"
+                      style={{
+                        color: `var(--${storeColour.colour}-active)`,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </a>
+                  <p>{currentProject.extraLink.buttonText} </p>
+                </div>
+              )}
+
+              {/* GitHub link */}
+              <div className={styles["project-btn__wrapper"]}>
+                <a
+                  href={currentProject.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles["git-btn"]}
+                >
+                  <FaGithub
+                    size="3rem"
+                    style={{
+                      color: `var(--${storeColour.colour}-active)`,
+                      cursor: "pointer",
+                    }}
+                  />
+                </a>
+                <p>GitHub</p>
+              </div>
             </div>
           </div>
         </div>

@@ -53,7 +53,8 @@ const PROJECTS = [
     IT: {
       id: "p5",
       name: "🦆 Portfolio personale (Web)",
-      description: `<p>Questo portfolio è un progetto di media entità. Utilizza diverse tecnologie, tra cui: </p> 
+      description: `
+      <p>Questo portfolio è un progetto di media entità. Utilizza diverse tecnologie, tra cui: </p> 
 
       <ul>
         <li><b>React</b> con <b>Redux Toolkit</b> per la gestione dello stato e <b>Redux Persist</b> per lo storage offline</li>
@@ -83,7 +84,8 @@ const PROJECTS = [
   {
     EN: {
       name: "🌊 Tsunami Prediction Model",
-      description: `<p>This project required me to formulate, research and present\na mathematical and <b>probabilistic model</b> of attributes relating to a computer simulation.</p>
+      description: `
+      <p>This project required me to formulate, research and present\na mathematical and <b>probabilistic model</b> of attributes relating to a computer simulation.</p>
 
       
       <div style="text-align: center;">
@@ -128,7 +130,7 @@ const PROJECTS = [
       name: "🤖 easyGPT",
       description: `
       
-      <h1 align="center">An Express server and npm module for ChatGPT 🤖</h1> <br/>
+      <h1 align="center">An Express server and npm module for ChatGPT</h1> <br/>
       
       <div style="text-align: center;">
         <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF of the portfolio in action" />
@@ -154,7 +156,7 @@ const PROJECTS = [
     IT: {
       name: "🤖 easyGPT",
       description: `
-      <h1 align="center">easyGPT: Un server Express e modulo npm per ChatGPT 🤖</h1>
+      <h1 align="center">easyGPT: Un server Express e modulo npm per ChatGPT</h1>
 
       <div style="text-align: center;">
         <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF del portfolio in azione" />
@@ -181,6 +183,10 @@ const PROJECTS = [
     },
     id: "p2",
     githubLink: "https://github.com/FrancescoCoding/easyGPT",
+    extraLink: {
+      buttonText: "Docs",
+      link: "https://easygpt.dev",
+    },
     image: playlistThumbnail600w,
     endpoint: "easygpt",
     order: 1.5,
