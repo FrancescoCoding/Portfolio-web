@@ -44,8 +44,8 @@ body {
   background: var(--portfolio-background);
   transition: transform 1s;
   overflow-x: hidden;
+  overflow: hidden;
   font-family: "Roboto", "Open Sans", "sans-serif";
-
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;

@@ -10,6 +10,10 @@ import noDataData from "./No Data 404.json";
 import loadingData from "./Loading.json";
 import mailData from "./Mail.json";
 import successCheck from "./Success.json";
+import FoliageRight from "./FoliageRight.json";
+import RightFoliageOcean from "./Right Foliage Ocean.json";
+import RightFoliageMagenta from "./Right Foliage Magenta.json";
+import { useSelector } from "react-redux";
 
 const AstronautLottie = props => {
   const [isDelayed, setIsDelayed] = useState(false);
@@ -165,3 +169,34 @@ const SuccessLottie = props => {
 };
 
 export const Success = SuccessLottie;
+
+const FoliageRightLottie = props => {
+  const storeColour = useSelector(state => state.colours.colour);
+
+  const foliageAnimations = {
+    default: FoliageRight,
+    // canary: RightFoliageCanary, -- To implement
+    ocean: RightFoliageOcean,
+    magenta: RightFoliageMagenta,
+    // leaf: RightFoliageCanary, -- To implement
+  };
+
+  const animationData =
+    foliageAnimations[storeColour] || foliageAnimations["default"];
+
+  return (
+    <Lottie
+      loop={true}
+      animationData={animationData}
+      play
+      style={{
+        width: props.width, // "43vw"
+        position: "fixed",
+        bottom: -5,
+        right: 0,
+      }}
+    />
+  );
+};
+
+export const FoliageRightSide = FoliageRightLottie;

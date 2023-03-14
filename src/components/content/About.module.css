@@ -1,0 +1,45 @@
+.about {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  background: var(--leaf-primary-color-darker);
+  background: #000704a2;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top: white 2px dashed;
+  border-left: white 2px dashed;
+  padding: 0.8rem 2rem;
+  color: white;
+}
+
+.about__content {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+/* Header (Francesco Gruosso) */
+.about__content h1 {
+  margin-bottom: 0.2rem;
+  text-align: start;
+  margin-left: 0.3rem;
+}
+/* Paragraph */
+.about__content p {
+  margin-bottom: 0.5rem;
+}
+/* Content */
+.about__content span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span.about__content__info > * {
+  margin: 0 0.4rem;
+}
+.about__content img {
+  width: 75px;
+  transform: translateY(0.25rem);
+  border-radius: 10px;
+}

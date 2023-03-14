@@ -7,10 +7,9 @@
   opacity: 0;
   animation: appear 1.5s forwards 1s;
   transition: all 1s ease;
-  height: 100vh;
+  height: 100vh !important;
   width: 100vw;
-  margin: auto;
-  z-index: -1;
+  margin: hidden;
 }
 
 .main-text h1 {
@@ -178,23 +177,35 @@
 @media screen and (min-width: 2561px) {
   .main-content {
     transform: scale(1.3) !important;
-    height: 100vh;
+    height: 100vh !important;
     transition: all 1s ease;
     align-items: center;
+    /* border: red solid 1px; */
   }
 }
 
+@media screen and (max-width: 1800px) {
+  .main-content {
+    transform: scale(0.65) !important;
+    height: 100vh !important;
+    transition: all 1s ease;
+    align-items: center;
+    /* border: red solid 1px; */
+  }
+}
+
+/* ! Switch from full astronaut text to single line */
 @media screen and (max-width: 1500px) {
   .main-content {
-    /* border: red solid 1px; // Testing */
     transform: scale(0.6);
+    /* border: red solid 1px; */
   }
 }
 
 @media screen and (max-width: 1300px) {
   .main-content {
-    /* border: red solid 1px; // Testing */
     transform: scale(0.5);
+    /* border: red solid 1px; */
   }
 }
 

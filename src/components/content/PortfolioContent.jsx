@@ -4,6 +4,7 @@ import Separator from "../../assets/Animations/Separator";
 import RubberDuck from "../../assets/Animations/RubberDuck";
 import { Astronaut } from "../../assets/Animations/Animations";
 import { FaChevronDown } from "react-icons/fa";
+import About from "./About";
 
 import styles from "./PortfolioContent.module.css";
 
@@ -15,9 +16,9 @@ import { isMobile } from "react-device-detect";
 import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
 const clickSound = new Audio(clickSoundWav);
 
-const PortfolioContent = (props) => {
-  const storeColour = useSelector((state) => state.colours);
-  const storeLanguage = useSelector((state) => state.languages.language);
+const PortfolioContent = props => {
+  const storeColour = useSelector(state => state.colours);
+  const storeLanguage = useSelector(state => state.languages.language);
 
   const [showModal, setShowModal] = useState(false);
   const [showModalTouched, setShowModalTouched] = useState(false);
@@ -139,6 +140,7 @@ const PortfolioContent = (props) => {
           )}
         </section>
       </main>
+      <About />
     </>
   );
 };

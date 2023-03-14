@@ -7,7 +7,7 @@ const checkMark = (
   <FaCheck
     size="50%"
     style={{
-      transform: "translateY(.13rem) translateX(.03em)",
+      transform: "translateY(.12rem) translateX(.04em)",
     }}
   />
 );
