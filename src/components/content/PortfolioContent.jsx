@@ -1,10 +1,11 @@
+import About from "../UI/About";
 import PopUp from "../UI/PopUp";
 import Contact from "./Contact";
 import Separator from "../../assets/Animations/Separator";
 import RubberDuck from "../../assets/Animations/RubberDuck";
+
 import { Astronaut } from "../../assets/Animations/Animations";
 import { FaChevronDown } from "react-icons/fa";
-import About from "./About";
 
 import styles from "./PortfolioContent.module.css";
 

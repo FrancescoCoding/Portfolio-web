@@ -14,6 +14,8 @@ import FoliageRight from "./FoliageRight.json";
 import RightFoliageOcean from "./Right Foliage Ocean.json";
 import RightFoliageMagenta from "./Right Foliage Magenta.json";
 import RightFoliageLeaf from "./Right Foliage Leaf.json";
+import RightFoliageCanary from "./Right Foliage Canary.json";
+
 import { useSelector } from "react-redux";
 
 const AstronautLottie = props => {
@@ -176,7 +178,7 @@ const FoliageRightLottie = props => {
 
   const foliageAnimations = {
     default: FoliageRight,
-    // canary: RightFoliageCanary, -- To implement
+    canary: RightFoliageCanary,
     ocean: RightFoliageOcean,
     magenta: RightFoliageMagenta,
     leaf: RightFoliageLeaf,
