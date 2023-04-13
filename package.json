@@ -12,7 +12,7 @@
     "copy-text-to-clipboard": "^3.1.0",
     "emailjs-com": "^3.2.0",
     "hamburger-react": "^2.5.0",
-    "html-react-parser": "^3.0.12",
+    "html-react-parser": "^3.0.13",
     "memfs": "^3.4.13",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
