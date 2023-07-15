@@ -7,11 +7,10 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./About.module.css";
 
 const About = () => {
-  // isBigScreen
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1924px)" });
   return (
     <>
-      <FoliageRightSide width={isBigScreen ? "40vw" : "50rem"} />
+      {isBigScreen && <FoliageRightSide width="38%" />}
       {/* ABOUT TEXT */}
       <section className={styles.about}>
         <div className={styles.about__content}>

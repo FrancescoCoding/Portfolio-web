@@ -9,14 +9,16 @@ import { FaChevronDown } from "react-icons/fa";
 
 import styles from "./PortfolioContent.module.css";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { isMobile } from "react-device-detect";
 
 import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
 const clickSound = new Audio(clickSoundWav);
 
+// @todo: Sort out internationalisation for this component by using a /locales en and it
 const PortfolioContent = props => {
   const storeColour = useSelector(state => state.colours);
   const storeLanguage = useSelector(state => state.languages.language);
@@ -25,6 +27,11 @@ const PortfolioContent = props => {
   const [showModalTouched, setShowModalTouched] = useState(false);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1524px)" });
+
+  const actionButtonStyle = useMemo(
+    () => ({ backgroundColor: `${storeColour.hex}` }),
+    [storeColour.hex]
+  );
 
   // Ensuring the modal appears and disappears when the screen size changes if it has been touched
   useEffect(() => {
@@ -40,7 +47,7 @@ const PortfolioContent = props => {
     setShowModal(false);
   };
 
-  const clickSoundHandler = () => {
+  const showModalWithSoundHandler = () => {
     clickSound.play();
 
     setShowModal(true);
@@ -81,8 +88,9 @@ const PortfolioContent = props => {
             </p>
             <div className={styles["btn-container"]}>
               <button
-                onClick={clickSoundHandler}
-                className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+                onClick={showModalWithSoundHandler}
+                className={`${styles.btn}`}
+                style={actionButtonStyle}
               >
                 Find out more{" "}
                 <FaChevronDown
@@ -108,8 +116,9 @@ const PortfolioContent = props => {
             </p>
             <div className={styles["btn-container"]}>
               <button
-                onClick={clickSoundHandler}
-                className={`${styles.btn} ${styles[`${storeColour.colour}`]}`}
+                onClick={showModalWithSoundHandler}
+                className={`${styles.btn}`}
+                style={actionButtonStyle}
               >
                 Scopri altro{" "}
                 <FaChevronDown
@@ -134,14 +143,35 @@ const PortfolioContent = props => {
                   color: `${storeColour.hex}`,
                 }}
               >
-                Francesco Gruosso
+                Gruosso Francesco
               </h1>
               <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
+              <NavLink
+                className={`${styles["btn-mobile"]}`}
+                activeClassName={styles.active}
+                to="/projects"
+                exact={true}
+              >
+                <button
+                  style={actionButtonStyle}
+                  className={`${styles["btn-mobile"]}`}
+                >
+                  {(storeLanguage === "EN" && "Find out more") ||
+                    (storeLanguage === "IT" && "Scopri altro")}
+                  <FaChevronDown
+                    style={{
+                      transform: "translateY(6px)",
+                      fontSize: " 1.6rem",
+                      marginLeft: ".5rem",
+                    }}
+                  />
+                </button>
+              </NavLink>
             </div>
           )}
         </section>
       </main>
-      <About />
+      {isBigScreen && <About />}
     </>
   );
 };

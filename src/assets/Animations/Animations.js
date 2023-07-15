@@ -37,7 +37,7 @@ const AstronautLottie = props => {
       loop={+props.loop || 2}
       play={isDelayed}
       animationData={astronautData}
-      style={{ width: +props.width || 620, height: +props.height || 620 }}
+      style={{ width: +props.width || 550, height: +props.height || 550 }}
     />
   );
 };
