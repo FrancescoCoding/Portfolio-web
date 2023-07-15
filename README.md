@@ -40,4 +40,4 @@ It is designed to utilize some of the latest technologies and web development be
 ![Portfolio Admin Preview](https://user-images.githubusercontent.com/64712227/191815790-57ed3daf-1d7c-44d2-b282-a1473a15ab53.png)
 
 ## License
-This project is licensed under the [MIT License](https://github.com/FrancescoCoding/Portfolio-web/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/FrancescoCoding/Portfolio-web/blob/main/LICENSE) Copyright (c) 2021 Francesco Gruosso.
