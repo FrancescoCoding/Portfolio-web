@@ -146,7 +146,7 @@ const ProjectDetail = () => {
         <div
           className={styles.design}
           style={{
-            background: `linear-gradient(45deg, ${storeColour.hex} 60%, #555)`,
+            background: `linear-gradient(45deg, ${storeColour.hexDarker} 60%, #555)`,
           }}
         />
       </section>

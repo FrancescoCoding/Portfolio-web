@@ -281,6 +281,65 @@ div.list-item {
   transition: 0.2s ease-out;
 }
 
+/* ////////////// */
+/* MOBILE CLASSES */
+/* ////////////// */
+.projects-section-mobile {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  opacity: 0;
+  animation: appear 1.5s forwards 0.8s;
+  /* border: red solid 1px; */
+}
+.items-mobile {
+  top: 5rem;
+  left: 0;
+  display: grid;
+  padding-top: 3px;
+  padding-bottom: 2px 0.8rem;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem 2.3rem;
+  max-height: 80vh !important;
+  overflow: scroll;
+  position: relative;
+  padding-left: 0.8rem;
+  width: 70%;
+  height: 100% !important;
+  /* scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; */
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  /* border: red solid 1px; */
+}
+
+.projects-section-mobile .items-mobile > div {
+  scroll-snap-align: start !important;
+}
+
+.projects-section-mobile .filter-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  font-size: 20px;
+  width: 69%;
+  background: transparent;
+  /* border: greenyellow solid 1px !important; */
+}
+
+/* move .filter-container as the first child of .projects-section-mobile */
+.projects-section-mobile .filter-container {
+  order: -1;
+}
+
+/* ////////////// */
+/* MEDIA QUERIES */
+/* ////////////// */
 @media screen and (max-width: 1824px) {
   div.items {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -420,7 +479,7 @@ div.list-item {
     overflow: hidden;
   }
 
-  .projects {
+  .projects-section .projects {
     align-items: baseline;
     margin-top: 0.5rem;
   }

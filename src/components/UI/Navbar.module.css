@@ -150,7 +150,6 @@ nav {
 @media screen and (max-width: 870px) {
   nav {
     width: 100vw !important;
-    position: relative;
     padding: 0;
     z-index: 0;
   }

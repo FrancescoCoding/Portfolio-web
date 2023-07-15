@@ -1,9 +1,11 @@
+/* /////////////// */
+/* DESKTOP CLASSES */
+/* /////////////// */
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  transform: scale(0.9);
   opacity: 0;
   animation: appear 1.5s forwards 1s;
   transition: all 1s ease;
@@ -16,7 +18,6 @@
   font-family: "Josefin Sans", sans-serif;
   font-size: 5rem;
   user-select: none;
-  font-weight: 400;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -25,29 +26,11 @@
   color: #f2f2f2;
   font-family: "Lucida sans", sans-serif;
   text-align: end;
-  font-size: 1.5rem;
+  font-size: 1vw;
   margin-top: 0.2rem;
   margin-bottom: 0.6rem;
   border-radius: 5rem;
   border-top-right-radius: 2rem;
-}
-
-.main-content-mobile {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  text-align: center;
-  transform: scale(0.5);
-  opacity: 0;
-  animation: appear 1.5s forwards 1s;
-  transition: all 1s ease;
-  margin: auto;
-  margin-top: -8rem;
-  z-index: -1;
-}
-
-.main-content-mobile .astronaut-text {
-  margin-top: 1rem !important;
 }
 
 .quack {
@@ -84,7 +67,8 @@
   font-size: 1.3rem;
   font-family: sans-serif !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.776);
+  font-weight: 600;
 }
 
 .btn:active {
@@ -94,42 +78,9 @@
   transform: translateY(3px);
 }
 
-.btn.canary {
-  background-color: var(--canary-primary-color);
-}
-
-.btn.leaf {
-  background-color: var(--leaf-primary-color);
-}
-
-.btn.ocean {
-  background-color: var(--ocean-primary-color);
-}
-
-.btn.magenta {
-  background-color: var(--magenta-primary-color);
-}
-
-.btn.canary:active {
-  background-color: var(--canary-primary-color-darker);
-}
-
-.btn.leaf:active {
-  background-color: var(--leaf-primary-color-darker);
-}
-
-.btn.ocean:active {
-  background-color: var(--ocean-primary-color-darker);
-}
-
-.btn.magenta:active {
-  background-color: var(--magenta-primary-color-darker);
-}
-
 .separator {
   -webkit-user-drag: none;
   user-select: none;
-  transform: translateY(-40px);
   margin-left: 7rem;
 }
 
@@ -145,7 +96,7 @@
 
 .astronaut-text p {
   font-size: 2.5rem !important;
-  margin-top: 0.6rem;
+  margin-top: 2rem;
 }
 
 .astronaut {
@@ -160,6 +111,45 @@
   margin-left: 0.2rem;
 }
 
+/* ////////////// */
+/* MOBILE CLASSES */
+/* ////////////// */
+.main-content-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh !important;
+  opacity: 0;
+  animation: appear 1.5s forwards 1s;
+  transition: all 1s ease;
+  margin: auto;
+  z-index: -1;
+  /* border: red solid 1px; */
+}
+
+.main-content-mobile .astronaut-text {
+  margin-top: -0.4rem !important;
+}
+
+.btn-mobile {
+  margin-top: 2.5rem;
+  margin-right: 0 !important;
+  padding: 1.7rem 4.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  font-size: 1.6rem;
+  font-family: sans-serif !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.776);
+  font-weight: 600;
+}
+
+/* /////////// */
+/* ANIMATIONS */
+/* ////////// */
 @keyframes appear {
   0% {
     opacity: 0;
@@ -173,45 +163,12 @@
   }
 }
 
-/* If the screen is bigger than 2k (i.e. zoom out) */
-@media screen and (min-width: 2561px) {
-  .main-content {
-    transform: scale(1.3) !important;
-    height: 100vh !important;
-    transition: all 1s ease;
-    align-items: center;
-    /* border: red solid 1px; */
-  }
-}
-
-@media screen and (max-width: 1800px) {
-  .main-content {
-    transform: scale(0.65) !important;
-    height: 100vh !important;
-    transition: all 1s ease;
-    align-items: center;
-    /* border: red solid 1px; */
-  }
-}
-
-/* ! Switch from full astronaut text to single line */
-@media screen and (max-width: 1500px) {
-  .main-content {
-    transform: scale(0.6);
-    /* border: red solid 1px; */
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .main-content {
-    transform: scale(0.5);
-    /* border: red solid 1px; */
-  }
-}
-
+/* ////////////// */
+/* MEDIA QUERIES */
+/* ////////////// */
 @media screen and (max-width: 900px) {
   .astronaut-text h1 {
-    font-size: 3.2rem !important;
+    /* font-size: 3.2rem !important; */
   }
 
   .zoom__h1 {
@@ -245,10 +202,6 @@
     margin-top: -8rem;
     z-index: -1;
   }
-
-  .astronaut-text {
-    transform: translateY(-20vh);
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -264,5 +217,39 @@
     margin: auto;
     margin-top: -8rem;
     z-index: -1;
+  }
+
+  .main-content-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: scale(0.5);
+    height: 100vh !important;
+    opacity: 0;
+    animation: appear 1.5s forwards 1s;
+    transition: all 1s ease;
+    margin: auto;
+    z-index: -1;
+    /* border: blueviolet solid 1px; */
+  }
+
+  .main-content-mobile .astronaut-container > * {
+    margin-top: 1rem !important;
+  }
+
+  .btn-mobile {
+    margin-top: 2.5rem;
+    margin-right: 0 !important;
+    padding: 1.7rem 4.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    font-size: 2.1rem;
+    font-family: sans-serif !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.776);
+    font-weight: 600;
   }
 }

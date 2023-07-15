@@ -4,15 +4,16 @@ import { useMediaQuery } from "react-responsive";
 import { FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 
-const ProjectsContent = (props) => {
-  const storeLanguage = useSelector((state) => state.languages.language);
-  const storeColour = useSelector((state) => state.colours);
+const ProjectsContent = props => {
+  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector(state => state.colours);
 
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
   const isSmallScreen = useMediaQuery({ query: "(max-width: 870px)" });
 
-  const smallScreenPadding = isSmallScreen ? "0px" : "16px";
+  const smallScreenPadding = isSmallScreen ? "8px" : "16px";
 
   // create filter state
   const [order, setOrder] = useState("order");
@@ -38,17 +39,25 @@ const ProjectsContent = (props) => {
     }
   });
 
-  const stopEvent = (event) => event.stopPropagation();
+  const stopEvent = event => event.stopPropagation();
 
   return (
     <>
-      <div className={styles["projects-section"]}>
+      <div
+        className={
+          isMobile
+            ? styles["projects-section-mobile"]
+            : styles["projects-section"]
+        }
+      >
         <div className={styles.projects}>
           <div
-            className={`${styles.items} ${styles[`${storeColour.colour}`]}`}
+            className={`${
+              isMobile ? styles["items-mobile"] : styles["items"]
+            } ${styles[`${storeColour.colour}`]}`}
             style={{ paddingRight: smallScreenPadding }}
           >
-            {items.map((project) => {
+            {items.map(project => {
               return (
                 <div className={styles["project-git"]} key={project.id + "git"}>
                   <Link
@@ -108,7 +117,7 @@ const ProjectsContent = (props) => {
                 name="filter"
                 id="filter"
                 value={order}
-                onChange={(e) => setOrder(e.target.value)}
+                onChange={e => setOrder(e.target.value)}
               >
                 <option value="order">Featured</option>
                 <option value="name">Name</option>
