@@ -9,7 +9,7 @@
   position: relative;
   top: 0;
   left: 0;
-  background: rgb(228, 228, 228);
+  background: var(--canary-primary-color-darker);
   height: 45vh;
   width: 200%;
   transform: skewY(4.5deg) translateY(-3rem) scale(1.3);

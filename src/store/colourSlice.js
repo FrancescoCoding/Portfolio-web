@@ -28,7 +28,7 @@ const colourSlice = createSlice({
       state.colour = "canary";
       state.hex = "#FFCC66";
       state.hexLighter = "#FFE6B3";
-      state.hexDarker = "#E6B85C";
+      state.hexDarker = "#e6b34d";
     },
   },
 });
