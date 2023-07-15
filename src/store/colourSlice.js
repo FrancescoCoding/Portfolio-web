@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { colour: "canary", hex: "#FFCC66" };
+const initialState = {
+  colour: "canary",
+  hex: "#FFCC66",
+  hexLighter: "#FFE6B3",
+  hexDarker: "#e6b34d",
+};
 
 const colourSlice = createSlice({
   name: "colours",
