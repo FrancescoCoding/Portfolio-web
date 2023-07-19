@@ -26,6 +26,8 @@ const PortfolioContent = props => {
   const [showModal, setShowModal] = useState(false);
   const [showModalTouched, setShowModalTouched] = useState(false);
 
+  // @todo this query is not very good, it controls when the main content
+  // @todo changes to a stacked layout
   const isBigScreen = useMediaQuery({ query: "(min-width: 1524px)" });
 
   const actionButtonStyle = useMemo(
@@ -132,9 +134,15 @@ const PortfolioContent = props => {
             </div>
           </section>
         )}
+        {/* Red and Blue separator only on big screens  */}
         {isBigScreen && <Separator styles={styles.separator} />}
+        {/* Astronaut + zoomed in text */}
         <section className={styles["astronaut-container"]}>
-          <Astronaut delay={delayMS} />
+          <Astronaut
+            delay={delayMS}
+            width={isBigScreen ? 600 : 450}
+            height={isBigScreen ? 600 : 450}
+          />
           {!isBigScreen && (
             <div className={styles["astronaut-text"]}>
               <h1
@@ -161,7 +169,6 @@ const PortfolioContent = props => {
                   <FaChevronDown
                     style={{
                       transform: "translateY(6px)",
-                      fontSize: " 1.6rem",
                       marginLeft: ".5rem",
                     }}
                   />

@@ -479,7 +479,7 @@ const PROJECTS = [
     },
     id: "p10",
     githubLink: "https://github.com/FrancescoCoding/Chamelii-chatbot",
-    image: "https://source.unsplash.com/600x400/?green lizard",
+    image: "https://source.unsplash.com/600x400/?lizard",
     order: 9,
     endpoint: "chameleon",
   },

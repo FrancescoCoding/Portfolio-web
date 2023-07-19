@@ -26,7 +26,7 @@
   color: #f2f2f2;
   font-family: "Lucida sans", sans-serif;
   text-align: end;
-  font-size: 1vw;
+  font-size: 1.5rem;
   margin-top: 0.2rem;
   margin-bottom: 0.6rem;
   border-radius: 5rem;
@@ -87,6 +87,8 @@
 .astronaut-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: -1;
 }
 
@@ -111,9 +113,9 @@
   margin-left: 0.2rem;
 }
 
-/* ////////////// */
-/* MOBILE CLASSES */
-/* ////////////// */
+/* /////////////////////// */
+/* MOBILE SPECIFIC CLASSES */
+/* /////////////////////// */
 .main-content-mobile {
   display: flex;
   justify-content: center;
@@ -126,10 +128,6 @@
   margin: auto;
   z-index: -1;
   /* border: red solid 1px; */
-}
-
-.main-content-mobile .astronaut-text {
-  margin-top: -0.4rem !important;
 }
 
 .btn-mobile {
@@ -166,9 +164,95 @@
 /* ////////////// */
 /* MEDIA QUERIES */
 /* ////////////// */
-@media screen and (max-width: 900px) {
+/* First zoom in from 2k 100% */
+@media screen and (max-width: 1800px) {
+  .main-content {
+    /* border: green solid 1px !important; */
+    transform: scale(0.7);
+  }
+}
+
+/* media query for 1524px */
+@media screen and (max-width: 1524px) {
+  /* restoring the above as it targets the whole content on desktop */
+  /* we want to only start resizing the astronaut container from */
+  /* 1524px and smaller screens */
+  .main-content {
+    transform: scale(1);
+    /* border: green solid 1px !important; */
+  }
+
+  .main-content .astronaut-container {
+    transform: scale(0.7);
+    /* border: red solid 1px !important; */
+  }
+
+  .main-text h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 5rem;
+    user-select: none;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
   .astronaut-text h1 {
-    /* font-size: 3.2rem !important; */
+    font-size: clamp(3.5rem, 3vw + 1rem, 2.25rem) !important;
+  }
+
+  .astronaut-text p {
+    font-size: clamp(2rem, 3vw + 1rem, 2rem) !important;
+  }
+
+  .main-content-mobile .astronaut-text {
+    /* border: blue solid 1px !important; */
+    /* Recenter */
+    /* -------- */
+    /* 110% is because of the calculation below */
+    /* formula is: (new width - old width) / 2 */
+    /* margin-left is because 130% shifts the element to the right */
+    margin-left: calc((110% - 100%) / 2) !important;
+    width: 130% !important;
+  }
+
+  .btn-mobile {
+    margin-right: 0 !important;
+    padding: 1.7rem 4.5rem;
+    border-radius: 3rem;
+    border-top-left-radius: 0.9rem;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    font-size: 1.3rem;
+    font-family: sans-serif !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.776);
+    font-weight: 600;
+  }
+}
+
+/* progressively  */
+@media screen and (max-width: 1300px) {
+  .main-content .astronaut-container {
+    transform: scale(0.6);
+    /* border: greenyellow solid 1px !important; */
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .main-content .astronaut-container {
+    transform: scale(0.5);
+    /* border: green solid 1px !important; */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-content {
+    /* display: none; */
+  }
+
+  .main-content .astronaut-container {
+    transform: scale(0.4);
+    /* border: blue solid 1px !important; */
   }
 
   .zoom__h1 {
@@ -188,35 +272,12 @@
     top: 13vh;
     right: 5.8vw;
   }
-
-  .main-content {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    text-align: center;
-    transform: scale(0.3) translateY(30vh) !important;
-    opacity: 0;
-    animation: appear 1.5s forwards 1s;
-    transition: all 1s ease;
-    margin: auto;
-    margin-top: -8rem;
-    z-index: -1;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .main-content {
-    display: flex;
-    justify-content: center;
-    transform: scale(0.25) translateY(40vh) !important;
-    text-align: center;
-    transform: scale(0.22);
-    opacity: 0;
-    animation: appear 1.5s forwards 1s;
-    transition: all 1s ease;
-    margin: auto;
-    margin-top: -8rem;
-    z-index: -1;
+  .main-content .astronaut-container {
+    transform: scale(0.3);
+    /* border: greenyellow solid 1px !important; */
   }
 
   .main-content-mobile {
@@ -224,7 +285,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: scale(0.5);
+    transform: scale(0.6);
     height: 100vh !important;
     opacity: 0;
     animation: appear 1.5s forwards 1s;
@@ -235,21 +296,10 @@
   }
 
   .main-content-mobile .astronaut-container > * {
-    margin-top: 1rem !important;
+    margin-top: 0.2rem !important;
   }
-
-  .btn-mobile {
-    margin-top: 2.5rem;
-    margin-right: 0 !important;
-    padding: 1.7rem 4.5rem;
-    border-radius: 3rem;
-    cursor: pointer;
-    border: none;
-    user-select: none;
-    font-size: 2.1rem;
-    font-family: sans-serif !important;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(0, 0, 0, 0.776);
-    font-weight: 600;
-  }
+  /* 
+  .astronaut-text h1 {
+    font-size: clamp(16px, 3vw, 32px);
+  } */
 }

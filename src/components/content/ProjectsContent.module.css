@@ -33,7 +33,8 @@
   border-radius: 20px;
   border-top-left-radius: 8px;
   /* background-color: rgb(64, 83, 169); */
-  background: rgba(0, 65, 206, 0.625);
+  background: transparent;
+  border: 2.5px solid var(--canary-active);
   color: white !important;
   padding: 8px 16px !important;
   max-width: var(--max-view-width) !important;
@@ -58,6 +59,16 @@
   padding: 10px 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+/* make the background of the selected option darker */
+.filter-wrapper select option:checked {
+  background-color: var(--portfolio-background);
+  color: rgb(253, 253, 253);
+}
+.filter-wrapper select option:not(:checked) {
+  background-color: var(--portfolio-background);
+  color: rgb(253, 253, 253);
 }
 
 /* make each options' padding bigger */
@@ -297,14 +308,14 @@ div.list-item {
   /* border: red solid 1px; */
 }
 .items-mobile {
-  top: 5rem;
+  top: 1rem;
   left: 0;
   display: grid;
   padding-top: 3px;
   padding-bottom: 2px 0.8rem;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem 2.3rem;
-  max-height: 80vh !important;
+  max-height: 75vh !important;
   overflow: scroll;
   position: relative;
   padding-left: 0.8rem;
@@ -350,6 +361,18 @@ div.list-item {
     /* border: red solid 1px !important; */
   }
 
+  .projects-section {
+    position: fixed;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    margin: 2rem auto !important;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 2rem;
+  }
+
   div.list-item {
     height: 20.5vh;
   }
@@ -365,10 +388,25 @@ div.list-item {
   .filter-container {
     font-size: 20px;
     top: 85%;
+    width: 93%;
   }
 
   .project-git {
     width: 100%;
+  }
+
+  .title-container {
+    width: 100%;
+    font-size: 0.95vw;
+    font-weight: 600;
+    user-select: none;
+    color: white;
+    font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease-in-out;
+    padding: 0rem 0.1rem;
+    pointer-events: none;
+    z-index: 2;
   }
 }
 
@@ -385,8 +423,8 @@ div.list-item {
   }
 
   .filter-container {
-    font-size: 20px;
-    top: 88%;
+    top: 85%;
+    width: 93%;
   }
 }
 
@@ -474,11 +512,6 @@ div.list-item {
 }
 
 @media screen and (max-width: 870px) {
-  .projects-section {
-    height: 100%;
-    overflow: hidden;
-  }
-
   .projects-section .projects {
     align-items: baseline;
     margin-top: 0.5rem;
@@ -487,32 +520,50 @@ div.list-item {
   .project-git {
     justify-content: center;
     align-items: center;
+    width: 100%;
+    /* order */
+  }
+
+  /* when active put z index to 4000 */
+  .project-git:active,
+  .project-git:focus,
+  .project-git:hover {
+    z-index: 4000 !important;
+  }
+
+  /* list item when project git is active */
+  .project-git:active ~ .list-item,
+  .project-git:focus ~ .list-item,
+  .project-git:hover ~ .list-item {
+    height: 30px;
   }
 
   div.list-item {
     width: 100%;
     border-radius: 10px !important;
+    /* stroke white */
   }
 
   .title-container {
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
   }
 
   /* target the p */
-  div.list-item:hover .title-container p.short {
-    display: none;
+  div.list-item .title-container p.short {
+    display: block !important;
   }
 
   div.items {
     font-size: 16px;
-    width: 85%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-top: 2rem;
     justify-content: center !important;
     padding-bottom: 0rem;
     max-height: 100% !important;
-    min-height: 100%;
+    height: 75vh !important;
   }
 }
 

@@ -69,13 +69,15 @@ const ProjectsContent = props => {
                       className={`${styles["list-item"]} ${
                         styles[`${storeColour.colour}`]
                       }`}
-                      // style={{
-                      //   background: `url(${project.image}) no-repeat center center/cover`,
-                      // }}
+                      style={{
+                        background: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${project.image}) no-repeat center center/cover`,
+                      }}
                     >
-                      <div className={styles["image-container"]}>
-                        <img src={project.image} alt={project.name} />
-                      </div>
+                      {!isMobile && (
+                        <div className={styles["image-container"]}>
+                          <img src={project.image} alt={project.name} />
+                        </div>
+                      )}
                       <div className={styles["title-container"]}>
                         <p>{project[`${storeLanguage}`].name}</p>
                         <p className={styles.short}>
@@ -112,15 +114,25 @@ const ProjectsContent = props => {
             })}
           </div>
           <div className={styles["filter-container"]}>
-            <div className={styles["filter-wrapper"]}>
+            <div
+              className={styles["filter-wrapper"]}
+              style={{
+                borderColor: `${storeColour.hex}`,
+              }}
+            >
               <select
                 name="filter"
                 id="filter"
                 value={order}
                 onChange={e => setOrder(e.target.value)}
               >
-                <option value="order">Featured</option>
-                <option value="name">Name</option>
+                {/* @todo: do proper internationalisation */}
+                <option value="order">
+                  {storeLanguage === "EN" ? "Featured" : "In evidenza"}
+                </option>
+                <option value="name">
+                  {storeLanguage === "EN" ? "Name" : "Nome"}
+                </option>
                 {/* <option value="order">Date</option> */}
               </select>
             </div>
