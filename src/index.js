@@ -19,7 +19,9 @@ root.render(
     <BrowserRouter basename="/">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App />
+          <div className="app-noise">
+            <App />
+          </div>
         </PersistGate>
       </Provider>
     </BrowserRouter>

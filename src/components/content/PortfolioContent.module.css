@@ -164,11 +164,20 @@
 /* ////////////// */
 /* MEDIA QUERIES */
 /* ////////////// */
+
+/* make one for 2300px */
+@media screen and (max-width: 2300px) {
+  .main-content {
+    /* border: green solid 1px !important; */
+    transform: scale(0.7);
+  }
+}
+
 /* First zoom in from 2k 100% */
 @media screen and (max-width: 1800px) {
   .main-content {
     /* border: green solid 1px !important; */
-    transform: scale(0.7);
+    transform: scale(0.65);
   }
 }
 
@@ -183,7 +192,7 @@
   }
 
   .main-content .astronaut-container {
-    transform: scale(0.7);
+    transform: scale(0.6);
     /* border: red solid 1px !important; */
   }
 

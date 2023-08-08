@@ -3,7 +3,7 @@ import Navbar from "../components/UI/Navbar";
 import ProjectsContent from "../components/content/ProjectsContent";
 import ProjectsList from "../settings/WorksList";
 // import Sidebar from "../components/UI/Sidebar";
-import { AnimatedArrow } from "../assets/Animations/Animations";
+// import { AnimatedArrow } from "../assets/Animations/Animations";
 import ColourSelector from "../components/UI/ColourSelector";
 
 const Projects = () => {
