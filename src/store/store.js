@@ -6,6 +6,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import colourSlice from "./colourSlice";
 import languageSlice from "./languageSlice";
+import effectSlice from "./effectSlice";
+import audioSlice from "./audioSlice";
 
 const persistColourConfig = {
   key: "colour",
@@ -13,6 +15,11 @@ const persistColourConfig = {
 };
 const persistLanguageConfig = {
   key: "language",
+  storage,
+};
+
+const persistEffectConfig = {
+  key: "effect",
   storage,
 };
 
@@ -25,10 +32,17 @@ const persistedLanguageReducer = persistReducer(
   languageSlice.reducer
 );
 
+const persistedEffectReducer = persistReducer(
+  persistEffectConfig,
+  effectSlice.reducer
+);
+
 const store = configureStore({
   reducer: {
     colours: persistedColourReducer,
     languages: persistedLanguageReducer,
+    effects: persistedEffectReducer,
+    audio: audioSlice.reducer,
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: [thunk],
@@ -36,4 +50,6 @@ const store = configureStore({
 
 export const colourActions = colourSlice.actions;
 export const languageActions = languageSlice.actions;
+export const effectActions = effectSlice.actions;
+export const audioActions = audioSlice.actions;
 export default store;

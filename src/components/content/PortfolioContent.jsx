@@ -19,16 +19,16 @@ import clickSoundWav from "../../assets/Sounds/ClickSound.wav";
 const clickSound = new Audio(clickSoundWav);
 
 // @todo: Sort out internationalisation for this component by using a /locales en and it
-const PortfolioContent = props => {
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+const PortfolioContent = (props) => {
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
 
   const [showModal, setShowModal] = useState(false);
   const [showModalTouched, setShowModalTouched] = useState(false);
 
   // @todo this query is not very good, it controls when the main content
   // @todo changes to a stacked layout
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1524px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1424px)" });
 
   const actionButtonStyle = useMemo(
     () => ({ backgroundColor: `${storeColour.hex}` }),
@@ -72,15 +72,17 @@ const PortfolioContent = props => {
       <main
         className={`${
           isMobile ? styles["main-content-mobile"] : styles["main-content"]
-        }`}
-      >
+        }`}>
         {showModal && <Contact onClose={hideModalHandler} />}
 
         {storeLanguage === "EN" && isBigScreen && (
           <section className={styles["main-text"]}>
             <h1>
               Stand the{" "}
-              <RubberDuck className={styles.quack} colour={storeColour.hex} />{" "}
+              <RubberDuck
+                className={styles.quack}
+                colour={storeColour.hex}
+              />{" "}
               out
             </h1>
             <p>
@@ -92,8 +94,7 @@ const PortfolioContent = props => {
               <button
                 onClick={showModalWithSoundHandler}
                 className={`${styles.btn}`}
-                style={actionButtonStyle}
-              >
+                style={actionButtonStyle}>
                 Find out more{" "}
                 <FaChevronDown
                   style={{
@@ -110,7 +111,10 @@ const PortfolioContent = props => {
           <section className={styles["main-text"]}>
             <h1>
               Fatti nuotare{" "}
-              <RubberDuck className={styles.quack} colour={storeColour.hex} />
+              <RubberDuck
+                className={styles.quack}
+                colour={storeColour.hex}
+              />
             </h1>
             <p>
               ... come Full-Stack developer, designer di UX
@@ -120,8 +124,7 @@ const PortfolioContent = props => {
               <button
                 onClick={showModalWithSoundHandler}
                 className={`${styles.btn}`}
-                style={actionButtonStyle}
-              >
+                style={actionButtonStyle}>
                 Scopri altro{" "}
                 <FaChevronDown
                   style={{
@@ -149,8 +152,7 @@ const PortfolioContent = props => {
                 style={{
                   fontSize: "4rem",
                   color: `${storeColour.hex}`,
-                }}
-              >
+                }}>
                 Gruosso Francesco
               </h1>
               <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
@@ -158,12 +160,10 @@ const PortfolioContent = props => {
                 className={`${styles["btn-mobile"]}`}
                 activeClassName={styles.active}
                 to="/projects"
-                exact={true}
-              >
+                exact={true}>
                 <button
                   style={actionButtonStyle}
-                  className={`${styles["btn-mobile"]}`}
-                >
+                  className={`${styles["btn-mobile"]}`}>
                   {(storeLanguage === "EN" && "Find out more") ||
                     (storeLanguage === "IT" && "Scopri altro")}
                   <FaChevronDown

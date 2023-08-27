@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import Contact from "../content/Contact";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
 import { useMediaQuery } from "react-responsive";
@@ -11,10 +11,11 @@ import { languageActions } from "../../store/store";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
 
-  const storeColour = useSelector(state => state.colours.colour);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours.colour);
+  const storeLanguage = useSelector((state) => state.languages.language);
   const isEnglish = storeLanguage === "EN";
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -25,7 +26,7 @@ const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [burgerIsTouched, setBurgerIsTouched] = useState(false);
 
-  const showModalHandler = e => {
+  const showModalHandler = (e) => {
     e.preventDefault();
     setShowModal(true);
   };
@@ -42,7 +43,7 @@ const Navbar = () => {
       setBurgerIsTouched(false);
     }, 400);
   };
-  const changeLanguageHandler = e => {
+  const changeLanguageHandler = (e) => {
     e.preventDefault();
 
     if (isEnglish) {
@@ -55,7 +56,10 @@ const Navbar = () => {
   return (
     <>
       {!isBigScreen && burgerIsTouched && (
-        <HamburgerMenu isMounted={isMounted} onClose={hideMenuSidebarHandler} />
+        <HamburgerMenu
+          isMounted={isMounted}
+          onClose={hideMenuSidebarHandler}
+        />
       )}
 
       {!isBigScreen && (
@@ -64,8 +68,7 @@ const Navbar = () => {
             onClick={showMenuSidebarHandler}
             className={styles["hamburger-container"]}
             aria-label="hamburger menu container"
-            role="button"
-          >
+            role="button">
             <Hamburger
               size={30}
               rounded
@@ -84,8 +87,7 @@ const Navbar = () => {
               <NavLink
                 activeClassName={styles.active}
                 to="/portfolio"
-                exact={true}
-              >
+                exact={true}>
                 Home
               </NavLink>
             </li>
@@ -93,13 +95,14 @@ const Navbar = () => {
               <NavLink
                 activeClassName={styles.active}
                 to="/projects"
-                exact={true}
-              >
+                exact={true}>
                 {isEnglish ? "Projects" : "Progetti"}
               </NavLink>
             </li>
             <li>
-              <a href="/#" onClick={showModalHandler}>
+              <a
+                href="/#"
+                onClick={showModalHandler}>
                 {isEnglish ? "Contact" : "Contatto"}
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
@@ -109,15 +112,28 @@ const Navbar = () => {
                 CV
               </NavLink>
             </li> */}
+            {location.pathname === "/404" && (
+              <li className={`${styles.broken} `}>
+                <NavLink
+                  activeClassName={styles.active}
+                  to="/404">
+                  404
+                </NavLink>
+              </li>
+            )}
 
             <li style={{ color: "white" }}>
               {isEnglish && (
-                <a href="/#" onClick={changeLanguageHandler}>
+                <a
+                  href="/#"
+                  onClick={changeLanguageHandler}>
                   EN
                 </a>
               )}
               {storeLanguage === "IT" && (
-                <a href="/#" onClick={changeLanguageHandler}>
+                <a
+                  href="/#"
+                  onClick={changeLanguageHandler}>
                   IT&nbsp;
                 </a>
               )}

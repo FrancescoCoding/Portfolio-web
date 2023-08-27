@@ -70,18 +70,18 @@ const Contact = (props) => {
       <div className={styles["contact-container"]}>
         <div
           className={styles.mail}
-          onClick={() => setShowMessageSection(!showMessageSection)}
-        >
+          onClick={() => setShowMessageSection(!showMessageSection)}>
           <Mail />
         </div>
-        <div className={styles.close} onClick={props.onClose}>
+        <div
+          className={styles.close}
+          onClick={props.onClose}>
           <IoCloseOutline />
         </div>
         {showMessageSection && (
           <div
             className={styles.back}
-            onClick={() => setShowMessageSection(!showMessageSection)}
-          >
+            onClick={() => setShowMessageSection(!showMessageSection)}>
             <AiOutlineArrowLeft />
           </div>
         )}
@@ -94,25 +94,23 @@ const Contact = (props) => {
             style={{
               border: `0.9vh solid var(--${storeColour.colour}-active)`,
               borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,
-            }}
-          >
+            }}>
             <h1
               style={{ borderBottom: `${storeColour.hex} 2px` }}
               onClick={() => {
                 copy("🐸 Francesco Gruosso 🐸");
                 textWasCopiedPopup();
-              }}
-            >
+              }}>
               Francesco Gruosso
             </h1>
             <p
               onClick={() => {
                 isEnglish
                   ? copy(
-                      "I am an Italian Computing Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
+                      "I am an Italian Computer Science BSc (Hons) student at Robert Gordon University with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
                     )
                   : copy(
-                      "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
+                      "Sono uno studente di Informatica di quarto anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."
                     );
                 textWasCopiedPopup();
               }}
@@ -120,11 +118,10 @@ const Contact = (props) => {
               style={{
                 marginBottom: "1rem",
                 border: `${storeColour.hex} solid 2px`,
-              }}
-            >
+              }}>
               {isEnglish
-                ? "I am an Italian Computing Science BSc (Hons) student with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
-                : "Sono uno studente di Informatica di terzo anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."}
+                ? "I am an Italian Computer Science BSc (Hons) student with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
+                : "Sono uno studente di Informatica di quarto anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."}
             </p>
 
             <p
@@ -144,8 +141,7 @@ const Contact = (props) => {
               style={{
                 marginBottom: "1rem",
                 border: `${storeColour.hex} solid 2px`,
-              }}
-            >
+              }}>
               {isEnglish
                 ? "Currently working as a software developer @ eCERTO."
                 : "Attualmente lavoro come software developer @ eCERTO."}
@@ -159,8 +155,7 @@ const Contact = (props) => {
             )}
             <button
               className={styles["action-button"]}
-              onClick={() => setShowMessageSection(true)}
-            >
+              onClick={() => setShowMessageSection(true)}>
               {isEnglish ? "Send me a message! " : "Invia un messaggio! "}
               <FaChevronDown style={{ transform: "translateY(4px)" }} />
             </button>
@@ -173,8 +168,7 @@ const Contact = (props) => {
               style={{
                 border: `0.9vh solid var(--${storeColour.colour}-active)`,
                 borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,
-              }}
-            >
+              }}>
               <ContactMeForm />
             </div>
           </>
@@ -187,15 +181,16 @@ const Contact = (props) => {
           style={{
             border: `0.9vh solid ${storeColour.hex}`,
             borderLeft: `0.9vh solid ${storeColour.hex}`,
-          }}
-        >
+          }}>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
             zoom={13}
-            options={options}
-          >
-            <Marker position={markerCoors} title="Francesco G" />
+            options={options}>
+            <Marker
+              position={markerCoors}
+              title="Francesco G"
+            />
           </GoogleMap>
         </div>
       </div>

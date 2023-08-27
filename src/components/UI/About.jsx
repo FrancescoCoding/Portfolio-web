@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./About.module.css";
 
 const About = () => {
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1924px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1424px)" });
   return (
     <>
       {isBigScreen && <FoliageRightSide width="38%" />}
@@ -17,7 +17,12 @@ const About = () => {
           <h1>🦁 Gruosso Francesco</h1>
           <span className={styles.about__content__info}>
             <a href="https://www.rgu.ac.uk/study/academic-schools/school-of-computing">
-              <img width="75px" height="75px" src={RGU_Logo} alt="RGU Logo" />
+              <img
+                width="75px"
+                height="75px"
+                src={RGU_Logo}
+                alt="RGU Logo"
+              />
             </a>
             <p>
               <RiMapPin2Line /> Aberdeen, Scotland <br />

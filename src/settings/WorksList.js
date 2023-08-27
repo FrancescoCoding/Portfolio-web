@@ -521,6 +521,52 @@ const PROJECTS = [
     endpoint: "portfolio-api",
     icons: [typescriptIcon, expressIcon, mongoDBIcon, vercelIcon],
   },
+  {
+    EN: {
+      name: "🥼 Rick Sanchez Chatbot",
+      description: `
+        <p>The "ask-sanchez" chatbot is a project powered by the ChatGPT's Natural language processing model. This ensures intelligent and smooth conversations with this bot!</p>
+        <ul>
+            <li><b>Backend</b> developed using <b>Node and Express</b> and is hosted on <b>Vercel</b></li>
+            <li><b>Frontend</b> is written in <b>React 18 (Vite)</b>, <b>CSS3</b>, and <b>TypeScript</b></li>
+        </ul>
+        <p>No external CSS frameworks were used. Only pure craftsmanship 😊 reminiscent of Rick himself!</p>
+        <div style="text-align: center;">
+            <img width="60%" src="https://media1.giphy.com/media/fVPnqjGGTSpz73hp14/giphy.gif?cid=ecf05e47zt7wo7hvj9hpde7nie1c3wo0ex1j3vvuqglhikvt&ep=v1_gifs_search&rid=giphy.gif" alt="GIF of the chatbot in action" />
+        </div>
+        <br/>
+        <p>For a comprehensive list of technologies, please check out the GitHub Repository's <a href="https://github.com/FrancescoCoding/ask-Sanchez">README</a> file. </p>
+        `,
+      tags: ["React, Node, Express, TypeScript, ChatGPT"],
+      short:
+        "Full-Stack Rick Sanchez chatbot powered by ChatGPT. Backend in Node/Express, and Frontend in React 18 (Vite).",
+    },
+    IT: {
+      name: "🥼 Chatbot Rick Sanchez",
+      description: `
+        <p>Il chatbot "ask-sanchez" è un progetto alimentato dal modello di NLP di ChatGPT. Questo garantisce conversazioni intelligenti e fluide.</p>
+        <ul>
+            <li>Il <b>backend</b> è stato sviluppato utilizzando <b>Node e Express</b> ed è hostato su <b>Vercel</b></li>
+            <li>Il <b>frontend</b> è scritto in <b>React 18 (Vite)</b>, <b>CSS3</b> e <b>TypeScript</b></li>
+        </ul>
+        <p>Nessun framework CSS esterno è stato utilizzato.</p>
+        <div style="text-align: center;">
+            <img width="60%" src="https://media1.giphy.com/media/fVPnqjGGTSpz73hp14/giphy.gif?cid=ecf05e47zt7wo7hvj9hpde7nie1c3wo0ex1j3vvuqglhikvt&ep=v1_gifs_search&rid=giphy.gif" alt="GIF del chatbot in azione" />
+        </div>
+        <br/>
+        <p>Per una lista completa delle tecnologie, si prega di consultare il file <a href="https://github.com/FrancescoCoding/ask-Sanchez">README</a> del repository GitHub. </p>
+        `,
+      short:
+        "Chatbot Rick Sanchez full-stack potenziato da ChatGPT. Backend in Node/Express e Frontend in React 18 (Vite).",
+    },
+    id: "p12",
+    githubLink: "https://github.com/FrancescoCoding/ask-Sanchez",
+    image:
+      "https://images.unsplash.com/photo-1681460590033-67b0d1413550?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    endpoint: "ask-sanchez",
+    order: 1.5,
+    icons: [nodeIcon, expressIcon, reactIcon, typescriptIcon, vercelIcon],
+  },
 ];
 
 export default PROJECTS;

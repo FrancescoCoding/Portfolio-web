@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { AnimatedArrow } from "../assets/Animations/Animations";
 
 const NotFound = () => {
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeLanguage = useSelector((state) => state.languages.language);
   const isEnglish = storeLanguage === "EN";
 
   return (
@@ -17,7 +17,7 @@ const NotFound = () => {
         message={
           isEnglish
             ? "Uh-oh. Something went wrong..."
-            : "La pagina web non è disponibile"
+            : "Qualcosa è andato storto..."
         }
       />
       <Sidebar concatContent={<AnimatedArrow />} />

@@ -1,7 +1,8 @@
 .design-section {
   background: linear-gradient(-30deg, rgb(3, 38, 84), #0a132e 50%);
   background: #08122e;
-  overflow: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   width: 100vw;
   height: 100vh;
 }
@@ -52,7 +53,8 @@
   padding: 2.6rem 5rem;
   border-radius: 1rem;
   background-color: white;
-  box-shadow: 5px 15px 4px rgba(154, 160, 185, 0.05),
+  box-shadow:
+    5px 15px 4px rgba(154, 160, 185, 0.05),
     8px 8px 10px rgba(3, 8, 29, 0.23);
   overflow: auto;
   text-align: left;
@@ -241,10 +243,9 @@ li {
 @media screen and (max-width: 1800px) {
   .project-card-section {
     position: fixed;
-    top: 10vh;
+    top: 14vh;
     left: 0;
     height: 80vh;
-    bottom: 10rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -299,11 +300,10 @@ li {
   /* @todo make similar to the hamburger sidebar for mobile, but do it at the bottom of the card */
 
   .project-card {
-    padding: 2rem 3rem !important;
     width: 90%;
     overflow: auto;
     /* text-align: center !important; */
-    padding: 1rem 2rem !important;
+    padding: 1rem 1.4rem !important;
   }
   .project-card h1 {
     font-size: 1.6rem !important;

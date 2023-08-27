@@ -105,6 +105,23 @@ nav {
   color: var(--leaf-active);
 }
 
+/* @important broken effect */
+.broken {
+  animation: tilt 1s ease-in-out infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
 @media only screen and (min-width: 64em) {
   .navbar ul li a:hover:after,
   .navbar ul li a:hover:before {

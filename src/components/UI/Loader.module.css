@@ -2,7 +2,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 6;
+  z-index: 1001;
   opacity: 100%;
   background: rgb(10, 0, 31);
   display: flex;

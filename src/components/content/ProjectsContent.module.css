@@ -315,7 +315,7 @@ div.list-item {
   padding-bottom: 2px 0.8rem;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem 2.3rem;
-  max-height: 75vh !important;
+  max-height: 68vh !important;
   overflow: scroll;
   position: relative;
   padding-left: 0.8rem;
@@ -328,12 +328,16 @@ div.list-item {
   /* border: red solid 1px; */
 }
 
+.middle-item {
+  transition: transform 0.3s ease-in-out;
+}
+
 .projects-section-mobile .items-mobile > div {
   scroll-snap-align: start !important;
 }
 
 .projects-section-mobile .filter-container {
-  margin-top: 2rem;
+  margin-top: 0rem;
   display: flex;
   align-items: center !important;
   justify-content: flex-end !important;
@@ -435,6 +439,12 @@ div.list-item {
 
   div.list-item {
     padding: 1rem;
+  }
+
+  .project-git:active .list-item,
+  .project-git:focus .list-item {
+    transform: scale(1.03); /* scale the item slightly */
+    transition: transform 0.3s ease-in-out; /* smooth the scaling effect */
   }
 
   div.items {
@@ -541,11 +551,12 @@ div.list-item {
   div.list-item {
     width: 100%;
     border-radius: 10px !important;
-    /* stroke white */
+    /* remove gradient from bg */
+    align-items: flex-start !important;
   }
 
   .title-container {
-    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.5rem);
   }
 
   /* target the p */

@@ -177,18 +177,18 @@
 @media screen and (max-width: 1800px) {
   .main-content {
     /* border: green solid 1px !important; */
-    transform: scale(0.65);
+    transform: scale(0.57);
   }
 }
 
 /* media query for 1524px */
-@media screen and (max-width: 1524px) {
+@media screen and (max-width: 1324px) {
   /* restoring the above as it targets the whole content on desktop */
   /* we want to only start resizing the astronaut container from */
   /* 1524px and smaller screens */
   .main-content {
     transform: scale(1);
-    /* border: green solid 1px !important; */
+    /* border: blue solid 1px !important; */
   }
 
   .main-content .astronaut-container {

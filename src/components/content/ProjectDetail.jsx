@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import { FaGithub } from "react-icons/fa";
 import { FcDocument } from "react-icons/fc";
 
+import VolumeControl from "../UI/VolumeControl";
+
 import styles from "./ProjectDetail.module.css";
 
 import WorksList from "../../settings/WorksList";
@@ -18,15 +20,15 @@ import Transition from "../UI/Transition";
 
 const ProjectDetail = () => {
   const params = useParams();
-  const storeColour = useSelector(state => state.colours);
-  const storeLanguage = useSelector(state => state.languages.language);
+  const storeColour = useSelector((state) => state.colours);
+  const storeLanguage = useSelector((state) => state.languages.language);
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
   const [isOpen, setIsOpen] = useState(false);
 
   const currentProject = WorksList.find(
-    project => project.endpoint === params.projectID
+    (project) => project.endpoint === params.projectID
   );
 
   const closeHandler = () => {
@@ -54,7 +56,8 @@ const ProjectDetail = () => {
     <>
       <Transition />
       <ColourSelector backgroundColor="#0a0f20" />
-      {!isSmallScreen && <BackButton endpoint="/projects" />}
+      <VolumeControl />
+      <BackButton endpoint="/projects" />
 
       <section className={styles["project-card-section"]}>
         {/* Card */}
@@ -77,9 +80,11 @@ const ProjectDetail = () => {
               <div className={styles.logos}>
                 {currentProject.icons &&
                   !isSmallScreen &&
-                  currentProject.icons.map(el => {
+                  currentProject.icons.map((el) => {
                     return (
-                      <div key={el.id} className={styles.logo}>
+                      <div
+                        key={el.id}
+                        className={styles.logo}>
                         <div className={styles["logo-wrap"]}>
                           {el.icon}
                           <p>{el.tag}</p>
@@ -97,8 +102,7 @@ const ProjectDetail = () => {
                   ? "space-between"
                   : "flex-end",
               }}
-              className={styles["buttons-container"]}
-            >
+              className={styles["buttons-container"]}>
               {/* Extra link on the left if present */}
               {currentProject.extraLink && (
                 <div className={styles["project-btn__wrapper"]}>
@@ -106,8 +110,7 @@ const ProjectDetail = () => {
                     href={currentProject.extraLink.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles["git-btn"]}
-                  >
+                    className={styles["git-btn"]}>
                     <FcDocument
                       size="3rem"
                       style={{
@@ -126,8 +129,7 @@ const ProjectDetail = () => {
                   href={currentProject.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles["git-btn"]}
-                >
+                  className={styles["git-btn"]}>
                   <FaGithub
                     size="3rem"
                     style={{

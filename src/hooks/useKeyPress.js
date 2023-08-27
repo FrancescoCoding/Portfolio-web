@@ -1,25 +1,48 @@
-/**
- * useKeyPress
- * @param {string} key - The name of the key to respond to, compared against event.key
- * @param {function} action - The action to perform on key press
- * @param {string} action - Can also be a predefined action - works like a reducer
- */
-
 import { useEffect } from "react";
-import { useHistory } from "react-router";
 
-export default function useKeypress(key, action) {
-  const history = useHistory();
-
+export default function useKeyPress(key, action, ctrlKey = false) {
   useEffect(() => {
-    const onKeyup = e => {
-      if (e.key === key && action === "goBack") {
-        history.push("/projects");
-      } else if (e.key === key) action();
+    let intervalId;
+    let isKeyHeldDown = false; // Flag to track if the key is being held down
+
+    const onKeydown = (e) => {
+      // Check if the target is an input, textarea, or select
+      if (
+        e.target.tagName === "INPUT" ||
+        e.target.tagName === "TEXTAREA" ||
+        e.target.tagName === "SELECT"
+      ) {
+        return; // If it's an input, textarea, or select, just return without invoking the action
+      }
+
+      if (
+        e.key.toLowerCase() === key.toLowerCase() &&
+        e.ctrlKey === ctrlKey &&
+        !isKeyHeldDown
+      ) {
+        // If the key is held down and the interval is not already running,
+        // call the action and start the interval
+        action(e);
+        intervalId = setInterval(() => action(e), 100);
+        isKeyHeldDown = true; // Set the flag to true
+      }
     };
 
+    const onKeyup = (e) => {
+      if (e.key.toLowerCase() === key.toLowerCase()) {
+        // Clear the interval when the key is released, regardless of the ctrlKey state
+        clearInterval(intervalId);
+        isKeyHeldDown = false; // Reset the flag
+      }
+    };
+
+    window.addEventListener("keydown", onKeydown);
     window.addEventListener("keyup", onKeyup);
 
-    return () => window.removeEventListener("keyup", onKeyup);
-  }, [action, history, key]);
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener("keydown", onKeydown);
+      window.removeEventListener("keyup", onKeyup);
+    };
+  }, [action, key, ctrlKey]);
 }

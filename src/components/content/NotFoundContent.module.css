@@ -1,39 +1,39 @@
-.notFound-container h1 {
-  font-family: "Josefin Sans", sans-serif;
-  padding: 3rem;
-  font-size: 3rem !important;
-  font-weight: 600;
-  width: 800px;
-}
-
 .notFound-container {
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .notFound-content {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  margin: 0 20vw;
 }
 
 .notFound-content > div {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .notFound-content > * {
   text-shadow: 4px 4px 0px #000000;
 }
 
+.notFound-container h1 {
+  font-family: "Josefin Sans", sans-serif;
+  padding: 3rem;
+  font-size: 3rem !important;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  text-align: left !important;
+}
+
 .notFound-animation {
-  transform: translateX(10rem) !important;
-  width: 100vw;
-  display: flex !important;
-  flex-direction: column !important;
+  width: 100%;
+
+  display: flex;
   align-items: center;
   justify-content: center;
   animation: notFound-animation 1s ease-in-out infinite;
@@ -57,9 +57,29 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .notFound-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+
+  .notFound-content > div {
+    /* No margin is set here */
+  }
+  .notFound-animation {
+    max-width: 70vw; /* Reduce this further if necessary */
+    max-height: 50vh; /* Adjust to make it smaller for small screens */
+  }
+
   .notFound-content h1 {
-    width: 90%;
     text-shadow: none;
+    text-align: center !important;
+    margin: 0;
+    padding: 1rem; /* Reduced padding */
+    font-size: 2rem; /* Reduced font size */
   }
 
   .canary {
@@ -73,5 +93,18 @@
   }
   .leaf {
     text-shadow: none;
+  }
+}
+
+/* Specific tweaks for very small screens like iPhone SE */
+@media screen and (max-width: 640px) {
+  .notFound-animation {
+    max-width: 60vw;
+    max-height: 40vh;
+  }
+
+  .notFound-content h1 {
+    padding: 0.2rem;
+    font-size: 1.5rem !important;
   }
 }

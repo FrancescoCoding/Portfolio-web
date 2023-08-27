@@ -18,7 +18,7 @@ import RightFoliageCanary from "./Right Foliage Canary.json";
 
 import { useSelector } from "react-redux";
 
-const AstronautLottie = props => {
+const AstronautLottie = (props) => {
   const [isDelayed, setIsDelayed] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const AstronautLottie = props => {
 
 export const Astronaut = AstronautLottie;
 
-const ArrowLottie = props => {
+const ArrowLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -60,15 +60,15 @@ const ArrowLottie = props => {
 
 export const AnimatedArrow = ArrowLottie;
 
-const NessieMonsterLottie = props => {
+const NessieMonsterLottie = (props) => {
   return (
     <Lottie
       loop={+props.loop || true}
       animationData={NessieData}
       play
       style={{
-        marginTop: +props.marginTop || -150,
-        height: +props.height || 600,
+        marginTop: +props.marginTop || -10,
+        height: +props.height || 700,
       }}
     />
   );
@@ -76,7 +76,7 @@ const NessieMonsterLottie = props => {
 
 export const Nessie = NessieMonsterLottie;
 
-const RobotLottie = props => {
+const RobotLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -84,7 +84,7 @@ const RobotLottie = props => {
       play
       style={{
         marginTop: +props.marginTop || -50,
-        height: +props.height || 600,
+        height: +props.height || 550,
       }}
     />
   );
@@ -92,14 +92,14 @@ const RobotLottie = props => {
 
 export const Robot = RobotLottie;
 
-const CarLottie = props => {
+const CarLottie = (props) => {
   return (
     <Lottie
       loop={true}
       animationData={carData}
       play
       style={{
-        height: +props.height || 600,
+        height: +props.height || 400,
         marginTop: +props.marginTop || -100,
       }}
     />
@@ -108,7 +108,7 @@ const CarLottie = props => {
 
 export const Car = CarLottie;
 
-const NoDataLottie = props => {
+const NoDataLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -125,7 +125,7 @@ const NoDataLottie = props => {
 
 export const NoData = NoDataLottie;
 
-const LoadingLottie = props => {
+const LoadingLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -141,7 +141,7 @@ const LoadingLottie = props => {
 
 export const Loading = LoadingLottie;
 
-const MailLottie = props => {
+const MailLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -157,7 +157,7 @@ const MailLottie = props => {
 
 export const Mail = MailLottie;
 
-const SuccessLottie = props => {
+const SuccessLottie = (props) => {
   return (
     <Lottie
       loop={true}
@@ -173,8 +173,8 @@ const SuccessLottie = props => {
 
 export const Success = SuccessLottie;
 
-const FoliageRightLottie = props => {
-  const storeColour = useSelector(state => state.colours.colour);
+const FoliageRightLottie = (props) => {
+  const storeColour = useSelector((state) => state.colours.colour);
 
   const foliageAnimations = {
     default: FoliageRight,

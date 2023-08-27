@@ -176,9 +176,17 @@
 @media screen and (max-width: 400px) {
   .sidebar {
     position: fixed;
+    height: 100vh;
   }
-  .sidebar a {
-    /* text-align: center; */
+  .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100% !important;
+    padding: 0.7rem 1rem;
+    background: #040b18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

@@ -5,7 +5,7 @@
   height: 100%;
   width: 100vw;
   background: rgb(10, 0, 31);
-  z-index: 5;
+  z-index: 900;
   animation: scroll-in 0.6s forwards;
 }
 .scrollOut {
@@ -15,7 +15,7 @@
   height: 100%;
   width: 100%;
   background: rgb(10, 0, 31);
-  z-index: 5;
+  z-index: 900;
   animation: scroll-out 0.6s forwards;
 }
 
@@ -45,7 +45,7 @@
   height: 100%;
   width: 100%;
   background: rgb(71, 24, 174);
-  z-index: 3;
+  z-index: 99;
   animation: fadeOut 0.9s forwards;
 }
 

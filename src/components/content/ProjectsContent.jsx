@@ -3,43 +3,57 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
 
-const ProjectsContent = props => {
-  const storeLanguage = useSelector(state => state.languages.language);
-  const storeColour = useSelector(state => state.colours);
+const stripEmojis = (text) => {
+  const regex = /\p{Emoji_Presentation}/gu;
+  return text.replace(regex, "");
+};
+
+const sortProjects = (projects, order, storeLanguage) => {
+  return [...projects].sort((a, b) => {
+    if (order === "name") {
+      const nameA = stripEmojis(a[storeLanguage].name.toUpperCase());
+      const nameB = stripEmojis(b[storeLanguage].name.toUpperCase());
+      return nameA.localeCompare(nameB);
+    } else {
+      // default to sorting by 'order' property
+      return a.order - b.order;
+    }
+  });
+};
+
+const ProjectsContent = (props) => {
+  const storeLanguage = useSelector((state) => state.languages.language);
+  const storeColour = useSelector((state) => state.colours);
 
   const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
   const isSmallScreen = useMediaQuery({ query: "(max-width: 870px)" });
 
   const smallScreenPadding = isSmallScreen ? "8px" : "16px";
 
+  // Load the user's sorting preference from local storage, or default to "order"
+  const savedOrder = localStorage.getItem("sortingOrder") || "order";
+
   // create filter state
-  const [order, setOrder] = useState("order");
+  const [order, setOrder] = useState(savedOrder);
+  const [sortedProjects, setSortedProjects] = useState(props.projects);
 
-  // let items = props.projects;
-  const items = props.projects.sort((a, b) => {
-    if (typeof a[order] === "number") {
-      return a[order] - b[order];
-    } else if (typeof a[`${storeLanguage}`].name === "string") {
-      const nameA = a[`${storeLanguage}`].name.slice(2).toUpperCase();
-      const nameB = b[`${storeLanguage}`].name.slice(2).toUpperCase();
+  useEffect(() => {
+    setSortedProjects(sortProjects(props.projects, order, storeLanguage));
+  }, [props.projects, order, storeLanguage]);
 
-      if (nameA < nameB) {
-        return -1;
-      } else if (nameA > nameB) {
-        return 1;
-      }
+  // Save the user's sorting preference to local storage
+  const handleOrderChange = (e) => {
+    const newOrder = e.target.value;
+    setOrder(newOrder);
 
-      return 0;
-    } else {
-      // handle other data types or values
-      return 0;
-    }
-  });
+    // Save the user's sorting preference to local storage
+    localStorage.setItem("sortingOrder", newOrder);
+  };
 
-  const stopEvent = event => event.stopPropagation();
+  const stopEvent = (event) => event.stopPropagation();
 
   return (
     <>
@@ -48,34 +62,37 @@ const ProjectsContent = props => {
           isMobile
             ? styles["projects-section-mobile"]
             : styles["projects-section"]
-        }
-      >
+        }>
         <div className={styles.projects}>
           <div
             className={`${
               isMobile ? styles["items-mobile"] : styles["items"]
             } ${styles[`${storeColour.colour}`]}`}
-            style={{ paddingRight: smallScreenPadding }}
-          >
-            {items.map(project => {
+            style={{ paddingRight: smallScreenPadding }}>
+            {sortedProjects.map((project) => {
               return (
-                <div className={styles["project-git"]} key={project.id + "git"}>
+                <div
+                  className={styles["project-git"]}
+                  key={project.id + "git"}>
                   <Link
                     key={project.id}
                     to={`/projects/${project.endpoint}`}
-                    className={styles["list-container"]}
-                  >
+                    className={styles["list-container"]}>
                     <div
                       className={`${styles["list-item"]} ${
                         styles[`${storeColour.colour}`]
                       }`}
                       style={{
-                        background: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${project.image}) no-repeat center center/cover`,
-                      }}
-                    >
+                        background: isMediumScreen
+                          ? `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${project.image}) no-repeat center center/cover`
+                          : `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url(${project.image}) no-repeat center center/cover`,
+                      }}>
                       {!isMobile && (
                         <div className={styles["image-container"]}>
-                          <img src={project.image} alt={project.name} />
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                          />
                         </div>
                       )}
                       <div className={styles["title-container"]}>
@@ -91,8 +108,7 @@ const ProjectsContent = props => {
                           href={project.githubLink}
                           onClick={stopEvent}
                           target="_blank"
-                          aria-label={project[`${storeLanguage}`].name}
-                        >
+                          aria-label={project[`${storeLanguage}`].name}>
                           <FaGithub
                             className={`${styles.git} ${styles.github}`}
                             color="white"
@@ -118,14 +134,12 @@ const ProjectsContent = props => {
               className={styles["filter-wrapper"]}
               style={{
                 borderColor: `${storeColour.hex}`,
-              }}
-            >
+              }}>
               <select
                 name="filter"
                 id="filter"
                 value={order}
-                onChange={e => setOrder(e.target.value)}
-              >
+                onChange={handleOrderChange}>
                 {/* @todo: do proper internationalisation */}
                 <option value="order">
                   {storeLanguage === "EN" ? "Featured" : "In evidenza"}

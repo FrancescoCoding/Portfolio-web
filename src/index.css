@@ -29,6 +29,9 @@
 
   --modals-background: #061024;
   --max-view-width: 3900px;
+
+  --global-background-image: url(./assets/Animations/effects/noise.gif);
+  --global-background-repeat: repeat;
 }
 
 * {
@@ -59,9 +62,24 @@ body::before {
   left: 0;
   z-index: 9999;
   pointer-events: none;
-  background-image: url(./assets/Animations/noise.gif);
   background-repeat: repeat;
-  opacity: 0.06;
+  opacity: 0.055;
+}
+
+/* Default */
+body.noise::before {
+  background-image: var(--global-background-image);
+}
+
+body.retro::before {
+  background-image: url(./assets/Animations/effects/retro.gif);
+  background-size: cover;
+  opacity: 0.05;
+}
+
+.grayscale {
+  filter: grayscale(40%);
+  /* filter: hue-rotate(50deg) saturate(80%); */
 }
 
 a {

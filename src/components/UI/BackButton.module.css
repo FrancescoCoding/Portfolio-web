@@ -13,3 +13,11 @@
   color: rgb(23, 66, 121) !important;
   transform: scale(1.2);
 }
+
+/* // less padding on smaller screens 1200 */
+@media (max-width: 1200px) {
+  .backButton {
+    left: 1rem;
+    top: 1rem;
+  }
+}
