@@ -1,6 +1,6 @@
 import Modal from "../UI/Modal";
 import { ContactMeForm } from "../UI/ContactMeForm";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 import copy from "copy-text-to-clipboard";
 
@@ -14,6 +14,7 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import styles from "./Contact.module.css";
 import { mapStyles } from "../UI/MapsStyles";
+import { useLocation } from "react-router-dom";
 
 const Contact = (props) => {
   const containerStyle = useMemo(() => {
@@ -26,9 +27,24 @@ const Contact = (props) => {
     };
   }, []);
 
+  const location = useLocation();
   const storeColour = useSelector((state) => state.colours);
   const storeLanguage = useSelector((state) => state.languages.language);
   const isEnglish = storeLanguage === "EN";
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash === "about/info") {
+      setShowMessageSection(false);
+    } else if (hash === "about/contact") {
+      setShowMessageSection(true);
+    }
+  }, [location.hash]);
+
+  const toggleMessageSection = () => {
+    const newHash = showMessageSection ? "about/info" : "about/contact";
+    window.location.hash = newHash;
+  };
 
   const [textCopied, setTextCopied] = useState(false);
   const [showMessageSection, setShowMessageSection] = useState(false);
@@ -70,7 +86,7 @@ const Contact = (props) => {
       <div className={styles["contact-container"]}>
         <div
           className={styles.mail}
-          onClick={() => setShowMessageSection(!showMessageSection)}>
+          onClick={toggleMessageSection}>
           <Mail />
         </div>
         <div
@@ -81,13 +97,14 @@ const Contact = (props) => {
         {showMessageSection && (
           <div
             className={styles.back}
-            onClick={() => setShowMessageSection(!showMessageSection)}>
+            onClick={toggleMessageSection}>
             <AiOutlineArrowLeft />
           </div>
         )}
 
         {/* /////////////////////////////// */}
         {/* // -- INFO SECTION -- */}
+        {/* @todo proper internationalization */}
         {!showMessageSection && (
           <div
             className={styles.info}
@@ -100,7 +117,8 @@ const Contact = (props) => {
               onClick={() => {
                 copy("🐸 Francesco Gruosso 🐸");
                 textWasCopiedPopup();
-              }}>
+              }}
+              className={styles.paragraph}>
               Francesco Gruosso
             </h1>
             <p
@@ -120,7 +138,7 @@ const Contact = (props) => {
                 border: `${storeColour.hex} solid 2px`,
               }}>
               {isEnglish
-                ? "I am an Italian Computer Science BSc (Hons) student with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
+                ? "I am a 4th year Computer Science BSc (Hons) student with an interest in Full-Stack Web Development, Graphics Design, UX & AI."
                 : "Sono uno studente di Informatica di quarto anno alla Robert Gordon University (RGU) con interesse in Full-Stack Web Development, Design Grafico, UX & AI."}
             </p>
 
@@ -129,11 +147,11 @@ const Contact = (props) => {
                 isEnglish
                   ? copy(
                       copy(
-                        "Currently working as a software developer @ eCERTO."
+                        "Currently working as a Full-Stack Developer @ eCERTO."
                       )
                     )
                   : copy(
-                      "Attualmente lavoro come software developer @ eCERTO."
+                      "Attualmente lavoro come Full-Stack Developer @ eCERTO."
                     );
                 textWasCopiedPopup();
               }}
@@ -143,8 +161,8 @@ const Contact = (props) => {
                 border: `${storeColour.hex} solid 2px`,
               }}>
               {isEnglish
-                ? "Currently working as a software developer @ eCERTO."
-                : "Attualmente lavoro come software developer @ eCERTO."}
+                ? "Currently working as a Full-Stack Developer @ eCERTO."
+                : "Attualmente lavoro come Full-Stack Developer @ eCERTO."}
             </p>
             {textCopied && (
               <p className={styles.copied}>
@@ -155,7 +173,7 @@ const Contact = (props) => {
             )}
             <button
               className={styles["action-button"]}
-              onClick={() => setShowMessageSection(true)}>
+              onClick={toggleMessageSection}>
               {isEnglish ? "Send me a message! " : "Invia un messaggio! "}
               <FaChevronDown style={{ transform: "translateY(4px)" }} />
             </button>
@@ -164,7 +182,7 @@ const Contact = (props) => {
         {showMessageSection && (
           <>
             <div
-              className={styles.info}
+              className={styles["form-container"]}
               style={{
                 border: `0.9vh solid var(--${storeColour.colour}-active)`,
                 borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,

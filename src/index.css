@@ -27,11 +27,25 @@
   --magenta-active: #7092ff;
   --leaf-active: #3f6ad8;
 
+  --error-color: #c84b31;
+
   --modals-background: #061024;
   --max-view-width: 3900px;
 
   --global-background-image: url(./assets/Animations/effects/noise.gif);
   --global-background-repeat: repeat;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition:
+    background-color 5000s ease-in-out 0s,
+    color 5000s ease-in-out 0s;
+  transition-delay:
+    background-color 5000s,
+    color 5000s;
 }
 
 * {

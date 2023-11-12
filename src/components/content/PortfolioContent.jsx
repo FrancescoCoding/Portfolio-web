@@ -40,19 +40,18 @@ const PortfolioContent = (props) => {
     if (showModalTouched && !isBigScreen) {
       setShowModal(false);
     } else if (showModalTouched && isBigScreen) {
-      setShowModal(true);
+      window.location.hash = "about/info";
     }
   }, [isBigScreen, showModalTouched]);
 
   const hideModalHandler = () => {
     setShowModalTouched(false);
-    setShowModal(false);
+    window.location.hash = "";
   };
 
   const showModalWithSoundHandler = () => {
     clickSound.play();
-
-    setShowModal(true);
+    window.location.hash = "about/info";
     setShowModalTouched(true);
   };
 

@@ -23,7 +23,7 @@
 }
 
 /* 150% zoom and above */
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 1200px) {
   .modal {
     top: 18vh !important;
     width: 63%;

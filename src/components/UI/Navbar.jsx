@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import Contact from "../content/Contact";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
@@ -26,11 +26,18 @@ const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [burgerIsTouched, setBurgerIsTouched] = useState(false);
 
-  const showModalHandler = (e) => {
+  const showModalHandler = (e, hash) => {
     e.preventDefault();
+    window.location.hash = hash;
     setShowModal(true);
   };
+
   const hideModalHandler = () => {
+    window.history.pushState(
+      "",
+      document.title,
+      window.location.pathname + window.location.search
+    );
     setShowModal(false);
   };
   const showMenuSidebarHandler = () => {
@@ -52,6 +59,24 @@ const Navbar = () => {
       dispatch(languageActions.switchToEnglish());
     }
   };
+
+  useEffect(() => {
+    const checkHash = () => {
+      const currentHash = window.location.hash;
+      if (currentHash === "#about/info" || currentHash === "#about/contact") {
+        setShowModal(true);
+      } else {
+        setShowModal(false);
+      }
+    };
+
+    checkHash();
+    window.addEventListener("hashchange", checkHash, false);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash, false);
+    };
+  }, []);
 
   return (
     <>
@@ -101,9 +126,9 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="/#"
-                onClick={showModalHandler}>
-                {isEnglish ? "Contact" : "Contatto"}
+                href="/#about/info"
+                onClick={(e) => showModalHandler(e, "about/info")}>
+                {isEnglish ? "About" : "Dettagli"}
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
