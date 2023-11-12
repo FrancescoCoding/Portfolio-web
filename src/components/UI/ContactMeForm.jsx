@@ -112,6 +112,7 @@ export const ContactMeForm = () => {
                     <Field
                       as={TextField}
                       name="name"
+                      autoComplete="name"
                       label={isEnglish ? "Name" : "Nome"}
                       error={touched.name && !!errors.name}
                       helperText={touched.name && errors.name}
@@ -129,6 +130,7 @@ export const ContactMeForm = () => {
                       type="email"
                       name="email"
                       label="Email"
+                      autoComplete="email"
                       required
                       error={touched.email && !!errors.email}
                       helperText={touched.email && errors.email}
