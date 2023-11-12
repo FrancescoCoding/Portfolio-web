@@ -97,7 +97,6 @@
   text-align: center !important;
   margin: 0 auto;
   margin-bottom: 1.4rem;
-  padding-bottom: 1rem;
   border-bottom-style: solid !important;
   transition: border 0.7s !important;
   user-select: none;
@@ -112,7 +111,6 @@
 
 .contact-container p {
   position: relative;
-  padding: 1vh 1.3vw;
   align-items: center;
   border-radius: 10px;
   font-family: "Open Sans";
@@ -127,6 +125,10 @@
   cursor: pointer;
   user-select: none;
   font-size: 0.7vw;
+}
+
+.paragraph {
+  padding: 1vh 1.3vw !important;
 }
 
 .contact-container p.paragraph:first-child {
@@ -164,14 +166,28 @@
 .contact-container .info {
   display: flex;
   flex-direction: column;
-  min-height: 500px;
+  min-height: 00px;
   align-items: center;
   background: var(--modals-background);
   border: 9px solid rgb(213, 212, 206);
   border-right: 0;
   color: white;
   width: 50%;
-  padding: 2.4rem 2vw;
+  padding: 2.3rem 2vw;
+  border-top-left-radius: 2vh !important;
+  border-bottom-left-radius: 2vh !important;
+}
+
+.form-container {
+  display: flex;
+  min-height: 500px;
+  align-items: end;
+  background: var(--modals-background);
+  border: 9px solid rgb(213, 212, 206);
+  border-right: 0;
+  color: white;
+  width: 50%;
+  padding: 2vw;
   border-top-left-radius: 2vh !important;
   border-bottom-left-radius: 2vh !important;
 }

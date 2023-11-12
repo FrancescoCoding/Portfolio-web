@@ -7,7 +7,6 @@
 }
 
 .form {
-  max-height: 500px !important;
 }
 
 .form label {
@@ -19,42 +18,29 @@
   font-size: 19px;
 }
 
-.form input {
-  font-family: "Lucida sans", sans-serif !important;
+.form input,
+.form textarea {
+  font-family: "Lucida sans", sans-serif;
+  color: white !important; /* Ensure text color is white */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   display: block;
   margin-bottom: 1rem;
   padding: 0.7rem;
-  font-size: 1.3rem !important;
-  border: 1.4px solid transparent;
-  border-bottom: 2px solid transparent;
-  width: 100%;
+  font-size: 1.3rem;
+  border: 1.4px solid white; /* Set border color */
   border-radius: 3px;
+  width: 100%;
+  -webkit-text-fill-color: white !important; /* Ensure text color is white for autofill */
 }
 
-.form input:focus {
-  outline-color: rgb(0, 110, 255);
-  outline-offset: 0px;
+.form input:focus,
+.form textarea:focus {
+  outline-color: rgb(0, 110, 255); /* Adjust if needed */
 }
 
 .invalid {
   background: rgb(255, 194, 194);
-  border: 1.4px solid red !important;
-  border-bottom: 2px solid red !important;
-}
-
-textarea {
-  font-family: "Lucida sans", sans-serif !important;
-  outline-color: rgb(0, 110, 255);
-  font-size: 1rem;
-  padding: 0.5rem 0.6rem !important;
-  width: 100% !important;
-  height: 60px;
-  font-size: 1.3rem;
-  max-height: 240px;
-  min-height: 100px;
-  padding: 0.3rem 0.6rem;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+  border-color: red !important; /* Border color for invalid input */
 }
 
 .submit {

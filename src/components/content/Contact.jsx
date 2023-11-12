@@ -88,6 +88,7 @@ const Contact = (props) => {
 
         {/* /////////////////////////////// */}
         {/* // -- INFO SECTION -- */}
+        {/* @todo proper internationalization */}
         {!showMessageSection && (
           <div
             className={styles.info}
@@ -100,7 +101,8 @@ const Contact = (props) => {
               onClick={() => {
                 copy("🐸 Francesco Gruosso 🐸");
                 textWasCopiedPopup();
-              }}>
+              }}
+              className={styles.paragraph}>
               Francesco Gruosso
             </h1>
             <p
@@ -164,7 +166,7 @@ const Contact = (props) => {
         {showMessageSection && (
           <>
             <div
-              className={styles.info}
+              className={styles["form-container"]}
               style={{
                 border: `0.9vh solid var(--${storeColour.colour}-active)`,
                 borderRight: `0.9vh solid var(--${storeColour.colour}-active)`,
