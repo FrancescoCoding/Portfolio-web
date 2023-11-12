@@ -166,7 +166,7 @@
 .contact-container .info {
   display: flex;
   flex-direction: column;
-  min-height: 00px;
+  min-height: 500px;
   align-items: center;
   background: var(--modals-background);
   border: 9px solid rgb(213, 212, 206);
@@ -179,13 +179,8 @@
 }
 
 .form-container {
-  display: flex;
   min-height: 500px;
-  align-items: end;
   background: var(--modals-background);
-  border: 9px solid rgb(213, 212, 206);
-  border-right: 0;
-  color: white;
   width: 50%;
   padding: 2vw;
   border-top-left-radius: 2vh !important;
