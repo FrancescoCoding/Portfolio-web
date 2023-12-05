@@ -515,8 +515,7 @@ const PROJECTS = [
     },
     id: "p11",
     githubLink: "https://github.com/FrancescoCoding/Portfolio-api",
-    image:
-      " https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    image: " https://source.unsplash.com/600x400/?servers",
     order: 1,
     endpoint: "portfolio-api",
     icons: [typescriptIcon, expressIcon, mongoDBIcon, vercelIcon],
@@ -566,6 +565,59 @@ const PROJECTS = [
     endpoint: "ask-sanchez",
     order: 1.5,
     icons: [nodeIcon, expressIcon, reactIcon, typescriptIcon, vercelIcon],
+  },
+  {
+    EN: {
+      name: "🦞 TTE: Text-to-Emoji",
+      description: `
+        <p>"Text-to-Emoji" is a simple React hook that changes text into emojis. It's smart enough to know which emoji fits best with the words you use, thanks to OpenAI's GPT-4. It's fun to use and can add some extra flair to any React project. You can use it in different ways, like:</p>
+        <ul>
+            <li>Making titles or headings on your website more fun by adding emojis.</li>
+            <li>Letting bloggers add a playful touch to their posts with emojis that match their writing.</li>
+            <li>Giving people emoji suggestions when they fill out forms, which is great for social media or chat apps.</li>
+            <li>Adding emojis to emails or texts to help people express themselves better.</li>
+            <li>Using it in feedback forms to show people's feelings with emojis instead of just words.</li>
+        </ul>
+              <div style="text-align: center;">
+            <img width="60%" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJyc2RmZGRpODJ5ZnFzcW9oNmNjM3d2d2tqOTllNGx0eDJnMXliNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jn8rlzWSj4HQlfsEBE/giphy.gif" alt="GIF of the application in action" />
+        </div>
+        <br/>
+        <p>Explore the full range of technologies on the GitHub Repository's <a href="https://github.com/FrancescoCoding/TTE-text-to-emoji/blob/main/README.md">README</a> file.</p>
+        `,
+      tags: ["React", "Node.js", "Express", "TypeScript", "Vite"],
+      short:
+        "Text-to-Emoji is a lightweight, easy-to-integrate React hook that converts text into emojis by using OpenAI's GPT-4 model.",
+    },
+    IT: {
+      name: "🦞 TTE: Testo-in-Emoji",
+      description: `
+      <p>"TTE: Testo-in-Emoji" è un hook per React facile da integrare che trasforma qualsiasi testo in emoji. Grazie al modello GPT-4 di OpenAI, sa scegliere l'emoji più adatta alle parole utilizzate. \nÈ divertente da usare e può aggiungere un tocco in più a qualsiasi progetto. Ecco alcuni modi per utilizzarlo:</p>
+      <ul>
+          <li>Rendere i titoli o le intestazioni del tuo sito web più divertenti aggiungendo emoji.</li>
+          <li>Permettere ai blogger di aggiungere un tocco giocoso ai loro post con emoji che corrispondono al loro contenuto.</li>
+          <li>Offrire suggerimenti di emoji alle persone quando compilano i moduli, il che è ottimo per i social media o le app di messaggistica.</li>
+          <li>Aggiungere emoji alle email o ai testi per aiutare le persone a esprimersi meglio.</li>
+          <li>Utilizzarlo nei moduli di feedback per mostrare i sentimenti delle persone con emoji anziché solo con parole.</li>
+      </ul>
+      <div style="text-align: center;">
+          <img width="60%" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJyc2RmZGRpODJ5ZnFzcW9oNmNjM3d2d2tqOTllNGx0eDJnMXliNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jn8rlzWSj4HQlfsEBE/giphy.gif" alt="GIF dell'applicazione in azione" />
+      </div>
+      <br/>
+      <p>Scopri come utilizzarlo consultando il file <a href="https://github.com/FrancescoCoding/TTE-text-to-emoji/blob/main/README.md">README</a> nel repository GitHub.</p>
+    `,
+      short:
+        "Text-to-Emoji è un hook per React facile da integrare che converte il testo in emoji utilizzando il modello GPT-4 di OpenAI.",
+    },
+    id: "p13",
+    githubLink: "https://github.com/FrancescoCoding/TTE-Text-to-Emoji",
+    image: "https://source.unsplash.com/600x400/?emoticon",
+    endpoint: "tte-text-to-emoji",
+    order: 1.3,
+    icons: [reactIcon],
+    extraLink: {
+      buttonText: "Demo",
+      link: "https://tte.fran-dev.com/",
+    },
   },
 ];
 

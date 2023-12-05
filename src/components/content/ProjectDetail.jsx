@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 
 import { useSelector } from "react-redux";
 import { FaGithub } from "react-icons/fa";
-import { FcDocument } from "react-icons/fc";
+import { FcDocument, FcSlrBackSide } from "react-icons/fc";
 
 import VolumeControl from "../UI/VolumeControl";
 
@@ -111,18 +111,27 @@ const ProjectDetail = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles["git-btn"]}>
-                    <FcDocument
-                      size="3rem"
-                      style={{
-                        color: `var(--${storeColour.colour}-active)`,
-                        cursor: "pointer",
-                      }}
-                    />
+                    {currentProject.extraLink.buttonText === "Docs" ? (
+                      <FcDocument
+                        size="3rem"
+                        style={{
+                          color: `var(--${storeColour.colour}-active)`,
+                          cursor: "pointer",
+                        }}
+                      />
+                    ) : (
+                      <FcSlrBackSide
+                        size="3rem"
+                        style={{
+                          color: `var(--${storeColour.colour}-active)`,
+                          cursor: "pointer",
+                        }}
+                      />
+                    )}
                   </a>
                   <p>{currentProject.extraLink.buttonText} </p>
                 </div>
               )}
-
               {/* GitHub link */}
               <div className={styles["project-btn__wrapper"]}>
                 <a
