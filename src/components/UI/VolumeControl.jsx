@@ -13,6 +13,7 @@ import {
 import styles from "./VolumeControl.module.css";
 import useKeyPress from "../../hooks/useKeyPress";
 import { useVolumeConfig } from "../../settings/VolumeConfig";
+import { memo } from "react";
 
 const VolumeControl = () => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
@@ -161,4 +162,6 @@ const VolumeControl = () => {
   );
 };
 
-export default VolumeControl;
+const MemoizedVolumeControl = memo(VolumeControl);
+
+export default MemoizedVolumeControl;

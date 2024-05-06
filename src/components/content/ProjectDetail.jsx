@@ -5,12 +5,15 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { BackButton } from "../UI/BackButton";
 import { useMediaQuery } from "react-responsive";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 import { useSelector } from "react-redux";
 import { FaGithub } from "react-icons/fa";
 import { FcDocument, FcSlrBackSide } from "react-icons/fc";
 
 import VolumeControl from "../UI/VolumeControl";
+
+import { useGoBack } from "../UI/BackButton";
 
 import styles from "./ProjectDetail.module.css";
 
@@ -20,6 +23,8 @@ import Transition from "../UI/Transition";
 
 const ProjectDetail = () => {
   const params = useParams();
+  const goBack = useGoBack(); // Assigning the function returned by useGoBack
+
   const storeColour = useSelector((state) => state.colours);
   const storeLanguage = useSelector((state) => state.languages.language);
 
@@ -57,11 +62,36 @@ const ProjectDetail = () => {
       <Transition />
       <ColourSelector backgroundColor="#0a0f20" />
       <VolumeControl />
-      <BackButton endpoint="/projects" />
+      {!isSmallScreen && <BackButton endpoint="/projects" />}
 
       <section className={styles["project-card-section"]}>
         {/* Card */}
         <div className={styles["project-card"]}>
+          {isSmallScreen && (
+            <div
+              className={styles["project-card__header"]}
+              style={{
+                borderBottom: `5px solid var(--${storeColour.colour}-active)`,
+                background: `${storeColour.hexDarker}`,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}>
+              <div
+                className={styles["project-card__header__left"]}
+                onClick={goBack}>
+                <IoArrowBackOutline
+                  fontSize={30}
+                  color="white"
+                />
+              </div>
+              <div className={styles["project-card__header__right"]}>
+                <VolumeControl />
+              </div>
+            </div>
+          )}
+          {/* design line of the color */}
+
           <div className={styles["information-wrapper"]}>
             {/* Project Header (name) */}
             <h1 className={styles["project-title"]}>

@@ -508,6 +508,7 @@ div.list-item {
     width: 70%;
     height: 50%;
     /* border: green solid 1px !important; */
+    height: 95vh !important;
   }
 
   .project-git .git {

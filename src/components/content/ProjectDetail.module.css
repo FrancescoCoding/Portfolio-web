@@ -297,20 +297,42 @@ li {
     padding: 0;
   }
 
+  .project-card-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-1rem);
+  }
+
   /* @todo make github link and other buttons appear at the bottom for mobile */
   /* @todo make similar to the hamburger sidebar for mobile, but do it at the bottom of the card */
+  .information-wrapper {
+    padding: 2rem 1rem !important;
+    transition: all 0.3s;
+    font-size: 1.3rem;
+  }
 
   .project-card {
-    width: 90%;
+    width: 100%;
     overflow: auto;
     /* text-align: center !important; */
-    padding: 1rem 1.4rem !important;
+    padding: 2.5rem 1.4rem !important;
+    border-radius: 0 !important;
+    height: 100vh;
   }
   .project-card h1 {
     font-size: 1.6rem !important;
   }
   .project-card p {
-    font-size: 1rem !important;
+    font-size: 19px !important;
     width: 100%;
     padding: 0 1.05rem;
   }
@@ -325,6 +347,31 @@ li {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+  }
+
+  .project-card__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10; /* Ensure it's above other content */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+  }
+
+  .project-card__header__left,
+  .project-card__header__right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  /* Ensures the content below the header is not hidden underneath */
+  .project-card-section {
+    padding-top: 16px; /* Adjust according to the actual height of your fixed header */
   }
 }
 

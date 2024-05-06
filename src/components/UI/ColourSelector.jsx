@@ -3,6 +3,7 @@ import { colourActions } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 
 import { FaCheck } from "react-icons/fa";
+import { memo } from "react";
 const checkMark = (
   <FaCheck
     size="50%"
@@ -13,7 +14,7 @@ const checkMark = (
 );
 
 const ColourSelector = ({ backgroundColor }) => {
-  const storeColour = useSelector(state => state.colours.colour);
+  const storeColour = useSelector((state) => state.colours.colour);
   const dispatch = useDispatch();
 
   const canaryThemeHandler = () => {
@@ -34,34 +35,29 @@ const ColourSelector = ({ backgroundColor }) => {
       <div className={styles["colours-wrapper"]}>
         <div
           className={styles["colours-container"]}
-          style={{ backgroundColor: `${backgroundColor}` }}
-        >
+          style={{ backgroundColor: `${backgroundColor}` }}>
           <button
             aria-label="Canary colour"
             onClick={canaryThemeHandler}
-            className={styles.canary}
-          >
+            className={styles.canary}>
             {storeColour === "canary" && checkMark}
           </button>
           <button
             aria-label="Ocean colour"
             onClick={oceanThemeHandler}
-            className={styles.ocean}
-          >
+            className={styles.ocean}>
             {storeColour === "ocean" && checkMark}
           </button>
           <button
             aria-label="Magenta colour"
             onClick={magentaThemeHandler}
-            className={styles.magenta}
-          >
+            className={styles.magenta}>
             {storeColour === "magenta" && checkMark}
           </button>
           <button
             aria-label="Leaf colour"
             onClick={leafThemeHandler}
-            className={styles.leaf}
-          >
+            className={styles.leaf}>
             {storeColour === "leaf" && checkMark}
           </button>
         </div>
@@ -70,4 +66,6 @@ const ColourSelector = ({ backgroundColor }) => {
   );
 };
 
-export default ColourSelector;
+const MemoizedColourSelector = memo(ColourSelector);
+
+export default MemoizedColourSelector;

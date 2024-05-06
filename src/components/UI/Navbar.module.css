@@ -5,7 +5,7 @@ nav {
   padding: 0rem 12.5rem;
   justify-content: flex-start;
   width: 100vw !important;
-  z-index: 10 !important;
+  z-index: 901 !important;
 }
 
 .hamburger-container {
@@ -33,10 +33,11 @@ nav {
   font-size: 1.6vh;
 }
 
-/* Put last li element at end of navbar */
-.navbar ul li:last-of-type {
-  margin-left: auto !important;
-  transform: translateX(2rem);
+.navbar ul li:nth-last-child(1) {
+  margin-left: 0;
+}
+.navbar ul li:nth-last-child(2) {
+  margin-left: auto;
 }
 
 .navbar ul li a {
@@ -76,6 +77,9 @@ nav {
 }
 
 .navbar ul.magenta li a.active {
+  color: var(--magenta-active);
+}
+.navbar ul.magenta li a.active:hover {
   color: var(--magenta-active);
 }
 

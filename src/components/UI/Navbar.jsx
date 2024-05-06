@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import Contact from "../content/Contact";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fade as Hamburger } from "hamburger-react";
@@ -146,7 +146,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
             )}
-
             <li style={{ color: "white" }}>
               {isEnglish && (
                 <a
@@ -170,4 +169,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
