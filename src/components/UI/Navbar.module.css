@@ -14,7 +14,7 @@ nav {
   display: flex;
   padding-bottom: -0.4rem;
   padding: 0.8rem;
-  z-index: 400 !important;
+  z-index: 902 !important;
   border-radius: 4rem;
   cursor: pointer;
 }
