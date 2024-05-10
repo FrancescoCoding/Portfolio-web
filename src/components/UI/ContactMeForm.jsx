@@ -33,10 +33,10 @@ export const ContactMeForm = () => {
     setSubmitting(true);
     emailjs
       .send(
-        "service_wp9ydnd",
-        "template_28ozq9m",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         values,
-        "user_3A2DqTXIldcHsNOG17QYb"
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
         (result) => {

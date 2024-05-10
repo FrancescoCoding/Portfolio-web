@@ -54,7 +54,7 @@ const Contact = (props) => {
   };
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDKi9ePWObhV1pQpOCfBMVKAmb1CkhSeuM",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
   if (loadError) return "Error loading maps";
