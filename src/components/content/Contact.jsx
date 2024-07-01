@@ -151,7 +151,7 @@ const Contact = (props) => {
                       )
                     )
                   : copy(
-                      "Attualmente lavoro come Full-Stack Developer @ eCERTO."
+                      "Se stai cercando di migliorare un prodotto esistente o costruirne uno nuovo, mi piacerebbe sentirti!"
                     );
                 textWasCopiedPopup();
               }}
@@ -162,7 +162,7 @@ const Contact = (props) => {
               }}>
               {isEnglish
                 ? "If you're looking to improve an existing product or build something new, I'd love to hear from you!"
-                : "Attualmente lavoro come Full-Stack Developer @ eCERTO."}
+                : "Se stai cercando di migliorare un prodotto esistente o costruirne uno nuovo, mi piacerebbe sentirti!"}
             </p>
             {textCopied && (
               <p className={styles.copied}>

@@ -321,6 +321,10 @@ li {
     font-size: 1.3rem;
   }
 
+  .project-card-section .project-card {
+    max-height: 100%;
+  }
+
   .project-card {
     width: 100%;
     overflow: auto;
