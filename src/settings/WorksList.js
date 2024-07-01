@@ -670,7 +670,6 @@ const PROJECTS = [
     },
     id: "p14",
     githubLink: "https://github.com/FrancescoCoding/hons-project",
-    image: "https://via.placeholder.com/600",
     order: 1.2,
     endpoint: "anonfeedback-io",
     icons: [reactIcon, nodeIcon, expressIcon, typescriptIcon],
