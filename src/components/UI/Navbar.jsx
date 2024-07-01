@@ -132,6 +132,14 @@ const Navbar = () => {
               </a>
               {showModal && <Contact onClose={hideModalHandler} />}
             </li>
+            <li>
+              <a
+                href="https://franwbu.com/blog"
+                target="_blank"
+                rel="noreferrer">
+                Blog
+              </a>
+            </li>
             {/* <li>
               <NavLink activeClassName={styles.active} to="/CV">
                 CV

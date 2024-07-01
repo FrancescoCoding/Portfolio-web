@@ -1,9 +1,15 @@
-import portfolioThumbnail600w from "../assets/Thumbnails/Portfolio-thumbnail-600w.webp";
 import tsunamiThumbnail600w from "../assets/Thumbnails/Tsunami-thumbnail-600w.webp";
-import playlistThumbnail600w from "../assets/Thumbnails/Playlist-thumbnail-600w.webp";
+import aiThumbnail600w from "../assets/Thumbnails/AI-thumbnail-600w.webp";
 import covidTrackerThumbnail600w from "../assets/Thumbnails/Covid-tracker-thumbnail-600w.webp";
-import tangibleThumbnail600w from "../assets/Thumbnails/Tangible-thumbnail-600w.webp";
-import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.jpg";
+import harvestTimeThumbnail600w from "../assets/Thumbnails/Harvest-time-thumbnail-600w.webp";
+import ServerThumbnail600w from "../assets/Thumbnails/Server-thumbnail-600w.webp";
+import EmojisThumbnail600w from "../assets/Thumbnails/Emojis-thumbnail-600w.webp";
+import HydroFloraThumbnail600w from "../assets/Thumbnails/Hydroflora-Thumbnail-600w.webp";
+import AlgorithmThumbnail600w from "../assets/Thumbnails/Algorithm-thumbnail-600w.webp";
+import HackerThumbnail600w from "../assets/Thumbnails/Hacker-thumbnail-600w.webp";
+import ChameliiThumbnail600w from "../assets/Thumbnails/Chameleon-thumbnail-600w.webp";
+import AnonfeedbackThumbnail600w from "../assets/Thumbnails/Anonfeedback-thumbnail-600w.webp";
+
 
 import {
   mongoDBIcon,
@@ -156,7 +162,7 @@ const PROJECTS = [
     IT: {
       name: "🤖 easyGPT",
       description: `
-      <h1 align="center">easyGPT: Un server Express e modulo npm per ChatGPT</h1>
+      <h1 align="center">Un server Express e modulo npm per ChatGPT</h1>
 
       <div style="text-align: center;">
         <img width="60%" src="https://media.giphy.com/media/pvAG72VNEeH0A/giphy.gif" alt="GIF del portfolio in azione" />
@@ -187,7 +193,7 @@ const PROJECTS = [
       buttonText: "Docs",
       link: "https://easygpt.dev",
     },
-    image: playlistThumbnail600w,
+    image: aiThumbnail600w,
     endpoint: "easygpt",
     order: 1.5,
     icons: [expressIcon, npmIcon, JSIcon],
@@ -354,7 +360,7 @@ const PROJECTS = [
     },
     id: "p7",
     githubLink: "https://github.com/FrancescoCoding/HydroFlora-app",
-    image: "https://source.unsplash.com/600x400/?plant",
+    image: HydroFloraThumbnail600w,
     endpoint: "HydroFlora",
     order: 1.5,
     tags: ["Android Studio, Java, Firebase"],
@@ -396,7 +402,7 @@ const PROJECTS = [
     githubLink:
       "https://github.com/FrancescoCoding/Quick-and-Count-sort-algorithm-analysis",
     order: 7,
-    image: " https://source.unsplash.com/600x400/?algorithm",
+    image: AlgorithmThumbnail600w,
     endpoint: "algorithms-analysis",
     tags: ["Java, Big O Notation"],
     icons: [javaIcon],
@@ -439,7 +445,7 @@ const PROJECTS = [
     id: "p9",
     githubLink:
       "https://github.com/FrancescoCoding/Ethical-Hacking-penetration-test",
-    image: "https://source.unsplash.com/600x400/?hacking",
+    image: HackerThumbnail600w,
     order: 8,
     endpoint: "hacking",
   },
@@ -479,7 +485,7 @@ const PROJECTS = [
     },
     id: "p10",
     githubLink: "https://github.com/FrancescoCoding/Chamelii-chatbot",
-    image: "https://source.unsplash.com/600x400/?lizard",
+    image: ChameliiThumbnail600w,
     order: 9,
     endpoint: "chameleon",
   },
@@ -509,13 +515,13 @@ const PROJECTS = [
       
       <p>Anche se il sito web client non è ancora collegato al server, lo sarà presto! <b>(In arrivo!)</b></p>
       <p>Il server è costruito utilizzando Node.js, Express, TypeScript, MongoDB e altri strumenti magici. 😎</p>`,
-      tags: ["Node, Express, TypeScript, MongoDB, Mongoose "],
+      tags: ["Node, Express, TypeScript, MongoDB, Mongoose"],
       short:
         "Server e REST API per questo portfolio. Costruito con Node.js, Express, TypeScript, MongoDB e altri strumenti magici 🪄",
     },
     id: "p11",
     githubLink: "https://github.com/FrancescoCoding/Portfolio-api",
-    image: " https://source.unsplash.com/600x400/?servers",
+    image: ServerThumbnail600w,
     order: 1,
     endpoint: "portfolio-api",
     icons: [typescriptIcon, expressIcon, mongoDBIcon, vercelIcon],
@@ -610,7 +616,7 @@ const PROJECTS = [
     },
     id: "p13",
     githubLink: "https://github.com/FrancescoCoding/TTE-Text-to-Emoji",
-    image: "https://source.unsplash.com/600x400/?emoticon",
+    image: EmojisThumbnail600w,
     endpoint: "tte-text-to-emoji",
     order: 1.3,
     icons: [reactIcon],
@@ -618,6 +624,61 @@ const PROJECTS = [
       buttonText: "Demo",
       link: "https://tte.fran-dev.com/",
     },
+  },
+  {
+    EN: {
+      name: "📚 Anonfeedback.io",
+      description: `
+        <h2>Enhancing Student Feedback Collection and Analysis with AI & HCI Techniques 🎓</h2>
+        <br/>
+        <p>In the fast-paced environment of higher education institutions, gathering student feedback can be a challenging endeavour. Traditional feedback mechanisms, such as online surveys or lengthy questionnaires, often suffer from low participation rates due to the cognitive load they impose on students, especially when presented after or during exam periods. These forms can be perceived as tedious and time-consuming, discouraging students from providing valuable insights into their educational experiences.</p>
+        <p>Cognitive load theory, a well-established concept in the field of human-computer interaction (HCI), suggests that individuals have limited cognitive resources available for processing information. When the demands of a task exceed these resources, cognitive overload can occur, leading to decreased performance and potentially abandonment of the task altogether (Hollender et al., 2010).</p>
+        <p>To address these challenges, this project introduces Anonfeedback.io, an innovative feedback system leveraging the power of AI and HCI techniques. It aims to reduce cognitive demands through intuitive design, encouraging higher engagement rates. This enables institutions to act promptly on contextualized, real-time feedback, in order to enable continuous improvement in the learning experience while overcoming limitations of conventional mechanisms.</p>
+        <p>The system's other strength lies in its use of sentiment analysis powered by large language models (LLMs) like GPT-4. These advanced natural language processing models excel at capturing linguistic nuances, detecting sarcasm, and providing nuanced insights from unstructured text comments, thereby obtaining far more accurate classification out of the box. By leveraging the latest advancements in AI, the system offers educational institutions the ability to promptly respond to contextualized, real-time feedback.</p>
+        <p>For a comprehensive list of technologies and the full report, please check out the GitHub Repository's <a href="https://github.com/FrancescoCoding/hons-project/tree/main">README</a> file.</p>
+        <br/>
+        <p>Live Links for the RGU Org Feedback:</p>
+        <ul>
+            <li><a href="https://rgu.anonfeedback.io/">General Feedback</a></li>
+            <li><a href="https://rgu.anonfeedback.io/fran/discussion">Project Discussion</a></li>
+        </ul>
+        `,
+      tags: ["AI, HCI, GPT-4, Sentiment Analysis"],
+      short:
+        "An innovative feedback system leveraging AI and HCI techniques to enhance student feedback collection and analysis.",
+    },
+    IT: {
+      name: "📚 Anonfeedback.io",
+      description: `
+        <h2>Migliorare la Raccolta e l'Analisi dei Feedback degli Studenti con Tecniche di AI e HCI 🎓</h2>
+        <br/>
+        <p>Nell'ambiente frenetico delle istituzioni di istruzione superiore, raccogliere feedback dagli studenti può essere un'impresa impegnativa. I meccanismi di feedback tradizionali, come i sondaggi online o i questionari lunghi, spesso soffrono di bassi tassi di partecipazione a causa del carico cognitivo che impongono agli studenti, specialmente quando presentati dopo o durante i periodi di esame. Queste forme possono essere percepite come tediose e dispendiose in termini di tempo, scoraggiando gli studenti dal fornire preziose informazioni sulle loro esperienze educative.</p>
+        <p>La teoria del carico cognitivo, un concetto ben consolidato nel campo dell'interazione uomo-computer (HCI), suggerisce che gli individui hanno risorse cognitive limitate disponibili per elaborare le informazioni. Quando le richieste di un compito superano queste risorse, può verificarsi un sovraccarico cognitivo, portando a una diminuzione delle prestazioni e all'abbandono del compito stesso (Hollender et al., 2010).</p>
+        <p>Per affrontare queste sfide, questo progetto introduce Anonfeedback.io, un innovativo sistema di feedback che sfrutta la potenza dell'AI e delle tecniche HCI. Mira a ridurre le richieste cognitive attraverso un design intuitivo, incoraggiando tassi di coinvolgimento più elevati. Ciò consente alle istituzioni di agire prontamente su feedback contestualizzati in tempo reale, per consentire un miglioramento continuo dell'esperienza di apprendimento superando le limitazioni dei meccanismi convenzionali.</p>
+        <p>Un altro punto di forza del sistema risiede nell'uso dell'analisi del sentiment potenziata da modelli di linguaggio di grandi dimensioni (LLM) come GPT-4. Questi modelli avanzati di elaborazione del linguaggio naturale eccellono nel catturare le sfumature linguistiche, rilevare il sarcasmo e fornire approfondimenti sfumati dai commenti di testo non strutturati, ottenendo così una classificazione molto più accurata fin dall'inizio. Sfruttando i più recenti progressi dell'AI, il sistema offre alle istituzioni educative la possibilità di rispondere prontamente ai feedback contestualizzati in tempo reale.</p>
+        <p>Per un elenco completo delle tecnologie e il rapporto completo, si prega di consultare il file <a href="https://github.com/FrancescoCoding/hons-project/tree/main">README</a> nel repository GitHub.</p>
+        <br/>
+        <p>Link Live per i Feedback dell'Org RGU:</p>
+        <ul>
+            <li><a href="https://rgu.anonfeedback.io/">Feedback Generale</a></li>
+            <li><a href="https://rgu.anonfeedback.io/fran/discussion">Discussione del Progetto</a></li>
+        </ul>
+        `,
+      tags: ["AI, HCI, GPT-4, Sentiment Analysis"],
+      short:
+        "Un innovativo sistema di feedback che sfrutta le tecniche di AI e HCI per migliorare la raccolta e l'analisi dei feedback degli studenti.",
+    },
+    id: "p14",
+    githubLink: "https://github.com/FrancescoCoding/hons-project",
+    image: "https://via.placeholder.com/600",
+    order: 1.2,
+    endpoint: "anonfeedback-io",
+    icons: [reactIcon, nodeIcon, expressIcon, typescriptIcon],
+    extraLink: {
+      buttonText: "Docs",
+      link: "https://github.com/FrancescoCoding/hons-project/blob/main/Honours%20Project%20Dissertation%20-%20Francesco%20Gruosso%202024.pdf",
+    },
+    image: AnonfeedbackThumbnail600w,
   },
 ];
 

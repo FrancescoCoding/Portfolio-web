@@ -61,6 +61,7 @@
   position: relative;
   opacity: 0;
   animation: appear 0.55s forwards 0.1s;
+  max-height: 80vh;
 }
 .project-card-section .project-card p {
   font-size: 19px !important;
