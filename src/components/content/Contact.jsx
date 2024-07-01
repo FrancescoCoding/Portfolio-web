@@ -125,7 +125,7 @@ const Contact = (props) => {
               onClick={() => {
                 isEnglish
                   ? copy(
-                      "I am an Italian Computer Science BSc (Hons) student at Robert Gordon University with an specialization in Full-Stack Development, Graphics Design, UX & AI."
+                      "I am an Italian Computer Science BSc (Hons) student at Robert Gordon University with a specialization in Full-Stack Development, Graphics Design, UX & AI."
                     )
                   : copy(
                       "Sono laureato in Informatica BSc (Hons) con lode alla Robert Gordon University (RGU). Sono specializzato in Full-Stack Development, Design Grafico, UX & AI."
@@ -138,7 +138,7 @@ const Contact = (props) => {
                 border: `${storeColour.hex} solid 2px`,
               }}>
               {isEnglish
-                ? "I am a Computer Science BSc (Hons) graduate (1st class) with an specialization in Full-Stack Development, Graphics Design, UX & AI."
+                ? "I am a Computer Science BSc (Hons) graduate (1st class) with a specialization in Full-Stack Development, Graphics Design, UX & AI."
                 : "Sono laureato in Informatica BSc (Hons) con lode alla Robert Gordon University (RGU). Sono specializzato in Full-Stack Development, Design Grafico, UX & AI."}
             </p>
 
