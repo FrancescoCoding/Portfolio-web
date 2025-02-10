@@ -1,6 +1,5 @@
 import React from "react";
 import { FoliageRightSide } from "../../assets/Animations/Animations";
-import RGU_Logo from "../../assets/Logos/RGU_Computing.svg";
 import { RiMapPin2Line, RiBuilding4Line, RiComputerLine } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 
