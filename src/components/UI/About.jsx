@@ -14,19 +14,11 @@ const About = () => {
       {/* ABOUT TEXT */}
       <section className={styles.about}>
         <div className={styles.about__content}>
-          <h1>🦁 Gruosso Francesco</h1>
+          <h1>Gruosso Francesco 🦁</h1>
           <span className={styles.about__content__info}>
-            <a href="https://www.rgu.ac.uk/study/academic-schools/school-of-computing">
-              <img
-                width="75px"
-                height="75px"
-                src={RGU_Logo}
-                alt="RGU Logo"
-              />
-            </a>
             <p>
               <RiMapPin2Line /> Aberdeen, Scotland <br />
-              <RiBuilding4Line /> Robert Gordon University <br />
+              <RiBuilding4Line /> Software, Research, UX <br />
               <span>
                 <RiComputerLine />
                 &nbsp;Computer Science BSc (Hons)

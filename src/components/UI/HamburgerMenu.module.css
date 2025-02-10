@@ -3,7 +3,7 @@
   position: fixed;
   margin: 0;
   padding: 0;
-  width: 330px;
+  width: 50%;
   height: 100%;
   max-height: 100%;
   overflow: auto;
@@ -192,7 +192,7 @@
 
 @keyframes slide-in {
   0% {
-    left: -330px;
+    left: -50%;
   }
   100% {
     left: 0;
@@ -203,7 +203,7 @@
     left: 0;
   }
   100% {
-    left: -330px;
+    left: -50%;
   }
 }
 @keyframes slide-down {

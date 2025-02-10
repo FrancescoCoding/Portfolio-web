@@ -215,7 +215,7 @@
 .buttons-container {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: relative;
   width: 100%;
   right: 0;
   bottom: 0;
@@ -329,7 +329,7 @@ li {
     width: 100%;
     overflow: auto;
     /* text-align: center !important; */
-    padding: 2.5rem 1.4rem !important;
+    padding: 0 !important;
     border-radius: 0 !important;
     height: 100vh;
   }
@@ -355,7 +355,7 @@ li {
   }
 
   .project-card__header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -365,6 +365,7 @@ li {
     z-index: 10; /* Ensure it's above other content */
     padding: 0.5rem 1rem; /* Adjust padding as needed */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    z-index: 999999;
   }
 
   .project-card__header__left,

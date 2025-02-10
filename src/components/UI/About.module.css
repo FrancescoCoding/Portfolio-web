@@ -21,13 +21,14 @@
 
 /* Header (Francesco Gruosso) */
 .about__content h1 {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   text-align: start;
   margin-left: 0.3rem;
 }
 /* Paragraph */
 .about__content p {
-  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-weight: 400;
 }
 /* Content */
 .about__content span {

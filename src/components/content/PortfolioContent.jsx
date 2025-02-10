@@ -142,8 +142,8 @@ const PortfolioContent = (props) => {
         <section className={styles["astronaut-container"]}>
           <Astronaut
             delay={delayMS}
-            width={isBigScreen ? 600 : 450}
-            height={isBigScreen ? 600 : 450}
+            width={isBigScreen ? 600 : 300}
+            height={isBigScreen ? 600 : 300}
           />
           {!isBigScreen && (
             <div className={styles["astronaut-text"]}>
@@ -154,7 +154,7 @@ const PortfolioContent = (props) => {
                 }}>
                 Gruosso Francesco
               </h1>
-              <p style={{ fontSize: "2rem", color: "white" }}>Web dev etc.</p>
+              <p>Web dev etc.</p>
               <NavLink
                 className={`${styles["btn-mobile"]}`}
                 activeClassName={styles.active}

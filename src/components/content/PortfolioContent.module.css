@@ -72,7 +72,7 @@
 }
 
 .btn:active {
-  transform: scale(0.97);
+  transform: scale(0.99);
   box-shadow: inset 2px 2px 3px #000;
   backface-visibility: hidden;
   transform: translateY(3px);
@@ -131,18 +131,35 @@
 }
 
 .btn-mobile {
-  margin-top: 2.5rem;
-  margin-right: 0 !important;
-  padding: 1.7rem 4.5rem;
+  margin: 1.7rem auto;
+  padding: 1rem 2rem;
   border-radius: 3rem;
   cursor: pointer;
   border: none;
   user-select: none;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family: sans-serif !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: rgba(0, 0, 0, 0.776);
   font-weight: 600;
+}
+
+.astronaut-text h1 {
+  font-size: 4rem !important;
+  transition: all 0.5s ease;
+}
+.astronaut-text p {
+  font-size: 2rem !important;
+  margin-top: 1rem;
+  white-space: normal !important;
+  transition: all 0.5s ease;
+  color: whitesmoke;
+}
+.main-content-mobile .astronaut-text p {
+  font-size: 1.5rem !important;
+  margin-top: 1rem;
+  white-space: normal !important;
+  transition: all 0.5s ease;
 }
 
 /* /////////// */
@@ -177,7 +194,6 @@
 @media screen and (max-width: 1800px) {
   .main-content {
     /* border: green solid 1px !important; */
-    transform: scale(0.57);
   }
 }
 
@@ -192,7 +208,6 @@
   }
 
   .main-content .astronaut-container {
-    transform: scale(0.6);
     /* border: red solid 1px !important; */
   }
 
@@ -212,103 +227,38 @@
     font-size: clamp(2rem, 3vw + 1rem, 2rem) !important;
   }
 
-  .main-content-mobile .astronaut-text {
-    /* border: blue solid 1px !important; */
-    /* Recenter */
-    /* -------- */
-    /* 110% is because of the calculation below */
-    /* formula is: (new width - old width) / 2 */
-    /* margin-left is because 130% shifts the element to the right */
-    margin-left: calc((110% - 100%) / 2) !important;
-    width: 130% !important;
+  .main-content-mobile .astronaut-text p {
+    margin-top: 1rem;
+    white-space: normal !important;
+    transition: all 0.5s ease;
   }
 
-  .btn-mobile {
-    margin-right: 0 !important;
-    padding: 1.7rem 4.5rem;
-    border-radius: 3rem;
-    border-top-left-radius: 0.9rem;
-    cursor: pointer;
-    border: none;
-    user-select: none;
-    font-size: 1.3rem;
-    font-family: sans-serif !important;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(0, 0, 0, 0.776);
-    font-weight: 600;
+  .main-content-mobile .astronaut-text h1 {
+    font-size: 2rem !important;
+    margin-top: 1rem;
+    white-space: normal !important;
   }
 }
-
-/* progressively  */
-@media screen and (max-width: 1300px) {
-  .main-content .astronaut-container {
-    transform: scale(0.6);
-    /* border: greenyellow solid 1px !important; */
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .main-content .astronaut-container {
-    transform: scale(0.5);
-    /* border: green solid 1px !important; */
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .main-content {
-    /* display: none; */
+/* screens smaller than 900px set astronaut text h1 to less */
+@media (max-width: 1424px) {
+  .main-content-mobile .astronaut-text h1,
+  .main-content .astronaut-text h1 {
+    font-size: 2rem !important;
+    margin-top: 2rem;
+    white-space: normal !important;
+    transition: all 0.5s ease;
   }
 
-  .main-content .astronaut-container {
-    transform: scale(0.4);
-    /* border: blue solid 1px !important; */
+  .main-content-mobile .astronaut-text p {
+    font-size: 1.5rem !important;
+    margin-top: 1rem;
+    white-space: normal !important;
+    transition: all 0.5s ease;
   }
 
-  .zoom__h1 {
-    position: fixed;
-    top: 9vh;
-    right: 6vw;
-    color: var(--canary-primary-color) !important;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 3vh;
-    color: #f2f2f2;
-    margin: 0.5rem;
-    z-index: 100;
+  .main-content-mobile .astronaut-text h1 {
+    font-size: 2rem !important;
+    margin-top: 1rem;
+    white-space: normal !important;
   }
-
-  .zoom__p {
-    position: fixed;
-    top: 13vh;
-    right: 5.8vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .main-content .astronaut-container {
-    transform: scale(0.3);
-    /* border: greenyellow solid 1px !important; */
-  }
-
-  .main-content-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: scale(0.6);
-    height: 100vh !important;
-    opacity: 0;
-    animation: appear 1.5s forwards 1s;
-    transition: all 1s ease;
-    margin: auto;
-    z-index: -1;
-    /* border: blueviolet solid 1px; */
-  }
-
-  .main-content-mobile .astronaut-container > * {
-    margin-top: 0.2rem !important;
-  }
-  /* 
-  .astronaut-text h1 {
-    font-size: clamp(16px, 3vw, 32px);
-  } */
 }
