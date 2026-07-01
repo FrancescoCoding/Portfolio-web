@@ -1,4 +1,5 @@
 import { IoLogoIonic } from "react-icons/io";
+import IconTooltip from "../components/UI/IconTooltip";
 
 import FraJS from "../assets/Logos/Javascript Icon.svg";
 import FraReact from "../assets/Logos/React Icon.svg";
@@ -7,7 +8,6 @@ import FraSass from "../assets/Logos/Sass Icon.svg";
 import FraRedux from "../assets/Logos/Redux Icon.svg";
 import FraggPlot2 from "../assets/Logos/ggPlot2 Icon.svg";
 import FraRProject from "../assets/Logos/RProject Icon.svg";
-import ReactTooltip from "react-tooltip";
 import FraCSS from "../assets/Logos/CSS3Icon.svg";
 import MongoDB from "../assets/Logos/MongoDB Icon.svg";
 import ExpressIcon from "../assets/Logos/Express Icon.svg";
@@ -23,11 +23,12 @@ import NetlifyIcon from "../assets/Logos/Netlify Icon.svg";
 
 const iconsSize = "35px";
 
-// Helper function
-const createIcon = (tag, icon) => {
+// Helper function. Tooltips are anchored to the icon itself (IconTooltip),
+// so they can't drift inside scrolling or fixed-position containers.
+const createIcon = (tag, icon, tooltip) => {
   return {
     tag,
-    icon,
+    icon: tooltip ? <IconTooltip text={tooltip}>{icon}</IconTooltip> : icon,
     id: tag + "Icon",
   };
 };
@@ -59,262 +60,84 @@ export const nodeIcon = createIcon(
 
 export const reactIcon = createIcon(
   "React",
-  <>
-    <img
-      height={iconsSize}
-      alt="React Logo"
-      data-tip="react"
-      data-for="react"
-      src={FraReact}
-    />
-    <ReactTooltip id="react" effect="solid">
-      <span>JavaScript frontend development library</span>
-    </ReactTooltip>
-  </>
+  <img src={FraReact} alt="React Logo" height={iconsSize} />,
+  "JavaScript frontend development library"
 );
 
 export const reduxIcon = createIcon(
   "Redux",
-  <>
-    <img
-      data-tip="redux"
-      data-for="redux"
-      src={FraRedux}
-      alt="Redux Logo"
-      height={iconsSize}
-    />
-    <ReactTooltip id="redux" effect="solid">
-      <span>
-        Open-source JavaScript library for <br />
-        managing and centralizing application state
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={FraRedux} alt="Redux Logo" height={iconsSize} />,
+  "Open-source JavaScript library for managing and centralising application state"
 );
 
 export const ionicIcon = createIcon(
   "Ionic",
-  <>
-    <IoLogoIonic
-      color="#367CF7"
-      data-tip="ionic"
-      data-for="ionic"
-      size={iconsSize}
-    />
-    <ReactTooltip id="ionic" effect="solid">
-      <span>
-        Open-source UI toolkit for <br />
-        building performant mobile apps
-      </span>
-    </ReactTooltip>
-  </>
+  <IoLogoIonic color="#367CF7" size={iconsSize} />,
+  "Open-source UI toolkit for building performant mobile apps"
 );
 
 export const sassIcon = createIcon(
   "Sass",
-  <>
-    <img
-      data-tip="sass"
-      data-for="sass"
-      src={FraSass}
-      alt="Redux Logo"
-      height={iconsSize}
-    />
-    <ReactTooltip id="sass" effect="solid">
-      <span>
-        Sass is a preprocessor scripting language that <br />
-        is interpreted or compiled into Cascading Style Sheets
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={FraSass} alt="Sass Logo" height={iconsSize} />,
+  "Preprocessor scripting language that is compiled into Cascading Style Sheets"
 );
 
 export const GGPlotIcon = createIcon(
   "ggPlot2",
-  <>
-    <img
-      src={FraggPlot2}
-      data-tip="ggplot"
-      data-for="ggplot"
-      alt="ggPlot2"
-      height={iconsSize}
-    />
-    <ReactTooltip id="ggplot" effect="solid">
-      <span>
-        Open-source data visualization package
-        <br /> for the statistical programming language R
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={FraggPlot2} alt="ggPlot2" height={iconsSize} />,
+  "Open-source data visualisation package for the statistical programming language R"
 );
 
 export const rStudioIcon = createIcon(
   "R Project",
-  <>
-    <img
-      data-tip="rstudio"
-      data-for="rstudio"
-      src={FraRProject}
-      alt="Redux Logo"
-      height={iconsSize}
-    />
-    <ReactTooltip id="rstudio" effect="solid">
-      <span>
-        R is a programming language <br />
-        for statistical computing and graphics
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={FraRProject} alt="R Project Logo" height={iconsSize} />,
+  "R is a programming language for statistical computing and graphics"
 );
 
 export const mongoDBIcon = createIcon(
   "MongoDB",
-  <>
-    <img
-      data-tip="mongodb"
-      data-for="mongodb"
-      src={MongoDB}
-      alt="MongoDB"
-      height={iconsSize}
-    />
-    <ReactTooltip id="mongodb" effect="solid">
-      <span>
-        MongoDB is a cross-platform document-oriented <br />
-        database program. Classified as a NoSQL database program
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={MongoDB} alt="MongoDB" height={iconsSize} />,
+  "Cross-platform document-oriented NoSQL database program"
 );
 
 export const expressIcon = createIcon(
   "express",
-  <>
-    <img
-      data-tip="express"
-      data-for="express"
-      src={ExpressIcon}
-      alt="Express"
-      height={iconsSize}
-    />
-    <ReactTooltip id="express" effect="solid">
-      <span>
-        Express is a minimal and flexible Node.js web application <br />
-        framework that provides a robust set of features for web and mobile
-        applications
-        <br />
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={ExpressIcon} alt="Express" height={iconsSize} />,
+  "Minimal and flexible Node.js web application framework for web and mobile applications"
 );
 
 export const npmIcon = createIcon(
   "npm",
-  <>
-    <img
-      data-tip="npm"
-      data-for="npm"
-      src={NpmIcon}
-      alt="npm"
-      height={iconsSize}
-    />
-    <ReactTooltip id="npm" effect="solid">
-      <span>npm is a package manager for the JavaScript ecosystem</span>
-    </ReactTooltip>
-  </>
+  <img src={NpmIcon} alt="npm" height={iconsSize} />,
+  "Package manager for the JavaScript ecosystem"
 );
 
 export const typescriptIcon = createIcon(
   "TypeScript",
-  <>
-    <img
-      data-tip="typescript"
-      data-for="typescript"
-      src={TypeScript}
-      alt="TypeScript"
-      height={iconsSize}
-    />
-    <ReactTooltip id="typescript" effect="solid">
-      <span>
-        TypeScript is strongly typed programming language <br />
-        developed and maintained by Microsoft
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={TypeScript} alt="TypeScript" height={iconsSize} />,
+  "Strongly typed programming language developed and maintained by Microsoft"
 );
 
 export const javaIcon = createIcon(
   "Java",
-  <>
-    <img
-      data-tip="java"
-      data-for="java"
-      src={JavaIcon}
-      alt="Java"
-      height={iconsSize}
-    />
-    <ReactTooltip id="java" effect="solid">
-      <span>
-        Java is a general-purpose programming language <br />
-        that is class-based, object-oriented, and designed to have as few
-        implementation dependencies as possible
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={JavaIcon} alt="Java" height={iconsSize} />,
+  "General-purpose, class-based, object-oriented programming language"
 );
 
 export const vercelIcon = createIcon(
   "Vercel",
-  <>
-    <img
-      data-tip="vercel"
-      data-for="vercel"
-      src={VercelIcon}
-      alt="Vercel"
-      height={iconsSize}
-    />
-    <ReactTooltip id="vercel" effect="solid">
-      <span>
-        Vercel is a cloud platform for static sites, <br />
-        hybrid apps, and Serverless Functions
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={VercelIcon} alt="Vercel" height={iconsSize} />,
+  "Cloud platform for static sites, hybrid apps, and Serverless Functions"
 );
 
 export const puppeteerIcon = createIcon(
   "Puppeteer",
-  <>
-    <img
-      data-tip="puppeteer"
-      data-for="puppeteer"
-      src={PuppeteerIcon}
-      alt="Puppeteer"
-      height={iconsSize}
-    />
-    <ReactTooltip id="puppeteer" effect="solid">
-      <span>
-        Puppeteer is a Node library which provides a high-level API <br />
-        to control Chrome or Chromium over the DevTools Protocol
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={PuppeteerIcon} alt="Puppeteer" height={iconsSize} />,
+  "Node library providing a high-level API to control Chrome over the DevTools Protocol"
 );
 
 export const netlifyIcon = createIcon(
   "Netlify",
-  <>
-    <img
-      data-tip="netlify"
-      data-for="netlify"
-      src={NetlifyIcon}
-      alt="Netlify"
-      height={iconsSize}
-    />
-    <ReactTooltip id="netlify" effect="solid">
-      <span>
-        Netlify is a cloud computing company that offers hosting and serverless
-        backend services for static websites
-      </span>
-    </ReactTooltip>
-  </>
+  <img src={NetlifyIcon} alt="Netlify" height={iconsSize} />,
+  "Cloud computing company offering hosting and serverless backend services for static websites"
 );

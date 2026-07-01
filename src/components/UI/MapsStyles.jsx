@@ -685,7 +685,7 @@ const canary = [
     elementType: "all",
     stylers: [
       {
-        color: "#e7cc13",
+        color: "#101b38",
       },
     ],
   },
@@ -696,9 +696,6 @@ const canary = [
       {
         visibility: "off",
       },
-      {
-        color: "#ff0000",
-      },
     ],
   },
   {
@@ -706,7 +703,7 @@ const canary = [
     elementType: "geometry",
     stylers: [
       {
-        color: "#858912",
+        color: "#1a2547",
       },
       {
         lightness: 5,
@@ -727,10 +724,10 @@ const canary = [
     elementType: "geometry.stroke",
     stylers: [
       {
-        color: "#000000",
+        color: "#e6b34d",
       },
       {
-        lightness: 25,
+        lightness: 10,
       },
     ],
   },
@@ -748,7 +745,7 @@ const canary = [
     elementType: "geometry.stroke",
     stylers: [
       {
-        color: "#ffe700",
+        color: "#ffcc66",
       },
       {
         lightness: 16,
@@ -760,7 +757,7 @@ const canary = [
     elementType: "geometry",
     stylers: [
       {
-        color: "#3a3b37",
+        color: "#000000",
       },
     ],
   },
@@ -769,7 +766,7 @@ const canary = [
     elementType: "all",
     stylers: [
       {
-        color: "#757f0d",
+        color: "#8a6d2f",
       },
     ],
   },

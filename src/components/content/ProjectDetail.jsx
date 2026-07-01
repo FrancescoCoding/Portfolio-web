@@ -1,5 +1,6 @@
 import useKeypress from "../../hooks/useKeyPress";
-import parse from "html-react-parser";
+import parse, { attributesToProps } from "html-react-parser";
+import ImageWithLoader from "../UI/ImageWithLoader";
 
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 
 import { useSelector } from "react-redux";
 import { FaGithub } from "react-icons/fa";
-import { FcDocument, FcSlrBackSide } from "react-icons/fc";
+import { FcDocument, FcSlrBackSide, FcGlobe } from "react-icons/fc";
 
 import VolumeControl from "../UI/VolumeControl";
 
@@ -20,6 +21,18 @@ import styles from "./ProjectDetail.module.css";
 import WorksList from "../../settings/WorksList";
 import ColourSelector from "../UI/ColourSelector";
 import Transition from "../UI/Transition";
+
+const parseOptions = {
+  replace: (node) => {
+    if (
+      node.name === "img" &&
+      node.attribs?.src &&
+      !node.attribs.src.includes("shields.io")
+    ) {
+      return <ImageWithLoader {...attributesToProps(node.attribs)} />;
+    }
+  },
+};
 
 const ProjectDetail = () => {
   const params = useParams();
@@ -101,7 +114,10 @@ const ProjectDetail = () => {
               <div className={styles.description}>
                 {currentProject[`${storeLanguage}`].description && (
                   <div style={{ display: "flex", flexDirection: "column" }}>
-                    {parse(currentProject[`${storeLanguage}`].description)}
+                    {parse(
+                      currentProject[`${storeLanguage}`].description,
+                      parseOptions
+                    )}
                   </div>
                 )}
               </div>
@@ -109,7 +125,6 @@ const ProjectDetail = () => {
               {/* Technologies utilised logos */}
               <div className={styles.logos}>
                 {currentProject.icons &&
-                  !isSmallScreen &&
                   currentProject.icons.map((el) => {
                     return (
                       <div
@@ -126,13 +141,7 @@ const ProjectDetail = () => {
             </div>
 
             {/* External links */}
-            <div
-              style={{
-                justifyContent: currentProject.extraLink
-                  ? "space-between"
-                  : "flex-end",
-              }}
-              className={styles["buttons-container"]}>
+            <div className={styles["buttons-container"]}>
               {/* Extra link on the left if present */}
               {currentProject.extraLink && (
                 <div className={styles["project-btn__wrapper"]}>
@@ -143,6 +152,14 @@ const ProjectDetail = () => {
                     className={styles["git-btn"]}>
                     {currentProject.extraLink.buttonText === "Docs" ? (
                       <FcDocument
+                        size="3rem"
+                        style={{
+                          color: `var(--${storeColour.colour}-active)`,
+                          cursor: "pointer",
+                        }}
+                      />
+                    ) : currentProject.extraLink.buttonText === "Website" ? (
+                      <FcGlobe
                         size="3rem"
                         style={{
                           color: `var(--${storeColour.colour}-active)`,

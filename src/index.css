@@ -57,19 +57,20 @@ input:-webkit-autofill:active {
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--portfolio-background);
   transition: transform 1s;
   overflow-x: hidden;
-  overflow: hidden;
   font-family: "Roboto", "Open Sans", "sans-serif";
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body::before {
   content: "";
-  position: fixed; /* Fixed position */
+  position: fixed;
+  /* Fixed position */
   top: 0;
   right: 0;
   bottom: 0;
@@ -114,32 +115,40 @@ p {
   width: 5px;
   height: 7px;
 }
+
 ::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #aeb6c4;
   border: 0px none #ffffff;
   border-radius: 2rem;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #525965;
 }
+
 ::-webkit-scrollbar-thumb:active {
   background: #525965;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
   border: 0px none #ffffff;
   border-radius: 50px;
 }
+
 ::-webkit-scrollbar-track:hover {
   background: transparent;
 }
+
 ::-webkit-scrollbar-track:active {
   background: transparent;
 }
+
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
@@ -149,8 +158,7 @@ p {
     opacity: 0;
   }
 
-  50% {
-  }
+  50% {}
 
   100% {
     opacity: 1;
@@ -178,6 +186,65 @@ p {
   body {
     transition: all 1s ease;
   }
+}
+
+/* Pure-CSS icon tooltips (see src/settings/Icons.js) — anchored to the icon
+   so they stay attached inside scrolling and fixed containers. */
+.icon-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.icon-tooltip__bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  /* --shift is set by IconTooltip.jsx to keep the bubble inside the viewport */
+  transform: translateX(calc(-50% + var(--shift, 0px))) translateY(-4px);
+  width: max-content;
+  max-width: min(230px, calc(100vw - 20px));
+  padding: 7px 11px;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 1000;
+}
+
+.icon-tooltip__arrow {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #222;
+  border-bottom-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s;
+  z-index: 1000;
+}
+
+.icon-tooltip:hover .icon-tooltip__bubble,
+.icon-tooltip:focus-visible .icon-tooltip__bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(calc(-50% + var(--shift, 0px))) translateY(0);
+}
+
+.icon-tooltip:hover .icon-tooltip__arrow,
+.icon-tooltip:focus-visible .icon-tooltip__arrow {
+  opacity: 1;
+  visibility: visible;
 }
 
 .canary {

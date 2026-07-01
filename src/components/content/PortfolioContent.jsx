@@ -139,22 +139,33 @@ const PortfolioContent = (props) => {
         {/* Red and Blue separator only on big screens  */}
         {isBigScreen && <Separator styles={styles.separator} />}
         {/* Astronaut + zoomed in text */}
-        <section className={styles["astronaut-container"]}>
-          <Astronaut
-            delay={delayMS}
-            width={isBigScreen ? 600 : 300}
-            height={isBigScreen ? 600 : 300}
-          />
+        <section
+          className={styles["astronaut-container"]}
+          style={{ "--accent": storeColour.hex }}>
+          {!isBigScreen && (
+            <>
+              <span className={styles["hero-blob"]} aria-hidden="true" />
+              <span className={styles["hero-blob-alt"]} aria-hidden="true" />
+            </>
+          )}
+          <div className={!isBigScreen ? styles["astronaut-float"] : undefined}>
+            <Astronaut
+              delay={delayMS}
+              width={isBigScreen ? 600 : 300}
+              height={isBigScreen ? 600 : 300}
+            />
+          </div>
           {!isBigScreen && (
             <div className={styles["astronaut-text"]}>
-              <h1
-                style={{
-                  fontSize: "4rem",
-                  color: `${storeColour.hex}`,
-                }}>
-                Gruosso Francesco
-              </h1>
-              <p>Web dev etc.</p>
+              <p className={styles.eyebrow}>
+                {storeLanguage === "IT" ? "Ciao 👋 sono" : "Hi there 👋 I'm"}
+              </p>
+              <h1 className={styles["hero-name"]}>Francesco Gruosso</h1>
+              <p className={styles.tagline}>
+                {storeLanguage === "IT"
+                  ? "Full-Stack developer, designer di UX e di terribili giochi di parole."
+                  : "Full-Stack developer, UX designer, engineer of terrible puns."}
+              </p>
               <NavLink
                 className={`${styles["btn-mobile"]}`}
                 activeClassName={styles.active}
@@ -165,12 +176,7 @@ const PortfolioContent = (props) => {
                   className={`${styles["btn-mobile"]}`}>
                   {(storeLanguage === "EN" && "Find out more") ||
                     (storeLanguage === "IT" && "Scopri altro")}
-                  <FaChevronDown
-                    style={{
-                      transform: "translateY(6px)",
-                      marginLeft: ".5rem",
-                    }}
-                  />
+                  <FaChevronDown className={styles["btn-chevron"]} />
                 </button>
               </NavLink>
             </div>

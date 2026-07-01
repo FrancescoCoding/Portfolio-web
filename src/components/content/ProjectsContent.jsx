@@ -1,10 +1,8 @@
 import styles from "./ProjectsContent.module.css";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 import { FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { isMobile } from "react-device-detect";
 
 const stripEmojis = (text) => {
   const regex = /\p{Emoji_Presentation}/gu;
@@ -28,132 +26,144 @@ const ProjectsContent = (props) => {
   const storeLanguage = useSelector((state) => state.languages.language);
   const storeColour = useSelector((state) => state.colours);
 
-  const isMediumScreen = useMediaQuery({ query: "(min-width: 1200px)" });
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 870px)" });
-
-  const smallScreenPadding = isSmallScreen ? "8px" : "16px";
-
   // Load the user's sorting preference from local storage, or default to "order"
   const savedOrder = localStorage.getItem("sortingOrder") || "order";
 
-  // create filter state
   const [order, setOrder] = useState(savedOrder);
   const [sortedProjects, setSortedProjects] = useState(props.projects);
+  const [centerCardIndex, setCenterCardIndex] = useState(0);
 
   useEffect(() => {
     setSortedProjects(sortProjects(props.projects, order, storeLanguage));
   }, [props.projects, order, storeLanguage]);
 
+  // On touch/mobile layouts, highlight the card closest to the viewport centre
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    if (!mobileQuery.matches) return;
+
+    let ticking = false;
+
+    const updateCenterCard = () => {
+      ticking = false;
+      const cards = document.querySelectorAll("[data-card-index]");
+      if (cards.length === 0) return;
+
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollTop <= 50) {
+        setCenterCardIndex(0);
+        return;
+      }
+
+      if (scrollTop + windowHeight >= documentHeight - 50) {
+        setCenterCardIndex(cards.length - 1);
+        return;
+      }
+
+      const viewportCenter = windowHeight / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setCenterCardIndex(closestIndex);
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateCenterCard);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sortedProjects]);
+
   // Save the user's sorting preference to local storage
   const handleOrderChange = (e) => {
     const newOrder = e.target.value;
     setOrder(newOrder);
-
-    // Save the user's sorting preference to local storage
     localStorage.setItem("sortingOrder", newOrder);
   };
 
   const stopEvent = (event) => event.stopPropagation();
 
   return (
-    <>
-      <div
-        className={
-          isMobile
-            ? styles["projects-section-mobile"]
-            : styles["projects-section"]
-        }>
-        <div className={styles.projects}>
-          <div
-            className={`${
-              isMobile ? styles["items-mobile"] : styles["items"]
-            } ${styles[`${storeColour.colour}`]}`}
-            style={{ paddingRight: smallScreenPadding }}>
-            {sortedProjects.map((project) => {
-              return (
-                <div
-                  className={styles["project-git"]}
-                  key={project.id + "git"}>
-                  <Link
-                    key={project.id}
-                    to={`/projects/${project.endpoint}`}
-                    className={styles["list-container"]}>
-                    <div
-                      className={`${styles["list-item"]} ${
-                        styles[`${storeColour.colour}`]
-                      }`}
-                      style={{
-                        background: isMediumScreen
-                          ? `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${project.image}) no-repeat center center/cover`
-                          : `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url(${project.image}) no-repeat center center/cover`,
-                      }}>
-                      {!isMobile && (
-                        <div className={styles["image-container"]}>
-                          <img
-                            src={project.image}
-                            alt={project.name}
-                          />
-                        </div>
-                      )}
-                      <div className={styles["title-container"]}>
-                        <p>{project[`${storeLanguage}`].name}</p>
-                        <p className={styles.short}>
-                          {" "}
-                          {project[`${storeLanguage}`].short}{" "}
-                        </p>
-                      </div>
-                      {isMediumScreen && (
-                        <a
-                          rel="noreferrer"
-                          href={project.githubLink}
-                          onClick={stopEvent}
-                          target="_blank"
-                          aria-label={project[`${storeLanguage}`].name}>
-                          <FaGithub
-                            className={`${styles.git} ${styles.github}`}
-                            color="white"
-                          />
-                        </a>
-                      )}
-                    </div>
-                  </Link>
-
-                  {isMediumScreen && (
-                    <div className={styles.description}>
-                      <p className={` ${styles.short}`}>
-                        {project[`${storeLanguage}`].short}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-          <div className={styles["filter-container"]}>
-            <div
-              className={styles["filter-wrapper"]}
-              style={{
-                borderColor: `${storeColour.hex}`,
-              }}>
-              <select
-                name="filter"
-                id="filter"
-                value={order}
-                onChange={handleOrderChange}>
-                {/* @todo: do proper internationalisation */}
-                <option value="order">
-                  {storeLanguage === "EN" ? "Featured" : "In evidenza"}
-                </option>
-                <option value="name">
-                  {storeLanguage === "EN" ? "Name" : "Nome"}
-                </option>
-                {/* <option value="order">Date</option> */}
-              </select>
-            </div>
+    <div
+      className={styles["projects-section"]}
+      style={{ "--accent": storeColour.hex }}
+    >
+      <div className={styles.projects}>
+        {/* Filter */}
+        <div className={styles["filter-container"]}>
+          <div className={styles["filter-wrapper"]}>
+            <select name="filter" id="filter" value={order} onChange={handleOrderChange}>
+              <option value="order">
+                {storeLanguage === "EN" ? "Featured" : "In evidenza"}
+              </option>
+              <option value="name">
+                {storeLanguage === "EN" ? "Name" : "Nome"}
+              </option>
+            </select>
           </div>
         </div>
+
+        {/* Projects Grid */}
+        <div className={`${styles["items"]} ${styles[storeColour.colour]}`}>
+          {sortedProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`${styles["project-card"]} ${index === centerCardIndex ? styles["center-card"] : ""}`}
+              data-card-index={index}
+            >
+              <Link to={`/projects/${project.endpoint}`} className={styles["card-link"]}>
+                <div
+                  className={`${styles["card"]} ${styles[storeColour.colour]}`}
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(${project.image})`,
+                  }}
+                >
+                  <div className={styles["card-content"]}>
+                    <h3 className={styles["card-title"]}>
+                      {project[storeLanguage].name}
+                    </h3>
+                    <p className={styles["card-description"]}>
+                      {project[storeLanguage].short}
+                    </p>
+                  </div>
+
+                  <a
+                    href={project.githubLink}
+                    onClick={stopEvent}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles["github-link"]}
+                    aria-label={`View ${project[storeLanguage].name} on GitHub`}
+                  >
+                    <FaGithub className={styles["github-icon"]} />
+                  </a>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

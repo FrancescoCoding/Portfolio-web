@@ -1,30 +1,31 @@
 .wrap {
   position: fixed;
-  top: 9vh;
-  right: 6vw;
+  top: clamp(2rem, 9vh, 4rem);
+  right: clamp(1rem, 6vw, 3rem);
   height: max-content !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1vw 2.4vw;
-  padding-left: 1.5vw;
+  padding: clamp(0.75rem, 1.5vw, 2rem) clamp(1rem, 2.4vw, 2.5rem);
   box-sizing: border-box;
-  border-radius: 0.9vw;
+  border-radius: clamp(8px, 0.9vw, 16px);
   background: #0000007a !important;
-  border: var(--canary-active) solid 0.3vw;
+  border: var(--canary-active) solid clamp(2px, 0.3vw, 4px);
   z-index: 399;
   animation: slide-down 0.5s ease-in-out;
+  min-width: 200px;
+  max-width: 90vw;
 }
 
 .popup__close {
   position: absolute;
-  top: 0.5vw;
-  right: 0.5vw;
+  top: clamp(8px, 0.5vw, 12px);
+  right: clamp(8px, 0.5vw, 12px);
   border-radius: 50%;
-  width: 1.4vw;
-  height: 1.4vw;
+  width: clamp(24px, 1.4vw, 32px);
+  height: clamp(24px, 1.4vw, 32px);
   background: var(--leaf-active) !important;
   display: flex;
   color: white !important;
@@ -36,8 +37,8 @@
 }
 
 .popup__close svg {
-  width: 1vw;
-  height: 1vw;
+  width: clamp(16px, 1vw, 20px);
+  height: clamp(16px, 1vw, 20px);
   stroke-width: 0.6;
 }
 
@@ -48,28 +49,79 @@
 }
 
 .zoom__h1 {
-  color: var(--canary-primary-color) !important;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 3vh;
   color: #f2f2f2;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(1.2rem, 3vh, 1.8rem);
   z-index: 100;
   margin-bottom: 0.4rem;
+  text-align: center;
 }
 
 .zoom__p {
-  color: var(--canary-active) !important;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.9vh;
-  color: #f2f2f2;
   color: var(--magenta-active) !important;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(0.9rem, 1.9vh, 1.1rem);
   z-index: 100;
   transition: margin 1s ease;
-  max-width: 14vw !important;
-  text-align: right;
+  max-width: clamp(200px, 14vw, 300px);
+  text-align: center;
+  line-height: 1.4;
 }
 
-/* if screen is zoomed in  */
+/* Mobile and tablet styles */
 @media screen and (max-width: 924px) {
+  .wrap {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    width: calc(100vw - 2rem);
+    max-width: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border-width: 2px;
+  }
+
+  .popup__close {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .popup__close svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .zoom__h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .zoom__p {
+    font-size: 1rem;
+    max-width: none;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrap {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    width: calc(100vw - 1rem);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+
+  .zoom__h1 {
+    font-size: 1.1rem;
+  }
+
+  .zoom__p {
+    font-size: 0.9rem;
+  }
 }
 
 @keyframes slide-down {

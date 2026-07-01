@@ -85,6 +85,8 @@
 }
 
 .astronaut-container {
+  --accent: var(--canary-active);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,11 +96,6 @@
 
 .astronaut-text {
   transform: translateY(-3rem);
-}
-
-.astronaut-text p {
-  font-size: 2.5rem !important;
-  margin-top: 2rem;
 }
 
 .astronaut {
@@ -144,23 +141,154 @@
   font-weight: 600;
 }
 
-.astronaut-text h1 {
-  font-size: 4rem !important;
-  transition: all 0.5s ease;
+/* //////////////////// */
+/* MOBILE HERO STYLING */
+/* //////////////////// */
+
+/* Ambient colour blobs behind the hero */
+.hero-blob,
+.hero-blob-alt {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: -1;
 }
-.astronaut-text p {
-  font-size: 2rem !important;
-  margin-top: 1rem;
-  white-space: normal !important;
-  transition: all 0.5s ease;
-  color: whitesmoke;
+
+.hero-blob {
+  width: 260px;
+  height: 260px;
+  top: 6%;
+  right: -60px;
+  background: var(--accent);
+  opacity: 0.28;
 }
-.main-content-mobile .astronaut-text p {
-  font-size: 1.5rem !important;
-  margin-top: 1rem;
-  white-space: normal !important;
-  transition: all 0.5s ease;
+
+.hero-blob-alt {
+  width: 220px;
+  height: 220px;
+  bottom: 4%;
+  left: -70px;
+  background: var(--magenta-primary-color);
+  opacity: 0.14;
 }
+
+/* Astronaut: gentle float + soft glow in the theme colour */
+.astronaut-float {
+  position: relative;
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+.astronaut-float::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0.22;
+  filter: blur(28px);
+  z-index: -1;
+}
+
+.eyebrow {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: hero-rise 0.7s ease forwards 1.2s;
+}
+
+.hero-name {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2.2rem, 9vw, 3rem) !important;
+  line-height: 1.1;
+  margin: 0;
+  color: #ffffff;
+  opacity: 0;
+  animation: hero-rise 0.7s ease forwards 1.35s;
+}
+
+.tagline {
+  font-size: 1.05rem !important;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92) !important;
+  max-width: 30ch;
+  margin: 1rem auto 0;
+  opacity: 0;
+  animation: hero-rise 0.7s ease forwards 1.5s;
+}
+
+.astronaut-text .btn-mobile {
+  opacity: 0;
+  animation: hero-rise 0.7s ease forwards 1.65s;
+}
+
+.astronaut-text .btn-mobile button,
+button.btn-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-chevron {
+  transform: none !important;
+  margin-left: 0 !important;
+  animation: hero-bounce 2s ease-in-out infinite 2.5s;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .astronaut-float,
+  .btn-chevron {
+    animation: none;
+  }
+
+  .eyebrow,
+  .hero-name,
+  .tagline,
+  .astronaut-text .btn-mobile {
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+  }
+}
+
 
 /* /////////// */
 /* ANIMATIONS */
@@ -219,46 +347,4 @@
     white-space: nowrap;
   }
 
-  .astronaut-text h1 {
-    font-size: clamp(3.5rem, 3vw + 1rem, 2.25rem) !important;
-  }
-
-  .astronaut-text p {
-    font-size: clamp(2rem, 3vw + 1rem, 2rem) !important;
-  }
-
-  .main-content-mobile .astronaut-text p {
-    margin-top: 1rem;
-    white-space: normal !important;
-    transition: all 0.5s ease;
-  }
-
-  .main-content-mobile .astronaut-text h1 {
-    font-size: 2rem !important;
-    margin-top: 1rem;
-    white-space: normal !important;
-  }
-}
-/* screens smaller than 900px set astronaut text h1 to less */
-@media (max-width: 1424px) {
-  .main-content-mobile .astronaut-text h1,
-  .main-content .astronaut-text h1 {
-    font-size: 2rem !important;
-    margin-top: 2rem;
-    white-space: normal !important;
-    transition: all 0.5s ease;
-  }
-
-  .main-content-mobile .astronaut-text p {
-    font-size: 1.5rem !important;
-    margin-top: 1rem;
-    white-space: normal !important;
-    transition: all 0.5s ease;
-  }
-
-  .main-content-mobile .astronaut-text h1 {
-    font-size: 2rem !important;
-    margin-top: 1rem;
-    white-space: normal !important;
-  }
 }

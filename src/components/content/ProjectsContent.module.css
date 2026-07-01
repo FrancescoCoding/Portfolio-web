@@ -1,650 +1,337 @@
+/* Main container — fluid padding scales between mobile and desktop */
 .projects-section {
-  height: 100vh;
-  width: 100vw;
+  --accent: var(--canary-active);
+  width: 100%;
+  height: auto;
+  padding: clamp(4.5rem, 2.5rem + 4vw, 6rem) clamp(1rem, 4vw, 2rem) 8rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: auto;
   opacity: 0;
   animation: appear 1.5s forwards 0.8s;
 }
 
+/* Projects wrapper */
 .projects {
   width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0 auto !important;
-  align-items: center;
-  z-index: 3;
+  gap: 1rem;
 }
 
+/* Filter section */
 .filter-container {
   display: flex;
-  align-items: flex-end !important;
-  justify-content: flex-end !important;
-  font-size: 20px;
-  width: 69%;
-  background: transparent;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
 }
 
 .filter-wrapper {
   border-radius: 20px;
   border-top-left-radius: 8px;
-  /* background-color: rgb(64, 83, 169); */
   background: transparent;
-  border: 2.5px solid var(--canary-active);
-  color: white !important;
-  padding: 8px 16px !important;
-  max-width: var(--max-view-width) !important;
+  border: 2.5px solid var(--accent);
+  color: white;
+  padding: 8px 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.filter-wrapper:focus-within {
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .filter-wrapper select {
   background-color: transparent;
   border: none;
-  font-size: 19px;
-  padding: 0px 5px;
+  font-size: 1rem;
+  min-height: 28px;
+  padding: 0px 10px;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
-  padding: 0px 10px;
   color: white;
 }
 
 .filter-wrapper select option {
-  background-color: transparent;
-  color: rgb(8, 8, 8);
-  font-size: 20px;
-  padding: 10px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* make the background of the selected option darker */
-.filter-wrapper select option:checked {
   background-color: var(--portfolio-background);
   color: rgb(253, 253, 253);
-}
-.filter-wrapper select option:not(:checked) {
-  background-color: var(--portfolio-background);
-  color: rgb(253, 253, 253);
-}
-
-/* make each options' padding bigger */
-.filter-wrapper select option:hover {
-  background-color: var(--leaf-active);
-  color: rgb(253, 253, 253);
-  font-size: 18px;
-  padding: 20px 10px;
+  font-size: 1rem;
+  padding: 10px;
   border-radius: 10px;
-  cursor: pointer;
 }
 
-div.items {
-  top: 0;
-  left: 0;
+/* Grid layout — fluid: fills as many 340px+ columns as fit, stacks to one on mobile */
+.items {
   display: grid;
-  padding-top: 3px;
-  padding-bottom: 2px 0.8rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 2rem 2.3rem;
-  max-height: 560px !important;
-  overflow: scroll;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  width: 100%;
+}
+
+/* Project cards */
+.project-card {
   position: relative;
-  padding-left: 0.8rem;
-  width: 70%;
-  height: 100% !important;
-  /* scroll-snap-type: y mandatory;
-  scroll-behavior: smooth; */
-  margin: 0 auto;
-  margin-bottom: 0.5rem;
+  aspect-ratio: 16 / 10;
+  min-height: 240px;
+  max-height: 320px;
+  padding: 4px;
 }
 
-div.items > div {
-  /* scroll-snap-align: start; */
-}
-
-div.list-item {
-  cursor: pointer;
-  border-radius: 13px !important;
-  box-shadow: 0 0 0 4px transparent;
-  width: 100%;
-  height: 100%;
-  background: rgba(2, 56, 171, 0.399);
-  margin-top: 3px;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-container {
-  width: 70%;
-  height: 100%;
-  pointer-events: none !important;
-  overflow: hidden;
-  z-index: 300;
-  margin-right: 15px;
-}
-
-.image-container img {
-  border-radius: 3px !important;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-.title-container {
-  width: 100%;
-  font-size: 0.65vw;
-  font-weight: 600;
-  user-select: none;
-  color: white;
-  font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 0.3rem;
-  transition: all 0.3s ease-in-out;
-  padding: 0rem 0.1rem;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.title-container p {
-  transition: all 0.3s ease-in-out;
-}
-
-div.list-item::before {
-  content: "";
-  background-size: cover !important;
-  position: absolute;
-  top: 0px;
-  right: -4px;
-  bottom: -4px;
-  left: -4px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 70%,
-    rgb(0, 0, 0, 0.5) 100%
-  );
-}
-
-div.list-item:hover::before {
-  content: "";
-  background: var(--portfolio-background);
-  background-size: cover !important;
-  top: 0px;
-  right: 0%;
-  bottom: 0px;
-  left: 0%;
-  height: 100% !important;
-  width: 120%;
-  transform: rotate(-4deg) translateY(8.56rem);
-  opacity: 0.9;
-  transition: all 0.3s ease-in-out;
-  z-index: 1;
-}
-
-div.list-item:hover {
-  border: none;
-  overflow: hidden;
-}
-
-/* Styled hovers */
-div.list-item.magenta:hover {
-  border: 4px solid var(--magenta-active) !important;
-}
-div.list-item.ocean:hover {
-  border: 4px solid var(--ocean-active) !important;
-}
-div.list-item.canary:hover {
-  border: 4px solid var(--canary-active) !important;
-}
-div.list-item.leaf:hover {
-  border: 4px solid var(--leaf-active) !important;
-}
-
-/* Project title */
-div.list-item:hover .title-container p:not(.short) {
-  transition: all 0.1s ease-in;
-
-  /* never break the line */
-  /* transform: translateX(-0.4vw); */
-  margin-bottom: 2px;
-}
-
-div.list-item:hover {
-  transition: all 0.2s ease-in-out;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-div.list-item:hover .title-container {
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease-in-out;
-  text-align: start;
-}
-
-.title-container p.short {
-  margin-top: 0.1rem;
-  font-weight: 400;
-  color: rgb(218, 217, 217) !important;
-  display: none;
-}
-
-div.list-item:hover .title-container p.short {
+.card-link {
   display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
 }
 
-div.list-item {
-  padding: 1rem;
-  color: rgb(72, 71, 71) !important;
-  border-radius: 5px !important;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+.card-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.card {
   position: relative;
-  z-index: 101 !important;
-  border: 4px transparent solid;
-}
-
-.project-git {
-  position: relative;
-}
-
-.project-git .git {
-  right: 0.9rem;
-  bottom: 0.9rem;
-  opacity: 0;
-  position: absolute;
-  transform: translateY(10px);
-  transition: 0.2s ease-out;
-  z-index: 4000;
-}
-
-.project-git:hover .git {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.project-git .git.github {
-  font-size: 2rem;
-  transition: all 0.15s ease-out;
-}
-
-.project-git .git.github:hover {
-  font-size: 2.9rem;
-  transform: translateY(2px) translateX(2px);
-  transition: all 0.15s ease-in;
-}
-
-.project-git .description {
-  right: 0.25rem;
-  top: 0.5rem;
-  opacity: 0;
-  position: absolute;
-  transform: translateY(10px);
-  display: flex;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: 0.2s ease-out;
-}
-
-/* ////////////// */
-/* MOBILE CLASSES */
-/* ////////////// */
-.projects-section-mobile {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  opacity: 0;
-  animation: appear 1.5s forwards 0.8s;
-  /* border: red solid 1px; */
+  justify-content: flex-end;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
 }
-.items-mobile {
-  top: 1rem;
-  left: 0;
-  display: grid;
-  padding-top: 3px;
-  padding-bottom: 2px 0.8rem;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem 2.3rem;
-  max-height: 68vh !important;
-  overflow: scroll;
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 3px var(--accent);
+}
+
+/* Card content */
+.card-content {
   position: relative;
-  padding-left: 0.8rem;
-  width: 70%;
-  height: 100% !important;
-  /* scroll-snap-type: y mandatory;
-  scroll-behavior: smooth; */
-  margin: 0 auto;
-  margin-bottom: 0.5rem;
-  /* border: red solid 1px; */
+  z-index: 2;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.middle-item {
-  transition: transform 0.3s ease-in-out;
+.card-title {
+  font-size: clamp(1.2rem, 1rem + 0.6vw, 1.4rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Segoe UI Variable", sans-serif;
+  transition: all 0.3s ease;
 }
 
-.projects-section-mobile .items-mobile > div {
-  scroll-snap-align: start !important;
+.card-description {
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1rem);
+  font-weight: 400;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Segoe UI Variable", sans-serif;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.projects-section-mobile .filter-container {
-  margin-top: 0rem;
+.card:hover .card-title {
+  transform: translateY(-0.5rem);
+}
+
+.card:hover .card-description {
+  opacity: 1;
+  max-height: 100px;
+}
+
+/* GitHub link — sized for a comfortable touch target */
+.github-link {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
   display: flex;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  font-size: 20px;
-  width: 69%;
-  background: transparent;
-  /* border: greenyellow solid 1px !important; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
 }
 
-/* move .filter-container as the first child of .projects-section-mobile */
-.projects-section-mobile .filter-container {
-  order: -1;
+.card:hover .github-link,
+.github-link:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ////////////// */
-/* MEDIA QUERIES */
-/* ////////////// */
-@media screen and (max-width: 1824px) {
-  div.items {
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 0.6rem 0.9rem;
-    height: 36rem !important;
-    max-height: 80vh !important;
-    /* border: red solid 1px !important; */
+.github-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.github-icon {
+  font-size: 2rem;
+  transition: all 0.2s ease;
+}
+
+.github-link:hover .github-icon {
+  transform: scale(1.1);
+}
+
+/* Touch devices have no hover: keep description and GitHub link always visible */
+@media (hover: none) {
+  .card-description {
+    opacity: 1;
+    max-height: none;
   }
 
+  .github-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile — single column with centre-card emphasis while scrolling */
+@media (max-width: 767px) {
   .projects-section {
-    position: fixed;
-    top: 0;
-    right: 50%;
-    transform: translateX(50%);
-    margin: 2rem auto !important;
-    height: 90%;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
-  div.list-item {
-    height: 20.5vh;
-  }
-
-  div.list-item:hover .title-container {
+  .items {
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease-in-out;
-    text-align: start;
-    margin-top: 1%;
-  }
-
-  .filter-container {
-    font-size: 20px;
-    top: 85%;
-    width: 93%;
-  }
-
-  .project-git {
-    width: 100%;
-  }
-
-  .title-container {
-    width: 100%;
-    font-size: 0.95vw;
-    font-weight: 600;
-    user-select: none;
-    color: white;
-    font-family: "Segoe UI Variable", Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 0.3rem;
-    transition: all 0.3s ease-in-out;
-    padding: 0rem 0.1rem;
-    pointer-events: none;
-    z-index: 2;
-  }
-}
-
-@media screen and (max-width: 1604px) {
-  div.items {
-    gap: 0.6rem 0.9rem;
-    grid-template-columns: repeat(1, 1fr) !important;
-    transition: all 1s;
-    height: 32rem !important;
-  }
-
-  div.list-item {
-    height: 33vh;
-  }
-
-  .filter-container {
-    top: 85%;
-    width: 93%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .title-container {
-    transform: translateX(0) translateY(0);
-  }
-
-  div.list-item {
-    padding: 1rem;
-  }
-
-  .project-git:active .list-item,
-  .project-git:focus .list-item {
-    transform: scale(1.03); /* scale the item slightly */
-    transition: transform 0.3s ease-in-out; /* smooth the scaling effect */
-  }
-
-  div.items {
-    font-size: 16px;
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-left: 0;
-    padding-bottom: 0rem;
-    height: 24rem !important;
-
-    /* border: plum solid 1px !important; */
+    padding: 0 0.5rem;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
-  div.list-item:hover .title-container {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease-in-out;
-    text-align: start;
-    margin-right: 0 !important;
+  .project-card {
+    aspect-ratio: auto;
+    height: 280px;
+    max-height: none;
+    scroll-snap-align: center;
+    margin: 0.5rem 0;
+    transform: scale(0.96);
+    opacity: 0.85;
+    filter: brightness(0.9);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .image-container {
-    width: 100%;
-    pointer-events: none !important;
-    overflow: hidden;
+  /* Dynamic centre card - when scrolled into view */
+  .project-card.center-card {
+    transform: scale(1.02);
+    opacity: 1;
+    filter: brightness(1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--accent);
+    border-radius: 20px;
+    padding: 3px;
   }
 
-  .image-container img {
-    transition: 0.1 ease-in-out;
-    border-radius: 15px !important;
-  }
-
-  /* image takes 50% */
-  div.list-item img {
-    width: 100% !important;
-  }
-
-  /* list-item flex centered */
-  .list-item {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media screen and (min-height: 1080px) {
-  div.items {
-    top: 0;
-    left: 0;
-    height: 100%;
-    display: grid;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 2rem 2.3rem;
-    max-height: 71% !important;
-    overflow: scroll;
-    position: relative;
-    padding-left: 0.8rem;
-    width: 70%;
-    height: 50%;
-    /* border: green solid 1px !important; */
-    height: 95vh !important;
-  }
-
-  .project-git .git {
-    right: 0.9rem;
-    bottom: 1rem;
-    opacity: 0;
+  /* Subtle glow behind the centre card */
+  .project-card.center-card::before {
+    content: "";
     position: absolute;
-    transform: translateY(10px);
-    transition: 0.2s ease-out;
-    z-index: 4000;
+    inset: -2px;
+    border-radius: 22px;
+    background: var(--accent);
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+
+  .project-card.center-card .card {
+    border-radius: 17px;
+  }
+
+  /* Prevent hover effects on centre cards to avoid double styling */
+  .project-card.center-card .card:hover {
+    transform: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .project-card.center-card .card:hover .card-title {
+    transform: none;
+  }
+
+  .card-title {
+    font-weight: 600;
   }
 }
 
-@media screen and (max-width: 870px) {
-  .projects-section .projects {
-    align-items: baseline;
-    margin-top: 0.5rem;
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  .projects-section,
+  .card,
+  .card-content,
+  .card-title,
+  .card-description,
+  .github-link,
+  .github-icon,
+  .project-card {
+    animation-duration: 0.01ms;
+    transition-duration: 0.01ms;
   }
 
-  .project-git {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* order */
-  }
-
-  /* when active put z index to 4000 */
-  .project-git:active,
-  .project-git:focus,
-  .project-git:hover {
-    z-index: 4000 !important;
-  }
-
-  /* list item when project git is active */
-  .project-git:active ~ .list-item,
-  .project-git:focus ~ .list-item,
-  .project-git:hover ~ .list-item {
-    height: 30px;
-  }
-
-  div.list-item {
-    width: 100%;
-    border-radius: 10px !important;
-    /* remove gradient from bg */
-    align-items: flex-start !important;
-  }
-
-  .title-container {
-    font-size: clamp(0.9rem, 1.5vw, 1.5rem);
-  }
-
-  /* target the p */
-  div.list-item .title-container p.short {
-    display: block !important;
-  }
-
-  div.items {
-    font-size: 16px;
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: center !important;
-    padding-bottom: 0rem;
-    max-height: 100% !important;
-    height: 75vh !important;
+  .card:hover {
+    transform: none;
   }
 }
 
-@media screen and (max-height: 800px) {
-  .projects-section {
-    margin-bottom: 0;
-  }
+/* Scrollbar styling */
+.items::-webkit-scrollbar {
+  width: 8px;
 }
 
-div.list-item.leaf-hover {
-  border: 4px solid var(--leaf-primary-color) !important;
-}
-
-div.list-item.magenta-hover {
-  border: 4px solid var(--magenta-primary-color) !important;
-}
-
-div.list-item.canary-hover {
-  border: 4px solid var(--canary-primary-color) !important;
-}
-
-div.list-item.ocean-hover {
-  border: 4px solid var(--ocean-primary-color) !important;
+.items::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .items.leaf::-webkit-scrollbar-thumb {
   background: var(--leaf-primary-color-darker);
-  /* background: var(--leaf-active); */
-  border: 0px none #ffffff;
-  border-radius: 2rem;
+  border-radius: 4px;
 }
 
 .items.magenta::-webkit-scrollbar-thumb {
   background: var(--magenta-primary-color-darker);
-  /* background: var(--magenta-active); */
-  border: 0px none #ffffff;
-  border-radius: 2rem;
+  border-radius: 4px;
 }
 
 .items.canary::-webkit-scrollbar-thumb {
   background: var(--canary-primary-color-darker);
-  /* background: var(--canary-active); */
-  border: 0px none #ffffff;
-  border-radius: 2rem;
+  border-radius: 4px;
 }
 
 .items.ocean::-webkit-scrollbar-thumb {
   background: var(--ocean-primary-color-darker);
-  /* background: var(--ocean-active); */
-  border: 0px none #ffffff;
-  border-radius: 2rem;
+  border-radius: 4px;
 }
 
+/* Animation */
 @keyframes appear {
   0% {
     opacity: 0;
-  }
-
-  50% {
+    transform: translateY(20px);
   }
 
   100% {
     opacity: 1;
-  }
-}
-
-@media screen and (min-height: 1080px) {
-  .project-git:hover .git {
-    transform: translateY(-5px) !important;
-    opacity: 1;
+    transform: translateY(0);
   }
 }

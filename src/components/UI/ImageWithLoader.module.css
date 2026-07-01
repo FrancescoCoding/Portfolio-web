@@ -1,0 +1,86 @@
+.wrapper {
+  display: inline-block;
+  position: relative;
+  margin: 0.5rem 0;
+  max-width: 100%;
+}
+
+/* Placeholder shown while the image is downloading */
+.skeleton {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: linear-gradient(
+    100deg,
+    rgba(7, 62, 104, 0.08) 40%,
+    rgba(7, 62, 104, 0.18) 50%,
+    rgba(7, 62, 104, 0.08) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* While loading, keep the image in the layout (hidden images are never
+   fetched by lazy loading) but stack it under the skeleton. */
+.image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.image.loaded {
+  position: static;
+  height: auto;
+  object-fit: unset;
+  opacity: 1;
+  animation: fade-in 0.4s ease;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: rgba(7, 62, 104, 0.08);
+  color: #073e68;
+  font-size: 0.9rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .skeleton,
+  .image.loaded {
+    animation: none;
+  }
+}

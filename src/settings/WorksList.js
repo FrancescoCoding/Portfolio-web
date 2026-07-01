@@ -629,44 +629,48 @@ const PROJECTS = [
     EN: {
       name: "📚 Anonfeedback.io",
       description: `
-        <h2>Enhancing Student Feedback Collection and Analysis with AI & HCI Techniques 🎓</h2>
+        <h2>AI-Powered Anonymous Feedback for Organizations 💬</h2>
         <br/>
-        <p>In the fast-paced environment of higher education institutions, gathering student feedback can be a challenging endeavour. Traditional feedback mechanisms, such as online surveys or lengthy questionnaires, often suffer from low participation rates due to the cognitive load they impose on students, especially when presented after or during exam periods. These forms can be perceived as tedious and time-consuming, discouraging students from providing valuable insights into their educational experiences.</p>
-        <p>Cognitive load theory, a well-established concept in the field of human-computer interaction (HCI), suggests that individuals have limited cognitive resources available for processing information. When the demands of a task exceed these resources, cognitive overload can occur, leading to decreased performance and potentially abandonment of the task altogether (Hollender et al., 2010).</p>
-        <p>To address these challenges, this project introduces Anonfeedback.io, an innovative feedback system leveraging the power of AI and HCI techniques. It aims to reduce cognitive demands through intuitive design, encouraging higher engagement rates. This enables institutions to act promptly on contextualized, real-time feedback, in order to enable continuous improvement in the learning experience while overcoming limitations of conventional mechanisms.</p>
-        <p>The system's other strength lies in its use of sentiment analysis powered by large language models (LLMs) like GPT-4. These advanced natural language processing models excel at capturing linguistic nuances, detecting sarcasm, and providing nuanced insights from unstructured text comments, thereby obtaining far more accurate classification out of the box. By leveraging the latest advancements in AI, the system offers educational institutions the ability to promptly respond to contextualized, real-time feedback.</p>
-        <p>For a comprehensive list of technologies and the full report, please check out the GitHub Repository's <a href="https://github.com/FrancescoCoding/hons-project/tree/main">README</a> file.</p>
+        <p><a href="https://anonfeedback.io">Anonfeedback.io</a> is a live SaaS platform that transforms how organisations collect and act on feedback. Anonymity unlocks the honest, constructive criticism people hold back in traditional surveys, while AI turns unstructured comments into clear, actionable insights.</p>
+        <div style="text-align: center;">
+            <img width="60%" src="${AnonfeedbackThumbnail600w}" alt="Anonfeedback.io preview" />
+        </div>
+        <p>Organisations create fully customisable feedback forms, with sentiment emojis, tags, and categories tailored to their brand, and monitor responses in real time on an intuitive dashboard. Sentiment analysis powered by large language models captures linguistic nuance and sarcasm that keyword-based classifiers miss, and an always-on AI safety filter keeps the content moderated.</p>
+        <p>Beyond collection, the platform closes the loop: critical feedback can be escalated, assigned, prioritised, and given deadlines, with public or private acknowledgements back to submitters. Slack notifications and automatic Jira ticket creation plug feedback directly into existing team workflows, and subscription tiers scale from free plans to enterprise deployments with custom integrations.</p>
+        <p>The platform began as my Honours dissertation, an HCI-driven study on reducing the cognitive load of student feedback forms in higher education, and has since grown into a full product serving organisations of any kind. The original research and report are available in the <a href="https://github.com/FrancescoCoding/hons-project/tree/main">GitHub repository</a>.</p>
         <br/>
-        <p>Live Links for the RGU Org Feedback:</p>
+        <p>Live links:</p>
         <ul>
-            <li><a href="https://rgu.anonfeedback.io/">General Feedback</a></li>
-            <li><a href="https://rgu.anonfeedback.io/fran/discussion">Project Discussion</a></li>
+            <li><a href="https://anonfeedback.io/">Anonfeedback.io</a></li>
+            <li><a href="https://rgu.anonfeedback.io/">RGU Org Feedback</a></li>
         </ul>
         `,
-      tags: ["AI, HCI, GPT-4, Sentiment Analysis"],
+      tags: ["AI, SaaS, Sentiment Analysis, Integrations"],
       short:
-        "An innovative feedback system leveraging AI and HCI techniques to enhance student feedback collection and analysis.",
+        "A live SaaS platform for anonymous feedback collection, with AI sentiment analysis, real-time dashboards, and Slack & Jira integrations.",
     },
     IT: {
       name: "📚 Anonfeedback.io",
       description: `
-        <h2>Migliorare la Raccolta e l'Analisi dei Feedback degli Studenti con Tecniche di AI e HCI 🎓</h2>
+        <h2>Feedback Anonimi Potenziati dall'AI per le Organizzazioni 💬</h2>
         <br/>
-        <p>Nell'ambiente frenetico delle istituzioni di istruzione superiore, raccogliere feedback dagli studenti può essere un'impresa impegnativa. I meccanismi di feedback tradizionali, come i sondaggi online o i questionari lunghi, spesso soffrono di bassi tassi di partecipazione a causa del carico cognitivo che impongono agli studenti, specialmente quando presentati dopo o durante i periodi di esame. Queste forme possono essere percepite come tediose e dispendiose in termini di tempo, scoraggiando gli studenti dal fornire preziose informazioni sulle loro esperienze educative.</p>
-        <p>La teoria del carico cognitivo, un concetto ben consolidato nel campo dell'interazione uomo-computer (HCI), suggerisce che gli individui hanno risorse cognitive limitate disponibili per elaborare le informazioni. Quando le richieste di un compito superano queste risorse, può verificarsi un sovraccarico cognitivo, portando a una diminuzione delle prestazioni e all'abbandono del compito stesso (Hollender et al., 2010).</p>
-        <p>Per affrontare queste sfide, questo progetto introduce Anonfeedback.io, un innovativo sistema di feedback che sfrutta la potenza dell'AI e delle tecniche HCI. Mira a ridurre le richieste cognitive attraverso un design intuitivo, incoraggiando tassi di coinvolgimento più elevati. Ciò consente alle istituzioni di agire prontamente su feedback contestualizzati in tempo reale, per consentire un miglioramento continuo dell'esperienza di apprendimento superando le limitazioni dei meccanismi convenzionali.</p>
-        <p>Un altro punto di forza del sistema risiede nell'uso dell'analisi del sentiment potenziata da modelli di linguaggio di grandi dimensioni (LLM) come GPT-4. Questi modelli avanzati di elaborazione del linguaggio naturale eccellono nel catturare le sfumature linguistiche, rilevare il sarcasmo e fornire approfondimenti sfumati dai commenti di testo non strutturati, ottenendo così una classificazione molto più accurata fin dall'inizio. Sfruttando i più recenti progressi dell'AI, il sistema offre alle istituzioni educative la possibilità di rispondere prontamente ai feedback contestualizzati in tempo reale.</p>
-        <p>Per un elenco completo delle tecnologie e il rapporto completo, si prega di consultare il file <a href="https://github.com/FrancescoCoding/hons-project/tree/main">README</a> nel repository GitHub.</p>
+        <p><a href="https://anonfeedback.io">Anonfeedback.io</a> è una piattaforma SaaS attiva che trasforma il modo in cui le organizzazioni raccolgono e gestiscono i feedback. L'anonimato sblocca le critiche oneste e costruttive che le persone trattengono nei sondaggi tradizionali, mentre l'AI trasforma i commenti non strutturati in informazioni chiare e utilizzabili.</p>
+        <div style="text-align: center;">
+            <img width="60%" src="${AnonfeedbackThumbnail600w}" alt="Anteprima di Anonfeedback.io" />
+        </div>
+        <p>Le organizzazioni creano moduli di feedback completamente personalizzabili, con emoji di sentiment, tag e categorie su misura per il proprio brand, e monitorano le risposte in tempo reale su una dashboard intuitiva. L'analisi del sentiment basata su modelli di linguaggio di grandi dimensioni (LLM) coglie le sfumature linguistiche e il sarcasmo che i classificatori basati su parole chiave non rilevano, e un filtro di sicurezza AI sempre attivo mantiene i contenuti moderati.</p>
+        <p>Oltre alla raccolta, la piattaforma chiude il cerchio: i feedback critici possono essere escalati, assegnati, prioritizzati e associati a scadenze, con riscontri pubblici o privati verso chi li ha inviati. Le notifiche Slack e la creazione automatica di ticket Jira integrano i feedback direttamente nei flussi di lavoro esistenti, e i piani di abbonamento scalano dal piano gratuito fino alle installazioni enterprise con integrazioni personalizzate.</p>
+        <p>La piattaforma è nata come la mia tesi di laurea con lode, uno studio HCI sulla riduzione del carico cognitivo nei moduli di feedback per studenti nell'istruzione superiore, e da allora è cresciuta fino a diventare un prodotto completo al servizio di organizzazioni di ogni tipo. La ricerca originale e il rapporto completo sono disponibili nel <a href="https://github.com/FrancescoCoding/hons-project/tree/main">repository GitHub</a>.</p>
         <br/>
-        <p>Link Live per i Feedback dell'Org RGU:</p>
+        <p>Link live:</p>
         <ul>
-            <li><a href="https://rgu.anonfeedback.io/">Feedback Generale</a></li>
-            <li><a href="https://rgu.anonfeedback.io/fran/discussion">Discussione del Progetto</a></li>
+            <li><a href="https://anonfeedback.io/">Anonfeedback.io</a></li>
+            <li><a href="https://rgu.anonfeedback.io/">Feedback dell'Org RGU</a></li>
         </ul>
         `,
-      tags: ["AI, HCI, GPT-4, Sentiment Analysis"],
+      tags: ["AI, SaaS, Sentiment Analysis, Integrazioni"],
       short:
-        "Un innovativo sistema di feedback che sfrutta le tecniche di AI e HCI per migliorare la raccolta e l'analisi dei feedback degli studenti.",
+        "Una piattaforma SaaS attiva per la raccolta di feedback anonimi, con analisi del sentiment AI, dashboard in tempo reale e integrazioni Slack e Jira.",
     },
     id: "p14",
     githubLink: "https://github.com/FrancescoCoding/hons-project",
@@ -674,8 +678,8 @@ const PROJECTS = [
     endpoint: "anonfeedback-io",
     icons: [reactIcon, nodeIcon, expressIcon, typescriptIcon],
     extraLink: {
-      buttonText: "Docs",
-      link: "https://github.com/FrancescoCoding/hons-project/blob/main/Honours%20Project%20Dissertation%20-%20Francesco%20Gruosso%202024.pdf",
+      buttonText: "Website",
+      link: "https://anonfeedback.io/",
     },
     image: AnonfeedbackThumbnail600w,
   },
